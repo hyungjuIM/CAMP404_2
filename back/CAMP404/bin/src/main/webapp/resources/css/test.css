@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+}
+
+
+.addArea {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 300px;
+    height: 50px;
+    border: 1px solid black;
+    margin-bottom: 20px;
+    padding: 0 10px;
+}
+
+.text1 {
+    flex: 9;
+}
+
+.down {
+    flex: 0;
+}
+
+.slideWrapper {
+    width: 300px;
+    height: 100px;
+    border: 1px solid black;
+    padding: 0 10px;
+}
+
+.slideArea {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text2 {
+    width: 270px;
+    height: 50px;
+    border: 1px solid black;
+}
+
+.test1 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.test2 {
+    flex: 7;
+}
+
+.test3 {
+    flex: 3;
+}
