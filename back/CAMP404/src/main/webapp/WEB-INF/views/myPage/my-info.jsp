@@ -1,5 +1,5 @@
-<!-- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> -->
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,13 +10,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>강의목차</title>
 
-    <link rel="stylesheet" href="/css/my-info.css">
-
+ <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/my-info.css" />
+ 
+  <!-- jQuery 라이브러리 추가(CDN) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        
 </head>
 
 <body>
     <heder>
-        <div data-include1="header" id="header"></div>
+        <jsp:include page="/WEB-INF/views/common/header.jsp"/>
     </heder>
     <mian>
         <div data-inclued2="Q&ABtn" id="Q&ABtn"></div>
@@ -29,7 +33,7 @@
                     </div>
                     <!-- 나의강의장, 찜목록, 정보수정버튼 -->
                     <div class="myClass-content-container">
-                        <div class="content-1" onclick="location.href='/html/myClass.html';">
+                        <div class="content-1" onclick="location.href='${pageContext.request.contextPath}/myPage/myClass';">
                             <span class="myClass-span">나의 강의장</span>
                             <i class="fa-solid fa-chevron-right fa-xm"></i>
                         </div>
@@ -37,7 +41,7 @@
                             <span class="myClass-span">나의 찜목록</span>
                             <i class="fa-solid fa-chevron-right fa-xm"></i>
                         </div>
-                        <div class="content-1" onclick="location.href='/html/my-info.html';">
+                        <div class="content-1" onclick="location.href='${pageContext.request.contextPath}/myPage/my-info';">
                             <span class="myClass-span">회원정보 수정</span>
                             <i class="fa-solid fa-chevron-right fa-xm"></i>
                         </div>
@@ -122,27 +126,10 @@
                     <button type="button" id="btnChange">회원정보수정</button>
                 </div>
             </div>
+                    <jsp:include page="/WEB-INF/views/common/Q&ABtn.jsp"/>
     </mian>
 
-
-    <!-- jQuery 라이브러리 추가 -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script>
-        $(function () {
-            var include1 = $('[data-include1="header"]');
-            var include2 = $('[data-inclued2="Q&ABtn"]');
-            jQuery.each(include1, function () {
-                $(this).load('/html/header.html');
-            });
-            jQuery.each(include2, function () {
-                $(this).load('/html/Q&ABtn.html');
-            });
-        });
-
-    </script>
-    <script src="/js/classContents.js"></script>
-    <script src="/js/infoChange.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/infoChange.js"></script>
 </body>
 
 

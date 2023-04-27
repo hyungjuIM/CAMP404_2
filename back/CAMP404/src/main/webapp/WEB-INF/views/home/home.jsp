@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/reset.css" />
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/index.css" />
+ <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/index.css" />
 
     <!-- jQuery 라이브러리 추가(CDN) -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -29,7 +29,6 @@
     <!-- 헤더 영역 -->
     <header>
         <jsp:include page="/WEB-INF/views/common/header.jsp"/>
-
     </header>
 
     <main>
@@ -246,7 +245,7 @@
 
                     <!-- BEST CLASS 과목 3 -->
                     <div class="classItem">
-                        <a href="${contextPath}classroom/frontClass" class="imgArea">
+                        <a href="${contextPath}class/class3" class="imgArea">
                             <img src="resources/images/6.png">
                         </a>
                         <div class="textArea">
@@ -257,7 +256,7 @@
                                 </div>
                                 <div class="likeBtn"><i class="fa-solid fa-heart heart"></i></i></div>
                             </div>
-                            <a href="${contextPath}classroom/frontClass">
+                            <a href="${contextPath}class/class3">
                                 <div class="subText">형, 자바는 이게 제일 쉬워요 ㅋㅋ<br>정말 쉬운 자바_진짜최종_ㅁㄴㅇㄹ.java</div>
                                 <div class="tutorTitle">월급도둑 김코딩</div>
                             </a>

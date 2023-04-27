@@ -21,22 +21,22 @@
 
 
 
-
-		<!-- 사용자 -->
+<!-- 
+		사용자
 	<resultMap type="users" id="users_rm">
-		<id property="usersNo" column="USER_NO"/>
-		<result property="usersId" column="USERS_ID" />
-		<result property="usersPw" column="USERS_PW" />
-		<result property="usersName" column="USERS_NAME" />
-		<result property="usersEmail" column="USERS_EMAIL" />
-		<result property="usersNick" column="USERS_NICK" />
-		<result property="usersTel" column="USERS_TEL" />
-		<result property="usersAddress" column="USERS_ADDR" />
+		<id property="userNo" column="USER_NO"/>
+		<result property="userId" column="USER_ID" />
+		<result property="userPw" column="USER_PW" />
+		<result property="userName" column="USER_NAME" />
+		<result property="userEmail" column="USER_EMAIL" />
+		<result property="userNick" column="USER_NICK" />
+		<result property="userTel" column="USER_TEL" />
+		<result property="userAddress" column="USER_ADDR" />
 		<result property="enrollDate" column="ENROLL_DT" />
 		<result property="secessionFlag" column="SECESSION_FL" />
 	</resultMap>
 	
-	<!-- 강사 -->
+	강사
 	<resultMap type="teacher" id="teacher_rm">
 		<id property="teacherNo" column="TEACHER_NO"/>
 		<result property="teacherId" column="TEACHER_ID" />
@@ -49,7 +49,7 @@
 		<result property="secessionFlag" column="SECESSION_FL" />
 	</resultMap>
 	
-	<!-- 강의노트 -->
+	강의노트
 	<resultMap type="lectureNote" id="lectureNote_rm">
 		<id property="noteNo" column="NOTE_NO"/>
 		<result property="noteContent" column="NOTE_CONTENT" />
@@ -57,14 +57,14 @@
 		<result property="lectureNo" column="LECTURE_NO" />
 	</resultMap>
 	
-	<!-- 이메일인증 -->
+	이메일인증
 	<resultMap type="certification" id="certification_rm">
 		<id property="cEmail" column="C_EMAIL"/>
 		<result property="cNumber" column="C_NUMBER" />
 		<result property="issueDate" column="ISSU_DT" />
 	</resultMap>
 	
-	<!-- 강의 -->
+	강의
 	<resultMap type="lecture" id="lecture_rm">
 		<id property="lectureNo" column="LECTURE_NO"/>
 		<result property="lectureName" column="LECTURE_NAME" />
@@ -75,20 +75,20 @@
 		<result property="categoryNo" column="CATEGORY_NO" />
 	</resultMap>
 	
-	<!-- 카테고리 -->
+	카테고리
 	<resultMap type="category" id="category_rm">
 		<id property="categoryNo" column="CATEGORY_NO"/>
 		<result property="categoryName" column="CATEGORY_NAME" />
 	</resultMap>
 	
-	<!-- 내강의 -->
+	내강의
 	<resultMap type="mylecture" id="mylecture_rm">
 		<id property="usersNo" column="USERS_NO"/>
 		<result property="lectureNo" column="LECTURE_NO" />
 		<result property="favNo" column="PAY_NO" />
 	</resultMap>
 	
-	<!-- 찜목록 -->
+	찜목록
 	<resultMap type="favlec" id="favlec_rm">
 		<id property="favNo" column="FAV_NO"/>
 		<result property="favYn" column="FAV_YN" />
@@ -96,7 +96,7 @@
 		<result property="usersNo" column="USERS_NO" />
 	</resultMap>
 	
-	<!-- 결제 -->
+	결제
 	<resultMap type="payment" id="payment_rm">
 		<id property="payNo" column="PAY_NO"/>
 		<result property="payWay" column="PAY_WAY" />
@@ -106,7 +106,7 @@
 		<result property="lectureNo" column="LECTURE_NO" />
 	</resultMap>
 	
-	<!-- 관리자 -->
+	관리자
 	<resultMap type="manager" id="manager_rm">
 		<id property="mgrNo" column="MGR_NO"/>
 		<result property="mgrName" column="MGR_NAME" />
@@ -114,7 +114,7 @@
 		<result property="mgrPw" column="MGR_PW" />
 	</resultMap>
 	
-	<!-- 공지사항 -->
+	공지사항
 	<resultMap type="notice" id="notice_rm">
 		<id property="noticeNo" column="NOTICE_NO"/>
 		<result property="noticeTitle" column="NOTICE_TITLE" />
@@ -124,7 +124,7 @@
 	</resultMap> 
 
 
-
+ -->
 
 
 
