@@ -1,0 +1,9 @@
+/.metadata/
+**/back/.metadata/
+**/back/CAMP404/.metadata/
+**/back/CAMP404/.settings/
+**/back/CAMP404/target/
+**/back/CAMP404/.vscode/
+**/back/CAMP404/*.classpath
+**/back/CAMP404/*.project
+**/back/CAMP404/src/test/

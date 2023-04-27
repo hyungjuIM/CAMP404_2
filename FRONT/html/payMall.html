@@ -1,0 +1,94 @@
+<!-- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/css/payMall.css">
+</head>
+
+<body>
+
+    <heder>
+        <div data-include1="header" id="header"></div>
+    </heder>
+
+    <main>
+        <!--왼쪽 버튼-->
+        <div class="myClass-container">
+            <nav class="myClass-nav-Area">
+                <div class="myClass-summary-container">
+                    <!-- 안녕하세요 * 님 -->
+                    <div class="myClass-hiUser">안녕하세요.<br>
+                        <span class="userName">김철수</span> 님!
+                    </div>
+                    <!-- 나의강의장, 찜목록, 정보수정버튼 -->
+                    <div class="myClass-content-container">
+                        <div class="content-1" onclick="location.href='/html/myClass.html';">
+                            <span class="myClass-span">나의 강의장</span>
+                            <i class="fa-solid fa-chevron-right fa-xm"></i>
+                        </div>
+                        <div class="content-1" onclick="location.href='/html/payMall.html';">
+                            <span class="myClass-span">나의 찜목록</span>
+                            <i class="fa-solid fa-chevron-right fa-xm"></i>
+                        </div>
+                        <div class="content-1" onclick="location.href='/html/classroom.html';">
+                            <span class="myClass-span">회원정보 수정</span>
+                            <i class="fa-solid fa-chevron-right fa-xm"></i>
+                        </div>
+
+                    </div>
+                    <!-- 로그아웃 -->
+                    <button class="logout-btn">로그아웃</button>
+                </div>
+            </nav>
+
+
+            <div id="payment_container">
+                <div id="check_payment_container">
+                    <div class="payment total">총 결제금액: <span>₩ 1,000,000</span></div>
+                    <div class="paymentBtn_container">
+                        <div class="paymentBtn">결제하기</div>
+                    </div>
+                </div>
+                <div id="wish_list_container">
+                    <div class="wish_list_content">
+                        <div>나의 찜목록</div>
+                        <div class="empty-line"></div>
+                    </div>
+                    <div class="wish_list">
+                        <div class="whish_list_class"></div>
+                        <div></div>
+                    </div>
+
+                </div>
+                <div id="myInfo_check_container"></div>
+                <div id="payment_confirm_container"></div>
+
+            </div>
+        </div>
+    </main>
+
+
+    <!-- jQuery 라이브러리 추가 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            var include1 = $('[data-include1="header"]');
+            jQuery.each(include1, function () {
+                $(this).load('/html/header.html');
+            });
+
+        });
+    </script>
+</body>
+
+</html>

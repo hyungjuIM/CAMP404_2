@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+
+
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    /* 영어, 숫자, 특수문자 => Helvetica */
+    font-family: 'Helvetica';
+    src: url('/프론트단/폰트/Helvetica-01.ttf') format('truetype');
+    unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
+    font-style: normal;
+}
+
+@font-face {
+    /* 한글 => Helvetica */
+    font-family: 'Helvetica';
+    src: url('/프론트단/폰트/NotoSans-Medium.ttf') format('truetype');
+    font-style: normal;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.bgColor {
+    position: absolute;
+    transition-property: all;
+    transition-duration: 0.5s;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.bgColorHidden {
+    display: none;
+}
+
+
+
+/* 헤더 태그, 크기 조절용 */
+header {
+    z-index: 100;
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    width: 100%;
+    background-color: black;
+}
+
+/* 큰 항목들 수직 정렬 */
+.headerContainer {
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    width: 1100px;
+    border: 1px solid black;
+    padding: 0 20px;
+}
+
+/* 로고, 검색, 로그인 영역 */
+/* 전체 영역 감싸기 */
+.topAreWrapper {
+    flex: 5;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+/* 왼쪽 로고와 검색창 */
+.leftAreaItems {
+    display: flex;
+    flex-direction: row;
+}
+
+/* 로고 */
+.logoArea {
+    display: inline-flex;
+    align-items: center;
+    width: 75px;
+    height: 35px;
+    margin-right: 30px;
+}
+
+/* 색이 안보여서 임시 추가. */
+.logoArea>a {
+    color: white;
+    text-decoration: none;
+}
+
+/* 검색창 영역 */
+.searchBarContainer {
+    display: flex;
+    width: 100%;
+}
+
+.searchBarWrapper {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 0 15px;
+    border-radius: 50px;
+    width: 280px;
+    transition: all 0.2s ease-in-out;
+}
+
+/* 돋보기 아이콘 */
+.searchBarWrapper>i {
+    color: #bbb;
+}
+
+/* 검색창 input */
+.searchBar {
+    padding: 0 10px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    min-width: 220px;
+    min-height: 35px;
+    color: black;
+    width: 100%;
+}
+
+/* 검색창 input placeholder 색상 */
+.searchBar::placeholder {
+    color: #bbb;
+}
+
+
+/* 검색창 X버튼 숨기기 */
+.btnHide {
+    visibility: hidden;
+}
+
+
+
+/* 검색창에 입력시 X버튼 나오게 하기 위한 클래스 */
+.searchXBtn {
+    background-color: #ccc;
+    border: none;
+    border-radius: 50px;
+    outline: none;
+    cursor: pointer;
+    color: white;
+}
+
+/* JS에서 사용. 검색창 위치 가운데 정렬 */
+.searchBarMiddle {
+    -webkit-transform: translateX(250px);
+    -webkit-transition-timing-function: linear;
+    width: 400px;
+}
+
+
+/* JS에서 사용. 검색창 크기 변경 */
+/* .searchBarWider {
+    width: 400px;
+}
+
+.searchBarWiderRemove {
+    width: -400px;
+} */
+
+.searchSubMenu {
+    position: absolute;
+    justify-content: center;
+    top: 59px;
+    left: 0px;
+    color: #aaa;
+    background-color: rgba(0, 0, 0);
+    border-top: 3px solid rgba(255, 255, 255, 0.3);
+    width: 100%;
+    height: 440px;
+    padding-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.searchSubMenuContainer {
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.searchSubMenuWrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.searchItems>a {
+    color: white;
+    text-decoration: none;
+    border: 2px solid white;
+    padding: 5px 5px;
+    border-radius: 50px;
+    margin: 10px 5px;
+    font-size: 12px;
+}
+
+.searchItems>a:hover {
+    color: orange;
+    border: 2px solid orange;
+}
+
+
+.searchSubMenu_Hide {
+    display: none;
+    transition-property: all;
+    transition-duration: 0.5s;
+
+}
+
+.rightWrapper {}
+
+/* 로그인버튼 영역 */
+.rightAreaItem {
+    text-align: center;
+    vertical-align: middle;
+    min-width: 50px;
+}
+
+/* 로그인 버튼 */
+.loginArea {
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.loginArea:hover {
+    color: orange;
+}
+
+.loginAreaHide {
+    display: none;
+}
+
+/* 검색창 클릭 시, 로그인 버튼 대신 나올 X */
+.closeSearch {
+    display: flex;
+    height: 35px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
+    border: 2px solid white;
+    border-radius: 50px;
+    padding-bottom: 3px;
+}
+
+.closeSearch:hover {
+    border: 2px solid orange;
+    color: orange;
+}
+
+.closeSearchHide {
+    display: none;
+}
+
+
+/* 카테고리 영역 */
+.catContainer {
+    flex: 5;
+    display: flex;
+    flex-direction: row;
+}
+
+.catContainer span {
+    color: white;
+    cursor: pointer;
+}
+
+/* "카테고리" */
+.catLeftWrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+
+
+/* 카테고리 옆 5개 항목 */
+.catRightWrapper {
+    flex: 9;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.catAreaItems {
+    padding: 0 15px;
+    min-width: 100px;
+    text-decoration: none;
+    color: white;
+}
+
+.catAreaItems:hover {
+    color: orange;
+}
+
+.searchclear {
+    position: absolute;
+    right: 6px;
+    top: 7px;
+    bottom: 15px;
+    width: 10px;
+    height: 14px;
+    margin: auto;
+    font-size: 15px;
+    cursor: pointer;
+    color: #ccc;
+    background-color: #fff;
+}
+
+.subMenuWrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.subMenu {
+    display: none;
+    position: absolute;
+    top: 100px;
+    left: 0px;
+    color: white;
+    background-color: rgba(0, 0, 0);
+    border-top: 3px solid rgba(255, 255, 255, 0.3);
+    width: 100%;
+    height: 400px;
+    padding-top: 20px;
+}
+
+.subMenuLineUp li {
+    float: left;
+    padding-right: 100px;
+}
+
+.hiddenMenu {
+    display: flex;
+    flex-direction: column;
+}
+
+.subMenuAtag {
+    font-size: 12px;
+    text-decoration: none;
+    color: white;
+    padding-top: 20px;
+}
+
+.subMenuAtag:hover {
+    color: orange;
+}
+
+.test {
+    font-family: "Helvetica";
+}

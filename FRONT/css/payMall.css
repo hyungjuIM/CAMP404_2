@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+main{
+    width: 100%;
+    display: flex;
+}
+
+.myClass-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+/*body-nav*/
+.myClass-container nav:nth-child(1) {
+    width: 30%;
+    height: 970px;
+    background-color: #e1e1e1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+/* <nav> 안녕하세요. 김철수님 [전체] */
+.myClass-summary-container {
+    width: 80%;
+    height: 780px;
+}
+
+/* 안녕하세요. ~님 글자 영역 */
+.myClass-hiUser {
+    width: 100%;
+    padding-top: 70px;
+    padding-bottom: 50px;
+
+    /*font */
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: #333333;
+    /*안녕하세요 * 님 폰트 크기, 행간 조절*/
+    letter-spacing: -0.5px;
+    line-height: 37px;
+}
+
+/*가명: 김철수님*/
+.userName {
+    color: #fe6936;
+    font-weight: 700;
+    font-size: 30px;
+}
+
+/* 나의강의장, 찜목록, 정보수정 버튼 */
+.myClass-content-container {
+    width: 100%;
+}
+
+/* 버튼영역 */
+.content-1 {
+    width: 90%;
+    height: 60px;
+
+    background-color: #333333;
+    margin-bottom: 10px;
+    border-radius: 18px;
+
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+    cursor: pointer;
+
+}
+
+.content-1:hover {
+    background-color: #fe6936;
+    font-weight: bolder;
+
+    box-shadow: 0px 0px 8px #9f9f9f;
+    transition-duration: 0.2s;
+}
+
+.content-1 span{
+    display: flex;
+    width: 93%;
+    justify-content: space-between;
+    text-decoration: none;
+    font-weight: 500;
+    color: white;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.content-1 i{
+    color: white;
+    margin-right: 20px;
+}
+
+/* 로그아웃버튼 */
+.logout-btn{
+    color: #fe6936;
+    background-color: transparent;
+    border: 0 none;
+    margin-left: 10px;
+    font-size: 17px;
+    cursor: pointer;
+    font-family: 'Noto Sans KR', sans-serif;
+    margin-top: 10px;
+    font-weight: 550;
+}
+
+/*------------------body-content------------------*/
+/* 총 결제금액 */
+#payment_container{
+    width: 70%;
+    height: 970px;
+}
+#check_payment_container{
+    width: 100%;
+    height: 25%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* 총 결제금액 */
+.total{
+    width: 65%;
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 500;
+    color: #333333;
+    padding: 30px;
+}
+/* 결제하기 버튼 */
+.paymnetBtn_container{
+    margin-top: 30px;
+    width: 100%;
+}
+.paymentBtn{
+    background-color: #fe6936;
+    padding: 17px 100px;
+    border-radius: 50px;
+    font-weight: 400;
+    font-size: 18px;
+    color: white;
+ 
+}
+/* 찜목록 */
+#wish_list_container{
+    width: auto;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    margin: 0px 50px;
+
+}
+/* 찜목록 제목 부분 */
+.wish_list_content{
+    height: 10%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.wish_list_content div:first-child{
+    font-size: 18px;
+    font-weight: 500;
+    color: #333333;
+}
+.wish_list_content div:last-child{
+    height: 1.05rem;
+    line-height: 5px;
+    border-bottom: 1.5px solid #333333;
+}
+/* 찜목록 상세 리스트  */
+.wish_list{
+    height: 70%;
+    display: flex;
+    flex-direction: row;
+}
+
+.wish_list div:first-child{
+    width: 30%;
+    background-color: aqua;
+}
+.wish_list div:last-child{
+    width: 70%;;
+    background-color: #fe6936;
+}
