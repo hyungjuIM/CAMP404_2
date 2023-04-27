@@ -22,6 +22,115 @@
 
 
 
+<!--  사용자 -->
+	<resultMap type="users" id="users_rm">
+		<id property="userNo" column="USER_NO"/>
+		<result property="userId" column="USER_ID" />
+		<result property="userPw" column="USER_PW" />
+		<result property="userName" column="USER_NAME" />
+		<result property="userEmail" column="USER_EMAIL" />
+		<result property="userNick" column="USER_NICK" />
+		<result property="userTel" column="USER_TEL" />
+		<result property="userAddress" column="USER_ADDR" />
+		<result property="enrollDate" column="ENROLL_DT" />
+		<result property="secessionFlag" column="SECESSION_FL" />
+	</resultMap>
+	
+	<!-- 강사 -->
+	<resultMap type="teacher" id="teacher_rm">
+		<id property="teacherNo" column="TEACHER_NO"/>
+		<result property="teacherId" column="TEACHER_ID" />
+		<result property="teacherPw" column="TEACHER_PW" />	
+		<result property="teacherName" column="TEACHER_NAME" />
+		<result property="teacherEmail" column="TEACHER_EMAIL" />
+		<result property="teacherTel" column="TEACHER_TEL" />
+		<result property="teacherAddress" column="TEACHER_ADDR" />
+		<result property="teacherenrollDate" column="ENROLL_DT" />
+		<result property="secessionFlag" column="SECESSION_FL" />
+	</resultMap>
+	
+	<!-- 강의노트 -->
+	<resultMap type="lectureNote" id="lectureNote_rm">
+		<id property="noteNo" column="NOTE_NO"/>
+		<result property="noteContent" column="NOTE_CONTENT" />
+		<result property="usersNo" column="USERS_NO" />
+		<result property="lectureNo" column="LECTURE_NO" />
+	</resultMap>
+	
+	<!-- 이메일인증 -->
+	<resultMap type="certification" id="certification_rm">
+		<id property="cEmail" column="C_EMAIL"/>
+		<result property="cNumber" column="C_NUMBER" />
+		<result property="issueDate" column="ISSU_DT" />
+	</resultMap>
+	
+	<!-- 강의 -->
+	<resultMap type="lecture" id="lecture_rm">
+		<id property="lectureNo" column="LECTURE_NO"/>
+		<result property="lectureName" column="LECTURE_NAME" />
+		<result property="uploadDate" column="UPLOAD_DATE" />
+		<result property="viewCount" column="VIEW_CNT" />
+		<result property="price" column="PRICE" />
+		<result property="teacherNo" column="TEACHER_NO" />
+		<result property="categoryNo" column="CATEGORY_NO" />
+	</resultMap>
+	
+	<!-- 카테고리 -->
+	<resultMap type="category" id="category_rm">
+		<id property="categoryNo" column="CATEGORY_NO"/>
+		<result property="categoryName" column="CATEGORY_NAME" />
+	</resultMap>
+	
+	<!-- 내강의 -->
+	<resultMap type="mylecture" id="mylecture_rm">
+		<id property="usersNo" column="USERS_NO"/>
+		<result property="lectureNo" column="LECTURE_NO" />
+		<result property="favNo" column="PAY_NO" />
+	</resultMap>
+	
+	<!-- 찜목록 -->
+	<resultMap type="favlec" id="favlec_rm">
+		<id property="favNo" column="FAV_NO"/>
+		<result property="favYn" column="FAV_YN" />
+		<result property="lectureNo" column="LECTURE_NO" />
+		<result property="usersNo" column="USERS_NO" />
+	</resultMap>
+	
+	<!-- 결제 -->
+	<resultMap type="payment" id="payment_rm">
+		<id property="payNo" column="PAY_NO"/>
+		<result property="payWay" column="PAY_WAY" />
+		<result property="payDate" column="PAY_DATE" />
+		<result property="payPrice" column="PAY_PRICE" />
+		<result property="usersNo" column="USERS_NO" />
+		<result property="lectureNo" column="LECTURE_NO" />
+	</resultMap>
+	
+	<!-- 관리자 -->
+	<resultMap type="manager" id="manager_rm">
+		<id property="mgrNo" column="MGR_NO"/>
+		<result property="mgrName" column="MGR_NAME" />
+		<result property="mgrId" column="MGR_ID" />
+		<result property="mgrPw" column="MGR_PW" />
+	</resultMap>
+	
+	<!-- 공지사항 -->
+	<resultMap type="notice" id="notice_rm">
+		<id property="noticeNo" column="NOTICE_NO"/>
+		<result property="noticeTitle" column="NOTICE_TITLE" />
+		<result property="noticeContent" column="NOTICE_CONTENT" />
+		<result property="noticeDate" column="NOTICE_DATE" />
+		<result property="mgrNo" column="MGR_NO" />
+	</resultMap> 
+
+
+
+
+
+
+
+
+
 <!--  parameterType="camp.kh.semi.member.model.vo.Camp"-->
 <select id="login" parameterType="camp" resultMap="camp_rm">
 SELECT USER_NO,
@@ -37,5 +146,15 @@ WHERE USER_ID = #{userId}
 AND USER_PW = #{userPw}
 AND SECESSION_FL = 'N'
 </select>
+
+
+
+
+
+
+
+
+
+
 
 </mapper>

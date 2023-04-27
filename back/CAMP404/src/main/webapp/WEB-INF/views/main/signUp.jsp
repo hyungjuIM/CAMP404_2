@@ -1,5 +1,5 @@
-<!-- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> -->
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 
 <!DOCTYPE html>
@@ -10,6 +10,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입</title>
+    
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/reset.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/signUp.css" />
     <link rel="stylesheet" href="../css/signUp.css">
 
     <link rel="stylesheet" href="../css/reset.css">
@@ -25,15 +28,15 @@
 
 <body>
     <header>
-        <div data-include1="header" id="header"></div>
+<jsp:include page="/WEB-INF/views/common/header.jsp"/>
     </header>
     <main>
         <!--content-->
         <div id="content">
             <!--로고-->
-            <div class="img_class"><img src="/로고/CAMP404(기본).png"></div>
+            <div class="img_class"><img src="${pageContext.request.contextPath}/resources/images/CAMP404(기본).png"></div>
 
-            <form method="post" id="signUp-form" onsubmit="return signUpValidate()" autocomplete="off">
+            <form action="signUp" method="post" id="signUp-form" onsubmit="return signUpValidate()" autocomplete="off">
 
                 <!--이름-->
                 <div class="messageBox">
@@ -192,9 +195,10 @@
         </div> <!-- content-->
 
     </main>
-
-    <script src="/js/signUp.js"></script>
-
+	<footer>
+<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+	</footer>
+    <script src="${pageContext.request.contextPath}/resources/js/signUp.js"></script>
     <!--
 회원가입 필요기능
 => 이름
@@ -205,17 +209,6 @@
 => 전화번호(중복검사 & 형식 유효메시지칸필요)
 => 주소
 -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script>
-        $(function () {
-            var include1 = $('[data-include1="header"]');
-            jQuery.each(include1, function () {
-                $(this).load('/html/header.html');
-            });
-        });
-
-    </script>
 
 
 </body>
