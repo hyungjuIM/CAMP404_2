@@ -1,0 +1,292 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Source+Sans+Pro&display=swap');
+
+main{
+    width: 100%;
+}
+.myClass-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+/*body-nav*/
+.myClass-container nav:nth-child(1) {
+    width: 30%;
+    height: 970px;
+    background-color: #e1e1e1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+/* <nav> 안녕하세요. 김철수님 [전체] */
+.myClass-summary-container {
+    width: 80%;
+    height: 780px;
+}
+
+/* 안녕하세요. ~님 글자 영역 */
+.myClass-hiUser {
+    width: 100%;
+    padding-top: 70px;
+    padding-bottom: 50px;
+
+    /*font */
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: #333333;
+    /*안녕하세요 * 님 폰트 크기, 행간 조절*/
+    letter-spacing: -0.5px;
+    line-height: 37px;
+}
+
+/*가명: 김철수님*/
+.userName {
+    color: #fe6936;
+    font-weight: 700;
+    font-size: 30px;
+}
+
+/* 나의강의장, 찜목록, 정보수정 버튼 */
+.myClass-content-container {
+    width: 100%;
+}
+
+/* 버튼영역 */
+.content-1 {
+    width: 90%;
+    height: 60px;
+
+    background-color: #333333;
+    margin-bottom: 10px;
+    border-radius: 18px;
+
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+    cursor: pointer;
+
+}
+
+.content-1:hover {
+    background-color: #fe6936;
+    font-weight: bolder;
+}
+
+.content-1 span{
+    display: flex;
+    width: 93%;
+    justify-content: space-between;
+    text-decoration: none;
+    font-weight: 500;
+    color: white;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.content-1 i{
+    color: white;
+    margin-right: 20px;
+}
+
+/* 로그아웃버튼 */
+.logout-btn{
+    color: #fe6936;
+    background-color: transparent;
+    border: 0 none;
+    margin-left: 10px;
+    font-size: 17px;
+    cursor: pointer;
+    font-family: 'Noto Sans KR', sans-serif;
+    margin-top: 10px;
+    font-weight: 550;
+}
+
+/*------------------body-content------------------*/
+
+/* 회원 정보 본문 */
+.content-Area {
+    width: 70%;
+    height: 100%;
+    background-color: white;
+
+    /* flex */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    margin-top: 100px;
+
+}
+.title{
+    width: 500px;
+    height: 80px;
+    margin: auto;
+    text-align: center;
+}
+.title h1{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 30px;
+    color: rgb(255, 142, 29);
+    font-weight: bold;
+}
+
+
+/* 회원정보수정 박스 */
+.changeInfo{
+    width: 50%;
+    height: 80px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 인풋창 */
+.input-area{
+    border: 1px solid black;
+    flex-basis: 80%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 50px;
+    
+    padding : 10px 14px 10px 14px;
+    box-sizing: border-box;
+
+    border : solid #D2D2D2 0.5px;
+    border-radius: 10px;
+    
+    outline: none;
+
+    position : relative; 
+    margin : 14px 0px 0px 0px; 
+}
+
+.message-area{
+   
+    flex-basis: 20%;
+}
+
+/* 메시지내용 */
+.info-message{
+    font-size: 8px;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #595e63;
+    
+}
+
+/* 중복확인들어가는 박스들 */
+.input-areaDup{
+    display: flex;
+    height: 50px;
+    width: 100%;
+    
+    padding : 0;
+    box-sizing: border-box;
+    
+    border : solid #D2D2D2 0.5px;
+    border-radius: 10px;
+    
+    outline: none;
+    
+    position : relative; 
+    margin : 14px 0px 0px 0px; 
+}
+.newInfoDup{
+    flex-basis: 80%;
+    border: none;
+    display: flex;
+    width: 100%;
+    height: 29px;
+    border :none;
+    outline: none;
+    
+    margin: auto;
+    margin-left: 14px;
+    background-color: transparent;
+    font-size: 15px;
+}
+.input-areaDup > button{
+    flex-basis: 20%;
+    
+    margin: 0;
+    background-color: rgb(255, 142, 29);
+    border: none;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius:0;
+    color: white;    
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    font-weight: 600px;
+
+    cursor: pointer;
+}
+
+/* 나머지 인풋박스 */
+.newInfo{
+    display: flex;
+    width: 100%;
+    height: 29px;
+    border :none;
+
+    background-color: none;
+    font-size: 15px;
+}
+
+/*입력폼*/
+
+.newInfo:focus{
+    outline : none; 
+ }
+
+ /* 변경버튼 */
+ .btn_area{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    
+}
+
+#btnChange{
+    width : 50%;
+    height: 48px;
+    box-sizing: border-box;  
+    
+    margin : auto;
+    
+    
+    border: 0;
+    cursor: pointer;
+
+    color : #fff;
+    background-color: rgb(255, 142, 29);
+    border-radius: 10px;
+
+    text-align: center;
+    font-size : 20px;
+    font-weight: bold;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+#btnChange:hover{
+    background: #595e63;
+    border-color: #595e63;
+}
+
+#btnChange{ transition-duration: 1s; }
+
+::placeholder{
+    color : #D2D2D2;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.confirm{ color : green;}
+.error{  color : red;  }
