@@ -20,7 +20,7 @@ public class Camp {
 	// 학생
 	private int userNo;
 	private String userId;
-	private String usesrPw;
+	private String userPw;
 	private String userName;
 	private String userEmail;
 	private String userNick;
