@@ -9,15 +9,16 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Users {
 
+	// 나중에 학생 관련해서 DB오류 생기면 USERS가 남아있는지 확인해보기!!
 	//학생
-	private int usersNo;
-	private String usersId;
-	private String usersPw;
-	private String usersName;
-	private String usersEmail;
-	private String usersNick;
-	private String usersTel;
-	private String usersAddress;
+	private int userNo;
+	private String userId;
+	private String userPw;
+	private String userName;
+	private String userEmail;
+	private String userNick;
+	private String userTel;
+	private String userAddress;
 	private String enrollDate;
 	private String secessionFlag;
 }

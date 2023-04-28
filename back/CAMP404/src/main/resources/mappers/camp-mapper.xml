@@ -22,16 +22,16 @@
 
 
 
-		<!-- 사용자 -->
+<!--  사용자 -->
 	<resultMap type="users" id="users_rm">
-		<id property="usersNo" column="USER_NO"/>
-		<result property="usersId" column="USERS_ID" />
-		<result property="usersPw" column="USERS_PW" />
-		<result property="usersName" column="USERS_NAME" />
-		<result property="usersEmail" column="USERS_EMAIL" />
-		<result property="usersNick" column="USERS_NICK" />
-		<result property="usersTel" column="USERS_TEL" />
-		<result property="usersAddress" column="USERS_ADDR" />
+		<id property="userNo" column="USER_NO"/>
+		<result property="userId" column="USER_ID" />
+		<result property="userPw" column="USER_PW" />
+		<result property="userName" column="USER_NAME" />
+		<result property="userEmail" column="USER_EMAIL" />
+		<result property="userNick" column="USER_NICK" />
+		<result property="userTel" column="USER_TEL" />
+		<result property="userAddress" column="USER_ADDR" />
 		<result property="enrollDate" column="ENROLL_DT" />
 		<result property="secessionFlag" column="SECESSION_FL" />
 	</resultMap>
@@ -122,7 +122,6 @@
 		<result property="noticeDate" column="NOTICE_DATE" />
 		<result property="mgrNo" column="MGR_NO" />
 	</resultMap> 
-
 
 
 
