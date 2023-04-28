@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--23.04.26 - 04 security 세팅을 위한 XML 파일을 생성  -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-5.7.xsd">
+
+<!--23.04.26 - 05  Bcrypt 암호화용 bean 생성-->
+<bean id="bcryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+<!--여기서 id는 멤버 명, class는 new Member(); 즉 경로 명 -->
+<!-- Member member = new Member(); -->
+
+<!-- 배포 서술자 web.XML에서 읽어주게끔 경로설정 필요 -->
+
+
+
+</beans>
