@@ -42,7 +42,7 @@
         </h3> -->
 
                     <div class="box int_name">
-                        <input type="text" id="memberName" class="int" maxlength="20" placeholder="이름을 입력해주세요">
+                        <input type="text" id="memberName" class="int" name="userName" maxlength="20" placeholder="이름을 입력해주세요">
                     </div>
 
                 </div>
@@ -57,7 +57,7 @@
         </h3> -->
 
                     <div class="int_email">
-                        <input type="text" id="memberEmail" class="email" maxlength="50" placeholder="이메일을 입력해주세요">
+                        <input type="text" id="memberEmail" class="email" name="userEmail" maxlength="50" placeholder="이메일을 입력해주세요">
 
                         <button type="button" id="cBtn">인증번호 받기</button>
                     </div>
@@ -91,7 +91,7 @@
                         </h3> -->
 
                     <div class="int_id">
-                        <input type="text" id="memberID" class="id" maxlength="20" placeholder="아이디를 입력해주세요">
+                        <input type="text" id="memberID" name="userId" class="id" maxlength="20" placeholder="아이디를 입력해주세요">
                         <button type="button" id="IdDupBtn">중복확인</button>
                     </div>
 
@@ -108,7 +108,7 @@
 </h3> -->
 
                     <div class="box int_pass">
-                        <input type="password" id="memberPw" class="int" maxlength="30" placeholder="비밀번호를 입력해주세요">
+                        <input type="password" name="userPw" id="memberPw" class="int" maxlength="30" placeholder="비밀번호를 입력해주세요">
                     </div>
                     <span class="signUp-message" id="pwMessage">영어, 숫자, 특수문자(!,@,#,-,_) 6~30글자 사이로 작성해주세요.</span>
                 </div>
@@ -137,7 +137,7 @@
             </h3> -->
 
                     <div class="int_nickName">
-                        <input type="text" id="memberNickname" class="nick" maxlength="10" placeholder="닉네임을 입력해주세요">
+                        <input type="text" name="userNickname" id="memberNickname" class="nick" maxlength="10" placeholder="닉네임을 입력해주세요">
                         <button type="button" id="IdDupBtn">중복확인</button>
                     </div>
 
@@ -160,7 +160,7 @@
             </h3> -->
 
                     <div class="box int_mobile">
-                        <input type="tel" id="memberTel" class="int" maxlength="12" placeholder="전화번호를 입력해주세요">
+                        <input type="tel" name="userTel" id="memberTel" class="int" maxlength="12" placeholder="전화번호를 입력해주세요">
                     </div>
                     <span class="signUp-message" id="telMessage">전화번호를 입력해주세요.(- 제외)</span>
                 </div>
@@ -174,7 +174,7 @@
             </h3> -->
 
                     <div class="box int_address">
-                        <input type="text" id="memberAddr" class="int" maxlength="50" placeholder="주소를 입력해주세요">
+                        <input type="text" id="memberAddr" name="userAddr" class="int" maxlength="50" placeholder="주소를 입력해주세요">
                     </div>
 
                 </div>
