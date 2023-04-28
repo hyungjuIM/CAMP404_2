@@ -63,9 +63,9 @@
 								</c:when>
 
 								<%--로그인 된 후--%>
-								<c:otherwise clss="loginArea">
+								<c:otherwise>
 									<div>
-										<a href="${contextPath}/member/my-info" id="nickName">${</a>
+										<a href="${contextPath}/member/my-info" id="nickName">${loginMember.userName}</a>
 									</div>
 								</c:otherwise>
 
