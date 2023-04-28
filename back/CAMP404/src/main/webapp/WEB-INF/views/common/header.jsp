@@ -53,9 +53,27 @@
 				<!-- 290 ㅌ 35 -->
 				<div class="rightWrapper">
 					<div class="rightAreaItem">
-						<a class="loginArea" href="${pageContext.request.contextPath}/member/login">로그인</a>
+						
+						<section class="loginArea">
+							<c:choose>
+								<%--로그인 하기 전--%>
+								<c:when test="${empty sessionScope.loginMember}">
+									<a class="loginArea" href="${pageContext.request.contextPath}/member/login">
+										로그인</a>
+								</c:when>
+
+								<%--로그인 된 후--%>
+								<c:otherwise clss="loginArea">
+									<div>
+										<a href="${contextPath}/member/my-info" id="nickName">${</a>
+									</div>
+								</c:otherwise>
+
+							</c:choose>
+						</section>
+						<!-- <a class="loginArea" href="${pageContext.request.contextPath}/member/login">로그인</a>
 						<%-- servlet-context.xml에서  <beans:property name="prefix" value="/WEB-INF/views/" /> 
-						<beans:property name="suffix" value=".jsp" /> 같이 설정 해주기 이렇게 하면 된다. --%>
+						<beans:property name="suffix" value=".jsp" /> 같이 설정 해주기 이렇게 하면 된다. --%> -->
 						<span class="closeSearch closeSearchHide">x</span>
 					</div>
 				</div>
@@ -64,16 +82,16 @@
 				<div class="searchSubMenuContainer">
 					추천 검색어
 					<div class="searchSubMenuWrapper">
-						<span class="searchItems"><a href="#">자바스크립트</a></span> <span
-							class="searchItems"><a href="#">파이썬</a></span> <span
+						<span class="searchItems"><a href="#">자바스크립트</a></span>
+							class="searchItems"><a href="#">파이썬</a></span> 
 							class="searchItems"><a href="#">SQL</a></span>
 					</div>
 					<div class="searchSubMenuWrapper">
-						<span class="searchItems"><a href="#">DATABASE</a></span> <span
+						<span class="searchItems"><a href="#">DATABASE</a></span> 
 							class="searchItems"><a href="#">AI DEEP LEARNING</a></span>
 					</div>
 					<div class="searchSubMenuWrapper">
-						<span class="searchItems"><a href="#">로또번호</a></span> <span
+						<span class="searchItems"><a href="#">로또번호</a></span>
 							class="searchItems"><a href="#">CHAT GPT</a></span>
 					</div>
 				</div>
