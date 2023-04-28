@@ -58,14 +58,17 @@
 							<c:choose>
 								<%--로그인 하기 전--%>
 								<c:when test="${empty sessionScope.loginMember}">
-									<a class="loginArea" href="${pageContext.request.contextPath}/member/login">
-										로그인</a>
+									<a class="loginArea" href="${pageContext.request.contextPath}/main/login">로그인</a>
 								</c:when>
 
 								<%--로그인 된 후--%>
 								<c:otherwise>
 									<div>
-										<a href="${contextPath}/member/my-info" id="nickName">${loginMember.userName}</a>
+										<div id="nickName">${loginMember.userName}</div>
+										<div class="userName-sall-menu-container">
+											<div class="user-small-menu"></div>
+										</div>
+										
 									</div>
 								</c:otherwise>
 
