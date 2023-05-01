@@ -62,7 +62,7 @@
                     <div class="int_email">
                         <input type="text" id="memberEmail" class="email" name="userEmail" maxlength="50" placeholder="이메일을 입력해주세요">
 
-                        <button type="button" id="cBtn">인증번호 받기</button>
+                        <button type="button" id="sendBtn">인증번호 받기</button>
                     </div>
                     <span class="signUp-message" id="emailMessage">메일을 받을 수 있는 이메일을 입력해주세요.</span>
 
@@ -77,8 +77,9 @@
             <label for="cNumber">인증번호</label>
         </h3> -->
 
-                    <div class="box int_cNumber">
-                        <input type="text" id="cNumber" class="int" maxlength="20" placeholder="인증번호를 입력해주세요">
+                    <div class="int_cNumber">
+                        <input type="text" id="cNumber" name="cNumber" class="emailCf" maxlength="20" placeholder="인증번호를 입력해주세요">
+                        <button type="button" id="cBtn">인증번호 확인</button>
                     </div>
 
                     <span class="signUp-message" id="emailCfMessage">인증번호를 입력해주세요.</span>
@@ -95,7 +96,7 @@
 
                     <div class="int_id">
                         <input type="text" id="memberID" name="userId" class="id" maxlength="20" placeholder="아이디를 입력해주세요">
-                        <button type="button" id="IdDupBtn">중복확인</button>
+                       
                     </div>
 
                     <span class="signUp-message" id="idMessage">영어/숫자/한글 2~20글자 사이로 작성해주세요.</span>
@@ -141,7 +142,7 @@
 
                     <div class="int_nickName">
                         <input type="text" name="userNickname" id="memberNickname" class="nick" maxlength="10" placeholder="닉네임을 입력해주세요">
-                        <button type="button" id="IdDupBtn">중복확인</button>
+                        
                     </div>
 
                     <span class="signUp-message" id="nicknameMessage">영어/숫자/한글 2~10글자 사이로 작성해주세요.</span>

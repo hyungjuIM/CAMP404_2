@@ -35,7 +35,8 @@ public class SendEmailController {
 	// 이메일 인증
 	@GetMapping("/sendEmail")
 	@ResponseBody
-	public int sendEmail(String memberEmail) {
+	public String sendEmail(String memberEmail) {
+		
 		
 		// 인증번호 6자리 생성코드(영어 대/소문 + 숫자)
 				String cNumber = "";
@@ -99,7 +100,7 @@ public class SendEmailController {
 		
 		
 		logger.info("이메일 인증 이메일 : "+ memberEmail);
-	return result;	
+	return Integer.toString(result);	
 	}
 
 }
