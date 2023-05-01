@@ -14,12 +14,14 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import camp.kh.semi.member.model.service.CampService;
 import camp.kh.semi.member.model.vo.Camp;
+import camp.kh.semi.member.model.vo.Users;
 
 
 // 로그인 및 회원가입 관련 기능 모음 컨트롤러
@@ -102,8 +104,7 @@ public class MainController {
 		return "main/signUp";
 	}
 	
+
 	
-	
-	
-	}
+}
 

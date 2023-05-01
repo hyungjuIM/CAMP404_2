@@ -62,7 +62,7 @@
                     <div class="int_email">
                         <input type="text" id="memberEmail" class="email" maxlength="50" placeholder="이메일을 입력해주세요">
 
-                        <button type="button" id="cBtn">인증번호 받기</button>
+                        <button type="button" id="sendBtn">인증번호 받기</button>
                     </div>
                     <span class="signUp-message" id="emailMessage">메일을 받을 수 있는 이메일을 입력해주세요.</span>
 
@@ -81,7 +81,7 @@
                         <input type="text" id="cNumber" class="int" maxlength="20" placeholder="인증번호를 입력해주세요">
                     </div>
 
-                    <span class="signUp-message" id="emailCfMessage">인증번호를 입력해주세요.</span>
+                    <span class="signUp-message" id="cMessage">인증번호를 입력해주세요.</span>
                 </div>
 
 
