@@ -536,7 +536,7 @@ body {
 .c_classLine {
     z-index: 90;
     position: sticky;
-    top: 100px;
+    top: 99px;
     width: 100%;
     height: 50px;
     background-color: #252525;
@@ -599,8 +599,7 @@ body {
     flex-direction: column;
     width: 1100px;
     height: auto;
-    border: 1px solid rgb(255, 0, 0);
-    margin-bottom: 50px;
+    margin: 50px 0;
 
 }
 
@@ -611,8 +610,182 @@ body {
 
 .c_separator {
     width: 980px;
-    border-bottom: 0.1px solid red;
+    border-bottom: 2px solid #3a3a3a;
     margin: 50px 0;
+}
+
+.intro_video {
+    height: 120px;
+    justify-content: end;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.intro_video_Text1 {
+    text-align: center;
+}
+
+.intro_video_Text1>span:nth-child(1) {
+    color: red;
+    font-size: 16px;
+}
+
+.intro_video_Text1>span:nth-child(4) {
+    font-size: 30px;
+}
+
+.intro_video_Text2 {
+    justify-content: center;
+    text-align: center;
+    margin-top: 40px;
+    color: #A0A0A0;
+    line-height: 25px;
+}
+
+.intro_Ex1 {
+    font-size: 30px;
+    margin-bottom: 50px;
+    text-align: center;
+    font-weight: bold;
+    line-height: 50px;
+}
+
+.intro_Ex2 {
+    justify-content: center;
+    line-height: 25px;
+    text-align: center;
+    margin: 25px 0;
+    color: #A0A0A0;
+}
+
+.intro_Ex3 {
+    color: #A0A0A0;
+    text-align: center;
+    line-height: 25px;
+    margin-top: 25px;
+}
+
+.portfolio1 {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 50px;
+    margin-bottom: 25px;
+}
+
+.portfolio2 {
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 100px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.why_Container {
+    width: 100%;
+    height: auto;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    color: black;
+}
+
+.why1 {
+    text-align: center;
+    margin-bottom: 25px;
+    line-height: 25px;
+    color: red;
+    font-weight: bold;
+}
+
+.why2 {
+    text-align: center;
+    margin-bottom: 25px;
+    line-height: 35px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.why3 {
+    text-align: center;
+    margin-bottom: 25px;
+    line-height: 25px;
+}
+
+.sample_Video_Text {
+    font-size: 30px;
+    text-align: center;
+    line-height: 50px;
+    margin-bottom: 25px;
+}
+
+.sample_Video_Container {
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-between;
+    width: 820px;
+    margin-bottom: 20px;
+}
+
+.c_TeacherInner {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 1100px;
+    height: auto;
+    margin: 50px 0;
+
+}
+
+.c_TeacherInner>div {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.teacer_nameArea {
+    margin-bottom: 20px;
+}
+
+.teacer_1 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.teacer_2 {
+    font-weight: bold;
+}
+
+.teacer_3 {
+    font-weight: bold;
+}
+
+.teacer_4 {
+    font-weight: bold;
+    line-height: 20px;
+}
+
+.teacer_5 {
+    font-weight: bold;
+    line-height: 20px;
+}
+
+.teacer_6 {
+    font-weight: bold;
+    line-height: 20px;
+}
+
+.teacer_7 {
+    font-weight: bold;
+    line-height: 20px;
 }
 
 .확인용 {
@@ -623,55 +796,246 @@ body {
     margin-bottom: 20px;
 }
 
-.확인용1 {
-    border: 1px solid red;
+
+.about_Teacher_Wrapper {
+    width: 100%;
+    height: auto;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+}
+
+.about_Teacher_Container {
+    display: flex;
+}
+
+.about_Teacher1 {
+    width: 160px;
+    height: 160px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 350px;
-    height: 100px;
-    cursor: pointer;
 }
 
-.확인용2 {
-    display: flex;
+.about_Teacher1>img {
+    border-radius: 20px;
 }
 
-.확인용3 {
-    border: 1px solid red;
-    width: 160px;
-    height: 160px;
-}
-
-.확인용4 {
-    border: 1px solid red;
+.about_Teacher2 {
     width: 230px;
     height: 260px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 25px;
 }
 
-.확인용5 {
-    border: 1px solid red;
+.about_Teacher2>span:nth-child(1) {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    height: 35px;
+}
+
+.about_Teacher_Seperator1 {
+    width: 230px;
+    border-bottom: 0.1px solid #c8c8d2;
+    margin: 10px 0;
+
+}
+
+.about_Teacher3 {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.about_Teacher4 {
     width: 480px;
     height: 260px;
 }
 
-.확인용6 {
-    width: 230px;
-    border-bottom: 0.1px solid #c8c8d2;
+.about_Teacher4>span:nth-child(1) {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    height: 35px;
 }
 
-.확인용7 {
+.about_Teacher_Seperator2 {
     width: 480px;
     border-bottom: 0.1px solid #c8c8d2;
+    margin: 10px 0;
 }
 
-.확인용8 {
-    display: flex;
-    flex-direction: row !important;
+.about_Teacher5 {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.classFeature_Container {
     width: 100%;
+    height: auto;
+    border: 1px solid black;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    color: black;
 }
 
-.확인용9 {
+.classFeature_Wrapper {
     display: flex;
-    flex-direction: row !important;
+    justify-content: center;
+    flex-direction: column;
+    width: 1100px;
+    height: auto;
+    margin: 50px 0;
+
+}
+
+.classFeature_title {
+    display: flex;
+    align-items: center;
+    width: 980px;
+    height: 50px;
+    color: red;
+    font-weight: bold;
+    margin-left: 100px;
+    margin-bottom: 20px;
+}
+
+.classFeature_Inner {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.classFeature_Inner_Left {
+    margin-right: 40px;
+    width: 500px;
+}
+
+.classFeature_Inner_Right {
+    width: 400px;
+}
+
+.classFeature_Inner_Title {
+    margin-bottom: 30px;
+}
+
+.classFeature_2 {
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 40px;
+}
+
+.classFeature_3 {
+    line-height: 25px;
+}
+
+.more_info {
+    display: flex;
+}
+
+.more_info_Inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    width: 1100px;
+    height: auto;
+    margin: 50px 0;
+
+}
+
+.more_info_Inner>div {
+    display: flex;
+    flex-direction: column;
+}
+
+.more_info_Inner_Left {}
+
+.more_info_Inner_Left1 {
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 40px;
+}
+
+.more_info_Inner_Left2 {
+    line-height: 25px;
+}
+
+.more_info_Inner_Left3 {
+    line-height: 25px;
+}
+
+.what_We_Learn {
+    width: 100%;
+    height: auto;
+    border: 1px solid black;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    color: black;
+}
+
+.what_We_Learn_Inner {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 1100px;
+    height: auto;
+    margin: 50px 0;
+
+}
+
+.learn_Title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.learn_Title1 {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.learn_Title2 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+.learn_Container {
+    display: flex;
+    flex-direction: row;
+    width: 980px;
+    justify-content: space-evenly;
+    margin-bottom: 50px;
+}
+
+.learn_content {
+    margin: 0 15px;
+}
+
+
+
+.learn_img {
+    margin-bottom: 15px;
+}
+
+.learn_content1 {
+    margin-bottom: 10px;
+
+}
+
+.learn_content1_text1 {
+    font-weight: bold;
+}
+
+.learn_content1_text2 {
+    font-size: 14px;
 }
