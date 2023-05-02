@@ -148,6 +148,16 @@ AND SECESSION_FL = 'N'
 </select>
 
 
+<!-- 강의노트 저장시, DB에 정보 insert --> 
+<insert id="noteSave" parameterType="LectureNote">
+INSERT INTO LECTURE_NOTE VALUES(
+SEQ_LECTURE_NO_S.NEXTVAL,
+#{noteContent},
+#{usersNo},
+#{lectureNo}
+)
+</insert>
+
 
 
 

@@ -195,49 +195,58 @@
                 <!--1-->
                 <li class = "classroom_asset_item">
                     <p class="classroom_asset_label">(추가)커리큘럼.pdf</p>
-                    <a href="#"><i class="fa-solid fa-file-arrow-down"></i></a>
+                    <a href="${pageContext.request.contextPath}/resources/images/test.pdf" download>
+                    	<i class="fa-solid fa-file-arrow-down"></i>
+                    </a>
                 </li>
 
                 <!--2-->
                 <li class = "classroom_asset_item">
                     <p class="classroom_asset_label">(추가)시스템 권장사양.pdf</p>
-                    <a href="#"><i class="fa-solid fa-file-arrow-down"></i></a>
+                    <a href="${pageContext.request.contextPath}/resources/images/test.pdf" download>
+                    <i class="fa-solid fa-file-arrow-down"></i></a>
                 </li>
 
                 <!--3-->
                 <li class = "classroom_asset_item">
                     <p class="classroom_asset_label">일러스트레이터_신혜경_서체.zip</p>
-                    <a href="#"><i class="fa-solid fa-file-arrow-down"></i></a>
+                    <a href="${pageContext.request.contextPath}/resources/images/test.pdf" download>
+                    <i class="fa-solid fa-file-arrow-down"></i></a>
                 </li>
 
                 <!--4-->
                 <li class = "classroom_asset_item">
                     <p class="classroom_asset_label">(추가)Q&A_CS6.ai</p>
-                    <a href="#"><i class="fa-solid fa-file-arrow-down"></i></a>
+                    <a href="${pageContext.request.contextPath}/resources/images/test.pdf" download>
+                    <i class="fa-solid fa-file-arrow-down"></i></a>
                 </li>
 
                 <!--5-->
                 <li class = "classroom_asset_item">
                     <p class="classroom_asset_label">디자인.pdf</p>
-                    <a href="#"><i class="fa-solid fa-file-arrow-down"></i></a>
+                    <a href="${pageContext.request.contextPath}/resources/images/test.pdf" download>
+                    <i class="fa-solid fa-file-arrow-down"></i></a>
                 </li>
 
                 <!--6-->
                 <li class = "classroom_asset_item">
                     <p class="classroom_asset_label">일러스트레이션1.pdf</p>
-                    <a href="#"><i class="fa-solid fa-file-arrow-down"></i></a>
+                    <a href="${pageContext.request.contextPath}/resources/images/test.pdf" download>
+                    <i class="fa-solid fa-file-arrow-down"></i></a>
                 </li>
 
                 <!--7-->
                 <li class = "classroom_asset_item">
                     <p class="classroom_asset_label">일러스트레이션2.pdf</p>
-                    <a href="#"><i class="fa-solid fa-file-arrow-down"></i></a>
+                    <a href="${pageContext.request.contextPath}/resources/images/test.pdf" download>
+                    <i class="fa-solid fa-file-arrow-down"></i></a>
                 </li>
 
                 <!--8-->
                 <li class = "classroom_asset_item">
                     <p class="classroom_asset_label">일러스트레이션3.pdf</p>
-                    <a href="#"><i class="fa-solid fa-file-arrow-down"></i></a>
+                    <a href="${pageContext.request.contextPath}/resources/images/test.pdf" download>
+                    <i class="fa-solid fa-file-arrow-down"></i></a>
                 </li>
             </ul>
 
