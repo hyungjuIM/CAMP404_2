@@ -6,7 +6,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Source+Sans+Pro&display=swap');
 
-section{
+.btn-container-session{
     position: fixed;
     right: 50px;
     bottom: 50px;

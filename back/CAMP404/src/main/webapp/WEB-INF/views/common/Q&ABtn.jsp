@@ -18,7 +18,7 @@
 </head>
 
 <body>
-	<section>
+	<section class="btn-container-session">
 		<!-- 아이콘 -->
 		<div class="QnABtn-icon show jittery" data-animate="shake">
 			<img	src="${pageContext.request.contextPath}/resources/images/pngwing.com.png" class="btn-emoji">

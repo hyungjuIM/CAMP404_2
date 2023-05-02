@@ -14,12 +14,14 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import camp.kh.semi.member.model.service.CampService;
 import camp.kh.semi.member.model.vo.Camp;
+import camp.kh.semi.member.model.vo.Users;
 
 
 // 로그인 및 회원가입 관련 기능 모음 컨트롤러
@@ -102,7 +104,70 @@ public class MainController {
 		return "main/signUp";
 	}
 	
+	// 이메일 중복 검사
+	@ResponseBody  // ajax 응답 시 사용!
+	@GetMapping("/emailDupCheck")
+	public int emailDupCheck(String userEmail) {
+		int result = service.emailDupCheck(userEmail);
+		return result;
+		
+	}
 	
+	
+	// 닉네임 중복 검사
+	@ResponseBody  
+	@GetMapping("/nicknameDupCheck")
+	public int nicknameDupCheck(String userNickname) {
+		int result = service.nicknameDupCheck(userNickname);
+		
+		return result;
+		
+	}
+	
+	// 아이디 중복검사
+	@ResponseBody
+	@GetMapping("/IdDupCheck")
+	public int IdDupCheck(String userId) {
+		int result =service.IdDupCheck(userId);
+		return result;
+	}
+	
+	
+
+	// 회원 가입
+	@PostMapping("/signUp")
+	public String signUp( Users inputMember
+						, String[] memberAddress
+						, RedirectAttributes ra) {
+		
+
+		
+		inputMember.setUserAddress(  String.join(",,", memberAddress)  );
+	
+		
+		if( inputMember.getUserAddress().equals(",,,,") ) { // 주소가 입력되지 않은 경우
+			
+			inputMember.setUserAddress(null); // null로 변환
+		}
+		
+		// 회원 가입 서비스 호출
+		int result = service.signUp(inputMember);
+		
+		String message = null;
+		String path = null;
+		
+		if(result > 0) { // 회원 가입 성공
+			message = "회원 가입 성공";
+			path = "redirect:/"; // 메인페이지
+			
+		}else { // 실패
+			message = "회원 가입 실패";
+			path = "redirect:/main/signUp"; // 회원 가입 페이지
+		}
+		
+		ra.addFlashAttribute("message", message);
+		return path;
+	}
 	
 	
 	}
