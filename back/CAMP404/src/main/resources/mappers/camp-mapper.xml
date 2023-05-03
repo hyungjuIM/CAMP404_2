@@ -196,7 +196,16 @@ AND SECESSION_FL = 'N'
   		)
 </insert>
   
+  <!-- 강의노트 업데이트 -->
+<update id="updateNote">
+	UPDATE LECTURE_NOTE SET
+	SEQ_NOTE_NO.NEXTVAL,
+	NOTE_CONTENT = #{noteContent},
+	LECTURE_NO = #{lectureNo}
+	WHERE USER_NO = #{usersNo}
+	
 
+</update>
 
 
 

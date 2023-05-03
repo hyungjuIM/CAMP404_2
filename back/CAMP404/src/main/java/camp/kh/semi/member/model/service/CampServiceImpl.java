@@ -1,5 +1,7 @@
 package camp.kh.semi.member.model.service;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -82,6 +84,15 @@ public class CampServiceImpl implements CampService{
 		
 		return result;
 	}
+
+	//강의저장 노트
+	@Override
+	public int updateNote(Map<String, Object> paramMap) {
+		
+		return dao.updateNote(paramMap);
+	}
+	
+	
 	
 	
 	

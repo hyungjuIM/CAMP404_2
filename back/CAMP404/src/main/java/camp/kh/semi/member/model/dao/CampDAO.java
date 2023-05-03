@@ -1,5 +1,7 @@
 package camp.kh.semi.member.model.dao;
 
+import java.util.Map;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -57,5 +59,15 @@ return loginMember;
 
 	public int signUp(Users inputMember) {
 		return sqlSession.insert("campMapper.signUp", inputMember);
+	}
+
+
+	/** 강의노트 저장
+	 * @param paramMap
+	 * @return
+	 */
+	public int updateNote(Map<String, Object> paramMap) {
+		
+		return sqlSession.selectOne("campMapper.updateNote", paramMap);
 	}
 }
