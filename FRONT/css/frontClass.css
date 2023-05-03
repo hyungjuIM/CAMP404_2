@@ -1039,3 +1039,92 @@ body {
 .learn_content1_text2 {
     font-size: 14px;
 }
+
+.curriculum {
+    width: 100%;
+    height: auto;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+}
+
+.curriculumContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 1100px;
+    height: auto;
+    margin: 50px 0;
+}
+
+.curriculum_title {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.curriculum_title1 {
+    color: red;
+}
+
+.curriculum_title2 {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.curriculum_Inner {
+    width: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 80px;
+}
+
+.curriculum_subTitle_Container {
+    width: 1000px;
+    display: flex;
+    margin: 0 0 30px 0;
+}
+
+.curriculum_subTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 30px;
+    border: 1px solid white;
+    padding: 15px 15px;
+}
+
+.curriculum_Inner_Img_text {
+    display: flex;
+    margin-bottom: 35px;
+}
+
+.Inner_Img {
+    width: 480px;
+    height: 270px;
+    margin-right: 30px;
+}
+
+.Inner_Text {
+    width: 480px;
+    height: 270px;
+}
+
+.Inner_Text1 {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.Inner_Text2 {
+    list-style-type: disc;
+    padding: 20px 0 0 25px;
+}
+
+.Inner_Text2>li {
+    margin-bottom: 20px;
+}
