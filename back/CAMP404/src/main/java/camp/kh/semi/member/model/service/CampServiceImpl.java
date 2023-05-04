@@ -14,7 +14,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import camp.kh.semi.member.model.dao.CampDAO;
-import camp.kh.semi.member.model.vo.Camp;
 import camp.kh.semi.member.model.vo.Users;
 
 @Service // 비즈니스 로직을 처리하는 클래스임을 명시하며 bean을 등록한다.
@@ -42,7 +41,7 @@ public class CampServiceImpl implements CampService{
 		
 		Users loginMember = dao.login(inputMember);
 		if(loginMember != null) { 
-			if( bcrypt.matches(  inputMember.getUserPw()   ,  loginMember.getUserPw() ) ) {
+			if( bcrypt.matches(  inputMember.getUserPw()  ,  loginMember.getUserPw() ) ) {
 				
 				loginMember.setUserPw(null); // 비교 끝났으면 비밀번호 지우기
 				
