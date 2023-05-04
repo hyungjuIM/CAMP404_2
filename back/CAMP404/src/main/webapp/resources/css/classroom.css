@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Source+Sans+Pro&display=swap');
 
 /*===================================================*/
 /*classroom 해당 css css*/
@@ -23,50 +24,51 @@ main {
 }
 
 
-a{
+a {
     text-decoration: none;
-    color : rgb(146, 145, 145);
+    color: rgb(146, 145, 145);
 }
-.classroom{
+
+.classroom {
     display: flex;
     flex-direction: row;
-    width : 100%;
+    width: 100%;
     height: 100vh;
 
 }
 
 .classroom_viewport {
-    display : flex;
+    display: flex;
     margin: 0;
     background-color: orange;
-    flex-basis : 80%;
-    height: 100vh;   
+    flex-basis: 80%;
+    height: 100vh;
 }
 
 /*사이드바*/
-.classroom_sidebar{
+.classroom_sidebar {
     display: flex;
     flex-direction: column;
-    margin : 0 auto;
+    margin: 0 auto;
     width: 280px;
     background-color: rgb(216, 213, 213);
     flex-basis: 20%;
-    padding : 15px 20px 15px 15px;
+    padding: 15px 20px 15px 15px;
 }
 
 /*강의목차,강의자료,노트부분*/
-.classroom_tabs{
+.classroom_tabs {
     display: flex;
     flex-direction: row;
-    padding-left: 0;   
+    padding-left: 0;
 }
 
 .classroom_tabs li {
-    list-style : none;
-    padding : 10px;
+    list-style: none;
+    padding: 10px;
 }
 
-.classroom_tabs li a:hover{
+.classroom_tabs li a:hover {
     color: rgb(255, 142, 29);
 }
 
@@ -76,74 +78,75 @@ a{
 
 /*강의 큰 제목*/
 
-.big_title{
+.big_title {
     list-style: none;
     display: flex;
     /* align-items: center;
     justify-content: center; */
-    padding : 10px;
+    padding: 10px;
     margin: 0;
 }
 
-.big_title > :nth-child(1){
-  font-size: 18px;
-  font-weight: bold;
-  padding : 0 20px 0 0;
- 
+.big_title> :nth-child(1) {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0 20px 0 0;
+
 }
 
-.big_title > :nth-child(2){
-    font-size: 13px;   
-  }
+.big_title> :nth-child(2) {
+    font-size: 13px;
+}
 
 
 
 /*강의 내용 전체*/
-.classroom_sidebar_content{
+.classroom_sidebar_content {
     padding-left: 0;
 }
 
-.classroom_chater{
+.classroom_chater {
     padding-left: 0;
-    
+
 }
 
 /*강의 목차의 class 1-4 */
 .classroom_chater li {
-    list-style : none;
+    list-style: none;
 }
 
 
-.classroom_chater_item, .classroom_asset_item {
+.classroom_chater_item,
+.classroom_asset_item {
     background-color: rgb(75, 74, 74);
     border-radius: 5px;
-    margin : 10px;
+    margin: 10px;
     padding: 10px;
 }
 
 
 /*class 1-4 위 title*/
-.title > :nth-child(1) {
-    font-size : 12px;
+.title> :nth-child(1) {
+    font-size: 12px;
     /* color : rgb(138, 136, 136); */
-    color : rgb(138, 136, 136);
+    color: rgb(138, 136, 136);
     display: flex;
     flex-direction: row;
-    justify-content:space-between;
+    justify-content: space-between;
     padding: 0 0 5px 0;
 }
 
 /*down angle*/
 .title>i {
-    margin : 2px 0 0 0 ;
-    color : rgb(138, 136, 136);
+    margin: 2px 0 0 0;
+    color: rgb(138, 136, 136);
     font-size: 12px;
 }
 
 /*class 1-4 아래 title*/
-.title > :nth-child(2) {
-    font-size : 20px;
-    color : white;
+.title> :nth-child(2) {
+    font-size: 20px;
+    color: white;
     font-weight: 550;
 }
 
@@ -152,26 +155,26 @@ a{
 
 /*강의목차 내용 click 시 작동하는 아코디언부분*/
 
-.Class_hiddenMenu{
+.Class_hiddenMenu {
     display: none;
     flex-direction: column;
-    background-color:  rgb(75, 74, 74);
+    background-color: rgb(75, 74, 74);
     border-radius: 5px;
-    color : white;   
-    margin : 10px;
-    padding : 10px;
+    color: white;
+    margin: 10px;
+    padding: 10px;
 
 }
 
 .Class_hiddenMenu li {
-    list-style: none;   
+    list-style: none;
 }
 
 .class_items {
-    color : rgb(138, 136, 136) ;
+    color: rgb(138, 136, 136);
     font-size: 12px;
     font-weight: normal;
-    margin : 0;
+    margin: 0;
 }
 
 
@@ -185,10 +188,10 @@ hr {
 /*강의자료 해당 부분*/
 
 .classroom_asset_item {
-    display : flex;
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
-    
+
 }
 
 .classroom_asset_list {
@@ -197,134 +200,134 @@ hr {
 
 
 .classroom_asset_label {
-    color : white;
-    font-size: 12px;    
+    color: white;
+    font-size: 12px;
 }
 
 /*--------------------------------------------------------*/
 /*강의노트  해당 부분*/
-.classroom_notes{
-    display : none;
+.classroom_notes {
+    display: none;
 }
 
-.writeButton{
-    display : none;
-    font : 20px;
-    color : red;
+.writeButton {
+    display: none;
+    font: 20px;
+    color: red;
 }
 
 /*노트 작성/저장버튼 영역*/
-.wrapper{
-    display : flex;
+.wrapper {
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin : 10px auto;
+    margin: 10px auto;
     /* border : 2px solid blue; */
     /* height : 600px;
     width : 100%; */
-    
+
 }
 
 
 
 
 /*노트작성*/
-.enterArea{
-    display : flex;
+.enterArea {
+    display: flex;
     flex-direction: column;
-    width : 100%;
+    width: 100%;
     /* height: 510px; */
-    height : 75vh;
+    height: 75vh;
     background-color: rgb(75, 74, 74);
     border-radius: 5px;
 }
 
 /*text 입력 하는 윗부분==글자수 카운트하는거~~*/
-.outerWrapper{
-    display : flex;
+.outerWrapper {
+    display: flex;
     flex-direction: row;
     background-color: rgb(75, 74, 74);
     /* padding-right: 0; */
     /* margin : 5px; */
-    margin : auto 0;
+    margin: auto 0;
     border-radius: 5px;
-    color : white;
+    color: white;
     justify-content: right;
-    
+
 }
 
 
 /*숫자 카운트 부분*/
 .counterOuter {
-    margin : 10px;
+    margin: 10px;
     /* white-space:nowrap; */
 }
 
 /* '/2000' */
 .outerWrapper :nth-child(2) {
-    margin : 10px 10px 10px 0;
+    margin: 10px 10px 10px 0;
     /* white-space:nowrap; */
-    justify-content: right;    
+    justify-content: right;
 }
 
 
 /*text 입력하는 부분*/
 .typeData {
-    text-align:left;
+    text-align: left;
     background-color: rgb(75, 74, 74);
     border: none;
-    outline : none;    
+    outline: none;
     margin: 10px;
-    color : white;
+    color: white;
 }
 
 /*저장버튼*/
 
-.downFunction{
-    width : 100%;
+.downFunction {
+    width: 100%;
     margin: 10px auto;
     /* padding :  0; */
 }
 
 
-.dBtn{
+.dBtn {
     align-items: center;
     justify-content: center;
-    width : 100%;
-    height : 50px;
-     
+    width: 100%;
+    height: 50px;
+
     background-color: rgb(253, 186, 62);
     border-radius: 5px;
-    border : none;
-    color : white;
+    border: none;
+    color: white;
     font-size: 15px;
-    cursor: pointer;  
+    cursor: pointer;
 }
 
-.downFunction :hover{
+.downFunction :hover {
     background-color: rgb(255, 142, 29);
 }
 
 /*노트작성버튼(하단 버튼)*/
-.noteWrite{
+.noteWrite {
     display: none;
-    
+
     align-items: center;
     justify-content: center;
-    position : fixed;
-    right : 25px;
-    bottom : 50px;
+    position: fixed;
+    right: 25px;
+    bottom: 50px;
 
-    width : 50px;
+    width: 50px;
     height: 50px;
 
     border-radius: 50%;
     background-color: orange;
-    color : white;
-    border : none;
-    font-size : 30px;
-    cursor : pointer;
+    color: white;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
 }
 
 
@@ -332,30 +335,30 @@ hr {
 
 
 
-.subArea{
+.subArea {
     /* display: flex; */
     display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     /* border : solid 2px yellow; */
-    margin : 10px auto;
-    width : 100%;
+    margin: 10px auto;
+    width: 100%;
 
-    
+
 }
 
-.addArea{
+.addArea {
     display: flex;
 
     justify-content: center;
     align-items: center;
     /* width: 250px; */
-    
-    height: 50px;  
+
+    height: 50px;
     background-color: rgb(75, 74, 74);
-    color : white;
-    margin : 10px;
+    color: white;
+    margin: 10px;
     border-radius: 5px;
 }
 
@@ -368,24 +371,24 @@ hr {
     border: none;
     overflow: hidden;
     height: 1em;
-    color : white;
+    color: white;
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
 
 }
 
-.down  {
+.down {
     /* display: flex; */
-    padding : 5px;
-    margin-right : 10px;
+    padding: 5px;
+    margin-right: 10px;
     cursor: pointer;
     font-size: 12px;
 }
 
-.up{
+.up {
     display: none;
-    padding : 5px;
-    margin-right : 10px;
+    padding: 5px;
+    margin-right: 10px;
     cursor: pointer;
     font-size: 12px;
 }
@@ -395,16 +398,16 @@ hr {
     /* position: relative; */
     justify-content: center;
     align-items: center;
-    margin : 10px;
+    margin: 10px;
     background-color: rgb(75, 74, 74);
     border-radius: 5px;
-   /* border : solid 1px yellow; */
+    /* border : solid 1px yellow; */
 }
 
 .slideArea {
     display: none;
-    border-left : 10px;
-    width : 100%;
+    border-left: 10px;
+    width: 100%;
     /* border : solid 2px red; */
     /* position: relative; */
 }
@@ -413,71 +416,62 @@ hr {
 /*text2: 수정된 노트가 출력되는 공간*/
 .text2 {
     /* position : relative; */
-    flex : 1;
-    width : 100%;
-    height : 100px;
+    flex: 1;
+    width: 100%;
+    height: 100px;
     padding: 10px;
     outline: none;
     border: none;
     overflow: auto;
     border-radius: 5px;
     background-color: rgb(75, 74, 74);
-    color : white;
+    color: white;
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.slideAreaDown{
-   
+.slideAreaDown {
+
     position: relative;
     display: flex;
     flex-direction: row;
-    height : 25px;
+    height: 25px;
 }
 
 .enterDate {
-    position : absolute;
-    top : 5px;
-    left : 10px;
-    font-size: 12px; 
-    color: white;     
-    
-}
-
-
-.change{
-    position : absolute;
-    top : 5px;
-    right : 30px;
-    font-size: 12px; 
-    padding-right: 10px;
-    color: white; 
-    cursor : pointer;
-   
-}
-
-.remove{
-    position : absolute;
-    top : 5px;
-    right : 5px;
+    position: absolute;
+    top: 5px;
+    left: 10px;
     font-size: 12px;
-    padding-right: 5px; 
-    color: white; 
-    cursor : pointer;   
+    color: white;
+
+}
+
+
+.change {
+    position: absolute;
+    top: 5px;
+    right: 30px;
+    font-size: 12px;
+    padding-right: 10px;
+    color: white;
+    cursor: pointer;
+
+}
+
+.remove {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 12px;
+    padding-right: 5px;
+    color: white;
+    cursor: pointer;
 }
 
 .change:hover,
 .remove:hover,
 .down:hover,
-.up:hover{
+.up:hover {
     color: rgb(255, 142, 29);
 }
-
-
-
-
-
-
-
-
-

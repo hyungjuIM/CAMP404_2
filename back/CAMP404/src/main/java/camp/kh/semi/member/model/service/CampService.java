@@ -11,27 +11,24 @@ public interface CampService {
 	 * @param inputMember
 	 * @return loginMember
 	 */
-	public abstract Users login(Users inputMember);
+	public abstract Camp login(Camp inputMember);
 
 	
+	/**	이메일본인인증 서비스
+	 * @param userEmail
+	 * @return
+	 */
+	public abstract int insertCertification(String userEmail, String cNumber);
+
+
 	public abstract int emailDupCheck(String userEmail);
 
 
-	public abstract int nicknameDupCheck(String userNick);
+	public abstract int nicknameDupCheck(String userNickname);
 
 
 	public abstract int IdDupCheck(String userId);
 
 
 	public abstract int signUp(Users inputMember);
-
-
-	public abstract int sendCertificationCode(String email) throws Exception;
-
-
-	public abstract int isValidCertification(String email, String cNumber);
-
-
-
-
 }
