@@ -1,7 +1,15 @@
 package camp.kh.semi.member.model.service;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.mail.MessagingException;
+import javax.mail.internet.MimeMessage;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -15,15 +23,24 @@ public class CampServiceImpl implements CampService{
 	@Autowired
 	private BCryptPasswordEncoder bcrypt;
 	
+	
 	@Autowired
 	private CampDAO dao;
+	@Autowired
+	public JavaMailSender  sender;
+	public void setJavaMailSender(JavaMailSender sender) {
+		this.sender = sender;
+	}
 
 	
 	
+	/** 로그인
+	 *
+	 */
 	@Override
-	public Camp login(Camp inputMember) {
+	public Users login(Users inputMember) {
 		
-		Camp loginMember = dao.login(inputMember);
+		Users loginMember = dao.login(inputMember);
 		if(loginMember != null) { 
 			if( bcrypt.matches(  inputMember.getUserPw()   ,  loginMember.getUserPw() ) ) {
 				
@@ -39,39 +56,39 @@ public class CampServiceImpl implements CampService{
 	}
 
 
-	// 이메일인증
-	@Override
-	public int insertCertification(String userEmail, String cNumber) {
-		
-		// 1) 입력한 이메일과 일치하는 값이 있으면 수정(UPDATE)
-		int result = dao.updateCertification(userEmail, cNumber);
-		// 2) 일치하는 이메일이 없는 경우 -> 처음으로 인증번호를 발급받음 -> 삽입(insert)
-		if (result == 0) {
-			result = dao.insertCertification(userEmail, cNumber);
-
-		}
-		return result;
-	}
 
 
+
+	/** 이메일 중복검사
+	 *
+	 */
 	@Override
 	public int emailDupCheck(String userEmail) {
 		return dao.emailDupCheck(userEmail);
 	}
 
 
+	/** 닉네임중복검사
+	 *
+	 */
 	@Override
-	public int nicknameDupCheck(String userNickname) {
-		return dao.nicknameDupCheck(userNickname);
+	public int nicknameDupCheck(String userNick) {
+		return dao.nicknameDupCheck(userNick);
 	}
 
 
+	/** 아이디 중복검사
+	 *
+	 */
 	@Override
 	public int IdDupCheck(String userId) {
 		return dao.IdDupCheck(userId);
 	}
 
 
+	/**회원가입
+	 *
+	 */
 	@Override
 	public int signUp(Users inputMember) {
 		// 비밀번호 암호화(bcrypt)
@@ -79,9 +96,79 @@ public class CampServiceImpl implements CampService{
 		inputMember.setUserPw(encPw);
 		
 		int result = dao.signUp(inputMember);
-		
+		System.out.println(inputMember);
+		System.out.println(result);
 		return result;
 	}
+
+
+
+	   // 6자리 인증번호 생성
+    private String CertificationNumber() {
+		String cNumber = "";
+		for(int i=0 ; i< 6 ; i++) {
+			
+			int sel1 = (int)(Math.random() * 3); // 0:숫자 / 1,2:영어
+			
+			if(sel1 == 0) {
+				
+				int num = (int)(Math.random() * 10); // 0~9
+				cNumber += num;
+				
+			}else {
+				
+				char ch = (char)(Math.random() * 26 + 65); // A~Z
+				
+				int sel2 = (int)(Math.random() * 2); // 0:소문자 / 1:대문자
+				
+				if(sel2 == 0) {
+					ch = (char)(ch + ('a' - 'A')); // 대문자로 변경
+				}
+				
+				cNumber += ch;
+			}
+			
+		}
+		return cNumber;
+    }
+	
+	@Override
+	public int sendCertificationCode(String email) throws Exception {
+		 String certificationNumber = CertificationNumber();
+	        
+
+	        // 메일 전송
+	        MimeMessage message = sender.createMimeMessage();
+	        MimeMessageHelper helper = new MimeMessageHelper(message);
+	        helper.setTo(email);
+	        helper.setSubject("이메일 인증을 진행해주세요.");
+	        helper.setText("인증번호: " + certificationNumber);
+	        helper.setFrom("hyungju9753@gmail.com");
+	        sender.send(message);
+	        
+	        Map<String, Object> map = new HashMap<>();
+	        map.put("userEmail", email);
+	        map.put("cNumber",certificationNumber );
+	        // 인증번호를 DB에 저장
+	        int result = dao.insertCertification(map);
+	        return result;
+	}
+
+
+
+	@Override
+	public int isValidCertification(String email, String cNumber) {
+		Map<String, Object> map = new HashMap<>();
+		map.put("userEmail", email);
+        map.put("cNumber", cNumber);
+		int result = dao.selectCertification(map);
+		return  result;
+	}
+
+
+
+
+
 	
 	
 	
