@@ -1,9 +1,7 @@
 package camp.kh.semi.member.model.service;
 
-import java.util.List;
-
 import camp.kh.semi.member.model.vo.Camp;
-import camp.kh.semi.member.model.vo.Notice;
+import camp.kh.semi.member.model.vo.Certification;
 import camp.kh.semi.member.model.vo.Users;
 
 public interface CampService {
@@ -13,11 +11,27 @@ public interface CampService {
 	 * @param inputMember
 	 * @return loginMember
 	 */
-	public abstract Camp login(Camp inputMember);
-
-
+	public abstract Users login(Users inputMember);
 
 	
-	
-	}
+	public abstract int emailDupCheck(String userEmail);
 
+
+	public abstract int nicknameDupCheck(String userNick);
+
+
+	public abstract int IdDupCheck(String userId);
+
+
+	public abstract int signUp(Users inputMember);
+
+
+	public abstract int sendCertificationCode(String email) throws Exception;
+
+
+	public abstract int isValidCertification(String email, String cNumber);
+
+
+
+
+}

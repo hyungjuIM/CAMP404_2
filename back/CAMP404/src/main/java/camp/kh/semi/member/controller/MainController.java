@@ -53,13 +53,13 @@ public class MainController {
 	
 //	로그인 기능
 	@PostMapping("/login")
-	public String login	(@ModelAttribute Camp inputMember, Model model, 
+	public String login	(@ModelAttribute Users inputMember, Model model, 
 			RedirectAttributes ra, HttpServletResponse resp, HttpServletRequest req,
 			@RequestParam(value ="saveId", required=false) String saveId
 			) {
 		logger.info("로그인 기능 수행됨.");
 
-	Camp loginMember = service.login(inputMember);
+	Users loginMember = service.login(inputMember);
 	
 
 	if(loginMember != null) { 	// 로그인 성공 시
@@ -104,6 +104,71 @@ public class MainController {
 		return "main/signUp";
 	}
 	
+	// 이메일 중복 검사
+	@ResponseBody  // ajax 응답 시 사용!
+	@GetMapping("/emailDupCheck")
+	public int emailDupCheck(String userEmail) {
+		int result = service.emailDupCheck(userEmail);
+		return result;
+		
+	}
 	
-}
+	
+	// 닉네임 중복 검사
+	@ResponseBody  
+	@GetMapping("/nicknameDupCheck")
+	public int nicknameDupCheck(String userNick) {
+		int result = service.nicknameDupCheck(userNick);
+		
+		return result;
+		
+	}
+	
+	// 아이디 중복검사
+	@ResponseBody
+	@GetMapping("/IdDupCheck")
+	public int IdDupCheck(String userId) {
+		int result =service.IdDupCheck(userId);
+		return result;
+	}
+	
+	
+
+	// 회원 가입
+	@PostMapping("/signUp")
+	public String signUp( Users inputMember
+//						, String[] memberAddress
+						, RedirectAttributes ra) {
+		
+
+		
+//		inputMember.setUserAddress(  String.join(",,", memberAddress)  );
+//	
+//		
+//		if( inputMember.getUserAddress().equals(",,,,") ) { // 주소가 입력되지 않은 경우
+//			
+//			inputMember.setUserAddress(null); // null로 변환
+//		}
+		
+		// 회원 가입 서비스 호출
+		int result = service.signUp(inputMember);
+		
+		String message = null;
+		String path = null;
+		
+		if(result > 0) { // 회원 가입 성공
+			message = "회원 가입 성공";
+			path = "redirect:/main/login"; // 메인페이지
+			
+		}else { // 실패
+			message = "회원 가입 실패";
+			path = "redirect:/main/signUp"; // 회원 가입 페이지
+		}
+		
+		ra.addFlashAttribute("message", message);
+		return path;
+	}
+	
+	
+	}
 
