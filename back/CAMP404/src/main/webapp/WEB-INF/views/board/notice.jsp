@@ -1,10 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<!-- map에 저장된 값을 각각 변수에 저장 -->
-<c:set var="noticeName" value="${map.noticeName}" />
-<c:set var="pagination" value="${map.pagination}" />
-<c:set var="noticeList" value="${map.noticeList}" />
 
 <!DOCTYPE html>
 <html lang="en">
@@ -137,10 +133,6 @@
                             </tr>
                         </tbody>
                     </table>
-                    
-                    
-                    <a href = "${pageContext.request.contextPath}/board/noticeWriteForm">글쓰기</a>
-                    
 
                     <nav class="page-nav">
                         <ul class="pagination">
@@ -168,10 +160,9 @@
 	<footer>
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 	</footer>
-	
-	
-    <script src="${pageContext.request.contextPath}/resources/js/notice.js"></script>
-
+<%--    
+나중에 JS 추가 시 내용만 변경해서 사용하세요
+ <script src="${pageContext.request.contextPath}/resources/js/JS파일명.js"></script> --%>
 </body>
 
 </html>
