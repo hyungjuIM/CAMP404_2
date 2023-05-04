@@ -1,6 +1,6 @@
 // 유효성 검사 여부를 기록할 객체 생성
 const checkobj = {
-    "memberName": false,
+    // "memberName": false,
     "memberEmail": false,
     "memberID": false,
     "memberPw": false, // 영어, 숫자, 특수문자 6~30
@@ -81,7 +81,7 @@ memberEmail.addEventListener("input", function () {
 });
 
 
-const sendBtn = document.getElementById("cBtn");
+const sendBtn = document.getElementById("sendBtn");
 const cMessage = document.getElementById("emailCfMessage");
 
 // 타이머에 사용될 변수
@@ -95,7 +95,7 @@ sendBtn.addEventListener("click", function () {
 
         $.ajax({
             url: "sendEmail",
-            data: { "inputEmail": memberEmail.value },
+            data: { "userEmail": memberEmail.value },
             type: "GET",
             success: function (result) {
                 console.log("이메일 발송 성공");
@@ -169,8 +169,8 @@ cBtn.addEventListener("click", function () {
             $.ajax({
                 url: "checkNumber",
                 data: {
-                    "cNumber": cNumber.value,
-                    "inputEmail": memberEmail.value
+                    "userEmail": memberEmail.value,
+                    "cNumber": cNumber.value
                 },
                 type: "GET",
                 success: function (result) {
@@ -186,12 +186,15 @@ cBtn.addEventListener("click", function () {
                         cMessage.innerText = "인증되었습니다.";
                         cMessage.classList.add("confirm");
                         cMessage.classList.remove("error");
+                        checkobj.cNumber = true; 
 
                     } else if (result == 2) {
                         alert("만료된 인증 번호 입니다.");
+                        checkobj.cNumber = false; 
 
                     } else { // 3
                         alert("인증 번호가 일치하기 않습니다.");
+                        checkobj.cNumber = false;
                     }
 
 
@@ -199,6 +202,7 @@ cBtn.addEventListener("click", function () {
 
                 error: function () {
                     console.log("이메일 인증 실패")
+                    checkobj.cNumber = false;
                 }
             });
 
@@ -206,11 +210,13 @@ cBtn.addEventListener("click", function () {
 
         } else { // 6자리 아님
             alert("인증번호를 정확하게 입력해주세요.");
+            checkobj.cNumber = false;
             cNumber.focus();
         }
 
     } else { // 인증번호를 안받은 경우
         alert("인증번호 받기 버튼을 먼저 클릭해주세요.");
+        checkobj.cNumber = false;
     }
 
 });
@@ -291,7 +297,7 @@ memberNickname.addEventListener("input", function () {
         //     /community/member/nicknameDupCheck
         $.ajax({
             url: "nicknameDupCheck",  // 필수 작성 속성
-            data: { "userNickname": memberNickname.value }, // 서버로 전달할 값(파라미터)
+            data: { "userNick": memberNickname.value }, // 서버로 전달할 값(파라미터)
             type: "GET", // 데이터 전달 방식(기본값 GET)
 
             success: function (res) { // 비동기 통신 성공 시(에러 발생 X)
@@ -439,6 +445,9 @@ function signUpValidate(){
             case "memberPwConfirm": str="비밀번호 확인이"; break;
             case "memberNickname":  str="닉네임이"; break;
             case "memberTel":       str="전화번호가"; break;
+            case "memberId":       str="아이디가"; break;
+            case "sendEmail":       str="인증번호전송이"; break;
+            case "cNumber":       str="인증번호가"; break;
             }
 
             str += " 유효하지 않습니다.";
