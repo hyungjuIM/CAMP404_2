@@ -41,17 +41,8 @@ public class BoardController {
 		return "board/noticeList";
 	}
 	
-	
-	// 공지사항 글쓰기 페이지 이동
-	@GetMapping("/noticeWriteForm")
-	public String noticeWriteGet() {
-		logger.info("공지사항 글쓰기 페이지 이동");
-		
-		return "board/noticeWriteForm";
-	}
-	
 
-
+	
 	
 
 

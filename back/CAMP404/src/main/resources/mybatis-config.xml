@@ -15,16 +15,16 @@
 <!-- resultMap을 생성했다면 반드시 typeAlias 만들기!!!!!!!!!!-->
 <typeAliases>
 <typeAlias type="camp.kh.semi.member.model.vo.Camp" alias="camp"/>
-<typeAlias type="camp.kh.semi.member.model.vo.Category" alias="category"/>
-<typeAlias type="camp.kh.semi.member.model.vo.Certification" alias="certification"/>
-<typeAlias type="camp.kh.semi.member.model.vo.FavLec" alias="favLec"/>
-<typeAlias type="camp.kh.semi.member.model.vo.Lecture" alias="lecture"/>
-<typeAlias type="camp.kh.semi.member.model.vo.LectureNote" alias="lectureNote"/>
-<typeAlias type="camp.kh.semi.member.model.vo.Manager" alias="manager"/>
-<typeAlias type="camp.kh.semi.member.model.vo.MyLecture" alias="myLecture"/>
-<typeAlias type="camp.kh.semi.member.model.vo.Notice" alias="notice"/>
-<typeAlias type="camp.kh.semi.member.model.vo.Payment" alias="payment"/>
-<typeAlias type="camp.kh.semi.member.model.vo.Teacher" alias="teacher"/>
+<typeAlias type="camp.kh.semi.member.model.vo.Category" alias="Category"/>
+<typeAlias type="camp.kh.semi.member.model.vo.Certification" alias="Certification"/>
+<typeAlias type="camp.kh.semi.member.model.vo.FavLec" alias="FavLec"/>
+<typeAlias type="camp.kh.semi.member.model.vo.Lecture" alias="Lecture"/>
+<typeAlias type="camp.kh.semi.member.model.vo.LectureNote" alias="LectureNote"/>
+<typeAlias type="camp.kh.semi.member.model.vo.Manager" alias="Manager"/>
+<typeAlias type="camp.kh.semi.member.model.vo.MyLecture" alias="MyLecture"/>
+<typeAlias type="camp.kh.semi.member.model.vo.Notice" alias="Notice"/>
+<typeAlias type="camp.kh.semi.member.model.vo.Payment" alias="Payment"/>
+<typeAlias type="camp.kh.semi.member.model.vo.Teacher" alias="Teacher"/>
 <typeAlias type="camp.kh.semi.member.model.vo.Users" alias="users"/>
 </typeAliases>
 
