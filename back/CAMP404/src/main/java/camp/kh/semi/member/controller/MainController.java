@@ -53,13 +53,13 @@ public class MainController {
 	
 //	로그인 기능
 	@PostMapping("/login")
-	public String login	(@ModelAttribute Users inputMember, Model model, 
+	public String login	(@ModelAttribute Camp inputMember, Model model, 
 			RedirectAttributes ra, HttpServletResponse resp, HttpServletRequest req,
 			@RequestParam(value ="saveId", required=false) String saveId
 			) {
 		logger.info("로그인 기능 수행됨.");
 
-	Users loginMember = service.login(inputMember);
+	Camp loginMember = service.login(inputMember);
 	
 
 	if(loginMember != null) { 	// 로그인 성공 시
@@ -117,8 +117,8 @@ public class MainController {
 	// 닉네임 중복 검사
 	@ResponseBody  
 	@GetMapping("/nicknameDupCheck")
-	public int nicknameDupCheck(String userNick) {
-		int result = service.nicknameDupCheck(userNick);
+	public int nicknameDupCheck(String userNickname) {
+		int result = service.nicknameDupCheck(userNickname);
 		
 		return result;
 		
@@ -137,18 +137,18 @@ public class MainController {
 	// 회원 가입
 	@PostMapping("/signUp")
 	public String signUp( Users inputMember
-//						, String[] memberAddress
+						, String[] memberAddress
 						, RedirectAttributes ra) {
 		
 
 		
-//		inputMember.setUserAddress(  String.join(",,", memberAddress)  );
-//	
-//		
-//		if( inputMember.getUserAddress().equals(",,,,") ) { // 주소가 입력되지 않은 경우
-//			
-//			inputMember.setUserAddress(null); // null로 변환
-//		}
+		inputMember.setUserAddress(  String.join(",,", memberAddress)  );
+	
+		
+		if( inputMember.getUserAddress().equals(",,,,") ) { // 주소가 입력되지 않은 경우
+			
+			inputMember.setUserAddress(null); // null로 변환
+		}
 		
 		// 회원 가입 서비스 호출
 		int result = service.signUp(inputMember);
@@ -158,7 +158,7 @@ public class MainController {
 		
 		if(result > 0) { // 회원 가입 성공
 			message = "회원 가입 성공";
-			path = "redirect:/main/login"; // 메인페이지
+			path = "redirect:/"; // 메인페이지
 			
 		}else { // 실패
 			message = "회원 가입 실패";

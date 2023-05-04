@@ -131,11 +131,10 @@
 
 
 
-<!--  parameterType="camp.kh.semi.member.model.vo.Users"-->
-<select id="login" parameterType="users" resultMap="users_rm">
+<!--  parameterType="camp.kh.semi.member.model.vo.Camp"-->
+<select id="login" parameterType="camp" resultMap="camp_rm">
 SELECT USER_NO,
 USER_ID,
-USER_PW,
 USER_NAME,
 USER_EMAIL,
 USER_NICK,
@@ -144,7 +143,7 @@ USER_ADDR,
 TO_CHAR(ENROLL_DT, 'YYYY-MM-DD HH24:MI:SS') AS ENROLL_DT
 FROM USERS
 WHERE USER_ID = #{userId}
-
+AND USER_PW = #{userPw}
 AND SECESSION_FL = 'N'
 </select>
 
@@ -153,36 +152,15 @@ AND SECESSION_FL = 'N'
 <update id="updateCertification">
 		UPDATE CERTIFICATION SET 
 		C_NUMBER = #{cNumber},
-		ISSU_DT = SYSDATE 
+		ISSUE_DT = SYSDATE 
 		WHERE C_EMAIL = #{cEmail}
 </update>
 <insert id="insertCertification">
-		INSERT INTO CERTIFICATION(C_EMAIL,C_NUMBER,ISSU_DT) VALUES(#{userEmail},#{cNumber},SYSDATE)
+		INSERT INTO CERTIFICATION VALUES(#{cEmail},#{cNumber},SYSDATE)
 </insert>
 
-<select id="checkNumber" resultType="_int">
-		SELECT 
-    CASE 
-        WHEN EXISTS (
-            SELECT '1' FROM CERTIFICATION
-            WHERE C_EMAIL = #{userEmail}
-            AND C_NUMBER = #{cNumber}
-        ) THEN
-            CASE 
-                WHEN EXISTS (
-                    SELECT '1' FROM CERTIFICATION
-                    WHERE C_EMAIL = #{userEmail}
-                    AND ISSU_DT + (INTERVAL '5' MINUTE) >= SYSDATE
-                ) THEN '1'
-                ELSE '2'
-            END
-        ELSE '3'	
-    END
-FROM DUAL
-</select>
-
 <select id="emailDupCheck" parameterType="string" resultType="_int">
-  		SELECT COUNT(*) FROM USERS
+  		SELECT COUNT(*) FROM ELEARNING
 		WHERE USER_EMAIL = #{userEmail}
 		AND SECESSION_FL = 'N'
 </select>
@@ -190,14 +168,14 @@ FROM DUAL
 
 <!-- 닉네임 중복 검사 -->
 <select id="nicknameDupCheck" parameterType="string" resultType="_int">
-  		SELECT COUNT(*) FROM USERS
-		WHERE USER_NICK = #{userNick}
+  		SELECT COUNT(*) FROM ELEARNING
+		WHERE USER_NICK = #{userNickname}
 		AND SECESSION_FL = 'N'
 </select>
 
 <!-- 아이디 중복검사 -->
 <select id="IdDupCheck" parameterType="string" resultType="_int">
-		SELECT COUNT(*) FROM USERS
+		SELECT COUNT(*) FROM ELEARNING
 		WHERE USER_ID = #{userId}
 		AND SECESSION_FL = 'N'
 </select>
@@ -206,14 +184,14 @@ FROM DUAL
 <!-- 회원 가입 -->
 <insert id="signUp" parameterType="users">
   		INSERT INTO USERS VALUES(
-  		SEQ_USER_NO.NEXTVAL,
+  		SEQ_MEMBER_NO.NEXTVAL,
   		#{userId},
   		#{userPw},
   		#{userName},
   		#{userEmail},
   		#{userNick},
   		#{userTel},
-  		#{userAddress},
+  		#{userAddress}
   		DEFAULT, DEFAULT
   		)
 </insert>
