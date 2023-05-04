@@ -36,13 +36,11 @@
             <!--로고-->
             <div class="img_class"><img src="${pageContext.request.contextPath}/resources/images/CAMP404(기본).png"></div>
 
-            <form action="signUp" method="post" id="signUp-form" onsubmit="return signUpValidate()" autocomplete="off">
+            <form action="signUp" method="POST" id="signUp-form" onsubmit="return signUpValidate()" autocomplete="off">
 
                 <!--이름-->
                 <div class="messageBox">
-                    <!-- <h3 class="join_title">
-            <label for="name">이름</label>
-        </h3> -->
+                
 
                     <div class="box int_name">
                         <input type="text" id="memberName" class="int" name="userName" maxlength="20" placeholder="이름을 입력해주세요">
@@ -62,7 +60,7 @@
                     <div class="int_email">
                         <input type="text" id="memberEmail" class="email" name="userEmail" maxlength="50" placeholder="이메일을 입력해주세요">
 
-                        <button type="button" id="cBtn">인증번호 받기</button>
+                        <button type="button" id="sendBtn">인증번호 받기</button>
                     </div>
                     <span class="signUp-message" id="emailMessage">메일을 받을 수 있는 이메일을 입력해주세요.</span>
 
@@ -77,8 +75,9 @@
             <label for="cNumber">인증번호</label>
         </h3> -->
 
-                    <div class="box int_cNumber">
-                        <input type="text" id="cNumber" class="int" maxlength="20" placeholder="인증번호를 입력해주세요">
+                    <div class="int_cNumber">
+                        <input type="text" id="cNumber" name="cNumber" class="emailCf" maxlength="20" placeholder="인증번호를 입력해주세요">
+                        <button type="button" id="cBtn">인증번호 확인</button>
                     </div>
 
                     <span class="signUp-message" id="emailCfMessage">인증번호를 입력해주세요.</span>
@@ -95,7 +94,7 @@
 
                     <div class="int_id">
                         <input type="text" id="memberID" name="userId" class="id" maxlength="20" placeholder="아이디를 입력해주세요">
-                        <button type="button" id="IdDupBtn">중복확인</button>
+                       
                     </div>
 
                     <span class="signUp-message" id="idMessage">영어/숫자/한글 2~20글자 사이로 작성해주세요.</span>
@@ -140,8 +139,8 @@
             </h3> -->
 
                     <div class="int_nickName">
-                        <input type="text" name="userNickname" id="memberNickname" class="nick" maxlength="10" placeholder="닉네임을 입력해주세요">
-                        <button type="button" id="IdDupBtn">중복확인</button>
+                        <input type="text" name="userNick" id="memberNickname" class="nick" maxlength="10" placeholder="닉네임을 입력해주세요">
+                        
                     </div>
 
                     <span class="signUp-message" id="nicknameMessage">영어/숫자/한글 2~10글자 사이로 작성해주세요.</span>
@@ -177,14 +176,14 @@
             </h3> -->
 
                     <div class="box int_address">
-                        <input type="text" id="memberAddr" name="userAddr" class="int" maxlength="50" placeholder="주소를 입력해주세요">
+                        <input type="text" id="memberAddr" name="userAddress" class="int" maxlength="50" placeholder="주소를 입력해주세요">
                     </div>
 
                 </div>
 
                 <!--join Btn-->
                 <div class="btn_area">
-                    <button type="button" id="btnJoin">회원가입</button>
+                    <button type="submit" id="btnJoin">회원가입</button>
                 </div>
 
 
