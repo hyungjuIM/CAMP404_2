@@ -21,7 +21,7 @@ private CampService service;
 @GetMapping("/sendEmail")
 @ResponseBody
 public int sendCertificationCode(HttpServletRequest req, Model model) throws Exception {
-    String email = req.getParameter("memberEmail");
+    String email = req.getParameter("userEmail");
    int result = service.sendCertificationCode(email);
     model.addAttribute("email", email);
     return result;
@@ -30,7 +30,7 @@ public int sendCertificationCode(HttpServletRequest req, Model model) throws Exc
 @GetMapping("/checkNumber")
 @ResponseBody
 public int confirmCertificationCode(HttpServletRequest req, Model model) {
-    String email = req.getParameter("memberEmail");
+    String email = req.getParameter("userEmail");
     String cNumber = req.getParameter("cNumber");
    int result = service.isValidCertification(email, cNumber);
     if (result == 1) {

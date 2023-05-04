@@ -20,7 +20,7 @@ import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import camp.kh.semi.member.model.service.CampService;
-import camp.kh.semi.member.model.vo.Camp;
+
 import camp.kh.semi.member.model.vo.Users;
 
 
@@ -53,7 +53,7 @@ public class MainController {
 	
 //	로그인 기능
 	@PostMapping("/login")
-	public String login	(@ModelAttribute Users inputMember, Model model, 
+	public String login	(@ModelAttribute("Users") Users inputMember, Model model, 
 			RedirectAttributes ra, HttpServletResponse resp, HttpServletRequest req,
 			@RequestParam(value ="saveId", required=false) String saveId
 			) {

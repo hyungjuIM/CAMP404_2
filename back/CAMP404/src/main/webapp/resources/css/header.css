@@ -1,12 +1,23 @@
-/* 폰트 설정 */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
 
 
-/* 전역설정 오직 박스 사이징만 */
 * {
     box-sizing: border-box;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-family: 'Noto Sans KR', sans-serif;
+}
+
+@font-face {
+    /* 영어, 숫자, 특수문자 => Helvetica */
+    font-family: 'Helvetica';
+    src: url('/프론트단/폰트/Helvetica-01.ttf') format('truetype');
+    unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
+    font-style: normal;
+}
+
+@font-face {
+    /* 한글 => Helvetica */
+    font-family: 'Helvetica';
+    src: url('/프론트단/폰트/NotoSans-Medium.ttf') format('truetype');
+    font-style: normal;
 }
 
 body {
