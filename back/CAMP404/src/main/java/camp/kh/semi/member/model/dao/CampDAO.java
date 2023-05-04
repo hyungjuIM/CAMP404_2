@@ -1,5 +1,7 @@
 package camp.kh.semi.member.model.dao;
 
+import java.util.Map;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,25 +21,16 @@ public class CampDAO {
 	private Logger logger = LoggerFactory.getLogger(CampDAO.class);
 	
 	
-	public Camp login(Camp inputMember) {
+	public Users login(Users inputMember) {
 		
 		// campMapper는 camp-mapper.xml에서 정의했다.
-Camp loginMember = sqlSession.selectOne("campMapper.login", inputMember);
+		Users loginMember = sqlSession.selectOne("campMapper.login", inputMember);
 
-return loginMember;
+		return loginMember;
 	}
 
 
-	public int updateCertification(String userEmail, String cNumber) {
-		int result = sqlSession.update("campMapper.updateCertification");
-		return result;
-	}
 
-
-	public int insertCertification(String userEmail, String cNumber) {
-		int result = sqlSession.insert("campMapper.insertCertification");
-		return 0;
-	}
 
 
 	public int emailDupCheck(String userEmail) {
@@ -45,8 +38,8 @@ return loginMember;
 	}
 
 
-	public int nicknameDupCheck(String userNickname) {
-		return sqlSession.selectOne("campMapper.nicknameDupCheck", userNickname);
+	public int nicknameDupCheck(String userNick) {
+		return sqlSession.selectOne("campMapper.nicknameDupCheck", userNick);
 	}
 
 
@@ -55,6 +48,23 @@ return loginMember;
 	}
 
 
+
+
+
+
+	public int selectCertification(Map<String, Object> map) {
+		
+		int result = sqlSession.selectOne("campMapper.checkNumber",map);
+		
+		return result;
+	}
+
+
+	public int insertCertification(Map<String, Object> map) {
+		return sqlSession.insert("campMapper.insertCertification",map);
+	}
+	
+	// 회원가입
 	public int signUp(Users inputMember) {
 		return sqlSession.insert("campMapper.signUp", inputMember);
 	}
