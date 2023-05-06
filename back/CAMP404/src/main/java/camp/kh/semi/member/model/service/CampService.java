@@ -1,10 +1,7 @@
 package camp.kh.semi.member.model.service;
 
-import java.util.Map;
-
 import camp.kh.semi.member.model.vo.Camp;
 import camp.kh.semi.member.model.vo.Certification;
-import camp.kh.semi.member.model.vo.LectureNote;
 import camp.kh.semi.member.model.vo.Users;
 
 public interface CampService {
@@ -14,20 +11,13 @@ public interface CampService {
 	 * @param inputMember
 	 * @return loginMember
 	 */
-	public abstract Camp login(Camp inputMember);
+	public abstract Users login(Users inputMember);
 
 	
-	/**	이메일본인인증 서비스
-	 * @param userEmail
-	 * @return
-	 */
-	public abstract int insertCertification(String userEmail, String cNumber);
-
-
 	public abstract int emailDupCheck(String userEmail);
 
 
-	public abstract int nicknameDupCheck(String userNickname);
+	public abstract int nicknameDupCheck(String userNick);
 
 
 	public abstract int IdDupCheck(String userId);
@@ -36,13 +26,12 @@ public interface CampService {
 	public abstract int signUp(Users inputMember);
 
 
-	/** 강의노트 저장
-	 * @param paramMap
-	 * @return
-	 */
-
-	//public abstract int insertNote(LectureNote loginLectureNote);
+	public abstract int sendCertificationCode(String email) throws Exception;
 
 
-	public abstract int insertNote(String noteContent);
+	public abstract int isValidCertification(String email, String cNumber);
+
+
+
+
 }
