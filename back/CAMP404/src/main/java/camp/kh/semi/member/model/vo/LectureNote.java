@@ -12,6 +12,6 @@ public class LectureNote {
 	//강의노트
 	private int noteNo;
 	private String noteContent;
-	private int usersNo;
+	private int userNo;
 	private int lectureNo;
 }

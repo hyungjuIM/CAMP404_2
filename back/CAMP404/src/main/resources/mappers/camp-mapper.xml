@@ -53,7 +53,7 @@
 	<resultMap type="lectureNote" id="lectureNote_rm">
 		<id property="noteNo" column="NOTE_NO"/>
 		<result property="noteContent" column="NOTE_CONTENT" />
-		<result property="usersNo" column="USERS_NO" />
+		<result property="userNo" column="USER_NO" />
 		<result property="lectureNo" column="LECTURE_NO" />
 	</resultMap>
 	
@@ -83,7 +83,7 @@
 	
 	<!-- 내강의 -->
 	<resultMap type="mylecture" id="mylecture_rm">
-		<id property="usersNo" column="USERS_NO"/>
+		<id property="usersNo" column="USER_NO"/>
 		<result property="lectureNo" column="LECTURE_NO" />
 		<result property="favNo" column="PAY_NO" />
 	</resultMap>
@@ -93,7 +93,7 @@
 		<id property="favNo" column="FAV_NO"/>
 		<result property="favYn" column="FAV_YN" />
 		<result property="lectureNo" column="LECTURE_NO" />
-		<result property="usersNo" column="USERS_NO" />
+		<result property="usersNo" column="USER_NO" />
 	</resultMap>
 	
 	<!-- 결제 -->
@@ -102,7 +102,7 @@
 		<result property="payWay" column="PAY_WAY" />
 		<result property="payDate" column="PAY_DATE" />
 		<result property="payPrice" column="PAY_PRICE" />
-		<result property="usersNo" column="USERS_NO" />
+		<result property="usersNo" column="USER_NO" />
 		<result property="lectureNo" column="LECTURE_NO" />
 	</resultMap>
 	
@@ -218,9 +218,14 @@ FROM DUAL
   		)
 </insert>
   
-
-
-
-
-
+  <!-- 강의노트 저장(insert) -->
+<insert id="insertNote" parameterType="lectureNote"  >
+	INSERT INTO LECTURE_NOTE VALUES
+	(SEQ_NOTE_NO.NEXTVAL,
+	#{noteContent}, '1', '1')
+</insert>
+	<!-- LECTURE_NO = #{lectureNo} -->
+	
+	
+	
 </mapper>
