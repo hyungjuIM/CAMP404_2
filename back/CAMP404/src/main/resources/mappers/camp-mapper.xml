@@ -225,4 +225,7 @@ FROM DUAL
 	#{noteContent}, '1', '1')
 </insert>
 	<!-- LECTURE_NO = #{lectureNo} -->
+	
+	
+	
 </mapper>
