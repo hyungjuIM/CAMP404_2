@@ -56,8 +56,8 @@
 
     <!--사이드바-->
     <div class="classroom_sidebar">
-       <form action="classroom1" method="POST">
        
+      <form action="classroom1" method="POST" name="classroom-note" onsubmit="return lecturenote"> 
         <!--강의목차,강의자료,노트부분-->
         <ul class="classroom_tabs">          
             <li><a href="#" id="classroom_tabs_menu" style="color:rgb(255, 142, 29);">강의목차</a></li>
@@ -258,7 +258,7 @@
             
             </div>
         
-
+		
         <!--강의노트-->
         <!--강의노트 글자 클릭시, 강의노트 관련 탭 나열-->
           
@@ -290,28 +290,25 @@
                         <button class="dBtn add">저 장</button>
                     </div>
                     
-                    </form>
+                   
         
                 </div>
   
             </div>   
             <!--강의노트가 실제로 입력되는 영역-->
          
-            <div class="subArea" name="subArea">
+         
+            <div class="subArea" name="noteContent">
                 <div class="bottomWrapper">
                     <button class="noteWrite">+</button>
                 </div>
             </div>
+	
+	</form>
+ 
+   </div>
 
-            <!-- <div class="bottomWrapper">
-                <button class="noteWrite">+</button>
-            </div> -->
-         
-        
-          </form>  
-        </div>
-
-        
+      
 
 </div> 
 </main>

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import camp.kh.semi.member.model.vo.Camp;
+import camp.kh.semi.member.model.vo.LectureNote;
 import camp.kh.semi.member.model.vo.Users;
 
 @Repository // 영속성을 가지는 DB / 파일과 연결되는 클래스임을 명시하면서 bean으로 등록.
@@ -66,8 +67,14 @@ return loginMember;
 	 * @param paramMap
 	 * @return
 	 */
-	public int updateNote(Map<String, Object> paramMap) {
+//
+//	public int insertNote(LectureNote loginLectureNote) {
+//		return sqlSession.insert("campMapper.insertNote", loginLectureNote);
+//	}
+
+
+	public int insertNote(String noteContent) {
 		
-		return sqlSession.selectOne("campMapper.updateNote", paramMap);
+		return sqlSession.insert("campMapper.insertNote", noteContent);
 	}
 }

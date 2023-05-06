@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import camp.kh.semi.member.model.dao.CampDAO;
 import camp.kh.semi.member.model.vo.Camp;
+import camp.kh.semi.member.model.vo.LectureNote;
 import camp.kh.semi.member.model.vo.Users;
 
 @Service // 비즈니스 로직을 처리하는 클래스임을 명시하며 bean을 등록한다.
@@ -85,12 +86,24 @@ public class CampServiceImpl implements CampService{
 		return result;
 	}
 
+
+
+
 	//강의저장 노트
+//	@Override
+//	public int insertNote(LectureNote loginLectureNote) {
+//		
+//		return dao.insertNote(loginLectureNote);
+//	}
+
 	@Override
-	public int updateNote(Map<String, Object> paramMap) {
+	public int insertNote(String noteContent) {
 		
-		return dao.updateNote(paramMap);
+		return dao.insertNote(noteContent);
 	}
+	
+
+
 	
 	
 	

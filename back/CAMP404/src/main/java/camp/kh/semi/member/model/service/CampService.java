@@ -4,6 +4,7 @@ import java.util.Map;
 
 import camp.kh.semi.member.model.vo.Camp;
 import camp.kh.semi.member.model.vo.Certification;
+import camp.kh.semi.member.model.vo.LectureNote;
 import camp.kh.semi.member.model.vo.Users;
 
 public interface CampService {
@@ -39,5 +40,9 @@ public interface CampService {
 	 * @param paramMap
 	 * @return
 	 */
-	public abstract int updateNote(Map<String, Object> paramMap);
+
+	//public abstract int insertNote(LectureNote loginLectureNote);
+
+
+	public abstract int insertNote(String noteContent);
 }
