@@ -28,7 +28,7 @@ public class LectureNoteController {
 	
 	
 @ResponseBody	
-@PostMapping(value ="/classroom1")
+@PostMapping("/classroom1")
 public int insertNote(@ModelAttribute LectureNote loginLectureNote,
 						@RequestParam Map<String, Object> paramMap,
 						HttpSession session,
