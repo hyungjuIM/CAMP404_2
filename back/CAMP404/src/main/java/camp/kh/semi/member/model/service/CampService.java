@@ -1,7 +1,10 @@
 package camp.kh.semi.member.model.service;
 
+import java.util.Map;
+
 import camp.kh.semi.member.model.vo.Camp;
 import camp.kh.semi.member.model.vo.Certification;
+import camp.kh.semi.member.model.vo.LectureNote;
 import camp.kh.semi.member.model.vo.Users;
 
 public interface CampService {
@@ -31,8 +34,14 @@ public interface CampService {
 
 	public abstract int isValidCertification(String email, String cNumber);
 
+    //강의노트 관련
+//	public abstract int insertNote(String noteContent);
+//
+//
+//	public abstract int insertNote(Map<String, Object> paramMap);
 
-	public abstract int insertNote(String noteContent);
+
+	//public abstract int insertNote(LectureNote lectureNote);
 
 
 

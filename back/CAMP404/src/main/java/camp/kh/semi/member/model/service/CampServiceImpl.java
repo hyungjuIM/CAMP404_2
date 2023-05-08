@@ -14,6 +14,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import camp.kh.semi.member.model.dao.CampDAO;
+import camp.kh.semi.member.model.vo.LectureNote;
 import camp.kh.semi.member.model.vo.Users;
 
 @Service // 비즈니스 로직을 처리하는 클래스임을 명시하며 bean을 등록한다.
@@ -165,14 +166,31 @@ public class CampServiceImpl implements CampService{
 	}
 
 
+	//강의노트 관련
+//	@Override
+//	public int insertNote(String noteContent) {
+//		
+//		int result = dao.insertNote(noteContent);
+//		return result;
+//	}
+//
+//
+//
+//	@Override
+//	public int insertNote(Map<String, Object> paramMap) {
+//		
+//		return dao.insertNote(paramMap);
+//	}
 
-	@Override
-	public int insertNote(String noteContent) {
-		
-		int result = dao.insertNote(noteContent);
-		return 0;
-	}
 
+
+//	@Override
+//	public int insertNote(LectureNote lectureNote) {
+//		
+//		return dao.insertNote(lectureNote);
+//	}
+
+	
 
 	
 

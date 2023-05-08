@@ -71,18 +71,21 @@ public class CampDAO {
 	}
 
 
-	/** 강의노트 저장
-	 * @param paramMap
-	 * @return
-	 */
+	//강의노트 관련
+
+//	public int insertNote(String noteContent) {
+//		
+//		return sqlSession.insert("campMapper.insertNote", noteContent);
+//	}
 //
-//	public int insertNote(LectureNote loginLectureNote) {
-//		return sqlSession.insert("campMapper.insertNote", loginLectureNote);
+//
+//	public int insertNote(Map<String, Object> paramMap) {
+//		
+//		return sqlSession.insert("campMapper.insertNote", paramMap);
 //	}
 
-
-	public int insertNote(String noteContent) {
-		
-		return sqlSession.insert("campMapper.insertNote", noteContent);
-	}
+//	public int insertNote(LectureNote lectureNote) {
+//		
+//		return sqlSession.insert("campMapper.insertNote", lectureNote);
+//	}
 }

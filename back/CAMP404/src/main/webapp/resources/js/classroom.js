@@ -84,8 +84,8 @@ $('#classroom_tabs_file').click(function(){
    $('#classroom_tabs_note').click(function(){
     $('.classroom_chater').hide();/*강의목차 hide */  
     $('.classroom_asset_list').hide();/*강의자료 hide */ 
-    $('.classroom_notes').hide();/*강의노트 show */
-    $('.subArea').show();  /*저장된 강의노트목록 hide */
+    $('.classroom_notes').hide();/*강의노트 hide */
+    $('.subArea').show();  /*저장된 강의노트목록 show */
     $('.noteWrite').show();  /*글작성버튼 show */
   
   })
@@ -106,7 +106,7 @@ $('.noteWrite').show();  /*글작성버튼 show */
 $('.noteWrite').click(function(){
 $('.classroom_chater').hide();/*강의목차 hide */  
 $('.classroom_asset_list').hide();/*강의자료 hide */ 
-$('.classroom_notes').show();/*강의노트 hide */  
+$('.classroom_notes').show();/*강의노트 show */  
 $('.subArea').hide();/*저장된 강의노트 목록 hide */ 
 $('.noteWrite').hide();  /*글작성버튼 hide */
 
