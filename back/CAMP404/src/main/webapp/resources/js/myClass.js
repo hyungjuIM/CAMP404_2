@@ -13,6 +13,7 @@ for (let i = 0; i < goClass.length; i++) {
     })
 };
 
+
 function test() {
     console.log("로그아웃 버튼 누름");
     let url = "/CAMP404/myPage/logout";

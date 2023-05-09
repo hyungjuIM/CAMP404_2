@@ -23,7 +23,7 @@ import camp.kh.semi.member.model.vo.Users;
 //마이페이지, 정보수정, 회원탈퇴, 찜목록 관련 기능 모음 컨트롤러
 
 @Controller
-@SessionAttributes({"loginMember"})
+@SessionAttributes({"loginMember"} )
 @RequestMapping("/myPage")
 public class MypageController {
 private Logger logger = LoggerFactory.getLogger(MypageController.class);

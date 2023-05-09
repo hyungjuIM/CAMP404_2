@@ -122,6 +122,7 @@
                 </div>
 
                 <!-- 변경 버튼 -->
+                
                 <div class="btn_area">
                     <button type="button" id="btnChange">회원정보수정</button>
                 </div>
