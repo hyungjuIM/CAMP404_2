@@ -166,12 +166,12 @@ public class CampServiceImpl implements CampService{
 
 
 
-	@Override
-	public int insertNote(String noteContent) {
-		
-		int result = dao.insertNote(noteContent);
-		return 0;
-	}
+//	@Override
+//	public int insertNote(String noteContent) {
+//		
+//		int result = dao.insertNote(noteContent);
+//		return 0;
+//	}
 
 
 	

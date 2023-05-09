@@ -81,8 +81,8 @@ public class CampDAO {
 //	}
 
 
-	public int insertNote(String noteContent) {
-		
-		return sqlSession.insert("campMapper.insertNote", noteContent);
-	}
+//	public int insertNote(String noteContent) {
+//		
+//		return sqlSession.insert("campMapper.insertNote", noteContent);
+//	}
 }

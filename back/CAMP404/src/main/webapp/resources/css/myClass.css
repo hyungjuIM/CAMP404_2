@@ -106,11 +106,14 @@
     font-family: 'Noto Sans KR', sans-serif;
     margin-top: 10px;
     font-weight: 550;
+    
+    
 }
 
 /*------------------body-content------------------*/
 
 /* 나의 정보 본문 */
+
 .myClass-content-area {
     width: 70%;
     height: 100%;
