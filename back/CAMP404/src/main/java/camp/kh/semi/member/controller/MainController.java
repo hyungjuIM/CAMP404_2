@@ -83,19 +83,19 @@ public class MainController {
 		return "redirect:/main/login";
 	}
 
-	
+	System.out.println();
 	return "redirect:/";
 	}
 	
-//	로그아웃 기능
-	@GetMapping("/logout")
-	public String logout(SessionStatus status) {
-		
-		logger.info("로그아웃 기능 수행됨.");
-		
-		return "redirect:/";
-		
-	}
+////	로그아웃 기능
+//	@GetMapping("/logout")
+//	public String logout(SessionStatus status) {
+//		
+//		logger.info("로그아웃 기능 수행됨.");
+//		
+//		return "redirect:/";
+//		
+//	}
 	
 	// 회원가입 화면 전환
 	@GetMapping(value="/signUp")

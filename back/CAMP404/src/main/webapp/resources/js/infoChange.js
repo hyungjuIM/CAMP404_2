@@ -132,3 +132,10 @@ newTel.addEventListener("input", function () {
     }
 });
 
+
+
+function test() {
+    console.log("로그아웃 버튼 누름");
+    let url = "/CAMP404/myPage/logout";
+    location.href = url;
+}

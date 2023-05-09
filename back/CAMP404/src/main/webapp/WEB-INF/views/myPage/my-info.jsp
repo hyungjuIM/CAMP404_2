@@ -48,7 +48,7 @@
 
                     </div>
                     <!-- 로그아웃 -->
-                    <button class="logout-btn">로그아웃</button>
+                    <button class="logout-btn" onclick="test()">로그아웃</button>
                 </div>
             </nav>
             <!-- ---------------------------------------------- -->

@@ -48,8 +48,9 @@
                         </div>
 
                     </div>
-                    <!-- 로그아웃 -->
-                    <button class="logout-btn">로그아웃</button>
+                    <!-- 로그아웃
+                    <a href="${contextPath}" class="logout-btn">로그아웃</a> -->
+                    <button class="logout-btn" onclick="test()">로그아웃</button>
                 </div>
             </nav>
             <!-- ---------------------------------------------- -->
@@ -143,7 +144,7 @@
     </mian>
 
 
-        <script src="${pageContext.request.contextPath}/resources/js/classContents.js"></script>
+        <script src="${pageContext.request.contextPath}/resources/js/myClass.js"></script>
 
 </body>
 
