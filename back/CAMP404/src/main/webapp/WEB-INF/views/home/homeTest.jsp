@@ -201,68 +201,29 @@
                             <a href="#" class="classTitle2">더보기&nbsp;<i class="fa-solid fa-angles-right"></i></a>
                         </div>
                         <div class="classDescription">
-                            <!-- BEST CLASS 과목 1 -->
-                            <div class="classItem">
-                                <a href="#" class="imgArea">
-                                    <img src="resources/images/DBimg.png">
-                                </a>
-                                <div class="textArea">
-                                    <div class="topText">
-                                        <div class="mainText">
-                                            <a href="#" class="mainText1">SQL</a>
-                                            <a href="#" class="mainText2">수강가능</a>
-                                        </div>
-                                        <div class="likeBtn"><i class="fa-solid fa-heart"></i></i></div>
-                                    </div>
-                                    <a href="#">
-                                        <div class="subText">데이터베이스 SQL 강의<br></div>
-                                        <div class="tutorTitle">홍길동</div>
+                            <c:forEach var="" items="">
+                                <!-- BEST CLASS 과목 1 -->
+                                <div class="classItem">
+                                    <a href="#" class="imgArea">
+                                        <img src="resources/images/DBimg.png">
                                     </a>
+                                    <div class="textArea">
+                                        <div class="topText">
+                                            <div class="mainText">
+                                                <a href="#" class="mainText1">SQL</a>
+                                                <a href="#" class="mainText2">수강가능</a>
+                                            </div>
+                                            <div class="likeBtn"><i class="fa-solid fa-heart"></i></i></div>
+                                        </div>
+                                        <a href="#">
+                                            <div class="subText">데이터베이스 SQL 강의<br></div>
+                                            <div class="tutorTitle">홍길동</div>
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- BEST CLASS 과목 1 -->
+                                <!-- BEST CLASS 과목 1 -->
+                            </c:forEach>
 
-                            <!-- BEST CLASS 과목 2 -->
-                            <div class="classItem">
-                                <a href="#" class="imgArea">
-                                    <img src="resources/images/backendImg.png">
-                                </a>
-                                <div class="textArea">
-                                    <div class="topText">
-                                        <div class="mainText">
-                                            <a href="#" class="mainText1">BACK-END</a>
-                                            <a href="#" class="mainText2">수강가능</a>
-                                        </div>
-                                        <div class="likeBtn"><i class="fa-solid fa-heart"></i></i></div>
-                                    </div>
-                                    <a href="#">
-                                        <div class="subText">백엔드, 프레임워크부터<br>개발 방법론까지</div>
-                                        <div class="tutorTitle">백엔드 마스터</div>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- BEST CLASS 과목 2 -->
-
-                            <!-- BEST CLASS 과목 3 -->
-                            <div class="classItem">
-                                <a href="${contextPath}class/class3" class="imgArea">
-                                    <img src="resources/images/6.png">
-                                </a>
-                                <div class="textArea">
-                                    <div class="topText">
-                                        <div class="mainText">
-                                            <a href="#" class="mainText1">JAVA</a>
-                                            <a href="#" class="mainText2">수강가능</a>
-                                        </div>
-                                        <div class="likeBtn"><i class="fa-solid fa-heart heart"></i></i></div>
-                                    </div>
-                                    <a href="${contextPath}class/class3">
-                                        <div class="subText">형, 자바는 이게 제일 쉬워요 ㅋㅋ<br>정말 쉬운 자바_진짜최종_ㅁㄴㅇㄹ.java</div>
-                                        <div class="tutorTitle">월급도둑 김코딩</div>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- BEST CLASS 과목 3 -->
                         </div>
                     </div>
                     <!-- BEST CLASS -->

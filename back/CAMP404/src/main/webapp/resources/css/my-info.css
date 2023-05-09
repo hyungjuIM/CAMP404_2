@@ -92,6 +92,7 @@ main{
 .content-1 i{
     color: white;
     margin-right: 20px;
+    
 }
 
 /* 로그아웃버튼 */
@@ -105,6 +106,7 @@ main{
     font-family: 'Noto Sans KR', sans-serif;
     margin-top: 10px;
     font-weight: 550;
+    text-decoration: none;
 }
 
 /*------------------body-content------------------*/

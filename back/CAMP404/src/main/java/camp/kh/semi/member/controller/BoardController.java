@@ -60,6 +60,7 @@ public class BoardController {
 		return "board/boardList";
 	}
 	
+
 	 	
 	
 	// 게시글 상세 조회
@@ -189,6 +190,8 @@ public class BoardController {
 		
 		return "board/boardWriteForm";
 	}
+
+
 	
 	
 	

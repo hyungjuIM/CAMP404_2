@@ -28,4 +28,13 @@ window.onload = () => {
     likeBtn.on('click', function () {
         $(this).toggleClass('likeColor');
     });
+
+    const c_innerText1 = $('.c_innerText1');
+    const c_innerText2 = $('.c_innerText2');
+    const c_innerText3 = $('.c_innerText3');
+    const c_innerText4 = $('.c_innerText4');
+
+
+
+
 };

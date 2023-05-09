@@ -48,7 +48,7 @@
 
                     </div>
                     <!-- 로그아웃 -->
-                    <button class="logout-btn">로그아웃</button>
+                    <button class="logout-btn" onclick="test()">로그아웃</button>
                 </div>
             </nav>
             <!-- ---------------------------------------------- -->
@@ -122,6 +122,7 @@
                 </div>
 
                 <!-- 변경 버튼 -->
+                
                 <div class="btn_area">
                     <button type="button" id="btnChange">회원정보수정</button>
                 </div>
