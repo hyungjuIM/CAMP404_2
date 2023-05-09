@@ -67,7 +67,7 @@
                         <tr>
                             <th scope="col" class="th-num">글번호</th>
                             <th scope="col" class="th-title">제목</th>
-                           <!-- <th scope="col" class="th-writer">작성자</th> -->
+                            <th scope="col" class="th-writer">작성자</th>
                             <th scope="col" class="th-date">작성일</th>
                             <th scope="col" class="th-num">조회수</th>
                         </tr>
@@ -99,7 +99,7 @@
                                             <%-- detail?no=${board.boardNo}&cp=${pagination.currentPage}&type=${param.type}${sURL} --%>
                                 
                                         </td>
-                                        <!-- <td>${board.memberNickname}</td> -->
+                                        <td>${board.userNick}</td>
                                         <td>${board.createDate}</td>
                                         <td>${board.readCount}</td>
                                     </tr>
@@ -114,9 +114,9 @@
 
             <div class="btn-area">
 
-                <c:if test="${!empty loginMember}">
+				<c:if test="${!empty loginMember}">
                     <!-- /community/board/write -->
-                    <button id="insertBtn" onclick="location.href='write?mode=insert&type=${param.type}&cp=${param.cp}'">글쓰기</button>                     
+                    <button id="insertBtn" onclick="location.href='../write/${boardCode}?mode=insert&cp=${pagination.currentPage}'">글쓰기</button>                     
                 </c:if>
 
             </div>
