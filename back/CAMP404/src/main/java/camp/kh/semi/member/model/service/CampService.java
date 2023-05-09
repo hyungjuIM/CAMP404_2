@@ -32,6 +32,9 @@ public interface CampService {
 	public abstract int isValidCertification(String email, String cNumber);
 
 
+	public abstract int insertNote(String noteContent);
+
+
 
 
 }

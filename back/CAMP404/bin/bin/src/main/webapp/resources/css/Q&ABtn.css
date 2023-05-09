@@ -1,0 +1,276 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Source+Sans+Pro&display=swap');
+
+section{
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    z-index: 9;
+}
+
+/* Q&A 아이콘 */
+.QnABtn-icon {
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    background-color:rgb(255 203 48);
+    border-radius: 30px;
+    box-shadow: 3px 3px 3px rgba(255,255,255,0.34) inset, 
+    0 2px 0 -1px rgba(0,0,0,0.13), 
+    0 3px 0 -1px rgba(0,0,0,0.08), 
+    0 3px 13px -1px rgba(0,0,0,0.21);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+} 
+.QnABtn-icon:active {
+    top: 1px;
+    border-color: rgba(0,0,0,0.34) rgba(0,0,0,0.21) rgba(0,0,0,0.21);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.89),0 1px rgba(0,0,0,0.05) inset;
+    position: relative;
+  }
+
+
+/* -----버튼 에니메이션------ */
+.jittery:hover{animation: jittery 3s infinite;}
+
+@keyframes jittery {
+    5%,
+    50% {
+      transform: scale(1);
+    }
+  
+    10% {
+      transform: scale(0.9);
+    }
+  
+    15% {
+      transform: scale(1.15);
+    }
+  
+    20% {
+      transform: scale(1.15) rotate(-5deg);
+    }
+  
+    25% {
+      transform: scale(1.15) rotate(5deg);
+    }
+  
+    30% {
+      transform: scale(1.15) rotate(-3deg);
+    }
+  
+    35% {
+      transform: scale(1.15) rotate(2deg);
+    }
+  
+    40% {
+      transform: scale(1.15) rotate(0);
+    }
+  }
+  /* ------ */
+.btn-emoji{
+    width: 60px;
+    height: 60px;
+    box-shadow: 3px 3px 5px rgba(219, 218, 218, 0.34);
+    border-radius: 50px;
+}
+/* ---------------------- */
+/*Q&A 클릭 시 메인 창*/
+.QnABtn-container {
+    width: 350px;
+    height: 600px;
+    background-color: #eaeaea;
+    border-radius: 30px;
+    padding-top: 30px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+QnA 메인 화면 
+.QnABtn-container div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 로고 영역 */
+.QnABtn-2-overContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.QnABtn-2-overContainer>img {
+    width: 35%;
+    margin-right: 38%;
+}
+
+#xbtn {
+    width: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#xbtn:hover{
+    transform: scale(1.2);
+    padding-left: 1.5px;
+}
+
+
+/* 설명창 */
+.QnA-2-content{
+    width: 90%;
+    height: 55%;
+    background-color: white;
+    border-radius: 30px;
+    padding-left: 15px;
+    padding-top: 15px;
+
+    /* box 그림자 영역 */
+    box-shadow: 0px 0px 8px #cbcbcb;
+
+    /*font*/
+    font-family: 'Noto Sans KR', sans-serif;
+  
+}
+.QnA-2-content-over{
+    width: 100%;
+    height: 60%;
+  /* flex */
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 15px;
+}
+
+/* 로고 */
+.logo-div {
+    vertical-align: baseline;
+    width: 40px;
+    height: 40px;
+    background-color: #cbcbcb;
+    border-radius: 10px;
+}
+
+/* camp 404 info*/
+.camp-info {
+    width: 80%;
+    height: 80%;
+    background-color: transparent;
+
+    padding-left: 10px;
+
+}
+
+.camp404-name {
+    font-weight: 800;
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.hi-user-camp404 {
+    font-size: 16px;
+    font-weight: 400;
+    color:  rgb(58, 58, 58);
+}
+
+.info-emoji {
+    width: 20px;
+    vertical-align: -4px;
+}
+.empty-line{
+    display: block;
+    height: 1.05rem;
+    line-height: 5px;
+}
+.operating-hours {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.camp-info-content>div {
+    height: 30%;
+    font-weight: 400;
+    font-size: 16px;
+    color: rgb(58, 58, 58);
+    margin-top: 8px;
+}
+/* 문의하기 버튼 */
+.inquire-btn{
+    width: 90%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    background-color: #fe6936;
+    border-radius: 50px;
+    margin-bottom: 10px;
+
+    /* flex */
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    box-shadow: 3px 3px 3px rgba(255,255,255,0.34) inset, 
+    0 2px 0 -1px rgba(0,0,0,0.13), 
+    0 3px 0 -1px rgba(0,0,0,0.08), 
+    0 3px 13px -1px rgba(0,0,0,0.21);
+}
+.inquire-btn:active {
+    top: 1px;
+    border-color: rgba(0,0,0,0.34) rgba(0,0,0,0.21) rgba(0,0,0,0.21);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.89),0 1px rgba(0,0,0,0.05) inset;
+    position: relative;
+  }
+.inquire-btn > a {
+    text-decoration: none;
+    font-weight: 700;
+    color: white;
+    font-size: 18px;
+    
+}
+.inquire-btn:hover{
+    box-shadow: 0px 0px 8px #9f9f9f;
+    transition-duration: 0.2s;
+}
+.exclamation-info{
+    font-size: 12px;
+    color: #cbcbcb;
+    margin-left: 38px;
+
+}
+.exclamation-emoji>i{color: rgb(255, 175, 1);}
+
+.hidden{
+    display: none;
+}
+
+
+  
+
+/* ---------------------- */
+/*상세안내*/
+
+/* 
+.QnABtn-container-2 {
+    position: absolute;
+    position: fixed;
+    width: 350px;
+    height: 600px;
+
+    background-color: #fe6936;
+    border-radius: 30px;
+    margin-top: 80px;
+    margin-left: 1050px;
+    padding-top: 30px;
+  
+}
