@@ -34,11 +34,11 @@ public int confirmCertificationCode(HttpServletRequest req, Model model) {
     String cNumber = req.getParameter("cNumber");
    int result = service.isValidCertification(email, cNumber);
     if (result == 1) {
-        model.addAttribute("message", "인증에 성공하였습니다.");
+        model.addAttribute("message", "�씤利앹뿉 �꽦怨듯븯���뒿�땲�떎.");
     } else if(result == 2){
-        model.addAttribute("message", "인증번호가 만료 되었습니다.");
+        model.addAttribute("message", "�씤利앸쾲�샇媛� 留뚮즺 �릺�뿀�뒿�땲�떎.");
     }else {
-    	model.addAttribute("message", "인증번호가 올바르지 않습니다.");
+    	model.addAttribute("message", "�씤利앸쾲�샇媛� �삱諛붾Ⅴ吏� �븡�뒿�땲�떎.");
     	
     }
     return result;

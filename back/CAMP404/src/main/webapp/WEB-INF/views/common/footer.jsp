@@ -67,7 +67,12 @@
                 <ul class="footer_menu_1">
                 
                     <p>COMPANY</p>
-                    <li><a href="${pageContext.request.contextPath}/board/notice">공지사항</a></li>
+                  <!-- <li><a href="${pageContext.request.contextPath}/board/boardList">공지사항</a></li>--> 
+                    
+                    <c:forEach var="boardType" items="${boardTypeList}">
+ 						<li><a href="${pageContext.request.contextPath}/board/list/${boardType.boardCode}">${boardType.boardName}</a></li>
+ 					</c:forEach>
+                    
                     <li><a href="${pageContext.request.contextPath}/myPage/myClass">채용안내</a></li>
                     <li><a href="#">FAQ</a></li>
                 </ul>
