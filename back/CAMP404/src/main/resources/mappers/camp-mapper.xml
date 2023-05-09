@@ -115,13 +115,13 @@
 	</resultMap>
 	
 	<!-- 공지사항 -->
-	<resultMap type="notice" id="notice_rm">
+	<!-- <resultMap type="notice" id="notice_rm">
 		<id property="noticeNo" column="NOTICE_NO"/>
 		<result property="noticeTitle" column="NOTICE_TITLE" />
 		<result property="noticeContent" column="NOTICE_CONTENT" />
 		<result property="noticeDate" column="NOTICE_DATE" />
 		<result property="mgrNo" column="MGR_NO" />
-	</resultMap> 
+	</resultMap>  -->
 
 
 

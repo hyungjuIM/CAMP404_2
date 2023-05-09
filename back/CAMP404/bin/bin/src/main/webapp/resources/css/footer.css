@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0px;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+
+footer {
+    width: 100%;
+    /* margin : 0px;
+    padding: 0px; */
+    /* position: fixed; */
+    /* bottom: 0;
+    left: 0;
+    right: 0; */
+
+}
+
+a,
+p {
+    text-decoration: none;
+    color: white;
+
+}
+
+/*footer_main*/
+.footer_main {
+    display: flex;
+    flex-direction: column;
+    height: 370px;
+
+
+}
+
+/*footer 윗부분*/
+.footer_content_up {
+    flex-basis: 65%;
+    padding: 45px 200px 0 200px;
+    margin: 32px 32px 0 32px;
+}
+
+
+
+
+
+/*footer-content 윗부분*/
+
+/**/
+.footer_content_up,
+.footer_content_down {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(122, 120, 120);
+    margin: 0;
+
+
+
+}
+
+
+
+/*footer 윗부분 왼쪽에서 1*/
+.footer_logo> :nth-child(1) {
+    margin: 0px;
+    padding-top: 0;
+    width: 100px;
+}
+
+
+
+.footer_logo> :nth-child(2) {
+    margin: 20px 10px 40px 0;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/*글로벌버튼*/
+.button {
+    background-color: rgb(75, 74, 74);
+    padding: 5px;
+    border-radius: 5px;
+    margin: 0;
+    display: flex;
+}
+
+.button a {
+    display: flex;
+    flex-direction: row;
+
+}
+
+/* .button > a > :nth-child(1){
+    margin : 0 px 0 0;    
+} */
+
+
+.button_a> :nth-child(2) {
+    margin: 0 10px 0 5px;
+    font-weight: bold;
+}
+
+.button_a> :nth-child(3) {
+    margin: 0 0 0 20px;
+    color: orange;
+}
+
+
+/*mouseover 시 열리는 menu*/
+.button>a {
+    padding: 10px;
+    list-style: none;
+}
+
+.menu {
+    display: none;
+    position: absolute;
+    /* z-index: 1; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(75, 74, 74);
+    font-size: 13px;
+    border-radius: 5px;
+    width: 193px;
+    padding: 3px;
+    margin: 3px 0 0 0;
+
+}
+
+.menu hr {
+    background-color: rgb(169, 168, 168);
+    height: 0.5px;
+    border: 0;
+    margin: 10px;
+}
+
+
+
+
+
+
+.menu li {
+    padding: 3px;
+    margin: 5px;
+    width: 100%;
+    text-align: center;
+}
+
+.menu_items {
+    text-decoration: none;
+    color: white;
+}
+
+
+.menu_items:hover {
+    text-decoration: underline;
+    color: orange;
+    text-decoration: none;
+}
+
+
+
+
+
+
+/*footer 윗부분 왼쪽에서2,3*/
+.footer_menu_1,
+.footer_menu_2 {
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+}
+
+.footer_menu_1 p,
+.footer_menu_2 p,
+.footer_customer p {
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    padding: 10px 10px 15px 10px;
+    font-size: 16px;
+}
+
+.footer_menu_1 li,
+.footer_menu_2 li,
+.footer_customer_box {
+    padding: 10px;
+    font-size: 14px;
+}
+
+
+
+.footer_customer>:nth-child(3) {
+    font-size: 14px;
+}
+
+/*footer 윗부분 왼쪽에서4*/
+.footer_customer_box {
+    background-color: white;
+    text-align: center;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+
+
+}
+
+/*footer 윗부분 2,3,4 해당 소제목 */
+.footer_menu_1> :nth-child(1),
+.footer_menu_2>:nth-child(1),
+.footer_customer> :nth-child(1) {
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+
+/*footer 아랫부분*/
+
+.footer_content_down {
+    flex-basis: 35%;
+    padding: 0 200px 45px 200px;
+
+}
+
+
+.footer_content_down_left>div>a {
+    padding: 5px;
+    margin: 5px 5px 5px 0;
+    font-size: 20px;
+}
+
+
+.footer_content_down_right {
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer_content_down_right p {
+    padding: 3px;
+}
+
+.footer_customer_box:hover {
+    color: white;
+    background-color: #fe6936;
+}
