@@ -51,22 +51,6 @@ public class BoardController {
 	
 	
 	
-	// 게시글 상세 조회
-	@GetMapping("/detail/{boardCode}/{boardNo}")
-	public String boardDetail(@PathVariable("boardCode") int boardCode,
-							@PathVariable("boardNo") int boardNo,
-							@RequestParam(value = "cp", required = false, defaultValue = "1") int cp,
-							Model model,
-							HttpSession session,
-							HttpServletRequest req, HttpServletResponse resp
-			) {
-		
-		BoardDetail detail = service.selectBoardDetail(boardNo);
-		
-		if(detail != null) {
-			Member loginMember = (Member)session.g
-		}
-		
-	}
+
 	
 }

@@ -8,3 +8,9 @@
 **/back/CAMP404/*.project
 **/back/CAMP404/src/test/
 ~$경로설정.xlsx
+back/Servers/CAMP404-config/tomcat-users.xml
+back/Servers/CAMP404-config/web.xml
+back/Servers/CAMP404-config/context.xml
+back/Servers/CAMP404-config/server.xml
+back/Servers/CAMP404-config/catalina.policy
+back/Servers/CAMP404-config/catalina.properties
