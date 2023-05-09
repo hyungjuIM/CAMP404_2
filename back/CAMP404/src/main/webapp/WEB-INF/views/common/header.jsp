@@ -56,24 +56,27 @@
 									<c:choose>
 										<%--로그인 하기 전--%>
 											<c:when test="${empty sessionScope.loginMember}">
-												<a class="loginArea"
+												<a class="loginArea user_btn"
 													href="${pageContext.request.contextPath}/main/login">로그인</a>
 											</c:when>
 
 											<%--로그인 된 후--%>
 											<c:otherwise>
-												<div class="nickContainer">
-													<div class="nick_con"><span id="nickName">username</span>님
+												<div class="loginArea">
+													<div class="nick_con user_btn"><span id="nickName">${loginMember.userNick}</span>님
 													</div>
 										
 										
 													<div class="user_small_menu hidden">
-														<a class="go-myClass" href="${pageContext.request.contextPath}/main/myClass">
-															<span>나의 강의장</span></a>
-														<a class="go-myClass" href="${pageContext.request.contextPath}/main/myClass">
-															<span>나의 찜목록</span></a>
-														<a class="go-myClass" href="${pageContext.request.contextPath}/main/myClass">
-															<span>회원정보 수정</span></a>
+														<div onclick="location.href='${pageContext.request.contextPath}/myPage/myClass';">
+															<span class="userCon user_btn">나의 강의장</span>
+														</div>
+														<div onclick="location.href='${pageContext.request.contextPath}/myPage/my-info';">
+															<span class="userCon user_btn">나의 찜목록</span>
+														</div>
+														<div onclick="location.href='${pageContext.request.contextPath}/myPage/my-info';">
+															<span class="userCon user_btn">회원정보 수정</span>
+														</div>
 													</div>
 												</div>
 											</c:otherwise>
@@ -117,55 +120,52 @@
 							<li></li>
 						</ul>
 						<ul class="catRightWrapper">
-							<li><a href="#" class="catAreaItems">New</a></li>
-							<li><a href="#" class="catAreaItems">Best</a></li>
+							<li><a href="#" class="catAreaItems">NEW</a></li>
+							<li><a href="#" class="catAreaItems">BEST</a></li>
 							<li><a href="#" class="catAreaItems">FRONT-END</a></li>
 							<li><a href="#" class="catAreaItems">BACK-END</a></li>
-							<li><a href="#" class="catAreaItems">Database</a></li>
+							<li><a href="#" class="catAreaItems">DATABASE</a></li>
 						</ul>
 					</div>
 					<ul class="subMenu subMenuLineUp">
 						<div class="subMenuWrapper">
-							<li class="hiddenMenu">FRONT-END <a href="#" class="subMenuAtag">HTML5</a> <a href="#"
+							<li class="hiddenMenu"><span class="grandTitle">FRONT-END</span> <a href="#" class="subMenuAtag">HTML5</a> <a href="#"
 									class="subMenuAtag">CSS</a>
 								<a href="#" class="subMenuAtag">JavaScript</a> <a href="#"
 									class="subMenuAtag">Jquery</a> <a href="#" class="subMenuAtag">TypeScript</a>
 								<a href="#" class="subMenuAtag">React</a> <a href="#" class="subMenuAtag">Vue.js</a> <a
 									href="#" class="subMenuAtag">Backbone</a>
 							</li>
-							<li class="hiddenMenu">BACK-END <a href="#" class="subMenuAtag">Java</a> <a href="#"
+							<li class="hiddenMenu"><span class="grandTitle">BACK-END</span> <a href="#" class="subMenuAtag">Java</a> <a href="#"
 									class="subMenuAtag">Python</a>
 								<a href="#" class="subMenuAtag">PHP</a> <a href="#" class="subMenuAtag">Ruby</a> <a
 									href="#" class="subMenuAtag">Node.js</a>
 								<a href="#" class="subMenuAtag">C#</a> <a href="#" class="subMenuAtag">Kotlin</a> <a
 									href="#" class="subMenuAtag">Rust</a>
 							</li>
-							<li class="hiddenMenu">Database <a href="#" class="subMenuAtag">MySQL</a> <a href="#"
+							<li class="hiddenMenu"><span class="grandTitle">DATABASE</span> <a href="#" class="subMenuAtag">MySQL</a> <a href="#"
 									class="subMenuAtag">MariaDB</a>
 								<a href="#" class="subMenuAtag">PostgreSQL</a> <a href="#"
 									class="subMenuAtag">ORACLE</a> <a href="#" class="subMenuAtag">SQL
 									SERVER</a> <a href="#" class="subMenuAtag">DB2</a> <a href="#"
 									class="subMenuAtag">Access</a> <a href="#" class="subMenuAtag">SQLite</a>
 							</li>
-							<li class="hiddenMenu">OS <a href="#" class="subMenuAtag">Windows</a>
+							<li class="hiddenMenu"><span class="grandTitle">OS</span> <a href="#" class="subMenuAtag">Windows</a>
 								<a href="#" class="subMenuAtag">Linux</a> <a href="#" class="subMenuAtag">Unix</a> <a
 									href="#" class="subMenuAtag">Mac</a>
 								<a href="#" class="subMenuAtag">Android</a> <a href="#" class="subMenuAtag">iOS</a> <a
 									href="#" class="subMenuAtag">UBUNTU</a>
 							</li>
-							<li class="hiddenMenu">피자 <a href="#" class="subMenuAtag">하와이안피자</a>
-								<a href="#" class="subMenuAtag">피자헛</a> <a href="#" class="subMenuAtag">도미노</a> <a
-									href="#" class="subMenuAtag">피자나라
-									치킨공주</a> <a href="#" class="subMenuAtag">시카고피자</a> <a href="#"
-									class="subMenuAtag">청년피자</a> <a href="#" class="subMenuAtag">반올림피자</a>
-								<a href="#" class="subMenuAtag">피자에땅</a>
+							<li class="hiddenMenu"><span class="grandTitle">TOOLS</span> <a href="#" class="subMenuAtag">Git+Git Hub</a>
+								<a href="#" class="subMenuAtag">Atom</a> <a href="#" class="subMenuAtag">Figma</a> <a
+									href="#" class="subMenuAtag">Source Tree</a>
 							</li>
-							<li class="hiddenMenu">C++ <a href="#" class="subMenuAtag">1</a>
+							<!-- <li class="hiddenMenu"><span class="grandTitle">C++</span> <a href="#" class="subMenuAtag">1</a>
 								<a href="#" class="subMenuAtag">2</a> <a href="#" class="subMenuAtag">3</a> <a href="#"
 									class="subMenuAtag">4</a> <a href="#" class="subMenuAtag">5</a> <a href="#"
 									class="subMenuAtag">6</a>
 								<a href="#" class="subMenuAtag">7</a> <a href="#" class="subMenuAtag">8</a>
-							</li>
+							</li> -->
 						</div>
 					</ul>
 					<div class="bgColor bgColorHidden"></div>

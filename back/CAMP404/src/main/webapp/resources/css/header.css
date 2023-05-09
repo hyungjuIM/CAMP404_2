@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
 
-
-* {
-    box-sizing: border-box;
-}
+* { box-sizing: border-box;}
 
 @font-face {
     /* 영어, 숫자, 특수문자 => Helvetica */
@@ -34,10 +31,7 @@ body {
     background-color: rgba(0, 0, 0, 0.3);
 }
 
-.bgColorHidden {
-    display: none;
-}
-
+.bgColorHidden {display: none;}
 
 
 /* 헤더 태그, 크기 조절용 */
@@ -48,7 +42,7 @@ header {
     left: 0px;
     display: flex;
     justify-content: center !important;
-    height: 100px;
+    height: 110px;
     width: 100%;
     background-color: black;
 }
@@ -72,22 +66,24 @@ header {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 10px 0;
+    padding: 10px 0px 0px 0px;
 }
 
 /* 왼쪽 로고와 검색창 */
 .leftAreaItems {
     display: flex;
     flex-direction: row;
+    /* margin-right: 15px; */
 }
 
 /* 로고 */
 .logoArea {
     display: inline-flex;
     align-items: center;
-    width: 75px;
-    height: 35px;
-    margin-right: 30px;
+    /* width: 75px;
+    height: 35px; */
+    margin-right: 15px;
+    margin-top: 5px;
 }
 
 /* 색이 안보여서 임시 추가. */
@@ -227,25 +223,11 @@ header {
 
 /* 로그인버튼 영역 */
 .rightAreaItem {
-    text-align: center;
+    /* text-align: center; */
     vertical-align: middle;
     min-width: 50px;
 }
 
-/* 로그인 버튼 */
-.loginArea {
-    color: white;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.loginArea:hover {
-    color: orange;
-}
-
-.loginAreaHide {
-    display: none;
-}
 
 /* 검색창 클릭 시, 로그인 버튼 대신 나올 X */
 .closeSearch {
@@ -282,6 +264,7 @@ header {
 .catContainer span {
     color: white;
     cursor: pointer;
+    font-size: 14px;
 }
 
 /* "카테고리" */
@@ -289,6 +272,7 @@ header {
     flex: 1;
     display: flex;
     align-items: center;
+    font-weight: 700;
 }
 
 
@@ -299,6 +283,7 @@ header {
     display: flex;
     align-items: center;
     flex-direction: row;
+    font-size: 14px;
 }
 
 .catAreaItems {
@@ -328,25 +313,28 @@ header {
 
 .subMenuWrapper {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .subMenu {
     display: none;
     position: absolute;
-    top: 100px;
+    top: 110px;
     left: 0px;
     color: white;
     background-color: rgba(0, 0, 0);
     border-top: 3px solid rgba(255, 255, 255, 0.3);
     width: 100%;
-    height: 400px;
+    height: 320px;
     padding-top: 20px;
 }
 
 .subMenuLineUp li {
     float: left;
-    padding-right: 100px;
+}
+.grandTitle{ 
+    font-weight: 700;
+    font-size: 14px;
 }
 
 .hiddenMenu {
@@ -357,8 +345,10 @@ header {
 .subMenuAtag {
     font-size: 12px;
     text-decoration: none;
-    color: white;
-    padding-top: 20px;
+    color: #9f9f9f;
+    padding-top: 16px;
+    font-weight: 380;
+    line-height: 1.2;
 }
 
 .subMenuAtag:hover {
@@ -369,60 +359,36 @@ header {
     font-family: "Helvetica";
 }
 
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-.nickContainer{
-    width: 100%;
-    height: 500px;
-    background-color: black;
-
-    display: flex;
-    flex-direction: column;
+/* 로그인 버튼 */
+.loginArea {
     color: white;
-    padding-left: 10px;
-}
-
-.nick_con span{
-    font-weight: 400;
-}
-.nick_con{
-    font-weight: 700;
-}
-
-.nick_con:hover{
-    color: orange;
-}
-
-
-.user_small_menu{
-    width: 95px;
-    height: 100px;
-    background-color:rgb(56, 56, 56);
-    padding: 8px 0px 8px 10px;
-    margin-left: 10px;
-    margin-top: 7px;
- 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-.go-myClass{
-    color: white;
-    font-size: 13px;
-}
-
-.go-myClass:hover{
-    font-weight: 700;
-}
-
-a{
+    cursor: pointer;
     text-decoration: none;
 }
 
-.hidden{
-    display: none;
+.loginAreaHide {display: none;}
+
+.loginArea, .user_small_menu{position: fixed;}
+
+.user_small_menu{
+    
+    display: flex;
+    flex-direction: column;
+
+    padding: 10px;
+    margin-top: 10px;
+
+    background-color:rgb(56, 56, 56);
+    font-size: 14px;
 }
+
+.user_small_menu div{margin-bottom: 5px;}
+
+.user_btn:hover{
+    color: orange;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+
+

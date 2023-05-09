@@ -115,7 +115,6 @@ catLeftWrapper.on('click', function () {
 
 const nickName = $('#nickName'); 
 const userMenu = $('.user_small_menu');
-let flag = false;
 
 // 닉네임에 마우스오버하면 메뉴 슬라이드다운
 nickName.on('mouseover', function(){
