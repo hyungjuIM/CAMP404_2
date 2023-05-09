@@ -1,5 +1,7 @@
 package camp.kh.semi.member.controller;
 
+import java.util.List;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,10 +19,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import camp.kh.semi.member.model.service.CampService;
-
+import camp.kh.semi.member.model.vo.Lecture;
 import camp.kh.semi.member.model.vo.Users;
 
 
@@ -167,6 +170,19 @@ public class MainController {
 		
 		ra.addFlashAttribute("message", message);
 		return path;
+	}
+	
+	// 메인화면 강의 불러오기
+	@GetMapping("/") // 메인 화면에 접속할 시 실행하기
+	public void getClassItems(
+			Model model
+			, Lecture lecture
+			) {
+		List<Lecture> list = null;
+		int catNo = lecture.getCategoryNo();
+		list = service.getClassItems(catNo);
+		
+		model.addAttribute("list", list);
 	}
 	
 	

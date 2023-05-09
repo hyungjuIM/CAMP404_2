@@ -216,8 +216,8 @@
                                             <div class="likeBtn"><i class="fa-solid fa-heart"></i></i></div>
                                         </div>
                                         <a href="#">
-                                            <div class="subText">데이터베이스 SQL 강의<br></div>
-                                            <div class="tutorTitle">홍길동</div>
+                                            <div class="subText">${lecture.lectureName}<br></div>
+                                            <div class="tutorTitle">${lecture.lectureName}</div>
                                         </a>
                                     </div>
                                 </div>

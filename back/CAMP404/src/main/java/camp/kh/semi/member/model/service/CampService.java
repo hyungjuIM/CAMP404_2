@@ -1,7 +1,10 @@
 package camp.kh.semi.member.model.service;
 
+import java.util.List;
+
 import camp.kh.semi.member.model.vo.Camp;
 import camp.kh.semi.member.model.vo.Certification;
+import camp.kh.semi.member.model.vo.Lecture;
 import camp.kh.semi.member.model.vo.Users;
 
 public interface CampService {
@@ -30,6 +33,10 @@ public interface CampService {
 
 
 	public abstract int isValidCertification(String email, String cNumber);
+
+
+	// 메인화면 강의 불러오기
+	public abstract List<Lecture> getClassItems(int catNo);
 
 
 //	public abstract int insertNote(String noteContent);
