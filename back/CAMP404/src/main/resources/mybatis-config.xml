@@ -14,23 +14,28 @@
 <!-- VO클래스의 패키지명 + 클래스명 작성하는 것이 불편하기 때문에 짧은 별칭 부여 -->
 <!-- resultMap을 생성했다면 반드시 typeAlias 만들기!!!!!!!!!!-->
 <typeAliases>
-<typeAlias type="camp.kh.semi.member.model.vo.Camp" alias="camp"/>
-<typeAlias type="camp.kh.semi.member.model.vo.Category" alias="category"/>
-<typeAlias type="camp.kh.semi.member.model.vo.Certification" alias="certification"/>
-<typeAlias type="camp.kh.semi.member.model.vo.FavLec" alias="favLec"/>
-<typeAlias type="camp.kh.semi.member.model.vo.Lecture" alias="lecture"/>
-<typeAlias type="camp.kh.semi.member.model.vo.LectureNote" alias="lectureNote"/>
-<typeAlias type="camp.kh.semi.member.model.vo.Manager" alias="manager"/>
-<typeAlias type="camp.kh.semi.member.model.vo.MyLecture" alias="myLecture"/>
-<typeAlias type="camp.kh.semi.member.model.vo.Notice" alias="notice"/>
-<typeAlias type="camp.kh.semi.member.model.vo.Payment" alias="payment"/>
-<typeAlias type="camp.kh.semi.member.model.vo.Teacher" alias="teacher"/>
-<typeAlias type="camp.kh.semi.member.model.vo.Users" alias="users"/>
+		<typeAlias type="camp.kh.semi.member.model.vo.Camp" alias="camp"/>
+		<typeAlias type="camp.kh.semi.member.model.vo.Category" alias="category"/>
+		<typeAlias type="camp.kh.semi.member.model.vo.Certification" alias="certification"/>
+		<typeAlias type="camp.kh.semi.member.model.vo.FavLec" alias="favLec"/>
+		<typeAlias type="camp.kh.semi.member.model.vo.Lecture" alias="lecture"/>
+		<typeAlias type="camp.kh.semi.member.model.vo.LectureNote" alias="lectureNote"/>
+		<typeAlias type="camp.kh.semi.member.model.vo.Manager" alias="manager"/>
+		<typeAlias type="camp.kh.semi.member.model.vo.MyLecture" alias="myLecture"/>
+		<typeAlias type="camp.kh.semi.member.model.vo.Payment" alias="payment"/>
+		<typeAlias type="camp.kh.semi.member.model.vo.Teacher" alias="teacher"/>
+		<typeAlias type="camp.kh.semi.member.model.vo.Users" alias="users"/>
+
+		<typeAlias type="camp.kh.semi.member.model.vo.boardVO.Board"  		alias="board"/>
+		<typeAlias type="camp.kh.semi.member.model.vo.boardVO.BoardDetail"  	alias="detail"/>
+		<typeAlias type="camp.kh.semi.member.model.vo.boardVO.BoardImage"  	alias="boardImage"/>
+		<typeAlias type="camp.kh.semi.member.model.vo.boardVO.BoardType"  	alias="boardType"/>
 </typeAliases>
 
 <!-- mapper 파일(SQL 작성되는파일) 위치 등록 부분 -->
 <mappers>
 <mapper resource="/mappers/camp-mapper.xml"/>
+<mapper resource="/mappers/board-mapper.xml"/>
 </mappers>
 
 </configuration>

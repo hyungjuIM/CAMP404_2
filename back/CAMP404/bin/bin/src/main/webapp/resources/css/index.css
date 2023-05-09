@@ -1,0 +1,826 @@
+/* 폰트 설정 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+
+/* 전역설정 오직 박스 사이징만 */
+* {
+    box-sizing: border-box;
+}
+
+/* 전체 테두리 영역 지정 */
+body {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 실제 내용이 들어갈 영역 지정 */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1100px;
+    height: 100%;
+}
+
+/* ====================================================================== */
+/* 상단 슬라이드 이미지 영역 */
+/* 상단 슬라이드 이미지 */
+.setSlideArea {
+    display: flex;
+    justify-content: center;
+    width: calc(100vw - 16.5px);
+    background-color: #1e1e1e;
+    margin-bottom: 40px;
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    /* background-image: */
+    /* 오른쪽 -> 왼쪽 */
+    /* linear-gradient(270deg, rgb(255, 255, 255) 0%, transparent 5%), */
+    /* 왼쪽 -> 오른쪽 */
+    /* linear-gradient(90deg, rgb(255, 255, 255) 0%, transparent 5%); */
+}
+
+
+/* 상단 슬라이드 컨테이너 */
+.SlideImageContainer {
+    position: relative;
+    width: 1100px;
+    overflow: hidden;
+}
+
+/* 왼쪽 오른쪽 이동 버튼 */
+.slideBtn {
+    position: absolute;
+    margin: 0 auto;
+    z-index: 1;
+    width: auto;
+    display: flex;
+    color: white;
+    font-size: 12px;
+    bottom: 20px;
+    left: 60px;
+}
+
+/* 상단 슬라이드 왼쪽 클릭 버튼 */
+.leftBtn {
+    cursor: pointer;
+}
+
+/* 상단 슬라이드 오른쪽 클릭 버튼 */
+.rightBtn {
+    cursor: pointer;
+}
+
+/* 필요없거 같은데..?? */
+.slideBtn>div {
+    left: -360px;
+}
+
+/* 상단 슬라이드 이동하는 숫자 */
+.moveNum {
+    padding: 10px;
+}
+
+/* 상단 슬라이드 고정 숫자 */
+.fixedNum {
+    padding: 10px;
+}
+
+/* 슬라이드 영역 지정. 총 4개이기 때문에 width가 4400px. */
+.slideImgHolder {
+    display: flex;
+    width: 4400px;
+    height: 400px;
+    transition: ease-in-out 0.3s;
+    transform: translateX(0px);
+}
+
+/* 상단 슬라이드 속 각각의 슬라이드 */
+.slideContainer {
+    position: relative;
+    flex: 1;
+}
+
+/* 슬라이드 이미지 크기 지정 */
+.innerImg {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    -webkit-user-drag: none;
+    /* 클릭 후 넘기기를 위해 지정. */
+}
+
+/* 슬라이드 내부 텍스트 */
+.slideTitle {
+    position: absolute;
+    z-index: 1;
+    width: auto;
+    margin: auto;
+    left: 50px;
+    bottom: 50px;
+}
+
+.slideTitle>span {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+/* 각 슬라이드 마다 다르게 글을 지정할 수 있기때문에 각 슬라이드마다 지정해둠. */
+/* 1번 슬라이드 */
+.slideTitle1-1 {
+    margin-left: 5px;
+    color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+}
+
+.slideTitle1-2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+}
+
+.slideTitle1-3 {
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+}
+
+
+/* 2번 슬라이드 */
+.slideTitle2-1 {
+    margin-left: 5px;
+}
+
+.slideTitle2-2 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.slideTitle2-3 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+
+/* 3번 슬라이드 */
+.slideTitle3-1 {
+    margin-left: 5px;
+    color: white;
+}
+
+.slideTitle3-2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+}
+
+.slideTitle3-3 {
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+}
+
+
+/* 4번 슬라이드 */
+.slideTitle4-1 {
+    margin-left: 5px;
+}
+
+.slideTitle4-2 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.slideTitle4-3 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+/* 상단 슬라이드 이미지 영역 */
+
+/* ====================================================================== */
+
+/* 후기, 포트폴리오, 이벤트, 강사소개 영역 */
+.infoArea {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-width: 1100px;
+    min-height: 300px;
+}
+
+.infoUp {
+    flex: 5;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 40px;
+
+}
+
+/* 각 항목별 사이즈 */
+.infoBoxes {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid black;
+    width: 250px;
+    height: 70px;
+    padding: 15px;
+    border-radius: 7px;
+    background-color: black;
+    text-decoration: none;
+}
+
+/* 위에있는 큰 텍스트 영역 */
+.innerUp {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* 아래있는 작은 텍스트 영역 */
+.innerDown {
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+/* 후기, 포트폴리오, 이벤트, 강사소개 영역 */
+
+/* ====================================================================== */
+
+/* 회원 수 및 수업 수 영역*/
+.infoDown {
+    flex: 5;
+    display: flex;
+    width: 100%;
+    height: 120px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.infoDown1 {
+    flex: 4;
+    display: flex;
+    height: 120px;
+    flex-direction: column;
+    border-right: 2px solid #aaa;
+}
+
+/* 가입 회원 수 */
+.aDown1 {
+    flex: 3;
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 18px;
+    padding-left: 15px;
+    color: #717171;
+}
+
+.aDown2 {
+    flex: 7;
+    display: flex;
+    align-items: center;
+}
+
+/* 2,000 + */
+.aDown3 {
+    flex: 5;
+    display: flex;
+    align-items: center;
+    font-size: 72px;
+    font-weight: bold;
+    color: #fe6936;
+    padding-left: 15px;
+}
+
+.aDown3>span:nth-child(2) {
+    margin-left: 10px;
+}
+
+.aDown4 {
+    flex: 5;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    border: 1px solid grey;
+    margin-right: 20px;
+}
+
+/* 회원, 증가율 */
+.aDown5 {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 74px;
+    text-align: right;
+    color: rgb(130, 130, 130);
+    font-weight: bolder;
+}
+
+.aDown5>div:first-child {
+    margin-bottom: 10px;
+}
+
+/* 120% */
+.aDown6 {
+    flex: 7;
+    margin-left: 10px;
+    font-size: 60px;
+    color: rgb(130, 130, 130);
+}
+
+.aDown6>span:nth-child(2) {
+    font-size: 50px;
+}
+
+.infoDown2 {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    border-right: 2px solid #aaa;
+}
+
+/* 오픈된 클래스 */
+.bDown1 {
+    flex: 3;
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 18px;
+    padding-left: 25px;
+    color: rgb(130, 130, 130);
+}
+
+/* 600+ */
+.bDown2 {
+    flex: 7;
+    flex: 5;
+    display: flex;
+    align-items: center;
+    font-size: 72px;
+    font-weight: bold;
+    color: rgb(130, 130, 130);
+    padding-left: 25px;
+}
+
+.bDown3 {
+    display: flex;
+    align-items: center;
+}
+
+.bDown5 {
+    margin-left: 10px;
+}
+
+
+.infoDown3 {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+}
+
+/* 회원 수 및 수업 수 영역*/
+
+/* ====================================================================== */
+
+/* 강의영역 */
+
+/* 강의영역 크기 설정 */
+.classWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 400px;
+    margin-bottom: 40px;
+}
+
+/* 강의명 */
+.classTitle {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    font-size: 32px;
+    color: #fe6936;
+    justify-content: space-between;
+}
+
+
+.classTitle1>span:nth-child(1) {
+    font-weight: bold;
+    padding-right: 5px;
+}
+
+/* 강의명 옆 더보기 */
+.classTitle2 {
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fe6936;
+}
+
+/* 강의 설명 */
+.classDescription {
+    flex: 8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.classItem {
+    transition: all 0.2s ease 0s;
+    width: 330px;
+    height: 330px;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+}
+
+.classItem:hover {
+    transition: all 0.2s ease 0s;
+    transition-property: all;
+    transition-duration: 0.3s;
+    margin-bottom: 25px;
+    border-radius: 15px 15px 15px 15px;
+}
+
+
+.imgArea {
+    flex: 7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 330 x 217 */
+.imgArea>img {
+    border-radius: 15px 15px 0 0;
+    max-width: 100%;
+    height: 217px;
+}
+
+.textArea {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    background-color: #fe6936;
+    border-radius: 0 0 15px 15px;
+    padding: 10px 15px;
+}
+
+.topText {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.mainText {
+    flex: 9;
+    font-size: 12px;
+    padding-top: 5px;
+}
+
+.mainText1 {
+    padding: 1px 10px;
+    background-color: white;
+    color: #fe6936;
+    font-weight: bold;
+    border-radius: 50px;
+    margin-right: 5px;
+}
+
+.mainText2 {
+    padding: 1px 10px;
+    border: 2px solid white;
+    background-color: #fe6936;
+    color: white;
+    border-radius: 50px;
+}
+
+.likeBtn {
+    text-align: right;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+
+}
+
+@keyframes animateHeart {
+    0% {
+        transform: scale(.2);
+    }
+
+    40% {
+        transform: scale(2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.likeBtn>i {
+    cursor: pointer;
+    transform-origin: center;
+}
+
+.likeColor {
+    color: red;
+    animation: animateHeart .3s linear forwards;
+}
+
+.subText {
+    width: 300px;
+    font-size: 16px;
+    color: white;
+    margin-bottom: 10px;
+    line-height: 20px;
+    -webkit-text-stroke: 0.3px white;
+}
+
+.tutorTitle {
+    font-size: 12px;
+    color: white;
+}
+
+/* 강의영역 크기 설정 */
+
+/* ====================================================================== */
+
+/* 중간 광고 영역1 */
+
+.middleAddArea {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 150px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+    width: 1100px;
+    overflow: hidden;
+}
+
+.middleAddItems {
+    z-index: 10;
+    position: absolute;
+    height: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-left: 200px;
+    flex-direction: column;
+}
+
+.middleAddItems>span {
+    font-size: 10px;
+    color: white;
+}
+
+.middleAddItems>span:first-child {
+    margin-bottom: 5px;
+}
+
+.middleLogoWrapper {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+
+.middleLogoWrapper>span {
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+    margin-left: 20px;
+}
+
+.middleCheckEvent {
+    display: flex;
+    justify-content: space-between;
+}
+
+.middleCheckEvent>a {
+    text-decoration: none;
+    color: #fe6936;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+/* 중간 광고 슬라이드 영역 */
+
+.Middle_SlideBtn {
+    margin-right: 50px;
+    position: absolute;
+    margin: 0 auto;
+    /* z-index: 1; */
+    width: auto;
+    display: flex;
+    color: white;
+    font-size: 12px;
+    right: 60px;
+    bottom: 15px;
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.Middle_leftBtn {
+    cursor: pointer;
+}
+
+.Middle_rightBtn {
+    cursor: pointer;
+}
+
+
+.Middle_slideBtn>div {
+    left: -360px;
+}
+
+.Middle_moveNum {
+    padding: 10px;
+}
+
+.Middle_fixedNum {
+    padding: 10px;
+}
+
+.midde_SlideImgHolder {
+    display: flex;
+    position: relative;
+}
+
+.midde_SlideImgHolder {
+    display: flex;
+    width: 4400px;
+    height: 150px;
+    transition: ease-in-out 0.3s;
+    transform: translateX(0px);
+}
+
+.midde_SlideContainer {
+    position: relative;
+    flex: 1;
+}
+
+/* 슬라이드 이미지 크기 지정 */
+.midde_InnerImg {
+    border: none;
+    outline: none;
+    -webkit-user-drag: none;
+    /* 클릭 후 넘기기를 위해 지정. */
+}
+
+/* 중간 광고 영역1*/
+
+/* ====================================================================== */
+
+/* 중간 광고 영역2 */
+
+.middleAddArea2 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 150px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+    width: 1100px;
+    overflow: hidden;
+}
+
+.middleAddItems2 {
+    z-index: 10;
+    position: absolute;
+    height: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-left: 200px;
+    flex-direction: column;
+}
+
+.middleAddItems2>span {
+    font-size: 10px;
+    color: white;
+}
+
+.middleAddItems2>span:first-child {
+    margin-bottom: 5px;
+}
+
+.middleLogoWrapper2 {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+
+.middleLogoWrapper2>span {
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+    margin-left: 20px;
+}
+
+.middleCheckEvent2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.middleCheckEvent2>a {
+    text-decoration: none;
+    color: #fe6936;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+/* 중간 광고 슬라이드 영역 */
+
+.Middle_SlideBtn2 {
+    position: absolute;
+    margin: 0 auto;
+    width: auto;
+    display: flex;
+    color: white;
+    font-size: 12px;
+    right: 60px;
+    bottom: 15px;
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.Middle_leftBtn2 {
+    cursor: pointer;
+}
+
+.Middle_rightBtn2 {
+    cursor: pointer;
+}
+
+
+.Middle_slideBtn2>div {
+    left: -360px;
+}
+
+.Middle_moveNum2 {
+    padding: 10px;
+}
+
+.Middle_fixedNum2 {
+    padding: 10px;
+}
+
+.midde_SlideImgHolder2 {
+    display: flex;
+    position: relative;
+}
+
+.midde_SlideImgHolder2 {
+    display: flex;
+    width: 4400px;
+    height: 150px;
+    transition: ease-in-out 0.3s;
+    transform: translateX(0px);
+}
+
+.midde_SlideContainer2 {
+    position: relative;
+    flex: 1;
+}
+
+/* 슬라이드 이미지 크기 지정 */
+.midde_InnerImg2 {
+    border: none;
+    outline: none;
+    -webkit-user-drag: none;
+    /* 클릭 후 넘기기를 위해 지정. */
+}
+
+/* 중간 광고 영역2 */
