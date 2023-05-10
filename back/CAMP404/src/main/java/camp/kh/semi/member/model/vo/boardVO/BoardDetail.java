@@ -20,9 +20,7 @@ public class BoardDetail {
 	private String profileImage;
 	private int userNo;
 	private String boardName;
-	
-	private List<BoardImage> imageList;
-	
+		
 	private int boardCode;
 	
 	

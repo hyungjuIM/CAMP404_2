@@ -80,7 +80,7 @@
     transition-duration: 0.2s;
 }
 
-.content-1 span{
+.content-1 span {
     display: flex;
     width: 93%;
     justify-content: space-between;
@@ -89,13 +89,14 @@
     color: white;
     font-family: 'Noto Sans KR', sans-serif;
 }
-.content-1 i{
+
+.content-1 i {
     color: white;
     margin-right: 20px;
 }
 
 /* 로그아웃버튼 */
-.logout-btn{
+.logout-btn {
     color: #fe6936;
     background-color: transparent;
     border: 0 none;
@@ -105,11 +106,14 @@
     font-family: 'Noto Sans KR', sans-serif;
     margin-top: 10px;
     font-weight: 550;
+    
+    
 }
 
 /*------------------body-content------------------*/
 
 /* 나의 정보 본문 */
+
 .myClass-content-area {
     width: 70%;
     height: 100%;
@@ -121,11 +125,11 @@
 }
 
 /* 전제목록, 수강중, 수강완료  버튼 부분 */
-.myClass-over-navpart{
+.myClass-over-navpart {
     width: 100%;
     display: flex;
     flex-direction: row;
-    margin-top : 3rem;
+    margin-top: 3rem;
     /* margin-bottom: 2rem; */
     padding: 2rem 4rem 2.5rem 4rem;
     justify-content: space-between;
@@ -138,7 +142,7 @@
 }
 
 /* 전체목록, 수강중, 수강완료 버튼 안쪽 영역 */
-.myClass-over-btn span{
+.myClass-over-btn span {
     height: 100%;
     font-size: 17px;
     border-radius: 50px;
@@ -156,6 +160,7 @@
 
     flex: none;
 }
+
 .class-btn:hover {
     background-color: #fe6936;
     font-weight: bolder;
@@ -170,22 +175,32 @@
     border-radius: 50px;
 
     font-size: 20px;
-    padding: 10px 40px 10px 10px ;
+    padding: 10px 40px 10px 10px;
     display: flex;
     align-items: center;
 
     font-family: 'Noto Sans KR', sans-serif;
 }
+
 /* 나의 강의 검색창 focus 효과 */
-input:focus{outline: none;}
+input:focus {
+    outline: none;
+}
+
 /* 나의 강의 검색창 placeholder관련 효과 */
-input:focus::placeholder{color: transparent;}
-input::placeholder{color:#cecece;}
+input:focus::placeholder {
+    color: transparent;
+}
+
+input::placeholder {
+    color: #cecece;
+}
 
 .class-mySearchBarWrapper>i {
     color: #e0e0e0;
     margin-right: 10px;
 }
+
 .class-searchBar {
     border: transparent;
     background-color: transparent;
@@ -201,7 +216,7 @@ input::placeholder{color:#cecece;}
     align-content: space-around;
 }
 
-.content-css{
+.content-css {
     width: 100%;
     height: 350px;
     background-color: transparent;
@@ -297,7 +312,7 @@ input::placeholder{color:#cecece;}
     overflow: hidden;
 }
 
-show_index{
+show_index {
     color: #fe6936;
 }
 
@@ -317,16 +332,19 @@ show_index{
     font-weight: 550;
     font-size: 18px;
 }
-.goClass:hover{
+
+.goClass:hover {
     background-color: #fe6936;
     font-weight: 800;
     box-shadow: 0px 0px 8px #9f9f9f;
     transition-duration: 0.2s;
 }
+
 /* 페이지네이션 */
-.page-nav{
+.page-nav {
     width: 100%;
 }
+
 .pagination {
     width: 100%;
     list-style: none;
@@ -347,7 +365,8 @@ show_index{
     font-weight: 500;
 
 }
-.pagination li a:hover{
-    color:#fe6936;
+
+.pagination li a:hover {
+    color: #fe6936;
     font-weight: bold;
 }

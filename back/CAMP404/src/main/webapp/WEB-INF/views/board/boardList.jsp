@@ -21,9 +21,7 @@
     <title>${boardName}</title>
 
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/notice.css" />
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/boardCss/boardList-style.css" />
-		
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/reset.css" />	
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/boardCss/boardList-style.css" />
 	
     <!-- jQuery 라이브러리 추가(CDN) -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -69,7 +67,7 @@
                         <tr>
                             <th scope="col" class="th-num">글번호</th>
                             <th scope="col" class="th-title">제목</th>
-                           <!-- <th scope="col" class="th-writer">작성자</th> -->
+                            <th scope="col" class="th-writer">작성자</th>
                             <th scope="col" class="th-date">작성일</th>
                             <th scope="col" class="th-num">조회수</th>
                         </tr>
@@ -101,7 +99,7 @@
                                             <%-- detail?no=${board.boardNo}&cp=${pagination.currentPage}&type=${param.type}${sURL} --%>
                                 
                                         </td>
-                                        <!-- <td>${board.memberNickname}</td> -->
+                                        <td>${board.userNick}</td>
                                         <td>${board.createDate}</td>
                                         <td>${board.readCount}</td>
                                     </tr>
@@ -116,9 +114,9 @@
 
             <div class="btn-area">
 
-                <c:if test="${!empty loginManager}">
+				<c:if test="${!empty loginMember}">
                     <!-- /community/board/write -->
-                    <button id="insertBtn" onclick="location.href='../write/${boardCode}?mode=insert&cp=${pagination.currentPage}'">글쓰기</button>                   
+                    <button id="insertBtn" onclick="location.href='../write/${boardCode}?mode=insert&cp=${pagination.currentPage}'">글쓰기</button>                     
                 </c:if>
 
             </div>

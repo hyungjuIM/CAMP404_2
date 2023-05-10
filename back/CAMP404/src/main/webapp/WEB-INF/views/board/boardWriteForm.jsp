@@ -10,19 +10,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>게시글 등록</title>
 
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/boardWriteForm-style.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/reset.css" />
-    
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/boardCss/boardWriteForm-style.css">
     <script src="https://kit.fontawesome.com/a2e8ca0ae3.js" crossorigin="anonymous"></script>
 
 </head>
 <body>
     <main>
-    
-     <heder>
+    <header>
         <jsp:include page="/WEB-INF/views/common/header.jsp"/>
-    </heder>
-
+    </header>
         <form action="${boardCode}" enctype="multipart/form-data" method="POST" class="board-write"
             onsubmit="return writeValidate()">
 
@@ -31,87 +27,6 @@
                 <input type="text" name="boardTitle" placeholder="제목을 입력해주세요." value="${detail.boardTitle}">         
             </h1>
 
-
-            <%-- imageList에 존재하는 이미지 레벨을 이용하여 변수 생성 --%>
-            <%--<c:forEach items="${detail.imageList}" var="boardImage">
-
-                <c:choose>
-                    <c:when test="${boardImage.imageLevel == 0}">
-                        <%-- c:set 변수는 page scope가 기본값 (조건문이 끝나도 사용 가능)  --%>
-                      <%--  <c:set var="img0"  value="${contextPath}${boardImage.imageReName}" />
-                    </c:when>
-
-                    <c:when test="${boardImage.imageLevel == 1}">
-                        <c:set var="img1"  value="${contextPath}${boardImage.imageReName}" />
-                    </c:when>
-
-                    <c:when test="${boardImage.imageLevel == 2}">
-                        <c:set var="img2"  value="${contextPath}${boardImage.imageReName}" />
-                    </c:when>
-
-                    <c:when test="${boardImage.imageLevel == 3}">
-                        <c:set var="img3"  value="${contextPath}${boardImage.imageReName}" />
-                    </c:when>
-
-                    <c:when test="${boardImage.imageLevel == 4}">
-                        <c:set var="img4"  value="${contextPath}${boardImage.imageReName}" />
-                    </c:when>
-                </c:choose>
-            </c:forEach>--%>
-
-
-
-
-            <!-- 썸네일 -->
-            <!--<h5>썸네일</h5>
-            <div class="img-box">
-                <div class="boardImg thumbnail">
-                    <label for="img0">
-                        <img class="preview" src="${img0}">
-                    </label>
-                    <input type="file" class="inputImage" id="img0" name="0" accept="image/*">
-                    <span class="delete-image">&times;</span>
-                    <!-- &times;  :  x 모양의 문자 -->
-               <!-- </div>
-            </div> -->
-
-            <!-- 업로드 이미지 -->
-            <!--<h5>업로드 이미지</h5>
-            <div class="img-box">
-
-                <div class="boardImg">
-                    <label for="img1">
-                        <img class="preview" src="${img1}">
-                    </label>
-                    <input type="file" class="inputImage" id="img1" name="1" accept="image/*">
-                    <span class="delete-image">&times;</span>
-                </div>
-
-                <div class="boardImg">
-                    <label for="img2">
-                        <img class="preview" src="${img2}">
-                    </label>
-                    <input type="file" class="inputImage" id="img2" name="2" accept="image/*">
-                    <span class="delete-image">&times;</span>
-                </div>
-
-                <div class="boardImg">
-                    <label for="img3">
-                        <img class="preview" src="${img3}">
-                    </label>
-                    <input type="file" class="inputImage" id="img3" name="3" accept="image/*">
-                    <span class="delete-image">&times;</span>
-                </div>
-                
-                <div class="boardImg">
-                    <label for="img4">
-                        <img class="preview" src="${img4}">
-                    </label>
-                    <input type="file" class="inputImage" id="img4" name="4" accept="image/*">
-                    <span class="delete-image">&times;</span>
-                </div>
-           
-            </div>-->
 
             <!-- 내용 -->
             <div class="board-content">
@@ -168,9 +83,7 @@
         
     </main>
 
-    <footer>
-            <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
-    </footer>
+    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
     
 
     <script src="${pageContext.request.contextPath}/resources/js/boardJs/board.js"></script>

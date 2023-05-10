@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import camp.kh.semi.member.model.vo.boardVO.Board;
+import camp.kh.semi.member.model.vo.boardVO.BoardDetail;
 import camp.kh.semi.member.model.vo.boardVO.BoardType;
 import camp.kh.semi.member.model.vo.boardVO.Pagination;
 
@@ -47,5 +48,57 @@ public class BoardDAO {
 		
 		return sqlSession.selectList("boardMapper.selectBoardList", boardCode, rowBounds);
 	}
+	
+	
+	
+	
+	/** 게시글 상세 조회 DAO
+	 * @param boardNo
+	 * @return detail
+	 */
+	public BoardDetail selectBoardDetail(int boardNo) {
+		
+		return sqlSession.selectOne("boardMapper.selectBoardDetail", boardNo);
+	}
+
+	
+	
+	
+	/** 조회수 증가 DAO
+	 * @param boardNo
+	 * @return result
+	 */
+	public int updateReadCount(int boardNo) {
+		
+		return sqlSession.update("boardMapper.updateReadCount", boardNo);
+	}
+	
+	
+
+	/** 게시글 삽입 DAO
+	 * @param detail
+	 * @return boardNo
+	 */
+	public int insertBoard(BoardDetail detail) {
+		
+		int result = sqlSession.insert("boardMapper.insertBoard", detail); // 0 or 1
+		
+		if( result > 0 ) result = detail.getBoardNo();
+		
+		return result;
+	}
+	
+	
+	
+
+	/** 게시글 수정 DAO
+	 * @param detail
+	 * @return result
+	 */
+	public int updateBoard(BoardDetail detail) {
+		
+		return sqlSession.update("boardMapper.updateBoard", detail);
+	}
+
 
 }

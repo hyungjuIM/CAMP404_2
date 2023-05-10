@@ -10,9 +10,8 @@
 		<bean id="realDataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
 
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-		<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />  
-		<!-- <property name="url" value="jdbc:oracle:thin:@112.220.137.37:1521:xe"/>  학원DB -->
-
+<!-- 		<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />  -->
+		<property name="url" value="jdbc:oracle:thin:@112.220.137.37:1521:xe"/>
 		
 		<property name="username" value="elearning" />
 		<property name="password" value="1234" />
