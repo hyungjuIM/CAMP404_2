@@ -11,15 +11,19 @@
     <title>게시글 등록</title>
 
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/boardWriteForm-style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/reset.css" />
+    
     <script src="https://kit.fontawesome.com/a2e8ca0ae3.js" crossorigin="anonymous"></script>
 
 </head>
 <body>
     <main>
-    <header>
-<jsp:include page="/WEB-INF/views/common/header.jsp"/>
-    </header>
-        <form action="write" enctype="multipart/form-data" method="POST" class="board-write"
+    
+     <heder>
+        <jsp:include page="/WEB-INF/views/common/header.jsp"/>
+    </heder>
+
+        <form action="${boardCode}" enctype="multipart/form-data" method="POST" class="board-write"
             onsubmit="return writeValidate()">
 
             <!-- 제목 -->
@@ -164,7 +168,9 @@
         
     </main>
 
-    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+    <footer>
+            <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+    </footer>
     
 
     <script src="${pageContext.request.contextPath}/resources/js/boardJs/board.js"></script>

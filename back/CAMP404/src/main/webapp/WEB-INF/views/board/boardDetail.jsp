@@ -11,10 +11,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>게시판</title>
 
-    <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css">
-    <link rel="stylesheet" href="${contextPath}/resources/css/boardDetail-style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/main-style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/boardDetail-style.css">
 
-    <link rel="stylesheet" href="${contextPath}/resources/css/reply-style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/reply-style.css">
+    
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/reset.css" />
 
 
     <script src="https://kit.fontawesome.com/a2e8ca0ae3.js" crossorigin="anonymous"></script>
@@ -119,7 +121,7 @@
             <!-- 버튼 영역-->
             <div class="board-btn-area">
 
-                <c:if test="${loginMember.memberNo == detail.memberNo}">
+                <c:if test="${loginMember.memberNo == detail.managerNo}">
                                                             <!-- detail?type=1&cp=3&no=100 -->
                                                             <!-- detail?no=1522&type=2 -->
                     <%-- cp가 없을 경우에 대한 처리 --%>
@@ -134,7 +136,7 @@
                     </c:if>
 
 
-                    <button id="updateBtn" onclick="location.href='write?mode=update&type=${param.type}&cp=${cp}&no=${detail.boardNo}'">수정</button>                       
+                    <button id="updateBtn" onclick="location.href='../../write/${boardCode}?mode=update&cp=${cp}&no=${detail.boardNo}'">수정</button>                        
                     <button id="deleteBtn">삭제</button>
                 </c:if>
 

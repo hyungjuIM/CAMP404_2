@@ -21,7 +21,9 @@
     <title>${boardName}</title>
 
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/notice.css" />
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/boardCss/boardList-style.css" />
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/boardCss/boardList-style.css" />
+		
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/reset.css" />	
 	
     <!-- jQuery 라이브러리 추가(CDN) -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -114,9 +116,9 @@
 
             <div class="btn-area">
 
-                <c:if test="${!empty loginMember}">
+                <c:if test="${!empty loginManager}">
                     <!-- /community/board/write -->
-                    <button id="insertBtn" onclick="location.href='write?mode=insert&type=${param.type}&cp=${param.cp}'">글쓰기</button>                     
+                    <button id="insertBtn" onclick="location.href='../write/${boardCode}?mode=insert&cp=${pagination.currentPage}'">글쓰기</button>                   
                 </c:if>
 
             </div>

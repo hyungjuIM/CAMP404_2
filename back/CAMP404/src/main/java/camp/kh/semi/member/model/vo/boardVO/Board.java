@@ -10,7 +10,7 @@ import lombok.Setter;
 public class Board {
 	private int boardNo;
 	private String boardTitle;
-	private String memberNickname;
+	private String userNick;
 	private String createDate;
 	private int readCount;
 	private String thumbnail;

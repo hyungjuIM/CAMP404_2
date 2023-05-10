@@ -16,9 +16,9 @@ public class BoardDetail {
 	private String createDate;
 	private String updateDate;
 	private int readCount;
-	private String memberNickname;
+	private String userNick;
 	private String profileImage;
-	private int memberNo;
+	private int userNo;
 	private String boardName;
 	
 	private List<BoardImage> imageList;

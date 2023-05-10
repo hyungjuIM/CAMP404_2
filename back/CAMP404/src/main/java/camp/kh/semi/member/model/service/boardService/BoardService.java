@@ -3,6 +3,7 @@ package camp.kh.semi.member.model.service.boardService;
 import java.util.List;
 import java.util.Map;
 
+import camp.kh.semi.member.model.vo.boardVO.BoardDetail;
 import camp.kh.semi.member.model.vo.boardVO.BoardType;
 
 public interface BoardService {
@@ -19,5 +20,7 @@ public interface BoardService {
 	 * @return map
 	 */
 	Map<String, Object> selectBoardList(int cp, int boardCode);
+
+	
 
 }

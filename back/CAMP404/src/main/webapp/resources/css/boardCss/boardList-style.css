@@ -22,6 +22,7 @@
 .board-name{
     font-size: 2.5em;
     margin-left: 30px;
+    margin-bottom: 30px;
 }
 
 /* 게시글 목록 영역 */
@@ -43,7 +44,7 @@
 }
 
 .list-table > thead{
-    background-color: #455ba8;
+    background-color: #333333;
     color : white
 }
 
@@ -57,6 +58,7 @@
 
 .list-table tr > *{
     text-align: center;
+    vertical-align: middle;
 }
 
 .list-table tr > *:nth-of-type(1){ width: 10%;}
@@ -81,20 +83,32 @@
 
 /* 글쓰기 버튼 */
 #insertBtn{
-    margin-right: 50px;
-
+    margin : 0px;
+	
     width: 80px;
     height: 40px;
-
-    background-color: white;
-    border: 2px solid #455ba8;
-    color:#455ba8;
-
-    border-radius: 5px;
-
-    font-weight: bold;
+	background-color: #333333;
+    border-radius: 50px;
     cursor: pointer;
+    
+    justify-content: center;
+    align-items: center;
+    
+    color:white;
+    font-weight: 550;
+    font-size: 14px;
+   
 }
+
+#insertBtn:hover{
+	background-color: #fe6936;
+    font-weight: 800;
+    box-shadow: 0px 0px 8px #9f9f9f;
+    transition-duration: 0.2s;
+    border : #fe6936;
+	
+}
+
 
 
 /* 페이지네이션(Pagination) */
@@ -121,10 +135,22 @@
 
 /* 현재 페이지 번호 */
 .pagination .current{
-    background-color: #455ba8;
-    border-radius: 50%;
-    color: white;
-    font-weight: bold;
+    border-radius: 5px;
+    color: #fe6936;
+    font-weight: 500;
+    border: 1px solid darkgray;
+}
+
+/* 페이지 hover*/
+.pagination a:hover{
+	background-color: #fe6936;
+    font-weight: 500;
+    box-shadow: 0px 0px 8px #9f9f9f;
+    transition-duration: 0.2s;
+    border : #fe6936;
+    border-radius : 5px;
+    color : white;
+	
 }
 
 
@@ -156,16 +182,51 @@
     padding-left: 10px;
 }
 
+#search-key ,.search-query-wrapper {
+    border-radius: 50px;
+    border: solid 0.5px;
+    
+}
+
+/* 돋보기, 검색창input */
+#search-query{
+    color: #bbb;
+}
+
+/* 돋보기*/
+#search-query > i {
+    margin: 7px 5px 7px 10px; 
+}
+
+/* 검색창 input*/
+.searchBar{
+	outline: none;
+	border : none;
+	padding: 0 10px;
+}
+
+
+
 #boardSearch button{
     width: 100px;
 
-    background-color: #455ba8;
+    background-color: #333333;
     color: white;
     border : 0;
 
     font-weight: bold;
     cursor: pointer;
+    border-radius: 50px;
 }
+
+#boardSearch button:hover{
+	background-color: #fe6936;
+    font-weight: 600;
+    box-shadow: 0px 0px 8px #9f9f9f;
+    transition-duration: 0.2s;
+    border : #fe6936;	
+}
+
 
 
 /* 썸네일 관련 스타일 */
