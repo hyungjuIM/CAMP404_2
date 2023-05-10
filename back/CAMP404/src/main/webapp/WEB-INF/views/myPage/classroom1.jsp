@@ -50,14 +50,17 @@
 <div class = "classroom">
 <!--동영상-->
 <div class="classroom_viewport">
-    <iframe width="1215" height="600" src="https://www.youtube.com/embed/PC3ypt_VGWI?autoplay=1&controls=" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    
+<iframe width="1215" height="600" src="https://www.youtube.com/embed/PC3ypt_VGWI?autoplay=1&controls=" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 </div>
 
 
     <!--사이드바-->
     <div class="classroom_sidebar">
        
-      <form action="classroom1" method="POST" name="classroom-note" onsubmit="return lecturenote"> 
+       <!-- <form action="classroom1" method="POST" id="classroom-note" > -->
+      
         <!--강의목차,강의자료,노트부분-->
         <ul class="classroom_tabs">          
             <li><a href="#" id="classroom_tabs_menu" style="color:rgb(255, 142, 29);">강의목차</a></li>
@@ -270,7 +273,7 @@
  					
  					
                     <!--노트 작성 : 글자수카운트, 글자입력공간 둘러싼거-->                           
-                    <div class="enterArea"> 
+                    <div class="enterArea" > 
                         <!--노트  0/2000 글자수 count 하는곳-->
                         <div class="outerWrapper">
                             <span class="counterOuter">0</span> 
@@ -280,7 +283,7 @@
                         
                         
                         <!--text 입력하는 부분-->
-                        <textarea class="typeData" type="text" rows="580" cols="100" name="typeData"
+                        <textarea class="typeData" type="text" rows="580" cols="100" 
                         placeholder="노트를 작성해주세요. 최대 2000자까지 입력하실 수 있습니다.">
                         </textarea>
                     </div>
@@ -295,16 +298,16 @@
                 </div>
   
             </div>   
-            <!--강의노트가 실제로 입력되는 영역-->
+            <!--강의노트목록이 실제로 출력되는 영역  -->
          
-         
-            <div class="subArea" name="noteContent">
+        <!--<form action="classroom1" method="POST"  >  --> 
+            <div class="subArea" >
                 <div class="bottomWrapper">
                     <button class="noteWrite">+</button>
                 </div>
             </div>
-	
-	</form>
+	<!-- </form> -->
+	 <!-- </form> -->
  
    </div>
 
