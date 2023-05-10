@@ -1,5 +1,6 @@
 package camp.kh.semi.member.model.dao;
 
+import java.util.List;
 import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import camp.kh.semi.member.model.vo.Camp;
+import camp.kh.semi.member.model.vo.Lecture;
 import camp.kh.semi.member.model.vo.LectureNote;
 import camp.kh.semi.member.model.vo.Users;
 
@@ -71,21 +73,46 @@ public class CampDAO {
 	}
 
 
-	//강의노트 관련
+
+
+// 카테고리 1 / BEST Class
+	public List<Lecture> getCat1(int catNo) {
+		return null;
+	}
+
+	// 카테고리 2 / FRONT-END Class
+	public List<Lecture> getCat2(int catNo) {
+		return null;
+	}
+
+	// 카테고리 3 / BACK-END Class
+	public List<Lecture> getCat3(int catNo) {
+		return null;
+	}
+
+	// 카테고리 4 / DataBase Class
+	public List<Lecture> getCat4(int catNo) {
+		return null;
+	}
+
+	// 카테고리 5 / Operation System Class
+	public List<Lecture> getCat5(int catNo) {
+		return null;
+	}
+
+
+	/** 강의노트 저장
+	 * @param paramMap
+	 * @return
+	 */
+//
+//	public int insertNote(LectureNote loginLectureNote) {
+//		return sqlSession.insert("campMapper.insertNote", loginLectureNote);
+//	}
+
 
 //	public int insertNote(String noteContent) {
 //		
 //		return sqlSession.insert("campMapper.insertNote", noteContent);
-//	}
-//
-//
-//	public int insertNote(Map<String, Object> paramMap) {
-//		
-//		return sqlSession.insert("campMapper.insertNote", paramMap);
-//	}
-
-//	public int insertNote(LectureNote lectureNote) {
-//		
-//		return sqlSession.insert("campMapper.insertNote", lectureNote);
 //	}
 }

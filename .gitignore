@@ -8,11 +8,9 @@
 **/back/CAMP404/*.project
 **/back/CAMP404/src/test/
 ~$경로설정.xlsx
-back/CAMP404/bin/bin/src/main/webapp/WEB-INF/lib/orai18n.jar
-back/CAMP404/src/main/resources/spring/root-context.xml
-back/CAMP404/src/main/webapp/WEB-INF/lib/orai18n.jar
-back/Servers/Tomcat v9.0 Server at localhost-config/catalina.policy
-back/Servers/Tomcat v9.0 Server at localhost-config/catalina.properties
-back/Servers/Tomcat v9.0 Server at localhost-config/context.xml
-back/Servers/Tomcat v9.0 Server at localhost-config/tomcat-users.xml
-back/Servers/Tomcat v9.0 Server at localhost-config/web.xml
+back/Servers/CAMP404-config/tomcat-users.xml
+back/Servers/CAMP404-config/web.xml
+back/Servers/CAMP404-config/context.xml
+back/Servers/CAMP404-config/server.xml
+back/Servers/CAMP404-config/catalina.policy
+back/Servers/CAMP404-config/catalina.properties
