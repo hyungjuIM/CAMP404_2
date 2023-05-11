@@ -22,7 +22,9 @@
 .board-name{
     font-size: 2.5em;
     margin-left: 30px;
-    margin-bottom: -30px;
+
+    margin-bottom: 30px;
+
 }
 
 /* 게시글 목록 영역 */
@@ -58,6 +60,7 @@
 
 .list-table tr > *{
     text-align: center;
+    vertical-align: middle;
 }
 
 .list-table tr > *:nth-of-type(1){ width: 10%;}
@@ -83,10 +86,12 @@
 /* 글쓰기 버튼 */
 #insertBtn{
     margin : 0px;
+
    
     width: 80px;
     height: 40px;
    background-color: #333333;
+
     border-radius: 50px;
     cursor: pointer;
     
@@ -97,16 +102,20 @@
     font-weight: 550;
     font-size: 14px;
    
+
 }
 
+
+
 #insertBtn:hover{
-   background-color: #fe6936;
+	background-color: #fe6936;
     font-weight: 800;
     box-shadow: 0px 0px 8px #9f9f9f;
     transition-duration: 0.2s;
     border : #fe6936;
-   
+	
 }
+
 
 
 
@@ -142,14 +151,16 @@
 
 /* 페이지 hover*/
 .pagination a:hover{
-   background-color: #fe6936;
+
+	background-color: #fe6936;
+
     font-weight: 500;
     box-shadow: 0px 0px 8px #9f9f9f;
     transition-duration: 0.2s;
     border : #fe6936;
     border-radius : 5px;
     color : white;
-   
+
 }
 
 
@@ -198,10 +209,13 @@
 }
 
 /* 검색창 input*/
+
 .boardSearchBar{
    outline: none;
    border : none;
    padding: 0 10px;
+
+
 }
 
 
@@ -216,21 +230,26 @@
     font-weight: bold;
     cursor: pointer;
     border-radius: 50px;
+
 }
 
-#boardSearch button:hover{
-   background-color: #fe6936;
-    font-weight: 600;
-    box-shadow: 0px 0px 8px #9f9f9f;
-    transition-duration: 0.2s;
-    border : #fe6936;   
-}
+
 
 
 .list-table tr > *{
 	text-align:center;
 	padding-top:20px;
+
 }
+
+#boardSearch button:hover{
+	background-color: #fe6936;
+    font-weight: 600;
+    box-shadow: 0px 0px 8px #9f9f9f;
+    transition-duration: 0.2s;
+    border : #fe6936;	
+}
+
 
 
 /* 썸네일 관련 스타일 */
