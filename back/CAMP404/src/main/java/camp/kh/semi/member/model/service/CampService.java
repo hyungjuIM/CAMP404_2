@@ -1,6 +1,7 @@
 package camp.kh.semi.member.model.service;
 
 import java.util.List;
+import java.util.Map;
 
 import camp.kh.semi.member.model.vo.Camp;
 import camp.kh.semi.member.model.vo.Certification;
@@ -37,6 +38,9 @@ public interface CampService {
 
 	// 메인화면 강의 불러오기
 	public abstract List<Lecture> getClassItems(int catNo);
+
+
+	public abstract int changeInfo(Map<String, Object> paramMap);
 
 
 //	public abstract int insertNote(String noteContent);

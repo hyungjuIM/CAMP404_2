@@ -101,18 +101,22 @@ public class CampDAO {
 	}
 
 
-	/** 강의노트 저장
+
+
+
+	/** 회원정보 수정
 	 * @param paramMap
 	 * @return
 	 */
-//
-//	public int insertNote(LectureNote loginLectureNote) {
-//		return sqlSession.insert("campMapper.insertNote", loginLectureNote);
-//	}
+	public int changeInfo(Map<String, Object> paramMap) {
+		return sqlSession.update("campMapper.changeInfo", paramMap);
+		
+	}
 
 
-//	public int insertNote(String noteContent) {
-//		
-//		return sqlSession.insert("campMapper.insertNote", noteContent);
-//	}
+
+
+
+	
+
 }
