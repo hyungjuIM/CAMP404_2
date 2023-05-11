@@ -80,12 +80,6 @@
 		WHERE BOARD_NO = ${boardNo}
 		AND BOARD_ST = 'N'
 	</select>
-	<!-- 	SELECT BOARD_NO, BOARD_TITLE, BOARD_CONTENT
-		FROM BOARD
-		JOIN USERS USING(USER_NO)
-		JOIN BOARD_TYPE USING(BOARD_CD)
-		WHERE BOARD_NO = ${board_no}
-		AND BOARD_ST = 'N' -->
 	
 	
 	<!-- 조회수 증가 -->
