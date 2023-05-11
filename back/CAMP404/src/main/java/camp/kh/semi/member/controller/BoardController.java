@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -66,7 +65,6 @@ public class BoardController {
 	 	
 	
 	// 게시글 상세 조회
-	@ResponseBody
 	@GetMapping("/detail/{boardCode}/{boardNo}")
 	public String boardDetail(@PathVariable("boardCode") int boardCode,
 							@PathVariable("boardNo") int boardNo,
@@ -203,7 +201,6 @@ public class BoardController {
 	
 	// 게시글 작성 (삽입/수정)
 		// "/board/write/{boardCode}"
-		@ResponseBody
 		@PostMapping("/write/{boardCode}")
 		public String boardWrite( BoardDetail detail //boardTitle, boardContent, boardNo(수정) 
 								, @PathVariable("boardCode") int boardCode
