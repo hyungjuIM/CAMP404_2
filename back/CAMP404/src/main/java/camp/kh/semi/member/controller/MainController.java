@@ -140,18 +140,9 @@ public class MainController {
 	// 회원 가입
 	@PostMapping("/signUp")
 	public String signUp( Users inputMember
-//						, String[] memberAddress
+
 						, RedirectAttributes ra) {
 		
-
-		
-//		inputMember.setUserAddress(  String.join(",,", memberAddress)  );
-//	
-//		
-//		if( inputMember.getUserAddress().equals(",,,,") ) { // 주소가 입력되지 않은 경우
-//			
-//			inputMember.setUserAddress(null); // null로 변환
-//		}
 		
 		// 회원 가입 서비스 호출
 		int result = service.signUp(inputMember);

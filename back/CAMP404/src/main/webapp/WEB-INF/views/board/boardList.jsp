@@ -125,7 +125,8 @@
                         </c:choose>
                     </tbody>
                 </table>
-            </div>
+            </div>   
+
 
             
             <div class="pagination-area">
