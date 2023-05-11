@@ -68,15 +68,25 @@
 	
 	
 	<!-- 게시글 상세 조회 -->
-	<select id="selectBoardDetail" resultMap="detail_rm">
-	SELECT BOARD_NO, BOARD_TITLE, BOARD_CONTENT
-	--BOARD_NM
+	<select id="selectBoardDetail" resultMap="detail_rm">		
+		SELECT BOARD_NO, BOARD_TITLE, BOARD_CONTENT,
+		TO_CHAR(CREATE_DT, 'YYYY"년" MM"월" DD"일" HH24:MI:SS') CREATE_DT,
+		TO_CHAR(UPDATE_DT, 'YYYY"년" MM"월" DD"일" HH24:MI:SS') UPDATE_DT,
+		READ_COUNT, USER_NICK, USER_NO,
+		BOARD_NM
+		FROM BOARD
+		JOIN USERS USING(USER_NO)
+		JOIN BOARD_TYPE USING(BOARD_CD)
+		WHERE BOARD_NO = ${boardNo}
+		AND BOARD_ST = 'N'
+	</select>
+	<!-- 	SELECT BOARD_NO, BOARD_TITLE, BOARD_CONTENT
 		FROM BOARD
 		JOIN USERS USING(USER_NO)
 		JOIN BOARD_TYPE USING(BOARD_CD)
 		WHERE BOARD_NO = ${board_no}
-		AND BOARD_ST = 'N'
-	</select>
+		AND BOARD_ST = 'N' -->
+	
 	
 	<!-- 조회수 증가 -->
 	<update id="updateReadCount">
@@ -96,7 +106,7 @@
 	
 			INSERT INTO BOARD VALUES( 
 			#{boardNo}, #{boardTitle} ,#{boardContent}, 
-			DEFAULT, DEFAULT, DEFAULT, DEFAULT, #{userNo}, #{boardNo})
+			DEFAULT, DEFAULT, DEFAULT, DEFAULT, #{boardCode}, #{userNo})
 	</insert>
 	
 	
