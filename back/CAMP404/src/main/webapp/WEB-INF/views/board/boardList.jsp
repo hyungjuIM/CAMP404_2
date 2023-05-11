@@ -3,10 +3,11 @@
 
 <!-- map에 저장된 값을 각각 변수에 저장 -->
 <c:forEach var="boardType" items="${boardTypeList}">
-	<c:if test="${boardCode == boardType.boardCode}">
-		<c:set var="boardName" value="${boardType.boardName}"/>
-	</c:if>
+    <c:if test="${boardCode == boardType.boardCode}">
+        <c:set var="boardName" value="${boardType.boardName}"/>
+    </c:if>
 </c:forEach>
+
 
 <c:set var="pagination" value="${map.pagination}" />
 <c:set var="boardList" value="${map.boardList}" />
@@ -30,7 +31,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+        
+        
+<!-- fontawesome -->
+<link rel="stylesheet"
+   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+   integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+   crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <header>
@@ -58,6 +65,15 @@
                 <h3 style="margin-left:30px;"> "${param.query}" 검색 결과  </h3>
             </c:if>
 
+
+			<div class="btn-area">
+
+                <c:if test="${!empty loginMember}">
+                    <!-- /community/board/write -->
+                    <button id="insertBtn" onclick="location.href='../write/${boardCode}?mode=insert&cp=${pagination.currentPage}'">글쓰기</button>                     
+                </c:if>
+
+            </div>
 
 
             <div class="list-wrapper">
@@ -109,16 +125,6 @@
                         </c:choose>
                     </tbody>
                 </table>
-            </div>
-
-
-            <div class="btn-area">
-
-				<c:if test="${!empty loginMember}">
-                    <!-- /community/board/write -->
-                    <button id="insertBtn" onclick="location.href='../write/${boardCode}?mode=insert&cp=${pagination.currentPage}'">글쓰기</button>                     
-                </c:if>
-
             </div>
 
             
@@ -173,8 +179,13 @@
                     <option value="w">작성자</option>
                 </select>
 
-                <input type="text" name="query"  id="search-query" placeholder="검색어를 입력해주세요.">
-
+				<div class="search-query-wrapper">
+		            <div id="search-query" >
+		               <i class="fa-solid fa-magnifying-glass"></i>   
+		                      <input type="text" name="query"  class="boardSearchBar" 
+		                       placeholder="검색어를 입력해주세요.">
+		            </div>
+		         </div>  
                 <button>검색</button>
             </form>
 

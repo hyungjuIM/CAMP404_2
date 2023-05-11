@@ -83,16 +83,16 @@
 #addReply{
     flex-basis: 8%;
     font-weight: bold;
-    background-color: #455ba8;
+    background-color: black;
     color: white;
     border: 0;
     cursor: pointer;
 }
 
 #addReply:hover{
-    background-color: white;
-    color: #455ba8;
-    border: 2px solid #455ba8;
+    background-color: #fe6936;
+    color: white;
+    border: 1px solid #fe6936;
 }
 
 /* 댓글 수정 textarea */
