@@ -96,7 +96,7 @@
 	
 			INSERT INTO BOARD VALUES( 
 			#{boardNo}, #{boardTitle} ,#{boardContent}, 
-			DEFAULT, DEFAULT, DEFAULT, DEFAULT, #{userNo}, #{boardNo});
+			DEFAULT, DEFAULT, DEFAULT, DEFAULT, #{userNo}, #{boardNo})
 	</insert>
 	
 	
