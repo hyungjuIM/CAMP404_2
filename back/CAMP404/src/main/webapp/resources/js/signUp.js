@@ -41,13 +41,13 @@ memberEmail.addEventListener("input", function () {
 
             type: "GET", // 데이터 전달 방식 type
 
-            success: function (result) {
+            success: function (resultult) {
                 // 비동기 통신(ajax)가 오류 없이 요청/응답 성공한 경우
 
-                // 매개변수 result : servlet에서 출력된 result 값이 담겨있음
-                // console.log(result);
+                // 매개변수 resultult : servlet에서 출력된 resultult 값이 담겨있음
+                // console.log(resultult);
 
-                if (result == 1) { // 중복 O
+                if (resultult == 1) { // 중복 O
                     emailMessage.innerText = "이미 사용중인 이메일 입니다.";
                     emailMessage.classList.add("error");
                     emailMessage.classList.remove("confirm");
@@ -97,9 +97,9 @@ sendBtn.addEventListener("click", function () {
             url: "sendEmail",
             data: { "userEmail": memberEmail.value },
             type: "GET",
-            success: function (result) {
+            success: function (resultult) {
                 console.log("이메일 발송 성공");
-                console.log(result);
+                console.log(resultult);
 
                 // 인증 버튼이 클릭되어 정상적으로 메일이 보내졌음을 checkobj에 기록
                 checkobj.sendEmail = true;
@@ -173,13 +173,13 @@ cBtn.addEventListener("click", function () {
                     "cNumber": cNumber.value
                 },
                 type: "GET",
-                success: function (result) {
-                    console.log(result);
+                success: function (resultult) {
+                    console.log(resultult);
                     // 1 : 인증번호 일치 O, 시간 만족O
                     // 2 : 인증번호 일치 O, 시간 만족X
                     // 3 : 인증번호 일치 X
 
-                    if (result == 1) {
+                    if (resultult == 1) {
 
                         clearInterval(checkInterval); // 타이머 멈춤     
 
@@ -188,7 +188,7 @@ cBtn.addEventListener("click", function () {
                         cMessage.classList.remove("error");
                         checkobj.cNumber = true; 
 
-                    } else if (result == 2) {
+                    } else if (resultult == 2) {
                         alert("만료된 인증 번호 입니다.");
                         checkobj.cNumber = false; 
 
@@ -300,11 +300,11 @@ memberNickname.addEventListener("input", function () {
             data: { "userNick": memberNickname.value }, // 서버로 전달할 값(파라미터)
             type: "GET", // 데이터 전달 방식(기본값 GET)
 
-            success: function (res) { // 비동기 통신 성공 시(에러 발생 X)
+            success: function (result) { // 비동기 통신 성공 시(에러 발생 X)
 
-                // 매개변수 res : Servlet에서 응답으로 출력된 데이터가 저장
+                // 매개변수 result : Servlet에서 응답으로 출력된 데이터가 저장
 
-                if (res == 0) { // 닉네임 중복 X
+                if (result == 0) { // 닉네임 중복 X
                     nicknameMessage.innerText = "사용 가능한 닉네임 입니다.";
                     nicknameMessage.classList.add("confirm");
                     nicknameMessage.classList.remove("error");
@@ -391,11 +391,11 @@ memberID.addEventListener("input", function () {
             data: { "userId": memberID.value }, // 서버로 전달할 값(파라미터)
             type: "GET", // 데이터 전달 방식(기본값 GET)
 
-            success: function (res) { // 비동기 통신 성공 시(에러 발생 X)
+            success: function (result) { // 비동기 통신 성공 시(에러 발생 X)
 
-                // 매개변수 res : Servlet에서 응답으로 출력된 데이터가 저장
+                // 매개변수 result : Servlet에서 응답으로 출력된 데이터가 저장
 
-                if (res == 0) { // 닉네임 중복 X
+                if (result == 0) { // 닉네임 중복 X
                     idMessage.innerText = "사용 가능한 아이디 입니다.";
                     idMessage.classList.add("confirm");
                     idMessage.classList.remove("error");

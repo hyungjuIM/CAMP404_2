@@ -93,8 +93,7 @@ public class CampServiceImpl implements CampService {
 		inputMember.setUserPw(encPw);
 
 		int result = dao.signUp(inputMember);
-		System.out.println(inputMember);
-		System.out.println(result);
+	
 		return result;
 	}
 
@@ -184,11 +183,18 @@ public class CampServiceImpl implements CampService {
 	    }
 	}
 
-//	@Override
-//	public int insertNote(String noteContent) {
-//		
-//		int result = dao.insertNote(noteContent);
-//		return 0;
-//	}
+	/** 회원정보 수정
+	 *
+	 */
+	@Override
+	public int changeInfo(Map<String, Object> paramMap) {
+		
+
+			paramMap.put("memberPw", bcrypt.encode( (String)paramMap.get("memberPw")) );
+
+			return dao.changeInfo(paramMap);
+
+	
+	}
 
 }

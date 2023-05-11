@@ -148,6 +148,17 @@ WHERE USER_ID = #{userId}
 AND SECESSION_FL = 'N'
 </select>
 
+<!-- 회원정보 수정 -->
+<update id="changeInfo">
+	UPDATE USERS SET 
+	USER_NICK = #{memberNick},
+	USER_PW = #{memberPw},
+	USER_TEL =#{memberTel},
+	USER_ADDR = #{memberAddress}
+	WHERE USER_NO=#{userNo}
+</update>
+
+
 
 <!-- 이메일 인증 -->
 <update id="updateCertification">
