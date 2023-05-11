@@ -74,13 +74,13 @@ public int newNicknameDupCheck(@RequestParam("memberNickname") String  userNick)
 }
 
 @PostMapping("/info")
-public String signUp( Users loginMember,
+public String changeinfo( Users loginMember,
 		@RequestParam Map<String, Object> paramMap
 
 					, RedirectAttributes ra) {
 	
 	paramMap.put("userNo", loginMember.getUserNo());
-	// 회원 가입 서비스 호출
+	
 	int result = service.changeInfo(paramMap);
 	
 	
@@ -93,7 +93,6 @@ public String signUp( Users loginMember,
 		loginMember.setUserNick((String)paramMap.get("memberNickname"));
 		loginMember.setUserTel((String)paramMap.get("memberTel"));
 		loginMember.setUserAddress((String)paramMap.get("memberAddr"));
-		loginMember.setUserPw((String)paramMap.get("memberPw"));
 	}else { // 실패
 		logger.info(message);
 		message = "회원 정보 수정 실패";

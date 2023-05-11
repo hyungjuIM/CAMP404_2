@@ -3,8 +3,7 @@ const checkobj = {
 
 
 
-    "newPw": false, // 영어, 숫자, 특수문자 6~30
-    "newPwConfirm": false,
+  
     "newNick": false, // 영어,숫자,한글 2~10 +중복검사
     "newTel": false, // (-) 제외 ->숫자만
 
@@ -17,56 +16,7 @@ const checkobj = {
 
 
 
-// 비밀번호 확인 
 
-
-const pwConfirmMessage = document.getElementById("pwConfirmMessage");
-const pwMessage = document.getElementById("pwMessage");
-const newPw = document.getElementById("newPw");
-const newPwConfirm = document.getElementById("newPwConfirm");
-newPw.addEventListener("input", function () {
-    if (newPw.value.length == 0) {
-        pwMessage.innerText = "영어, 숫자, 특수문자(!,@,#,-,_) 6~30글자 사이로 작성해주세요.";
-
-        pwMessage.classList.remove("confirm", "error");
-        checkobj.newPw = false; // 유효x 기록
-        return;
-    }
-
-
-    // 입력 조건 만들기
-    const pwExp = /^[\w\!\@\#\-\_]{6,30}/;
-    if (pwExp.test(newPw.value)) {
-
-        console.log("올바른 형식");
-        pwMessage.classList.remove("error");
-        pwMessage.innerText = "올바른 비밀번호 형식입니다.";
-        pwMessage.classList.add("confirm");
-        checkobj.newPw = true;
-
-    } else {
-        console.log("비밀번호입력에 실패했습니다.")
-        pwMessage.innerText = "잘못된 비밀번호 형식입니다.";
-        pwMessage.classList.add("error");
-        pwMessage.classList.remove("confirm");
-        checkobj.newPw = false;
-
-    }
-});
-newPwConfirm.addEventListener("input", function () {
-    if (newPw.value == newPwConfirm.value) {
-        pwConfirmMessage.innerText = "비밀번호 일치";
-        pwConfirmMessage.classList.remove("error");
-        pwConfirmMessage.classList.add("confirm");
-        checkobj.newPwConfirm = true;
-    } else {
-        console.log("비밀번호입력에 실패했습니다.")
-        pwConfirmMessage.innerText = "비밀번호 불일치";
-        pwConfirmMessage.classList.add("error");
-        pwConfirmMessage.classList.remove("confirm");
-        checkobj.newPwConfirm = false;
-    }
-})
 
 
 
