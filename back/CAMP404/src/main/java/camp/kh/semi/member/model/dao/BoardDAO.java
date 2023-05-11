@@ -99,6 +99,15 @@ public class BoardDAO {
 		
 		return sqlSession.update("boardMapper.updateBoard", detail);
 	}
+	
+	
+	/** 게시글 삭제 DAO
+	 * @param boardNo
+	 * @return result
+	 */
+	public int deleteBoard(int boardNo) {
+		return sqlSession.update("boardMapper.deleteBoard", boardNo);
+	}
 
 
 }
