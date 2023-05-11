@@ -170,7 +170,6 @@ public class CampServiceImpl implements CampService {
 	public int changeInfo(Map<String, Object> paramMap) {
 		
 
-			paramMap.put("memberPw", bcrypt.encode( (String)paramMap.get("memberPw")) );
 
 			return dao.changeInfo(paramMap);
 

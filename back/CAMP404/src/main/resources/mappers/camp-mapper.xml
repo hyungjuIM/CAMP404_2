@@ -152,7 +152,6 @@ AND SECESSION_FL = 'N'
 <update id="changeInfo">
 	UPDATE USERS SET 
 	USER_NICK = #{memberNick},
-	USER_PW = #{memberPw},
 	USER_TEL =#{memberTel},
 	USER_ADDR = #{memberAddress}
 	WHERE USER_NO=#{userNo}

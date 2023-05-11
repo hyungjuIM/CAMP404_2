@@ -30,12 +30,16 @@
 		<typeAlias type="camp.kh.semi.member.model.vo.boardVO.BoardDetail"  	alias="detail"/>
 		<typeAlias type="camp.kh.semi.member.model.vo.boardVO.BoardImage"  	alias="boardImage"/>
 		<typeAlias type="camp.kh.semi.member.model.vo.boardVO.BoardType"  	alias="boardType"/>
+		
+		<typeAlias type="camp.kh.semi.member.model.vo.boardVO.Reply" alias="reply"/>
+		
 </typeAliases>
 
 <!-- mapper 파일(SQL 작성되는파일) 위치 등록 부분 -->
 <mappers>
 <mapper resource="/mappers/camp-mapper.xml"/>
 <mapper resource="/mappers/board-mapper.xml"/>
+<mapper resource="/mappers/reply-mapper.xml"/>
 </mappers>
 
 </configuration>

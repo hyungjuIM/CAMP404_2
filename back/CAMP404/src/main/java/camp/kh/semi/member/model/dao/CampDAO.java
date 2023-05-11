@@ -98,9 +98,6 @@ public class CampDAO {
 
 
 
-	public String selectEncPw(int memberNo) {
-		return sqlSession.selectOne("campMapper.selectEncPw", memberNo);
-		
-	}
+	
 
 }

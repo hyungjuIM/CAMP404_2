@@ -74,30 +74,7 @@
                     </div>
                 </div>
 
-                <!-- 비밀번호 -->
-                <div class="changeInfo">
-                    <!--인풋창 -->
-                    <div class="input-area">
-                        <input type="password" name="memberPw" class="newInfo" id="newPw" maxlength="30" placeholder="새로운 비밀번호를 입력해주세요">
-                    </div>
-                    <!-- 정규식메시지창 -->
-                    <div class="message-area">
-                        <span class="info-message" id="pwMessage">영어, 숫자, 특수문자(!,@,#,-,_) 6~30글자 사이로 작성해주세요.</span>
-                    </div>
-                </div>
-
-                <!-- 비밀번호 확인 -->
-                <div class="changeInfo">
-                    <!-- 인풋창 -->
-                    <div class="input-area">
-                        <input type="password" class="newInfo" name="memberPwConfirm" id="newPwConfirm" maxlength="30"
-                            placeholder="변경할 비밀번호를 재입력해주세요">
-                    </div>
-                    <!-- 정규식메시지창 -->
-                    <div class="message-area">
-                        <span class="info-message" id="pwConfirmMessage">변경할 비밀번호를 재입력해주세요</span>
-                    </div>
-                </div>
+               
 
                 <!-- 전화번호 -->
                 <div class="changeInfo">
