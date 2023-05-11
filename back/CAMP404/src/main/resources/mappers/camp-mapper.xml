@@ -241,6 +241,10 @@ FROM DUAL
 </insert>  
 -->
 	
+	<select id="getCat1" parameterType="lecture" resultMap="lecture_rm">
+	SELECT * FROM LECTURE
+	WHERE CATEGORY_NO = #{categoryNo}
+	</select>
 	
 	
 </mapper>

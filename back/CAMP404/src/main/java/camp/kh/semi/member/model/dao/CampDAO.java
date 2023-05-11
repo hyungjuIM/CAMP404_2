@@ -76,28 +76,9 @@ public class CampDAO {
 
 
 // 카테고리 1 / BEST Class
-	public List<Lecture> getCat1(int catNo) {
-		return null;
-	}
-
-	// 카테고리 2 / FRONT-END Class
-	public List<Lecture> getCat2(int catNo) {
-		return null;
-	}
-
-	// 카테고리 3 / BACK-END Class
-	public List<Lecture> getCat3(int catNo) {
-		return null;
-	}
-
-	// 카테고리 4 / DataBase Class
-	public List<Lecture> getCat4(int catNo) {
-		return null;
-	}
-
-	// 카테고리 5 / Operation System Class
-	public List<Lecture> getCat5(int catNo) {
-		return null;
+	public List<Lecture> getCat(int catNo) {
+		System.out.println("1번을 통과 후 SQL 반환함");
+		return sqlSession.selectList("campMapper.getCat1",catNo);
 	}
 
 

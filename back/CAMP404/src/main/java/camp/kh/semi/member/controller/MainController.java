@@ -163,18 +163,7 @@ public class MainController {
 		return path;
 	}
 	
-	// 메인화면 강의 불러오기
-	@GetMapping("/") // 메인 화면에 접속할 시 실행하기
-	public void getClassItems(
-			Model model
-			, Lecture lecture
-			) {
-		List<Lecture> list = null;
-		int catNo = lecture.getCategoryNo();
-		list = service.getClassItems(catNo);
-		
-		model.addAttribute("list", list);
-	}
+
 	
 	
 	}

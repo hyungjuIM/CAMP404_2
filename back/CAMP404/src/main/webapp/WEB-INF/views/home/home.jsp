@@ -201,68 +201,28 @@
                             <a href="#" class="classTitle2">더보기&nbsp;<i class="fa-solid fa-angles-right"></i></a>
                         </div>
                         <div class="classDescription">
-                            <!-- BEST CLASS 과목 1 -->
-                            <div class="classItem">
-                                <a href="#" class="imgArea">
-                                    <img src="resources/images/DBimg.png">
-                                </a>
-                                <div class="textArea">
-                                    <div class="topText">
-                                        <div class="mainText">
-                                            <a href="#" class="mainText1">SQL</a>
-                                            <a href="#" class="mainText2">수강가능</a>
+                            <c:forEach var="bestClass" items="${bestClassList}">
+                                <c:if test="${bestClass.categoryNo == 1}">
+                                    <div class="classItem">
+                                        <a href="${contextPath}class/class3" class="imgArea">
+                                            <img src="resources/images/6.png">
+                                        </a>
+                                        <div class="textArea">
+                                            <div class="topText">
+                                                <div class="mainText">
+                                                    <a href="#" class="mainText1">SQL</a>
+                                                    <a href="#" class="mainText2">수강가능</a>
+                                                </div>
+                                                <div class="likeBtn"><i class="fa-solid fa-heart"></i></i></div>
+                                            </div>
+                                            <a href="${contextPath}class/class3">
+                                                <div class="subText">${bestClass.lectureName}<br></div>
+                                                <div class="tutorTitle">${bestClass.lectureNo}</div>
+                                            </a>
                                         </div>
-                                        <div class="likeBtn"><i class="fa-solid fa-heart"></i></i></div>
                                     </div>
-                                    <a href="#">
-                                        <div class="subText">데이터베이스 SQL 강의<br></div>
-                                        <div class="tutorTitle">홍길동</div>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- BEST CLASS 과목 1 -->
-
-                            <!-- BEST CLASS 과목 2 -->
-                            <div class="classItem">
-                                <a href="#" class="imgArea">
-                                    <img src="resources/images/backendImg.png">
-                                </a>
-                                <div class="textArea">
-                                    <div class="topText">
-                                        <div class="mainText">
-                                            <a href="#" class="mainText1">BACK-END</a>
-                                            <a href="#" class="mainText2">수강가능</a>
-                                        </div>
-                                        <div class="likeBtn"><i class="fa-solid fa-heart"></i></i></div>
-                                    </div>
-                                    <a href="#">
-                                        <div class="subText">백엔드, 프레임워크부터<br>개발 방법론까지</div>
-                                        <div class="tutorTitle">백엔드 마스터</div>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- BEST CLASS 과목 2 -->
-
-                            <!-- BEST CLASS 과목 3 -->
-                            <div class="classItem">
-                                <a href="${contextPath}class/class3" class="imgArea">
-                                    <img src="resources/images/6.png">
-                                </a>
-                                <div class="textArea">
-                                    <div class="topText">
-                                        <div class="mainText">
-                                            <a href="#" class="mainText1">JAVA</a>
-                                            <a href="#" class="mainText2">수강가능</a>
-                                        </div>
-                                        <div class="likeBtn"><i class="fa-solid fa-heart heart"></i></i></div>
-                                    </div>
-                                    <a href="${contextPath}class/class3">
-                                        <div class="subText">형, 자바는 이게 제일 쉬워요 ㅋㅋ<br>정말 쉬운 자바_진짜최종_ㅁㄴㅇㄹ.java</div>
-                                        <div class="tutorTitle">월급도둑 김코딩</div>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- BEST CLASS 과목 3 -->
+                                </c:if>
+                            </c:forEach>
                         </div>
                     </div>
                     <!-- BEST CLASS -->
@@ -305,68 +265,28 @@
                             <a href="#" class="classTitle2">더보기&nbsp;<i class="fa-solid fa-angles-right"></i></a>
                         </div>
                         <div class="classDescription">
-                            <!-- FRONT-END 과목 1 -->
-                            <div class="classItem">
-                                <a href="#" class="imgArea">
-                                    <img src="resources/images/class1.png">
-                                </a>
-                                <div class="textArea">
-                                    <div class="topText">
-                                        <div class="mainText">
-                                            <a href="#" class="mainText1">JAVA</a>
-                                            <a href="#" class="mainText2">수강가능</a>
+                            <c:forEach var="frontClass" items="${frontClassList}">
+                                <c:if test="${frontClass.categoryNo == 2}">
+                                    <div class="classItem">
+                                        <a href="${contextPath}class/class3" class="imgArea">
+                                            <img src="resources/images/class1.png">
+                                        </a>
+                                        <div class="textArea">
+                                            <div class="topText">
+                                                <div class="mainText">
+                                                    <a href="#" class="mainText1">JAVA</a>
+                                                    <a href="#" class="mainText2">수강가능</a>
+                                                </div>
+                                                <div class="likeBtn"><i class="fa-solid fa-heart"></i></i></div>
+                                            </div>
+                                            <a href="${contextPath}class/class3">
+                                                <div class="subText">${frontClass.lectureName}<br></div>
+                                                <div class="tutorTitle">${frontClass.lectureNo}</div>
+                                            </a>
                                         </div>
-                                        <div class="likeBtn"><i class="fa-solid fa-heart"></i></i></div>
                                     </div>
-                                    <a href="#">
-                                        <div class="subText">강의 설명 영역 내용을 수정하세요.<br>br태그를 활용해서 줄을 바꿈.</div>
-                                        <div class="tutorTitle">강사님 이름을 설정하세요.</div>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- FRONT-END 과목 1 -->
-
-                            <!-- FRONT-END 과목 2 -->
-                            <div class="classItem">
-                                <a href="#" class="imgArea">
-                                    <img src="resources/images/class2.png">
-                                </a>
-                                <div class="textArea">
-                                    <div class="topText">
-                                        <div class="mainText">
-                                            <a href="#" class="mainText1">JAVA</a>
-                                            <a href="#" class="mainText2">수강가능</a>
-                                        </div>
-                                        <div class="likeBtn"><i class="fa-solid fa-heart"></i></i></div>
-                                    </div>
-                                    <a href="#">
-                                        <div class="subText">강의 설명 영역 내용을 수정하세요.<br>br태그를 활용해서 줄을 바꿈.</div>
-                                        <div class="tutorTitle">강사님 이름을 설정하세요.</div>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- FRONT-END 과목 2 -->
-
-                            <!-- FRONT-END 과목 3 -->
-                            <div class="classItem">
-                                <a href="#" class="imgArea">
-                                    <img src="resources/images/class3.png">
-                                </a>
-                                <div class="textArea">
-                                    <div class="topText">
-                                        <div class="mainText">
-                                            <a href="#" class="mainText1">JAVA</a>
-                                            <a href="#" class="mainText2">수강가능</a>
-                                        </div>
-                                        <div class="likeBtn"><i class="fa-solid fa-heart"></i></i></div>
-                                    </div>
-                                    <a href="#">
-                                        <div class="subText">강의 설명 영역 내용을 수정하세요.<br>br태그를 활용해서 줄을 바꿈.</div>
-                                        <div class="tutorTitle">강사님 이름을 설정하세요.</div>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- FRONT-END 과목 3 -->
+                                </c:if>
+                            </c:forEach>
                         </div>
                     </div>
                     <!-- FRONT-END class -->
@@ -380,70 +300,29 @@
                             </div>
                             <a href="#" class="classTitle2">더보기&nbsp;<i class="fa-solid fa-angles-right"></i></a>
                         </div>
-
                         <div class="classDescription">
-                            <!-- BACK-END 과목 1 -->
-                            <div class="classItem">
-                                <a href="#" class="imgArea">
-                                    <img src="resources/images/class4.png">
-                                </a>
-                                <div class="textArea">
-                                    <div class="topText">
-                                        <div class="mainText">
-                                            <a href="#" class="mainText1">JAVA</a>
-                                            <a href="#" class="mainText2">수강가능</a>
+                            <c:forEach var="backClass" items="${backClassList}">
+                                <c:if test="${backClass.categoryNo == 3}">
+                                    <div class="classItem">
+                                        <a href="${contextPath}class/class3" class="imgArea">
+                                            <img src="resources/images/class4.png">
+                                        </a>
+                                        <div class="textArea">
+                                            <div class="topText">
+                                                <div class="mainText">
+                                                    <a href="#" class="mainText1">JAVA</a>
+                                                    <a href="#" class="mainText2">수강가능</a>
+                                                </div>
+                                                <div class="likeBtn"><i class="fa-solid fa-heart"></i></i></div>
+                                            </div>
+                                            <a href="${contextPath}class/class3">
+                                                <div class="subText">${backClass.lectureName}<br></div>
+                                                <div class="tutorTitle">${backClass.lectureNo}</div>
+                                            </a>
                                         </div>
-                                        <div class="likeBtn"><i class="fa-solid fa-heart"></i></i></div>
                                     </div>
-                                    <a href="#">
-                                        <div class="subText">강의 설명 영역 내용을 수정하세요.<br>br태그를 활용해서 줄을 바꿈.</div>
-                                        <div class="tutorTitle">강사님 이름을 설정하세요.</div>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- BACK-END 과목 1 -->
-
-                            <!-- BACK-END 과목 2 -->
-                            <div class="classItem">
-                                <a href="#" class="imgArea">
-                                    <img src="resources/images/class5.png">
-                                </a>
-                                <div class="textArea">
-                                    <div class="topText">
-                                        <div class="mainText">
-                                            <a href="#" class="mainText1">JAVA</a>
-                                            <a href="#" class="mainText2">수강가능</a>
-                                        </div>
-                                        <div class="likeBtn"><i class="fa-solid fa-heart"></i></i></div>
-                                    </div>
-                                    <a href="#">
-                                        <div class="subText">강의 설명 영역 내용을 수정하세요.<br>br태그를 활용해서 줄을 바꿈.</div>
-                                        <div class="tutorTitle">강사님 이름을 설정하세요.</div>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- BACK-END 과목 2 -->
-
-                            <!-- BACK-END 과목 3 -->
-                            <div class="classItem">
-                                <a href="#" class="imgArea">
-                                    <img src="resources/images/class6.png">
-                                </a>
-                                <div class="textArea">
-                                    <div class="topText">
-                                        <div class="mainText">
-                                            <a href="#" class="mainText1">JAVA</a>
-                                            <a href="#" class="mainText2">수강가능</a>
-                                        </div>
-                                        <div class="likeBtn"><i class="fa-solid fa-heart"></i></i></div>
-                                    </div>
-                                    <a href="#">
-                                        <div class="subText">강의 설명 영역 내용을 수정하세요.<br>br태그를 활용해서 줄을 바꿈.</div>
-                                        <div class="tutorTitle">강사님 이름을 설정하세요.</div>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- BACK-END 과목 3 -->
+                                </c:if>
+                            </c:forEach>
                         </div>
                     </div>
                     <!-- BACK-END class -->
@@ -486,68 +365,28 @@
                             <a href="#" class="classTitle2">더보기&nbsp;<i class="fa-solid fa-angles-right"></i></a>
                         </div>
                         <div class="classDescription">
-                            <!-- DATABASE 과목 1 -->
-                            <div class="classItem">
-                                <a href="#" class="imgArea">
-                                    <img src="resources/images/class7.png">
-                                </a>
-                                <div class="textArea">
-                                    <div class="topText">
-                                        <div class="mainText">
-                                            <a href="#" class="mainText1">JAVA</a>
-                                            <a href="#" class="mainText2">수강가능</a>
+                            <c:forEach var="dataBase" items="${dataBaseClass}">
+                                <c:if test="${dataBase.categoryNo == 4}">
+                                    <div class="classItem">
+                                        <a href="${contextPath}class/class3" class="imgArea">
+                                            <img src="resources/images/class7.png">
+                                        </a>
+                                        <div class="textArea">
+                                            <div class="topText">
+                                                <div class="mainText">
+                                                    <a href="#" class="mainText1">JAVA</a>
+                                                    <a href="#" class="mainText2">수강가능</a>
+                                                </div>
+                                                <div class="likeBtn"><i class="fa-solid fa-heart"></i></i></div>
+                                            </div>
+                                            <a href="${contextPath}class/class3">
+                                                <div class="subText">${dataBase.lectureName}<br></div>
+                                                <div class="tutorTitle">${dataBase.lectureNo}</div>
+                                            </a>
                                         </div>
-                                        <div class="likeBtn"><i class="fa-solid fa-heart"></i></i></div>
                                     </div>
-                                    <a href="#">
-                                        <div class="subText">강의 설명 영역 내용을 수정하세요.<br>br태그를 활용해서 줄을 바꿈.</div>
-                                        <div class="tutorTitle">강사님 이름을 설정하세요.</div>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- DATABASE 과목 1 -->
-
-                            <!-- DATABASE 과목 2 -->
-                            <div class="classItem">
-                                <a href="#" class="imgArea">
-                                    <img src="resources/images/class8.png">
-                                </a>
-                                <div class="textArea">
-                                    <div class="topText">
-                                        <div class="mainText">
-                                            <a href="#" class="mainText1">JAVA</a>
-                                            <a href="#" class="mainText2">수강가능</a>
-                                        </div>
-                                        <div class="likeBtn"><i class="fa-solid fa-heart"></i></i></div>
-                                    </div>
-                                    <a href="#">
-                                        <div class="subText">강의 설명 영역 내용을 수정하세요.<br>br태그를 활용해서 줄을 바꿈.</div>
-                                        <div class="tutorTitle">강사님 이름을 설정하세요.</div>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- DATABASE 과목 2 -->
-
-                            <!-- DATABASE 과목 3 -->
-                            <div class="classItem">
-                                <a href="#" class="imgArea">
-                                    <img src="resources/images/class9.png">
-                                </a>
-                                <div class="textArea">
-                                    <div class="topText">
-                                        <div class="mainText">
-                                            <a href="#" class="mainText1">JAVA</a>
-                                            <a href="#" class="mainText2">수강가능</a>
-                                        </div>
-                                        <div class="likeBtn"><i class="fa-solid fa-heart"></i></i></div>
-                                    </div>
-                                    <a href="#">
-                                        <div class="subText">강의 설명 영역 내용을 수정하세요.<br>br태그를 활용해서 줄을 바꿈.</div>
-                                        <div class="tutorTitle">강사님 이름을 설정하세요.</div>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- DATABASE 과목 3 -->
+                                </c:if>
+                            </c:forEach>
                         </div>
                     </div>
                     <!-- DATABASE class -->
@@ -562,72 +401,30 @@
                             <a href="#" class="classTitle2">더보기&nbsp;<i class="fa-solid fa-angles-right"></i></a>
                         </div>
                         <div class="classDescription">
-                            <!-- OS class 과목 1 -->
-                            <div class="classItem">
-                                <a href="#" class="imgArea">
-                                    <img src="resources/images/class10.png">
-                                </a>
-                                <div class="textArea">
-                                    <div class="topText">
-                                        <div class="mainText">
-                                            <a href="#" class="mainText1">JAVA</a>
-                                            <a href="#" class="mainText2">수강가능</a>
+                            <c:forEach var="osClass" items="${osClassList}">
+                                <c:if test="${osClass.categoryNo == 5}">
+                                    <div class="classItem">
+                                        <a href="${contextPath}class/class3" class="imgArea">
+                                            <img src="resources/images/class10.png">
+                                        </a>
+                                        <div class="textArea">
+                                            <div class="topText">
+                                                <div class="mainText">
+                                                    <a href="#" class="mainText1">JAVA</a>
+                                                    <a href="#" class="mainText2">수강가능</a>
+                                                </div>
+                                                <div class="likeBtn"><i class="fa-solid fa-heart"></i></i></div>
+                                            </div>
+                                            <a href="${contextPath}class/class3">
+                                                <div class="subText">${osClass.lectureName}<br></div>
+                                                <div class="tutorTitle">${osClass.lectureNo}</div>
+                                            </a>
                                         </div>
-                                        <div class="likeBtn"><i class="fa-solid fa-heart"></i></i></div>
                                     </div>
-                                    <a href="#">
-                                        <div class="subText">강의 설명 영역 내용을 수정하세요.<br>br태그를 활용해서 줄을 바꿈.</div>
-                                        <div class="tutorTitle">강사님 이름을 설정하세요.</div>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- OS class 과목 1 -->
-
-                            <!-- OS class 과목 2 -->
-                            <div class="classItem">
-                                <a href="#" class="imgArea">
-                                    <img src="resources/images/class11.png">
-                                </a>
-                                <div class="textArea">
-                                    <div class="topText">
-                                        <div class="mainText">
-                                            <a href="#" class="mainText1">JAVA</a>
-                                            <a href="#" class="mainText2">수강가능</a>
-                                        </div>
-                                        <div class="likeBtn"><i class="fa-solid fa-heart"></i></i></div>
-                                    </div>
-                                    <a href="#">
-                                        <div class="subText">강의 설명 영역 내용을 수정하세요.<br>br태그를 활용해서 줄을 바꿈.</div>
-                                        <div class="tutorTitle">강사님 이름을 설정하세요.</div>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- OS class 과목 2 -->
-
-                            <!-- OS class 과목 3 -->
-                            <div class="classItem">
-                                <a href="#" class="imgArea">
-                                    <img src="resources/images/class12.png">
-                                </a>
-                                <div class="textArea">
-                                    <div class="topText">
-                                        <div class="mainText">
-                                            <a href="#" class="mainText1">JAVA</a>
-                                            <a href="#" class="mainText2">수강가능</a>
-                                        </div>
-                                        <div class="likeBtn"><i class="fa-solid fa-heart"></i></i></div>
-                                    </div>
-                                    <a href="#">
-                                        <div class="subText">강의 설명 영역 내용을 수정하세요.<br>br태그를 활용해서 줄을 바꿈.</div>
-                                        <div class="tutorTitle">강사님 이름을 설정하세요.</div>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- OS class 과목 3 -->
+                                </c:if>
+                            </c:forEach>
                         </div>
                     </div>
-                    <!-- OS class -->
-
                 </div>
                 <jsp:include page="/WEB-INF/views/common/Q&ABtn.jsp" />
             </main>
