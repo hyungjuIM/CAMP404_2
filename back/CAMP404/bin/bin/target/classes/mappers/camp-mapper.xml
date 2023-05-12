@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!-- namespace 추가하기 -->
+<mapper namespace="campMapper">
+
+<!-- <cache-ref namespace=""/> : 지우기 -->
+
+<resultMap type="camp" id="camp_rm">
+<id property="userNo" column="USER_NO"/>
+<result property="userId" column="USER_ID"/>
+<result property="userPw" column="USER_PW"/>
+<result property="userName" column="USER_NAME"/>
+<result property="userEmail" column="USER_EMAIL"/>
+<result property="userNick" column="USER_NICK"/>
+<result property="userTel" column="USER_TEL"/>
+<result property="userAddress" column="USER_ADDR"/>
+<result property="enrollDate" column="ENROLL_DT"/>
+<result property="secessionFlag" column="SECESSION_FL"/>
+</resultMap>
+
+
+
+
+<!--  parameterType="camp.kh.semi.member.model.vo.Camp"-->
+<select id="login" parameterType="camp" resultMap="camp_rm">
+SELECT USER_NO,
+USER_ID,
+USER_NAME,
+USER_EMAIL,
+USER_NICK,
+USER_TEL,
+USER_ADDR,
+TO_CHAR(ENROLL_DT, 'YYYY-MM-DD HH24:MI:SS') AS ENROLL_DT
+FROM USERS
+WHERE USER_ID = #{userId}
+AND USER_PW = #{userPw}
+AND SECESSION_FL = 'N'
+</select>
+
+</mapper>

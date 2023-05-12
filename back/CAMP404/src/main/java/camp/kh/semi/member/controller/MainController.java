@@ -1,5 +1,7 @@
 package camp.kh.semi.member.controller;
 
+import java.util.List;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,10 +19,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import camp.kh.semi.member.model.service.CampService;
-
+import camp.kh.semi.member.model.vo.Lecture;
 import camp.kh.semi.member.model.vo.Users;
 
 
@@ -83,19 +86,19 @@ public class MainController {
 		return "redirect:/main/login";
 	}
 
-	
+	System.out.println();
 	return "redirect:/";
 	}
 	
-//	로그아웃 기능
-	@GetMapping("/logout")
-	public String logout(SessionStatus status) {
-		
-		logger.info("로그아웃 기능 수행됨.");
-		
-		return "redirect:/";
-		
-	}
+////	로그아웃 기능
+//	@GetMapping("/logout")
+//	public String logout(SessionStatus status) {
+//		
+//		logger.info("로그아웃 기능 수행됨.");
+//		
+//		return "redirect:/";
+//		
+//	}
 	
 	// 회원가입 화면 전환
 	@GetMapping(value="/signUp")
@@ -137,18 +140,9 @@ public class MainController {
 	// 회원 가입
 	@PostMapping("/signUp")
 	public String signUp( Users inputMember
-//						, String[] memberAddress
+
 						, RedirectAttributes ra) {
 		
-
-		
-//		inputMember.setUserAddress(  String.join(",,", memberAddress)  );
-//	
-//		
-//		if( inputMember.getUserAddress().equals(",,,,") ) { // 주소가 입력되지 않은 경우
-//			
-//			inputMember.setUserAddress(null); // null로 변환
-//		}
 		
 		// 회원 가입 서비스 호출
 		int result = service.signUp(inputMember);
@@ -168,6 +162,8 @@ public class MainController {
 		ra.addFlashAttribute("message", message);
 		return path;
 	}
+	
+
 	
 	
 	}

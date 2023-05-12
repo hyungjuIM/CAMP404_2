@@ -1,5 +1,6 @@
 package camp.kh.semi.member.model.dao;
 
+import java.util.List;
 import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -9,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import camp.kh.semi.member.model.vo.Camp;
+import camp.kh.semi.member.model.vo.Lecture;
+import camp.kh.semi.member.model.vo.LectureNote;
 import camp.kh.semi.member.model.vo.Users;
 
 @Repository // 영속성을 가지는 DB / 파일과 연결되는 클래스임을 명시하면서 bean으로 등록.
@@ -68,4 +71,32 @@ public class CampDAO {
 	public int signUp(Users inputMember) {
 		return sqlSession.insert("campMapper.signUp", inputMember);
 	}
+
+
+
+
+// 메인화면 강의 정보 불러오기
+	public List<Lecture> getClassItems(int catNo) {
+		return sqlSession.selectList("campMapper.getClassItems",catNo);
+	}
+
+
+
+
+
+	/** 회원정보 수정
+	 * @param paramMap
+	 * @return
+	 */
+	public int changeInfo(Map<String, Object> paramMap) {
+		return sqlSession.update("campMapper.changeInfo", paramMap);
+		
+	}
+
+
+
+
+
+	
+
 }

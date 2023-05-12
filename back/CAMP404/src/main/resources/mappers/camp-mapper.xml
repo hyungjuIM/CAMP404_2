@@ -53,7 +53,7 @@
 	<resultMap type="lectureNote" id="lectureNote_rm">
 		<id property="noteNo" column="NOTE_NO"/>
 		<result property="noteContent" column="NOTE_CONTENT" />
-		<result property="usersNo" column="USERS_NO" />
+		<result property="userNo" column="USER_NO" />
 		<result property="lectureNo" column="LECTURE_NO" />
 	</resultMap>
 	
@@ -73,6 +73,7 @@
 		<result property="price" column="PRICE" />
 		<result property="teacherNo" column="TEACHER_NO" />
 		<result property="categoryNo" column="CATEGORY_NO" />
+		<result property="lectureImg" column="LECTURE_IMG" />
 	</resultMap>
 	
 	<!-- 카테고리 -->
@@ -83,7 +84,7 @@
 	
 	<!-- 내강의 -->
 	<resultMap type="mylecture" id="mylecture_rm">
-		<id property="usersNo" column="USERS_NO"/>
+		<id property="usersNo" column="USER_NO"/>
 		<result property="lectureNo" column="LECTURE_NO" />
 		<result property="favNo" column="PAY_NO" />
 	</resultMap>
@@ -93,7 +94,7 @@
 		<id property="favNo" column="FAV_NO"/>
 		<result property="favYn" column="FAV_YN" />
 		<result property="lectureNo" column="LECTURE_NO" />
-		<result property="usersNo" column="USERS_NO" />
+		<result property="usersNo" column="USER_NO" />
 	</resultMap>
 	
 	<!-- 결제 -->
@@ -102,7 +103,7 @@
 		<result property="payWay" column="PAY_WAY" />
 		<result property="payDate" column="PAY_DATE" />
 		<result property="payPrice" column="PAY_PRICE" />
-		<result property="usersNo" column="USERS_NO" />
+		<result property="usersNo" column="USER_NO" />
 		<result property="lectureNo" column="LECTURE_NO" />
 	</resultMap>
 	
@@ -115,13 +116,13 @@
 	</resultMap>
 	
 	<!-- 공지사항 -->
-	<resultMap type="notice" id="notice_rm">
+	<!-- <resultMap type="notice" id="notice_rm">
 		<id property="noticeNo" column="NOTICE_NO"/>
 		<result property="noticeTitle" column="NOTICE_TITLE" />
 		<result property="noticeContent" column="NOTICE_CONTENT" />
 		<result property="noticeDate" column="NOTICE_DATE" />
 		<result property="mgrNo" column="MGR_NO" />
-	</resultMap> 
+	</resultMap>  -->
 
 
 
@@ -147,6 +148,16 @@ WHERE USER_ID = #{userId}
 
 AND SECESSION_FL = 'N'
 </select>
+
+<!-- 회원정보 수정 -->
+<update id="changeInfo">
+	UPDATE USERS SET 
+	USER_NICK = #{memberNick},
+	USER_TEL =#{memberTel},
+	USER_ADDR = #{memberAddress}
+	WHERE USER_NO=#{userNo}
+</update>
+
 
 
 <!-- 이메일 인증 -->
@@ -218,9 +229,22 @@ FROM DUAL
   		)
 </insert>
   
+  <!-- 강의노트 저장(insert) -->
 
-
-
-
-
+	<!--
+	<insert id="insertNote" parameterType="lectureNote"  >
+	INSERT INTO LECTURE_NOTE VALUES
+	(SEQ_NOTE_NO.NEXTVAL,
+	#{noteContent}, 
+	'1', 
+	'1')
+</insert>  
+-->
+	
+	<select id="getClassItems" parameterType="lecture" resultMap="lecture_rm">
+	SELECT * FROM LECTURE
+	WHERE CATEGORY_NO = #{categoryNo}
+	</select>
+	
+	
 </mapper>

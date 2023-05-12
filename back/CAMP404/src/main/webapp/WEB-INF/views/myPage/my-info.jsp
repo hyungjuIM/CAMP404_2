@@ -48,12 +48,13 @@
 
                     </div>
                     <!-- 로그아웃 -->
-                    <button class="logout-btn">로그아웃</button>
+                    <button class="logout-btn" onclick="test()">로그아웃</button>
                 </div>
             </nav>
             <!-- ---------------------------------------------- -->
             <!-- 회원정보 본문 -->
-            <div class="content-Area">
+            <form action="info" method="POST" class="content-Area" onsubmit="return infoValidate()" autocomplete="off">
+                <!-- <div class="content-Area"> -->
                 <!-- h -->
                 <div class="title">
                     <h1>회원정보 수정</h1>
@@ -62,9 +63,9 @@
                 <!-- 닉네임 -->
                 <div class="changeInfo">
                     <!-- 인풋창 -->
-                    <div class="input-areaDup">
-                        <input type="text" class="newInfoDup" id="newNick" maxlength="10" placeholder="새로운 닉네임을 입력해주세요">
-                        <button type="button" id="nickDupBtn">중복확인</button>
+                    <div class="input-area">
+                        <input type="text" class="newInfo" name="memberNickname" id="newNick" maxlength="10" placeholder="새로운 닉네임을 입력해주세요">
+                        
                     </div>
 
                     <!-- 정규식메시지창 -->
@@ -73,37 +74,14 @@
                     </div>
                 </div>
 
-                <!-- 비밀번호 -->
-                <div class="changeInfo">
-                    <!--인풋창 -->
-                    <div class="input-area">
-                        <input type="text" class="newInfo" id="newPw" maxlength="30" placeholder="새로운 비밀번호를 입력해주세요">
-                    </div>
-                    <!-- 정규식메시지창 -->
-                    <div class="message-area">
-                        <span class="info-message" id="pwMessage">영어, 숫자, 특수문자(!,@,#,-,_) 6~30글자 사이로 작성해주세요.</span>
-                    </div>
-                </div>
-
-                <!-- 비밀번호 확인 -->
-                <div class="changeInfo">
-                    <!-- 인풋창 -->
-                    <div class="input-area">
-                        <input type="text" class="newInfo" id="newPwConfirm" maxlength="30"
-                            placeholder="변경할 비밀번호를 재입력해주세요">
-                    </div>
-                    <!-- 정규식메시지창 -->
-                    <div class="message-area">
-                        <span class="info-message" id="pwConfirmMessage">변경할 비밀번호를 재입력해주세요</span>
-                    </div>
-                </div>
+               
 
                 <!-- 전화번호 -->
                 <div class="changeInfo">
                     <!-- 인풋창 -->
-                    <div class="input-areaDup">
-                        <input type="text" class="newInfoDup" id="newTel" maxlength="12" placeholder="새로운 전화번호를 입력해주세요">
-                        <button type="button" id="telDupBtn">중복확인</button>
+                    <div class="input-area">
+                        <input type="text" class="newInfo" id="newTel" name="memberTel" maxlength="12" placeholder="새로운 전화번호를 입력해주세요">
+                        
                     </div>
                     <!-- 정규식메시지창 -->
                     <div class="message-area">
@@ -115,16 +93,19 @@
                 <div class="changeInfo">
                     <!-- 인풋창 -->
                     <div class="input-area">
-                        <input type="text" class="newInfo" id="newAddr" maxlength="50" placeholder="새로운 주소를 입력해주세요">
+                        <input type="text" class="newInfo" id="newAddr" name="memberAddr" maxlength="50" placeholder="새로운 주소를 입력해주세요">
                     </div>
                     <!-- 정규식메시지창 -->
                     <div class="message-area"></div>
                 </div>
 
                 <!-- 변경 버튼 -->
+                
                 <div class="btn_area">
-                    <button type="button" id="btnChange">회원정보수정</button>
+                    <button type="submit" id="btnChange">회원정보수정</button>
                 </div>
+                <!-- </div> -->
+            </form>
             </div>
                     <jsp:include page="/WEB-INF/views/common/Q&ABtn.jsp"/>
     </mian>

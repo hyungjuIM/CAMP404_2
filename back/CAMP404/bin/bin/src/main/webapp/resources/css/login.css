@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Source+Sans+Pro&display=swap');
+
+
+*:focus{
+    outline: 0;
+}
+body{
+    font-size: 14px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: black;
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    
+    
+    height: 1100px;
+    
+    width: 100vw;
+}
+.login-container{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 450px;
+    
+    box-sizing: border-box;
+   
+    margin: 100px auto;
+    
+    padding: 10px;
+
+    background-color: white;
+
+    border: solid 1px rgb(211, 208, 208);
+    border-radius: 20px;
+    text-transform: uppercase;
+    justify-content: center;
+    
+}
+.login-container div{
+    margin-bottom: 30px;
+text-align: center;
+}
+.login-container  img{
+    
+    width: 150px;
+    height: 60px;
+       
+}
+#login-form>input{
+    width: 100%;
+    height: 48px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+    border: solid rgb(209, 209, 209) 1px;
+    border-radius: 6px;
+    background-color: #F8F8F8;
+   
+}
+#login-form > input::placeholder{
+    color: #D2D2D2;
+}
+.login{
+    width : 100%;
+    height: 50px;
+    box-sizing: border-box;
+    
+    margin : auto;
+    /* padding: 21px 0 21px; */
+    
+    border: 0;
+    cursor: pointer;
+
+    color : #fff;
+    background-color: rgb(255, 142, 29);
+    border-radius: 10px;
+
+    font-size : 20px;
+    font-weight: bold;
+    font-family: 'Noto Sans KR', sans-serif;
+
+    transition: all 1s ease;
+    
+}
+.signup{
+    color: black;
+    font-size: 16px;  
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.signup a{
+    font-family: 'Noto Sans KR', sans-serif;
+    color: rgb(255, 142, 29)
+}
+.submit {
+    margin-top: 25px;
+    padding: 12px;
+    border-color: #dfa828;
+    cursor: pointer;
+  }
+  .submit:hover {
+    background: #595e63;
+    border-color: #595e63;
+  }
+#login-form > input[type="checkbox"]{
+    display: none;
+}
+#login-form > label{
+    color: #999999;
+}
+#login-form input[type="checkbox"] + label{
+    cursor: pointer;
+    padding-left: 26px;
+    background-image: url("checkbox.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+#login-form input[type="checkbox"]:checked + label{
+    background-image: url("checkbox-active.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}

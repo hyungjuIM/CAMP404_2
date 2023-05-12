@@ -374,5 +374,20 @@ function numberWithCommas(x) { // 3자리마자 콤마를 찍어주기 위한 �
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
+function getList() {
 
+    $.ajax({
+        url: "home/getList",
+        dataType: "json",
+
+        success: function (list) {
+            if (list.categoryNo == 1) {
+                for (let item of list) {
+                    const subText = item.lectureName
+                }
+            }
+        }
+
+    })
+}
 

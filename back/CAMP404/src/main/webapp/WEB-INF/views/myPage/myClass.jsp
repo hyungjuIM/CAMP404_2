@@ -30,7 +30,7 @@
                 <div class="myClass-summary-container">
                     <!-- 안녕하세요 * 님 -->
                     <div class="myClass-hiUser">안녕하세요.<br>
-                        <span class="userName">${loginMember.userNick}</span> 님!
+                        <span class="userName">김철수</span> 님!
                     </div>
                     <!-- 나의강의장, 찜목록, 정보수정버튼 -->
                     <div class="myClass-content-container">
@@ -38,18 +38,19 @@
                             <span class="myClass-span">나의 강의장</span>
                             <i class="fa-solid fa-chevron-right fa-xm"></i>
                         </div>
-                        <!-- <div class="content-1" onclick="location.href='/html/payMall.html';">
+                        <div class="content-1" onclick="location.href='/html/payMall.html';">
                             <span class="myClass-span">나의 찜목록</span>
                             <i class="fa-solid fa-chevron-right fa-xm"></i>
-                        </div> -->
+                        </div>
                         <div class="content-1" onclick="location.href='${pageContext.request.contextPath}/myPage/my-info';">
                             <span class="myClass-span">회원정보 수정</span>
                             <i class="fa-solid fa-chevron-right fa-xm"></i>
                         </div>
 
                     </div>
-                    <!-- 로그아웃 -->
-                    <div class="logout-btn">로그아웃</div>
+                    <!-- 로그아웃
+                    <a href="${contextPath}" class="logout-btn">로그아웃</a> -->
+                    <button class="logout-btn" onclick="test()">로그아웃</button>
                 </div>
             </nav>
             <!-- ---------------------------------------------- -->
@@ -78,10 +79,24 @@
                                 수강하기</div>
                             </div>
                         </div>
-                    
-
+                        <div id="class-content-1" class="class1">
+                            <img src="${pageContext.request.contextPath}/resources/images/3ddesign-parkjinbeom-coursecard.png">
+                            <div class="class-index">
+                                <span class="classIndex">JAVASCRIPT</span>
+                                <div class="class-index-content">감각의 시대에 살아남기 위한 크리에이티브, 기획력과 브랜딩</div>
+                                <div class="goClass">수강하기</div>
+                            </div>
+                        </div>
+                        <div id="class-content-1" class="class2">
+                            <img src="${pageContext.request.contextPath}/resources/images/3ddesign-parkjinbeom-coursecard.png">
+                            <div class="class-index">
+                                <span class="classIndex">DATABASE</span>
+                                <div class="class-index-content">디비는 정말루 싫어요... 진짜 이거 왜있는거야</div>
+                                <div class="goClass">수강하기</div>
+                            </div>
+                        </div>
                     </div>
-                    <!-- <div class="content-container-2 content-css">
+                    <div class="content-container-2 content-css">
                         <div id="class-content-1" class="class1">
                             <img src="${pageContext.request.contextPath}/resources/images/3ddesign-parkjinbeom-coursecard.png">
                             <div class="class-index">
@@ -90,9 +105,24 @@
                                 <div class="goClass">수강하기</div>
                             </div>
                         </div>
-                    
+                        <div id="class-content-1" class="class1">
+                            <img src="${pageContext.request.contextPath}/resources/images/3ddesign-parkjinbeom-coursecard.png">
+                            <div class="class-index">
+                                <span class="classIndex">java</span>
+                                <div class="class-index-content">감각의 시대에 살아남기 위한 크리에이티브, 기획력과 브랜딩</div>
+                                <div class="goClass">수강하기</div>
+                            </div>
+                        </div>
+                        <div id="class-content-1" class="class2">
+                            <img src="${pageContext.request.contextPath}/resources/images/3ddesign-parkjinbeom-coursecard.png">
+                            <div class="class-index">
+                                <span>DATABASE</span>
+                                <div class="class-index-content">디비는 정말루 싫어요... 진짜 이거 왜있는거야</div>
+                                <div class="goClass">수강하기</div>
+                            </div>
+                        </div>
 
-                    </div> -->
+                    </div>
                 </div>
 
                 <nav class="page-nav">
@@ -106,6 +136,7 @@
                         <li><a href="">5</a></li>
                         <li><a href="">&gt;</a></li>
 
+                        
                     </ul>
                 </nav>
             </div>
@@ -114,7 +145,7 @@
     </mian>
 
 
-        <script src="${pageContext.request.contextPath}/resources/js/classContents.js"></script>
+        <script src="${pageContext.request.contextPath}/resources/js/myClass.js"></script>
 
 </body>
 
