@@ -75,10 +75,9 @@ public class CampDAO {
 
 
 
-// 카테고리 1 / BEST Class
-	public List<Lecture> getCat(int catNo) {
-		System.out.println("1번을 통과 후 SQL 반환함");
-		return sqlSession.selectList("campMapper.getCat1",catNo);
+// 메인화면 강의 정보 불러오기
+	public List<Lecture> getClassItems(int catNo) {
+		return sqlSession.selectList("campMapper.getClassItems",catNo);
 	}
 
 

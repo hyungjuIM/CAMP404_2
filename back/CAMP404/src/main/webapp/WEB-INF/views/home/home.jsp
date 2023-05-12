@@ -205,7 +205,7 @@
                                 <c:if test="${bestClass.categoryNo == 1}">
                                     <div class="classItem">
                                         <a href="${contextPath}class/class3" class="imgArea">
-                                            <img src="resources/images/6.png">
+                                            <img src="${bestClass.lectureImg}">
                                         </a>
                                         <div class="textArea">
                                             <div class="topText">
@@ -269,7 +269,7 @@
                                 <c:if test="${frontClass.categoryNo == 2}">
                                     <div class="classItem">
                                         <a href="${contextPath}class/class3" class="imgArea">
-                                            <img src="resources/images/class1.png">
+                                            <img src="${frontClass.lectureImg}">
                                         </a>
                                         <div class="textArea">
                                             <div class="topText">
@@ -305,7 +305,7 @@
                                 <c:if test="${backClass.categoryNo == 3}">
                                     <div class="classItem">
                                         <a href="${contextPath}class/class3" class="imgArea">
-                                            <img src="resources/images/class4.png">
+                                            <img src="${backClass.lectureImg}">
                                         </a>
                                         <div class="textArea">
                                             <div class="topText">
@@ -369,7 +369,7 @@
                                 <c:if test="${dataBase.categoryNo == 4}">
                                     <div class="classItem">
                                         <a href="${contextPath}class/class3" class="imgArea">
-                                            <img src="resources/images/class7.png">
+                                            <img src="${dataBase.lectureImg}">
                                         </a>
                                         <div class="textArea">
                                             <div class="topText">
@@ -405,7 +405,7 @@
                                 <c:if test="${osClass.categoryNo == 5}">
                                     <div class="classItem">
                                         <a href="${contextPath}class/class3" class="imgArea">
-                                            <img src="resources/images/class10.png">
+                                            <img src="${osClass.lectureImg}">
                                         </a>
                                         <div class="textArea">
                                             <div class="topText">

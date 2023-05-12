@@ -156,11 +156,11 @@ public class CampServiceImpl implements CampService {
 		return result;
 	}
 
-	// 메인화면 강의 불러오기
+	// 메인화면 강의 정보 불러오기
 	@Override
 	public List<Lecture> getClassItems(int catNo) {
 		
-		return dao.getCat(catNo);
+		return dao.getClassItems(catNo);
 	}
 
 	/** 회원정보 수정
