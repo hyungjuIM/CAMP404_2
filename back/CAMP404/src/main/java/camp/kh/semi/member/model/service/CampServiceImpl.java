@@ -156,31 +156,11 @@ public class CampServiceImpl implements CampService {
 		return result;
 	}
 
-	// 메인화면 강의 불러오기
+	// 메인화면 강의 정보 불러오기
 	@Override
 	public List<Lecture> getClassItems(int catNo) {
 		
-		// 각 카테고리에 대한 상수
-		final int CAT_BEST = 1;
-		final int CAT_FRONT_END = 2;
-		final int CAT_BACK_END = 3;
-		final int CAT_DB = 4;
-		final int CAT_OS = 5;
-		
-	    switch (catNo) {
-	        case CAT_BEST:
-	            return dao.getCat1(catNo); // 카테고리 1 / BEST Class
-	        case CAT_FRONT_END:
-	            return dao.getCat2(catNo); // 카테고리 2 / FRONT-END Class
-	        case CAT_BACK_END:
-	            return dao.getCat3(catNo); // 카테고리 3 / BACK-END Class
-	        case CAT_DB:
-	            return dao.getCat4(catNo); // 카테고리 4 / DataBase Class
-	        case CAT_OS:
-	            return dao.getCat5(catNo); // 카테고리 5 / Operation System Class
-	        default:
-	            return null; // 예외처리?????
-	    }
+		return dao.getClassItems(catNo);
 	}
 
 	/** 회원정보 수정

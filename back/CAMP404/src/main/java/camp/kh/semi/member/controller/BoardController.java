@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -20,15 +19,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import camp.kh.semi.common.Util;
 import camp.kh.semi.member.model.service.boardService.BoardService;
+import camp.kh.semi.member.model.service.boardService.ReplyService;
 import camp.kh.semi.member.model.vo.Users;
 import camp.kh.semi.member.model.vo.boardVO.BoardDetail;
+import camp.kh.semi.member.model.vo.boardVO.Reply;
 
 //공지 및 게시판 관련 컨트롤러
 
@@ -41,10 +44,13 @@ public class BoardController {
 	@Autowired
 	private BoardService service;
 	
+	@Autowired
+	private ReplyService rService;
 	
 	
 	
-	// 공지사항 이동
+	
+	// 공지사항 이동(게시글 목록 조회)
 	@GetMapping(value ="/list/{boardCode}")
 	public String boardList( @PathVariable("boardCode") int boardCode,
 							@RequestParam(value = "cp", required = false, defaultValue = "1") int cp,
@@ -87,6 +93,9 @@ public class BoardController {
 		System.out.println(detail);
 		
 		if( detail != null ) { // 상세 조회 성공 시
+			
+			List<Reply> rList = rService.selectReplyList(boardNo);
+			model.addAttribute("rList", rList);
 			
 			Users loginMember = (Users)session.getAttribute("loginMember");
 			System.out.println(loginMember);
@@ -207,8 +216,8 @@ public class BoardController {
 								, @ModelAttribute("loginMember") Users loginMember
 								, RedirectAttributes ra
 								, HttpServletRequest req
-								, @RequestParam(value="cp", required = false, defaultValue = "1") int cp
-								, @RequestParam(value="deleteList", required = false) String deleteList ) 
+								, @RequestHeader("referer") String referer
+								, @RequestParam(value="cp", required = false, defaultValue = "1") int cp) 
 								throws IOException{
 			
 			
@@ -222,8 +231,6 @@ public class BoardController {
 				// 게시글 부분 삽입 (제목, 내용, 회원번호, 게시판코드)
 				// -> 삽입된 게시글의 번호(boardNo) 반환 (왜? 삽입이 끝나면 게시글 상세조회로 리다이렉트)
 				
-				// 게시글에 포함된 이미지 정보 삽입 (0~5개, 게시글 번호 필요)
-				// -> 실제 파일로 변환해서 서버에 저장( transFer() )
 				
 				// 두 번의 insert 중 한 번이라도 실패하면 전체 rollback (트랜잭션 처리)
 				
@@ -245,14 +252,15 @@ public class BoardController {
 				}
 				
 				ra.addFlashAttribute("message", message);
-				
 				return "redirect:" + path;
+				
+				
 				
 			} else { // 수정
 
 				// 게시글 수정 서비스 호출
 				// 게시글 번호를 알고있기때문에 수정 결과만 반환 받으면 된다.
-				int result = service.updateBoard(detail, deleteList);
+				int result = service.updateBoard(detail);
 				
 				String path = null;
 				String message = null;
@@ -267,7 +275,7 @@ public class BoardController {
 					
 				} else {
 					path = req.getHeader("referer");
-					message = "게시글 수정 실패..";
+					message = "게시글 수정 실패...";
 				}
 				
 				ra.addFlashAttribute("message", message);
@@ -277,5 +285,37 @@ public class BoardController {
 	
 	
 		}
+		
+		
+		
+		
+		
+
+		// 게시글 삭제
+		@GetMapping("/delete/{boardCode}/{boardNo}")
+		public String deleteBoard(@PathVariable("boardCode") int boardCode,
+								  @PathVariable("boardNo") int boardNo,
+								  RedirectAttributes ra, @RequestHeader("referer") String referer) {
+			
+			int result = service.deleteBoard(boardNo);
+			
+			
+			String path = null;
+			String message = null;
+			
+			if(result > 0) {
+				message = "삭제되었습니다.";
+				//path = "../../list/" + boardCode; // 상대경로
+				path = "/board/list/" + boardCode;
+			} else {
+				message = "삭제 실패";
+				path = referer;
+			}
+			
+			ra.addFlashAttribute("message", message);
+			
+			return "redirect:" + path;
+		}
+		
 		
 }

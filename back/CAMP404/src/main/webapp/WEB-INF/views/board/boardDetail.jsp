@@ -17,6 +17,11 @@
 
 
     <script src="https://kit.fontawesome.com/a2e8ca0ae3.js" crossorigin="anonymous"></script>
+    
+    	<!-- jQuery 라이브러리 추가(CDN) -->
+			<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+				integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    
 </head>
 <body>
 
@@ -100,7 +105,7 @@
     <!-- jQuery 추가 -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-    <script src="${contextPath}/resources/js/board/board.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/boardJs/board.js"></script>
 
 
     <script>
@@ -126,9 +131,7 @@
 
     </script>
 
-    <script src="${contextPath}/resources/js/board/reply.js"></script>
-
-	    <script src="${pageContext.request.contextPath}/resources/js/boardJs/board.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/boardJs/reply.js"></script>
 	
 
 </body>

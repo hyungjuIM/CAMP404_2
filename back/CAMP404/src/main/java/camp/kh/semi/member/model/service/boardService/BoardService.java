@@ -56,7 +56,13 @@ public interface BoardService {
 	 * @return result
 	 * @throws IOException
 	 */
-	int updateBoard(BoardDetail detail,String deleteList)  throws IOException;	
+	int updateBoard(BoardDetail detail)  throws IOException;
+
+	/** 게시글 삭제 서비스
+	 * @param boardNo
+	 * @return result
+	 */
+	int deleteBoard(int boardNo);	
 
 
 

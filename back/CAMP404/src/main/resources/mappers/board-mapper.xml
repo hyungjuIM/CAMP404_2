@@ -52,31 +52,35 @@
 
 	<!-- 게시글 목록 조회 -->
 	<select id="selectBoardList" resultMap="board_rm">
-		SELECT BOARD_NO,
-		BOARD_TITLE, USER_NICK, READ_COUNT
-		--CASE WHEN SYSDATE - CREATE_DT &lt; 1
-		--THEN TO_CHAR(CREATE_DT, 'HH:MI')
-		--ELSE TO_CHAR(CREATE_DT, 'YYYY-MM-DD')
-		--END CREATE_DT
+		SELECT BOARD_NO, BOARD_TITLE, BOARD_CONTENT,
+		TO_CHAR(CREATE_DT, 'YYYY"년" MM"월" DD"일" HH24:MI:SS') CREATE_DT,
+		TO_CHAR(UPDATE_DT, 'YYYY"년" MM"월" DD"일" HH24:MI:SS') UPDATE_DT,
+		READ_COUNT, USER_NICK, USER_NO,
+		BOARD_NM
 		FROM BOARD
-		JOIN BOARD_TYPE USING(BOARD_CD)
 		JOIN USERS USING(USER_NO)
-		WHERE BOARD_ST = 'N'
-		AND BOARD_CD = 1
+		JOIN BOARD_TYPE USING(BOARD_CD)
+		WHERE BOARD_CD = 1
+		AND BOARD_ST = 'N'
+		AND BOARD_CD = ${boardCode}
 		ORDER BY BOARD_NO DESC
 	</select>
 	
 	
 	<!-- 게시글 상세 조회 -->
-	<select id="selectBoardDetail" resultMap="detail_rm">
-	SELECT BOARD_NO, BOARD_TITLE, BOARD_CONTENT
-	--BOARD_NM
+	<select id="selectBoardDetail" resultMap="detail_rm">		
+		SELECT BOARD_NO, BOARD_TITLE, BOARD_CONTENT,
+		TO_CHAR(CREATE_DT, 'YYYY"년" MM"월" DD"일" HH24:MI:SS') CREATE_DT,
+		TO_CHAR(UPDATE_DT, 'YYYY"년" MM"월" DD"일" HH24:MI:SS') UPDATE_DT,
+		READ_COUNT, USER_NICK, USER_NO,
+		BOARD_NM
 		FROM BOARD
 		JOIN USERS USING(USER_NO)
 		JOIN BOARD_TYPE USING(BOARD_CD)
-		WHERE BOARD_NO = ${board_no}
+		WHERE BOARD_NO = ${boardNo}
 		AND BOARD_ST = 'N'
 	</select>
+	
 	
 	<!-- 조회수 증가 -->
 	<update id="updateReadCount">
@@ -95,8 +99,8 @@
 	
 	
 			INSERT INTO BOARD VALUES( 
-			#{boardNo}, #{boardTitle} ,#{boardContent}, 
-			DEFAULT, DEFAULT, DEFAULT, DEFAULT, #{userNo}, #{boardNo})
+			#{boardNo} ,#{boardTitle} ,#{boardContent}, 
+			DEFAULT, DEFAULT, DEFAULT, DEFAULT, #{userNo}, #{boardCode} )
 	</insert>
 	
 	
@@ -107,8 +111,15 @@
 		BOARD_TITLE = #{boardTitle},
 		BOARD_CONTENT = #{boardContent},
 		UPDATE_DT = SYSDATE
-		WHERE BOARD_NO = #{boardNo}
+		WHERE BOARD_NO = ${boardNo}
 	</update>
   
+  
+  	<!-- 게시글 삭제 -->
+	<update id="deleteBoard">
+		UPDATE BOARD SET
+		BOARD_ST = 'Y'
+		WHERE BOARD_NO = ${boardNo}
+	</update>
   
 </mapper>

@@ -101,7 +101,7 @@ public class BoardServiceImpl implements BoardService {
 		// 선언적 트랜잭션 처리 방법(unchecked Exception 처리가 기본)
 		@Transactional(rollbackFor = {Exception.class}) // 모든 종류의 예외 발생 시 롤백
 		@Override
-		public int updateBoard(BoardDetail detail, String deleteList) throws IOException {
+		public int updateBoard(BoardDetail detail) throws IOException {
 			
 			// 1) XSS, 개행문자 처리
 			detail.setBoardTitle(    Util.XSSHandling(detail.getBoardTitle())  );
@@ -109,7 +109,19 @@ public class BoardServiceImpl implements BoardService {
 			detail.setBoardContent(  Util.newLineHandling(detail.getBoardContent())  );
 			
 			// 2) 게시글(제목, 내용, 마지막 수정일(sysdate) / boardNo 필요) 만 수정하는 DAO 호출
-			int result = dao.updateBoard(detail);
+			int result= dao.updateBoard(detail);
+			return result;
+			
+		}
+		
+		
+		
+		
+		// 게시글 삭제 서비스 구현
+		@Override
+		public int deleteBoard(int boardNo) {
+			// return dao.deleteBoard(boardNo);
+			int result = dao.deleteBoard(boardNo);
 			
 			return result;
 		}
