@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.google.gson.Gson;
 
@@ -25,6 +26,7 @@ import camp.kh.semi.member.model.vo.boardVO.Reply;
 // -> @Controller + @ResponseBody
 
 @RestController
+@SessionAttributes({"loginMember"})
 @RequestMapping("/reply")
 public class ReplyController {
 
