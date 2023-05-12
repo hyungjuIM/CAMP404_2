@@ -292,12 +292,14 @@ public class BoardController {
 		
 
 		// 게시글 삭제
+		@ResponseBody
 		@GetMapping("/delete/{boardCode}/{boardNo}")
 		public String deleteBoard(@PathVariable("boardCode") int boardCode,
 								  @PathVariable("boardNo") int boardNo,
-								  RedirectAttributes ra, @RequestHeader("referer") String referer) {
+								  RedirectAttributes ra, @RequestHeader("referer") String referer,
+								  BoardDetail boardDetail) {
 			
-			int result = service.deleteBoard(boardNo);
+			int result = service.deleteBoard(boardDetail);
 			
 			
 			String path = null;

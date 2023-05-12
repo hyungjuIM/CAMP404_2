@@ -38,8 +38,8 @@ public class ReplyDAO {
 	 * @param replyNo
 	 * @return result
 	 */
-	public int deleteReply(int replyNo) {
-		return sqlSession.update("replyMapper.deleteReply", replyNo);
+	public int deleteReply(Reply reply) {
+		return sqlSession.update("replyMapper.deleteReply", reply);
 	}
 
 	

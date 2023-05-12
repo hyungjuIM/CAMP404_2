@@ -96,6 +96,7 @@
 		UPDATE REPLY_S SET
 		REPLY_ST = 'Y'
 		WHERE REPLY_NO = #{replyNo}
+		AND USER_NO =#{userNo}
 	</update>
 	
 	
@@ -104,6 +105,7 @@
 		UPDATE REPLY_S SET
 		REPLY_CONTENT = #{replyContent}
 		WHERE REPLY_NO = #{replyNo}
+		AND USER_NO=#{userNo}
 	</update>
 	
 	
