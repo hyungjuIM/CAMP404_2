@@ -14,8 +14,8 @@ public class Reply {
 	private String replyContent;
 	private String createDate;
 	private int boardNo;
-	private int memberNo;
-	private String memberNickname;
-	private String profileImage;
+	private int userNo;
+	private String userNickname;
+	//private String profileImage;
 	private int parentReplyNo;
 }

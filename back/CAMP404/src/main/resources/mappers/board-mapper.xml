@@ -111,7 +111,7 @@
 		BOARD_TITLE = #{boardTitle},
 		BOARD_CONTENT = #{boardContent},
 		UPDATE_DT = SYSDATE
-		WHERE BOARD_NO = #{boardNo}
+		WHERE BOARD_NO = ${boardNo}
 	</update>
   
   

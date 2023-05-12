@@ -12,17 +12,9 @@
                 <li class='reply-row  <c:if test="${reply.parentReplyNo != 0}"> child-reply </c:if>'>
                     <p class="reply-writer">
 
-                        <c:if test="${empty reply.profileImage}">
-                            <!-- 프로필 이미지가 없을 경우 -->
-                            <img src="${contextPath}/resources/images/user.png">
-                        </c:if>
+           
 
-                        <c:if test="${!empty reply.profileImage}">
-                            <!-- 프로필 이미지가 있을 경우 -->
-                            <img src="${contextPath}${reply.profileImage}">
-                        </c:if>
-
-                        <span>${reply.memberNickname}</span>
+                        <span>${reply.userNickname}</span>
                         <span class="reply-date">(${reply.createDate})</span>
                     </p>
                     
@@ -35,7 +27,7 @@
                             <button onclick="showInsertReply(${reply.replyNo}, this)">답글</button>
 
                             <%-- 로그인한 회원의 댓글인 경우 --%>
-                            <c:if test="${loginMember.memberNo == reply.memberNo}">
+                            <c:if test="${loginMember.userNo == reply.userNo}">
                                 <button onclick="showUpdateReply(${reply.replyNo}, this);">수정</button>     
                                 <button onclick="deleteReply(${reply.replyNo})">삭제</button>
                             </c:if>
@@ -52,7 +44,7 @@
     <!-- 댓글 작성 부분 -->
     <div class="reply-write-area">
         <textarea id="replyContent"></textarea>
-        <button id="addReply">
+        <button id="addReply" >
             댓글<br>
             등록
         </button>
