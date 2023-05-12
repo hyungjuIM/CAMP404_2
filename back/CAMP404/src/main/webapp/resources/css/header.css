@@ -150,9 +150,13 @@ header {
 
 /* JS에서 사용. 검색창 위치 가운데 정렬 */
 .searchBarMiddle {
-    -webkit-transform: translateX(250px);
+    /* -webkit-transform: translateX(250px);
     -webkit-transition-timing-function: linear;
-    width: 400px;
+    width: 400px; */
+    -webkit-transform: translateX(12vw);
+    -webkit-transition-timing-function: linear;
+    width: 35vw;
+
 }
 
 
@@ -178,6 +182,7 @@ header {
     padding-top: 20px;
     display: flex;
     flex-wrap: wrap;
+    margin-top:20px;
 
 }
 
@@ -326,7 +331,7 @@ header {
     border-top: 3px solid rgba(255, 255, 255, 0.3);
     width: 100%;
     height: 320px;
-    padding-top: 20px;
+    padding: 20px 30px 0px 30px
 }
 
 .subMenuLineUp li {
@@ -371,18 +376,17 @@ header {
 .loginArea, .user_small_menu{position: fixed;}
 
 .user_small_menu{
-    
     display: flex;
     flex-direction: column;
 
     padding: 10px;
-    margin-top: 10px;
+    margin: 10px 3px 18px 3px;
 
     background-color:rgb(56, 56, 56);
     font-size: 14px;
 }
 
-.user_small_menu div{margin-bottom: 5px;}
+.user_small_menu div{margin-bottom: 10px;}
 
 .user_btn:hover{
     color: orange;
