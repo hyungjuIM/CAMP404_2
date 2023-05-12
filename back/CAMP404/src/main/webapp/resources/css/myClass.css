@@ -243,6 +243,8 @@ input::placeholder {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    margin-right: 10px;
 }
 
 /* 강의 목록 -> 이미지 */

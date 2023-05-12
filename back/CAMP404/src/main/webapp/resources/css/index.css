@@ -251,12 +251,12 @@ main {
     font-size: 18px;
     font-weight: 450;
     
-    margin-bottom: 3px;
+    margin-bottom: 5px;
 }
 
 /* 아래있는 작은 텍스트 영역 */
 .innerDown {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 350;
     line-height: 18px;
     color: rgb(130, 130, 130);
@@ -286,12 +286,12 @@ main {
 
 /* 가입 회원 수 */
 .aDown1 {
-    /* flex: 3; */
+    flex: 3;
     display: flex;
     align-items: center;
     font-weight: 450;
     font-size: 16px;
-    padding-left: 15px;
+    /* padding-left: 15px; */
     color: #717171;
 }
 
@@ -309,7 +309,7 @@ main {
     font-size: 72px;
     font-weight: 500;
     color: #fe6936;
-    padding-left: 15px;
+    /* padding-left: 15px; */
 }
 
 .aDown3>span:nth-child(2) {
@@ -338,8 +338,9 @@ main {
     height: 74px;
     text-align: right;
     color: rgb(130, 130, 130);
-    font-weight: bolder;
+    font-weight: 400;
     padding-left: 23px;
+    line-height: 1.1;
 }
 
 a.Down5>div:first-child {
@@ -367,6 +368,7 @@ a.Down5>div:first-child {
     align-items: center;
     height: 120px;
     border-right: 2px solid #aaa;
+    padding: 10px 40px;
 }
 
 /* 오픈된 클래스 */
@@ -409,6 +411,7 @@ a.Down5>div:first-child {
     justify-content: center;
     align-items: center;
     height: 120px;
+    padding: 10px 0px 10px 70p
 }
 
 /* 회원 수 및 수업 수 영역*/
