@@ -103,7 +103,7 @@
                                 <div><i class="fa-solid fa-ellipsis-vertical"></i></div>
                             </div>
                             <div class="innerDown">
-                                <span>수강생들이 직접 만든 완벽한 포트폴리오!</span>
+                                <span>수강생들의 리얼 포트폴리오!</span>
                             </div>
                         </a>
                         <!-- 포트폴리오 -->
@@ -127,7 +127,7 @@
                                 <div><i class="fa-solid fa-ellipsis-vertical"></i></div>
                             </div>
                             <div class="innerDown">
-                                <span>&lt;CAMP 404/&gt;의 엄청난 강사님들을 소개합니다!</span>
+                                <span>&lt;CAMP 404/&gt;의 강사님을 소개합니다!</span>
                             </div>
                         </a>
                         <!-- 강사소개 -->
@@ -149,8 +149,9 @@
                                 </div>
                                 <div class="aDown4">
                                     <div class="aDown5">
-                                        <div>회원</div>
-                                        <div>증가율</div>
+                                        <div>회원
+                                            <br>증가율
+                                        </div>
                                     </div>
                                     <div class="aDown6">
                                         <span class="count_num2">0</span>

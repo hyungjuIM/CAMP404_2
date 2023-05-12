@@ -71,9 +71,9 @@
 														<div onclick="location.href='${pageContext.request.contextPath}/myPage/myClass';">
 															<span class="userCon user_btn">나의 강의장</span>
 														</div>
-														<!-- <div onclick="location.href='${pageContext.request.contextPath}/myPage/my-info';">
+														<div onclick="location.href='${pageContext.request.contextPath}/myPage/my-info';">
 															<span class="userCon user_btn">나의 찜목록</span>
-														</div> -->
+														</div>
 														<div onclick="location.href='${pageContext.request.contextPath}/myPage/my-info';">
 															<span class="userCon user_btn">회원정보 수정</span>
 														</div>

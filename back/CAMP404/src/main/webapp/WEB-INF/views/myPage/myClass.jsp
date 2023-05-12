@@ -82,28 +82,24 @@
                                             onclick="location.href='${pageContext.request.contextPath}/myPage/classroom1';">
                                             수강하기</div>
                                     </div>
+                             
                                 </div>
                                 <div id="class-content-1" class="class1">
                                     <img
                                         src="${pageContext.request.contextPath}/resources/images/3ddesign-parkjinbeom-coursecard.png">
                                     <div class="class-index">
-                                        <span class="classIndex">JAVASCRIPT</span>
+                                        <span class="classIndex">JAVA</span>
                                         <div class="class-index-content">감각의 시대에 살아남기 위한 크리에이티브, 기획력과 브랜딩</div>
-                                        <div class="goClass">수강하기</div>
+                                        <div class="goClass"
+                                            onclick="location.href='${pageContext.request.contextPath}/myPage/classroom1';">
+                                            수강하기</div>
                                     </div>
+                             
                                 </div>
-                                <div id="class-content-1" class="class2">
-                                    <img
-                                        src="${pageContext.request.contextPath}/resources/images/3ddesign-parkjinbeom-coursecard.png">
-                                    <div class="class-index">
-                                        <span class="classIndex">DATABASE</span>
-                                        <div class="class-index-content">디비는 정말루 싫어요... 진짜 이거 왜있는거야</div>
-                                        <div class="goClass">수강하기</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="content-container-2 content-css">
-                                <div id="class-content-1" class="class1">
+                                
+                                
+                            <!-- <div class="content-container-2 content-css"> -->
+                                <!-- <div id="class-content-1" class="class1">
                                     <img
                                         src="${pageContext.request.contextPath}/resources/images/3ddesign-parkjinbeom-coursecard.png">
                                     <div class="class-index">
@@ -111,44 +107,26 @@
                                         <div class="class-index-content">감각의 시대에 살아남기 위한 크리에이티브, 기획력과 브랜딩</div>
                                         <div class="goClass">수강하기</div>
                                     </div>
-                                </div>
-                                <div id="class-content-1" class="class1">
-                                    <img
-                                        src="${pageContext.request.contextPath}/resources/images/3ddesign-parkjinbeom-coursecard.png">
-                                    <div class="class-index">
-                                        <span class="classIndex">java</span>
-                                        <div class="class-index-content">감각의 시대에 살아남기 위한 크리에이티브, 기획력과 브랜딩</div>
-                                        <div class="goClass">수강하기</div>
-                                    </div>
-                                </div>
-                                <div id="class-content-1" class="class2">
-                                    <img
-                                        src="${pageContext.request.contextPath}/resources/images/3ddesign-parkjinbeom-coursecard.png">
-                                    <div class="class-index">
-                                        <span>DATABASE</span>
-                                        <div class="class-index-content">디비는 정말루 싫어요... 진짜 이거 왜있는거야</div>
-                                        <div class="goClass">수강하기</div>
-                                    </div>
-                                </div>
+                                </div> -->
+                                
+                        <!-- </div> -->
 
-                            </div>
-                        </div>
-
-                        <nav class="page-nav">
-                            <ul class="pagination">
-
-                                <li><a href="">&lt;</a></li>
-                                <li><a href="">1</a></li>
-                                <li><a href="">2</a></li>
-                                <li><a href="">3</a></li>
-                                <li><a href="">4</a></li>
-                                <li><a href="">5</a></li>
-                                <li><a href="">&gt;</a></li>
-
-
-                            </ul>
-                        </nav>
                     </div>
+
+                    <nav class="page-nav">
+                        <ul class="pagination">
+
+                            <li><a href="">&lt;</a></li>
+                            <li><a href="">1</a></li>
+                            <li><a href="">2</a></li>
+                            <li><a href="">3</a></li>
+                            <li><a href="">4</a></li>
+                            <li><a href="">5</a></li>
+                            <li><a href="">&gt;</a></li>
+
+
+                        </ul>
+                    </nav>
                 </div>
                 <jsp:include page="/WEB-INF/views/common/Q&ABtn.jsp" />
             </mian>
