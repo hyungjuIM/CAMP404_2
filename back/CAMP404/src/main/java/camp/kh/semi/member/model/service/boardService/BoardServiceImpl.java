@@ -119,9 +119,9 @@ public class BoardServiceImpl implements BoardService {
 		
 		// 게시글 삭제 서비스 구현
 		@Override
-		public int deleteBoard(int boardNo) {
+		public int deleteBoard(BoardDetail boardDetail) {
 			// return dao.deleteBoard(boardNo);
-			int result = dao.deleteBoard(boardNo);
+			int result = dao.deleteBoard(boardDetail);
 			
 			return result;
 		}

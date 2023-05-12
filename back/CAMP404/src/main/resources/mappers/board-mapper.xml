@@ -120,6 +120,7 @@
 		UPDATE BOARD SET
 		BOARD_ST = 'Y'
 		WHERE BOARD_NO = ${boardNo}
+		AND USER_NO =#{userNo}
 	</update>
   
 </mapper>

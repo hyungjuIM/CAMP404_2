@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import com.google.gson.Gson;
 
 import camp.kh.semi.member.model.service.boardService.ReplyService;
+import camp.kh.semi.member.model.vo.Users;
 import camp.kh.semi.member.model.vo.boardVO.Reply;
 
 
@@ -62,14 +64,19 @@ public class ReplyController {
 	
 	// 댓글 수정
 	@PostMapping("/update")
-	public int updateReply(Reply reply) {
+	public int updateReply(@ModelAttribute("loginMember") Users loginMember,
+			Reply reply) {
+		reply.setUserNo( loginMember.getUserNo() );
 		return service.updateReply(reply);
 	}
 		
 	
 	// 댓글 삭제
 	@GetMapping("/delete")
-	public int deleteReply(int replyNo) {
-		return service.deleteReply(replyNo);
+	public int deleteReply(@ModelAttribute("loginMember") Users loginMember,
+			int replyNo,
+			Reply reply) {
+		reply.setUserNo( loginMember.getUserNo() );
+		return service.deleteReply(reply);
 	}
 }

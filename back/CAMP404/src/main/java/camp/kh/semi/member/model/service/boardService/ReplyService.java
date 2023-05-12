@@ -24,7 +24,7 @@ public interface ReplyService {
 	 * @param replyNo
 	 * @return result
 	 */
-	int deleteReply(int replyNo);
+	int deleteReply(Reply reply);
 
 
 	/** 댓글 수정 서비스
