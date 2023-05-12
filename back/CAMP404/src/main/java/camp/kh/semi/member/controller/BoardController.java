@@ -28,8 +28,10 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import camp.kh.semi.common.Util;
 import camp.kh.semi.member.model.service.boardService.BoardService;
+import camp.kh.semi.member.model.service.boardService.ReplyService;
 import camp.kh.semi.member.model.vo.Users;
 import camp.kh.semi.member.model.vo.boardVO.BoardDetail;
+import camp.kh.semi.member.model.vo.boardVO.Reply;
 
 //공지 및 게시판 관련 컨트롤러
 
@@ -41,6 +43,9 @@ public class BoardController {
 	
 	@Autowired
 	private BoardService service;
+	
+	@Autowired
+	private ReplyService rService;
 	
 	
 	
@@ -88,6 +93,9 @@ public class BoardController {
 		System.out.println(detail);
 		
 		if( detail != null ) { // 상세 조회 성공 시
+			
+			List<Reply> rList = rService.selectReplyList(boardNo);
+			model.addAttribute("rList", rList);
 			
 			Users loginMember = (Users)session.getAttribute("loginMember");
 			System.out.println(loginMember);
@@ -208,6 +216,7 @@ public class BoardController {
 								, @ModelAttribute("loginMember") Users loginMember
 								, RedirectAttributes ra
 								, HttpServletRequest req
+								, @RequestHeader("referer") String referer
 								, @RequestParam(value="cp", required = false, defaultValue = "1") int cp) 
 								throws IOException{
 			
@@ -222,8 +231,6 @@ public class BoardController {
 				// 게시글 부분 삽입 (제목, 내용, 회원번호, 게시판코드)
 				// -> 삽입된 게시글의 번호(boardNo) 반환 (왜? 삽입이 끝나면 게시글 상세조회로 리다이렉트)
 				
-				// 게시글에 포함된 이미지 정보 삽입 (0~5개, 게시글 번호 필요)
-				// -> 실제 파일로 변환해서 서버에 저장( transFer() )
 				
 				// 두 번의 insert 중 한 번이라도 실패하면 전체 rollback (트랜잭션 처리)
 				
@@ -268,7 +275,7 @@ public class BoardController {
 					
 				} else {
 					path = req.getHeader("referer");
-					message = "게시글 수정 실패!!!!";
+					message = "게시글 수정 실패...";
 				}
 				
 				ra.addFlashAttribute("message", message);

@@ -109,10 +109,9 @@ public class BoardServiceImpl implements BoardService {
 			detail.setBoardContent(  Util.newLineHandling(detail.getBoardContent())  );
 			
 			// 2) 게시글(제목, 내용, 마지막 수정일(sysdate) / boardNo 필요) 만 수정하는 DAO 호출
-			int result = dao.updateBoard(detail);
-			
-			
+			int result= dao.updateBoard(detail);
 			return result;
+			
 		}
 		
 		
@@ -121,6 +120,9 @@ public class BoardServiceImpl implements BoardService {
 		// 게시글 삭제 서비스 구현
 		@Override
 		public int deleteBoard(int boardNo) {
-			return dao.deleteBoard(boardNo);
+			// return dao.deleteBoard(boardNo);
+			int result = dao.deleteBoard(boardNo);
+			
+			return result;
 		}
 }

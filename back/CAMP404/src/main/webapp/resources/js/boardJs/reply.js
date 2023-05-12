@@ -40,8 +40,8 @@ function selectReplyList(){
                 }
   
                 // 작성자 닉네임
-                const memberNickname = document.createElement("span");
-                memberNickname.innerText = reply.memberNickname;
+                const userNickname = document.createElement("span");
+                userNickname.innerText = reply.userNickname;
                 
                 // 작성일
                 const replyDate = document.createElement("span");
@@ -49,7 +49,7 @@ function selectReplyList(){
                 replyDate.innerText =  "(" + reply.createDate + ")";
 
                 // 작성자 영역(p)에 프로필,닉네임,작성일 마지막 자식으로(append) 추가
-                replyWriter.append(profileImage , memberNickname , replyDate);
+                replyWriter.append(profileImage , userNickname , replyDate);
 
                 
 
@@ -64,7 +64,7 @@ function selectReplyList(){
                 replyRow.append(replyWriter, replyContent);
 
                 // 로그인한 회원번호와 댓글 작성자의 회원번호가 같을 때만 버튼 추가
-                if( loginMemberNo == reply.memberNo   ){
+                if( loginMemberNo == reply.userNo   ){
 
                     // 버튼 영역
                     const replyBtnArea = document.createElement("div");
@@ -114,6 +114,8 @@ function selectReplyList(){
 const addReply = document.getElementById("addReply");
 const replyContent = document.getElementById("replyContent");
 
+
+
 addReply.addEventListener("click", function(){ // 댓글 등록 버튼이 클릭이 되었을 때
 
     // 1) 로그인이 되어있나? -> 전역변수 loginMemberNo 이용
@@ -133,9 +135,9 @@ addReply.addEventListener("click", function(){ // 댓글 등록 버튼이 클릭
 
     // 3) AJAX를 이용해서 댓글 내용 DB에 저장(INSERT)
     $.ajax({
-        url : contextPath + "/reply/insert",
+        url : contextPath + "/",
         data : {"replyContent" : replyContent.value,
-                "memberNo" : loginMemberNo,
+                "userNo" : loginMemberNo,
                 "boardNo" : boardNo },
         type : "post",
         success : function(result){
@@ -161,7 +163,6 @@ addReply.addEventListener("click", function(){ // 댓글 등록 버튼이 클릭
     });
 
 });
-
 
 // -----------------------------------------------------------------------------------
 // 댓글 삭제
