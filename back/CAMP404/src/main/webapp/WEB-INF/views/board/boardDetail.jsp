@@ -95,7 +95,7 @@
                     history.go(숫자) : 양수(앞으로가기), 음수(뒤로가기)
                 -->
                             <button id="goToListBtn" 
-                            onclick="location.href='../../write/${boardCode}?mode=update&cp=${cp}&no=${detail.boardNo}'">목록으로</button>
+                            onclick="location.href='../../list/${boardCode}'">목록으로</button>
                         </div>
                     </section>
 
@@ -107,11 +107,7 @@
                 <jsp:include page="/WEB-INF/views/common/footer.jsp" />
 
 
-                <!-- jQuery 추가 -->
-                <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-                    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
-                <script src="${pageContext.request.contextPath}/resources/js/boardJs/board.js"></script>
+               
 
 
                 <script>
