@@ -71,9 +71,9 @@
 														<div onclick="location.href='${pageContext.request.contextPath}/myPage/myClass';">
 															<span class="userCon user_btn">나의 강의장</span>
 														</div>
-														<div onclick="location.href='${pageContext.request.contextPath}/myPage/my-info';">
+														<!-- <div onclick="location.href='${pageContext.request.contextPath}/myPage/my-info';">
 															<span class="userCon user_btn">나의 찜목록</span>
-														</div>
+														</div> -->
 														<div onclick="location.href='${pageContext.request.contextPath}/myPage/my-info';">
 															<span class="userCon user_btn">회원정보 수정</span>
 														</div>
@@ -93,24 +93,24 @@
 						<!-- <a class="loginArea" href="${pageContext.request.contextPath}/member/login">로그인</a>
 						<%-- servlet-context.xml에서  <beans:property name="prefix" value="/WEB-INF/views/" /> 
 						<beans:property name="suffix" value=".jsp" /> 같이 설정 해주기 이렇게 하면 된다. --%> -->
-						<span class="closeSearch closeSearchHide">x</span>
 					</div>
 
 					<div class="searchSubMenu searchSubMenu_Hide">
 						<div class="searchSubMenuContainer">
+
 							추천 검색어
 							<div class="searchSubMenuWrapper">
 								<span class="searchItems"><a href="#">자바스크립트</a></span>
-								class="searchItems"><a href="#">파이썬</a></span>
-								class="searchItems"><a href="#">SQL</a></span>
+								<span class="searchItems"><a href="#">파이썬</a></span>
+								<span class="searchItems"><a href="#">SQL</a></span>
 							</div>
 							<div class="searchSubMenuWrapper">
 								<span class="searchItems"><a href="#">DATABASE</a></span>
-								class="searchItems"><a href="#">AI DEEP LEARNING</a></span>
+								<span class="searchItems"><a href="#">AI DEEP LEARNING</a></span>
 							</div>
 							<div class="searchSubMenuWrapper">
 								<span class="searchItems"><a href="#">로또번호</a></span>
-								class="searchItems"><a href="#">CHAT GPT</a></span>
+								<span class="searchItems"><a href="#">CHAT GPT</a></span>
 							</div>
 						</div>
 					</div>
@@ -168,7 +168,8 @@
 							</li> -->
 						</div>
 					</ul>
-					<div class="bgColor bgColorHidden"></div>
+				</div>
+				<div class="bgColor bgColorHidden"></div>
 
 
 			</header>
