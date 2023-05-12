@@ -17,5 +17,5 @@ public class Lecture {
 	private int price;
 	private int teacherNo;
 	private int categoryNo;
-	
+	private String lectureImg;
 }

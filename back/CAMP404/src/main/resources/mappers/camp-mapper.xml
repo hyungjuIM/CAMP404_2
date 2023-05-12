@@ -73,6 +73,7 @@
 		<result property="price" column="PRICE" />
 		<result property="teacherNo" column="TEACHER_NO" />
 		<result property="categoryNo" column="CATEGORY_NO" />
+		<result property="lectureImg" column="LECTURE_IMG" />
 	</resultMap>
 	
 	<!-- 카테고리 -->
@@ -240,6 +241,10 @@ FROM DUAL
 </insert>  
 -->
 	
+	<select id="getClassItems" parameterType="lecture" resultMap="lecture_rm">
+	SELECT * FROM LECTURE
+	WHERE CATEGORY_NO = #{categoryNo}
+	</select>
 	
 	
 </mapper>
