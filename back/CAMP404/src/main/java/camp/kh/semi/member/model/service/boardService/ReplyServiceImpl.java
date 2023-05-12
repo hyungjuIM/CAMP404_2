@@ -38,8 +38,8 @@ public class ReplyServiceImpl implements ReplyService {
 
 	// 댓글 삭제 서비스 구현
 	@Override
-	public int deleteReply(int replyNo) {
-		return dao.deleteReply(replyNo);
+	public int deleteReply(Reply reply) {
+		return dao.deleteReply(reply);
 	}
 
 	// 댓글 수정 서비스 구현
