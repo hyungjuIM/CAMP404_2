@@ -106,13 +106,95 @@ leftBtn.on('click', function () {
 });
 
 
+// =========================================================================
+// =========================================================================
+
+function test123(a) {
+    console.log(a);
+}
+
 
 // 강의 좋아요 버튼
 likeBtn.on('click', function () {
-    $(this).toggleClass('likeColor');
+    // $(this).toggleClass('likeColor');
+    console.log("좋아요 버튼이 눌림");
+    let FAV_YN = "Y";
+
+    console.log(lectureNo);
+
+
+    if (loginMember != "") { // 로그인 되어 있을 경우.
+        console.log("로그인 했음");
+        $.ajax({
+            url: contextPath + "/test",
+            data: {
+                "favYn": FAV_YN,
+
+
+            },
+            type: post,
+
+            success: function (result) {
+                if (result > 0) {
+                    console.log("찜 목록에 등록 완료");
+
+                    function ask(question, yes, no) { // 등록 후 찜 목록 이동 여부 물어보기.
+                        if (confirm(question)) {
+                            yes(); // 찜 목록 이동 희망
+                            // let url = contextPath + "/main/login";
+                            // location.href = url;
+                        } else {
+                            no(); // 거부 시, 메인 화면에 계속 머물기
+                            return;
+                        }
+                    };
+
+                    ask( // function ask() 용 질의 구문
+                        "찜목록에 강의를 추가했습니다!.\n찜 목록으로 가시겠어요?",
+                        (ask) => alert("찜목 록 창으로 이동합니다."),
+                        (ask) => alert("취소 버튼을 누르셨습니다."),
+                    );
+                }
+            },
+
+            error: function () {
+
+            }
+
+        });
+
+
+
+
+
+
+
+
+    } else { // 로그인이 되어 있지 않은 경우.
+        console.log("로그인 안했음");
+
+        function ask(question, yes, no) { // 사용자에게 로그인 할지 말지 물어본다.
+            if (confirm(question)) {
+                yes(); // 로그인 희망 시, 로그인 사이트로 이동
+                let url = contextPath + "/main/login";
+                location.href = url;
+            } else {
+                no(); // 거부 시, 이벤트 취소 및 방지
+                likeBtn.removeClass('likeColor');
+                e.preventDefault()
+                return false;
+            }
+        };
+
+        ask( // function ask() 용 질의 구문
+            "로그인 후 찜목록에 추가할 수 있습니다.\n로그인 하시겠어요?",
+            (ask) => alert("로그인 창으로 이동합니다."),
+            (ask) => alert("취소 버튼을 누르셨습니다."),
+        );
+
+    }
 });
-// =========================================================================
-// =========================================================================
+
 // =========================================================================
 // =========================================================================
 
@@ -390,4 +472,3 @@ function getList() {
 
     })
 }
-

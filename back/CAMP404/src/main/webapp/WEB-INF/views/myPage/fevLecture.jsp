@@ -11,7 +11,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>강의목차</title>
 
-            <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/myClass.css" />
+            <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/fevLecture.css" />
 
             <!-- jQuery 라이브러리 추가(CDN) -->
             <script src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -60,7 +60,7 @@
                     <!-- 나의 정보 본문 -->
                     <div class="myClass-content-area">
                         <div class="myClass-over-navpart">
-                            <div class="myClass-over-btn">
+                            <!-- <div class="myClass-over-btn">
                                 <span class="class-btn">전체 목록</span>
                                 <span class="class-btn">수강중</span>
                                 <span class="class-btn">수강완료</span>
@@ -68,7 +68,7 @@
                             <div class="class-mySearchBarWrapper">
                                 <i class="fa-solid fa-magnifying-glass inputClass"></i>
                                 <input class="class-searchBar" placeholder="나의 강의 찾기" />
-                            </div>
+                            </div> -->
                         </div>
 
                         <div class="myclass-under-contentpart">
@@ -79,9 +79,7 @@
                                     <div class="class-index">
                                         <span class="classIndex">JAVA</span>
                                         <div class="class-index-content">감각의 시대에 살아남기 위한 크리에이티브, 기획력과 브랜딩</div>
-                                        <div class="goClass"
-                                            onclick="location.href='${pageContext.request.contextPath}/myPage/classroom1';">
-                                            수강하기</div>
+                                        <div class="goClass">구매하기</div>
                                     </div>
 
                                 </div>
@@ -91,30 +89,23 @@
                                     <div class="class-index">
                                         <span class="classIndex">JAVA</span>
                                         <div class="class-index-content">감각의 시대에 살아남기 위한 크리에이티브, 기획력과 브랜딩</div>
-                                        <div class="goClass"
-                                            onclick="location.href='${pageContext.request.contextPath}/myPage/classroom1';">
-                                            수강하기</div>
+                                        <div class="goClass">구매하기</div>
                                     </div>
 
                                 </div>
-
-
-                                <!-- <div class="content-container-2 content-css"> -->
-                                <!-- <div id="class-content-1" class="class1">
+                                <div id="class-content-1" class="class1">
                                     <img
                                         src="${pageContext.request.contextPath}/resources/images/3ddesign-parkjinbeom-coursecard.png">
                                     <div class="class-index">
                                         <span class="classIndex">JAVA</span>
                                         <div class="class-index-content">감각의 시대에 살아남기 위한 크리에이티브, 기획력과 브랜딩</div>
-                                        <div class="goClass">수강하기</div>
+                                        <div class="goClass">구매하기</div>
                                     </div>
-                                </div> -->
 
-                                <!-- </div> -->
-
+                                </div>
                             </div>
 
-                            <nav class="page-nav">
+                            <!-- <nav class="page-nav">
                                 <ul class="pagination">
 
                                     <li><a href="">&lt;</a></li>
@@ -127,13 +118,13 @@
 
 
                                 </ul>
-                            </nav>
+                            </nav> -->
                         </div>
                         <jsp:include page="/WEB-INF/views/common/Q&ABtn.jsp" />
             </mian>
 
 
-            <script src="${pageContext.request.contextPath}/resources/js/myClass.js"></script>
+            <script src="${pageContext.request.contextPath}/resources/js/fevLecture.js"></script>
 
             <script>
                 const contextPath = "${pageContext.request.contextPath}";

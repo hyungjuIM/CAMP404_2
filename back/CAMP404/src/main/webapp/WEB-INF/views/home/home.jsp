@@ -434,8 +434,18 @@
                 <jsp:include page="/WEB-INF/views/common/footer.jsp" />
             </footer>
 
+            <script>
+                const contextPath = "${contextPath}";
+                console.log(contextPath);
+                const loginMemberNo = "${loginMember.userNo}";
+                console.log(loginMemberNo);
+                const loginMember = "${loginMember}";
+                console.log(loginMember);
+            </script>
 
             <script src="${pageContext.request.contextPath}/resources/js/index.js"></script>
+
+
         </body>
 
         </html>

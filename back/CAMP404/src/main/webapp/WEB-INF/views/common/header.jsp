@@ -61,25 +61,29 @@
 											</c:when>
 
 											<%--로그인 된 후--%>
-											<c:otherwise>
-												<div class="loginArea">
-													<div class="nick_con user_btn"><span id="nickName">${loginMember.userNick}</span>님
+												<c:otherwise>
+													<div class="loginArea">
+														<div class="nick_con user_btn"><span
+																id="nickName">${loginMember.userNick}</span>님
+														</div>
+
+
+														<div class="user_small_menu hidden">
+															<div
+																onclick="location.href='${pageContext.request.contextPath}/myPage/myClass';">
+																<span class="userCon user_btn">나의 강의장</span>
+															</div>
+															<div
+																onclick="location.href='${pageContext.request.contextPath}/myPage/favLecture';">
+																<span class="userCon user_btn">나의 찜목록</span>
+															</div>
+															<div
+																onclick="location.href='${pageContext.request.contextPath}/myPage/my-info';">
+																<span class="userCon user_btn">회원정보 수정</span>
+															</div>
+														</div>
 													</div>
-										
-										
-													<div class="user_small_menu hidden">
-														<div onclick="location.href='${pageContext.request.contextPath}/myPage/myClass';">
-															<span class="userCon user_btn">나의 강의장</span>
-														</div>
-														<div onclick="location.href='${pageContext.request.contextPath}/myPage/my-info';">
-															<span class="userCon user_btn">나의 찜목록</span>
-														</div>
-														<div onclick="location.href='${pageContext.request.contextPath}/myPage/my-info';">
-															<span class="userCon user_btn">회원정보 수정</span>
-														</div>
-													</div>
-												</div>
-											</c:otherwise>
+												</c:otherwise>
 									</c:choose>
 								</section>
 
@@ -129,34 +133,36 @@
 					</div>
 					<ul class="subMenu subMenuLineUp">
 						<div class="subMenuWrapper">
-							<li class="hiddenMenu"><span class="grandTitle">FRONT-END</span> <a href="#" class="subMenuAtag">HTML5</a> <a href="#"
-									class="subMenuAtag">CSS</a>
+							<li class="hiddenMenu"><span class="grandTitle">FRONT-END</span> <a href="#"
+									class="subMenuAtag">HTML5</a> <a href="#" class="subMenuAtag">CSS</a>
 								<a href="#" class="subMenuAtag">JavaScript</a> <a href="#"
 									class="subMenuAtag">Jquery</a> <a href="#" class="subMenuAtag">TypeScript</a>
 								<a href="#" class="subMenuAtag">React</a> <a href="#" class="subMenuAtag">Vue.js</a> <a
 									href="#" class="subMenuAtag">Backbone</a>
 							</li>
-							<li class="hiddenMenu"><span class="grandTitle">BACK-END</span> <a href="#" class="subMenuAtag">Java</a> <a href="#"
-									class="subMenuAtag">Python</a>
+							<li class="hiddenMenu"><span class="grandTitle">BACK-END</span> <a href="#"
+									class="subMenuAtag">Java</a> <a href="#" class="subMenuAtag">Python</a>
 								<a href="#" class="subMenuAtag">PHP</a> <a href="#" class="subMenuAtag">Ruby</a> <a
 									href="#" class="subMenuAtag">Node.js</a>
 								<a href="#" class="subMenuAtag">C#</a> <a href="#" class="subMenuAtag">Kotlin</a> <a
 									href="#" class="subMenuAtag">Rust</a>
 							</li>
-							<li class="hiddenMenu"><span class="grandTitle">DATABASE</span> <a href="#" class="subMenuAtag">MySQL</a> <a href="#"
-									class="subMenuAtag">MariaDB</a>
+							<li class="hiddenMenu"><span class="grandTitle">DATABASE</span> <a href="#"
+									class="subMenuAtag">MySQL</a> <a href="#" class="subMenuAtag">MariaDB</a>
 								<a href="#" class="subMenuAtag">PostgreSQL</a> <a href="#"
 									class="subMenuAtag">ORACLE</a> <a href="#" class="subMenuAtag">SQL
 									SERVER</a> <a href="#" class="subMenuAtag">DB2</a> <a href="#"
 									class="subMenuAtag">Access</a> <a href="#" class="subMenuAtag">SQLite</a>
 							</li>
-							<li class="hiddenMenu"><span class="grandTitle">OS</span> <a href="#" class="subMenuAtag">Windows</a>
+							<li class="hiddenMenu"><span class="grandTitle">OS</span> <a href="#"
+									class="subMenuAtag">Windows</a>
 								<a href="#" class="subMenuAtag">Linux</a> <a href="#" class="subMenuAtag">Unix</a> <a
 									href="#" class="subMenuAtag">Mac</a>
 								<a href="#" class="subMenuAtag">Android</a> <a href="#" class="subMenuAtag">iOS</a> <a
 									href="#" class="subMenuAtag">UBUNTU</a>
 							</li>
-							<li class="hiddenMenu"><span class="grandTitle">TOOLS</span> <a href="#" class="subMenuAtag">Git+Git Hub</a>
+							<li class="hiddenMenu"><span class="grandTitle">TOOLS</span> <a href="#"
+									class="subMenuAtag">Git+Git Hub</a>
 								<a href="#" class="subMenuAtag">Atom</a> <a href="#" class="subMenuAtag">Figma</a> <a
 									href="#" class="subMenuAtag">Source Tree</a>
 							</li>
