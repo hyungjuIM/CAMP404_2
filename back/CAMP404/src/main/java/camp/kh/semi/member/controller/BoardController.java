@@ -245,7 +245,7 @@ public class BoardController {
 					
 					path = "../detail/" + boardCode + "/" + boardNo;
 					message = "게시글이 등록되었습니다.";
-					
+					logger.info("공지사항 등록 됨");
 				} else {
 					path = req.getHeader("referer");
 					message = "게시글 삽입 실패..";
