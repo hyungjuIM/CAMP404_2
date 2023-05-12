@@ -204,7 +204,7 @@
                             <c:forEach var="bestClass" items="${bestClassList}">
                                 <c:if test="${bestClass.categoryNo == 1}">
                                     <div class="classItem">
-                                        <a href="${contextPath}class/class3" class="imgArea">
+                                        <a href="${contextPath}/class/class3" class="imgArea">
                                             <img src="${bestClass.lectureImg}">
                                         </a>
                                         <div class="textArea">
@@ -215,9 +215,9 @@
                                                 </div>
                                                 <div class="likeBtn"><i class="fa-solid fa-heart"></i></i></div>
                                             </div>
-                                            <a href="${contextPath}class/class3">
+                                            <a href="${contextPath}/class/class3">
                                                 <div class="subText">${bestClass.lectureName}<br></div>
-                                                <div class="tutorTitle">${bestClass.lectureNo}</div>
+                                                <div class="tutorTitle">${bestClass.teacherName}</div>
                                             </a>
                                         </div>
                                     </div>
@@ -268,7 +268,7 @@
                             <c:forEach var="frontClass" items="${frontClassList}">
                                 <c:if test="${frontClass.categoryNo == 2}">
                                     <div class="classItem">
-                                        <a href="${contextPath}class/class3" class="imgArea">
+                                        <a href="${contextPath}/class/class3" class="imgArea">
                                             <img src="${frontClass.lectureImg}">
                                         </a>
                                         <div class="textArea">
@@ -279,9 +279,9 @@
                                                 </div>
                                                 <div class="likeBtn"><i class="fa-solid fa-heart"></i></i></div>
                                             </div>
-                                            <a href="${contextPath}class/class3">
+                                            <a href="${contextPath}/class/class3">
                                                 <div class="subText">${frontClass.lectureName}<br></div>
-                                                <div class="tutorTitle">${frontClass.lectureNo}</div>
+                                                <div class="tutorTitle">${frontClass.teacherName}</div>
                                             </a>
                                         </div>
                                     </div>
@@ -304,7 +304,7 @@
                             <c:forEach var="backClass" items="${backClassList}">
                                 <c:if test="${backClass.categoryNo == 3}">
                                     <div class="classItem">
-                                        <a href="${contextPath}class/class3" class="imgArea">
+                                        <a href="${contextPath}/class/class3" class="imgArea">
                                             <img src="${backClass.lectureImg}">
                                         </a>
                                         <div class="textArea">
@@ -315,9 +315,9 @@
                                                 </div>
                                                 <div class="likeBtn"><i class="fa-solid fa-heart"></i></i></div>
                                             </div>
-                                            <a href="${contextPath}class/class3">
+                                            <a href="${contextPath}/class/class3">
                                                 <div class="subText">${backClass.lectureName}<br></div>
-                                                <div class="tutorTitle">${backClass.lectureNo}</div>
+                                                <div class="tutorTitle">${backClass.teacherName}</div>
                                             </a>
                                         </div>
                                     </div>
@@ -368,7 +368,7 @@
                             <c:forEach var="dataBase" items="${dataBaseClass}">
                                 <c:if test="${dataBase.categoryNo == 4}">
                                     <div class="classItem">
-                                        <a href="${contextPath}class/class3" class="imgArea">
+                                        <a href="${contextPath}/class/class3" class="imgArea">
                                             <img src="${dataBase.lectureImg}">
                                         </a>
                                         <div class="textArea">
@@ -379,9 +379,9 @@
                                                 </div>
                                                 <div class="likeBtn"><i class="fa-solid fa-heart"></i></i></div>
                                             </div>
-                                            <a href="${contextPath}class/class3">
+                                            <a href="${contextPath}/class/class3">
                                                 <div class="subText">${dataBase.lectureName}<br></div>
-                                                <div class="tutorTitle">${dataBase.lectureNo}</div>
+                                                <div class="tutorTitle">${dataBase.teacherName}</div>
                                             </a>
                                         </div>
                                     </div>
@@ -404,7 +404,7 @@
                             <c:forEach var="osClass" items="${osClassList}">
                                 <c:if test="${osClass.categoryNo == 5}">
                                     <div class="classItem">
-                                        <a href="${contextPath}class/class3" class="imgArea">
+                                        <a href="${contextPath}/class/class3" class="imgArea">
                                             <img src="${osClass.lectureImg}">
                                         </a>
                                         <div class="textArea">
@@ -415,9 +415,9 @@
                                                 </div>
                                                 <div class="likeBtn"><i class="fa-solid fa-heart"></i></i></div>
                                             </div>
-                                            <a href="${contextPath}class/class3">
+                                            <a href="${contextPath}/class/class3">
                                                 <div class="subText">${osClass.lectureName}<br></div>
-                                                <div class="tutorTitle">${osClass.lectureNo}</div>
+                                                <div class="tutorTitle">${osClass.teacherName}</div>
                                             </a>
                                         </div>
                                     </div>
