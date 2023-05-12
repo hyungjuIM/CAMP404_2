@@ -2,6 +2,8 @@ package camp.kh.semi.member.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -29,6 +31,7 @@ import camp.kh.semi.member.model.vo.boardVO.Reply;
 @SessionAttributes({"loginMember"})
 @RequestMapping("/reply")
 public class ReplyController {
+	private Logger logger = LoggerFactory.getLogger(ReplyController.class);
 
 	@Autowired
 	private ReplyService service;
@@ -38,7 +41,7 @@ public class ReplyController {
 	public String selectReplyList(int boardNo) {
 		
 		List<Reply> rList = service.selectReplyList(boardNo);
-		
+		logger.info("댓글목록으로 이동");
 		return new Gson().toJson(rList);
 	}
 	
@@ -46,8 +49,15 @@ public class ReplyController {
 	// 댓글 등록
 	@PostMapping("/insert")
 	public int insertReply(Reply reply) {
-		
-		return service.insertReply(reply);
+		System.out.println(reply + "====================================================");
+		System.out.println(reply + "====================================================");
+		System.out.println(reply + "====================================================");
+		System.out.println(reply + "====================================================");
+		System.out.println(reply + "====================================================");
+		System.out.println(reply + "====================================================");
+		System.out.println(reply + "====================================================");
+		int result=service.insertReply(reply);
+		return result;
 	}
 	
 	// 댓글 수정

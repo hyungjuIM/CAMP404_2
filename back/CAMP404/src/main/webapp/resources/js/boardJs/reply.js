@@ -2,15 +2,15 @@
 
 
 // 댓글 목록 조회(AJAX)
-function selectReplyList() {
-
+function selectReplyList(){
+    
     // contextPath, boardNo, memberNo 전역 변수 사용
     $.ajax({
-        url: contextPath + "/reply/selectReplyList",
-        data: { "boardNo": boardNo },
-        type: "GET",
-        dataType: "JSON", // JSON 형태의 문자열 응답 데이터를 JS 객체로 자동 변환
-        success: function (rList) {
+        url : contextPath + "/reply/selectReplyList",
+        data : {"boardNo" : boardNo},
+        type : "GET",
+        dataType : "JSON", // JSON 형태의 문자열 응답 데이터를 JS 객체로 자동 변환
+        success : function(rList){
             // rList : 반환 받은 댓글 목록 
             console.log(rList);
 
@@ -19,7 +19,7 @@ function selectReplyList() {
             replyList.innerHTML = "";
 
             // rList에 저장된 요소를 하나씩 접근
-            for (let reply of rList) {
+            for(let reply of rList){
 
                 // 행
                 const replyRow = document.createElement("li");
@@ -33,25 +33,25 @@ function selectReplyList() {
                 // 프로필 이미지
                 const profileImage = document.createElement("img");
 
-                if (reply.profileImage != null) { // 프로필 이미지가 있을 경우
+                if( reply.profileImage != null ){ // 프로필 이미지가 있을 경우
                     profileImage.setAttribute("src", contextPath + reply.profileImage);
-                } else { // 없을 경우 == 기본이미지
+                }else{ // 없을 경우 == 기본이미지
                     profileImage.setAttribute("src", contextPath + "/resources/images/user.png");
                 }
-
+  
                 // 작성자 닉네임
-                const memberNickname = document.createElement("span");
-                memberNickname.innerText = reply.memberNickname;
-
+                const userNickname = document.createElement("span");
+                userNickname.innerText = reply.userNickname;
+                
                 // 작성일
                 const replyDate = document.createElement("span");
                 replyDate.classList.add("reply-date");
-                replyDate.innerText = "(" + reply.createDate + ")";
+                replyDate.innerText =  "(" + reply.createDate + ")";
 
                 // 작성자 영역(p)에 프로필,닉네임,작성일 마지막 자식으로(append) 추가
-                replyWriter.append(profileImage, memberNickname, replyDate);
+                replyWriter.append(profileImage , userNickname , replyDate);
 
-
+                
 
                 // 댓글 내용
                 const replyContent = document.createElement("p");
@@ -64,7 +64,7 @@ function selectReplyList() {
                 replyRow.append(replyWriter, replyContent);
 
                 // 로그인한 회원번호와 댓글 작성자의 회원번호가 같을 때만 버튼 추가
-                if (loginMemberNo == reply.memberNo) {
+                if( loginMemberNo == reply.userNo   ){
 
                     // 버튼 영역
                     const replyBtnArea = document.createElement("div");
@@ -75,21 +75,21 @@ function selectReplyList() {
                     updateBtn.innerText = "수정";
 
                     // 수정 버튼에 onclick 이벤트 속성 추가
-                    updateBtn.setAttribute("onclick", "showUpdateReply(" + reply.replyNo + ", this)");
+                    updateBtn.setAttribute("onclick", "showUpdateReply("+reply.replyNo+", this)");                        
 
 
                     // 삭제 버튼
                     const deleteBtn = document.createElement("button");
                     deleteBtn.innerText = "삭제";
                     // 삭제 버튼에 onclick 이벤트 속성 추가
-                    deleteBtn.setAttribute("onclick", "deleteReply(" + reply.replyNo + ")");
+                    deleteBtn.setAttribute("onclick", "deleteReply("+reply.replyNo+")");                       
 
 
                     // 버튼 영역 마지막 자식으로 수정/삭제 버튼 추가
                     replyBtnArea.append(updateBtn, deleteBtn);
 
                     // 행에 버튼영역 추가
-                    replyRow.append(replyBtnArea);
+                    replyRow.append(replyBtnArea); 
 
                 } // if 끝
 
@@ -99,7 +99,7 @@ function selectReplyList() {
             }
 
         },
-        error: function (req, status, error) {
+        error : function(req, status, error){
             console.log("에러 발생");
             console.log(req.responseText);
         }
@@ -114,17 +114,18 @@ function selectReplyList() {
 const addReply = document.getElementById("addReply");
 const replyContent = document.getElementById("replyContent");
 
-addReply.addEventListener("click", function () { // 댓글 등록 버튼이 클릭이 되었을 때
-    console.log("댓글 등록 버튼 눌림");
+
+
+addReply.addEventListener("click", function(){ // 댓글 등록 버튼이 클릭이 되었을 때
 
     // 1) 로그인이 되어있나? -> 전역변수 loginMemberNo 이용
-    if (loginMemberNo == "") { // 로그인 X
+    if(loginMemberNo == ""){ // 로그인 X
         alert("로그인 후 이용해주세요.");
         return;
     }
 
     // 2) 댓글 내용이 작성되어있나?
-    if (replyContent.value.trim().length == 0) { // 미작성인 경우
+    if(replyContent.value.trim().length == 0){ // 미작성인 경우
         alert("댓글을 작성한 후 버튼을 클릭해주세요.");
 
         replyContent.value = ""; // 띄어쓰기, 개행문자 제거
@@ -134,16 +135,14 @@ addReply.addEventListener("click", function () { // 댓글 등록 버튼이 클�
 
     // 3) AJAX를 이용해서 댓글 내용 DB에 저장(INSERT)
     $.ajax({
-        url: contextPath + "/reply/insert",
-        data: {
-            "replyContent": replyContent.value,
-            "memberNo": loginMemberNo,
-            "boardNo": boardNo
-        },
-        type: "post",
-        success: function (result) {
-            console.log(contextPath);
-            if (result > 0) { // 등록 성공
+        url : contextPath + "/",
+        data : {"replyContent" : replyContent.value,
+                "userNo" : loginMemberNo,
+                "boardNo" : boardNo },
+        type : "post",
+        success : function(result){
+
+            if(result > 0){ // 등록 성공
                 alert("댓글이 등록되었습니다.");
 
                 replyContent.value = ""; // 작성했던 댓글 삭제
@@ -152,13 +151,12 @@ addReply.addEventListener("click", function () { // 댓글 등록 버튼이 클�
                 // -> 새로운 댓글이 추가되어짐
 
             } else { // 실패
-                console.log(contextPath);
                 alert("댓글 등록에 실패했습니다...");
             }
 
         },
 
-        error: function (req, status, error) {
+        error : function(req, status, error){
             console.log("댓글 등록 실패")
             console.log(req.responseText);
         }
@@ -166,12 +164,11 @@ addReply.addEventListener("click", function () { // 댓글 등록 버튼이 클�
 
 });
 
-
 // -----------------------------------------------------------------------------------
 // 댓글 삭제
-function deleteReply(replyNo) {
+function deleteReply(replyNo){
 
-    if (confirm("정말로 삭제 하시겠습니까?")) {
+    if( confirm("정말로 삭제 하시겠습니까?") ){
 
         // 요청주소 : /community/reply/delete
         // 파라미터 : key : "replyNo",  value : 매개변수 replyNo
@@ -186,19 +183,19 @@ function deleteReply(replyNo) {
         // DB에서 댓글 삭제 ==>   REPLY_ST = 'Y' 변경
 
         $.ajax({
-            url: contextPath + "/reply/delete",
-            data: { "replyNo": replyNo },
-            type: "GET",
-            success: function (result) {
-                if (result > 0) {
+            url : contextPath + "/reply/delete",
+            data : {"replyNo" : replyNo},
+            type : "GET",
+            success: function(result){
+                if(result > 0){
                     alert("삭제되었습니다");
                     selectReplyList(); // 목록을 다시 조회해서 삭제된 글을 제거
-                } else {
+                }else{
                     alert("삭제 실패");
                 }
             },
 
-            error: function (req, status, error) {
+            error : function(req, status, error){
                 console.log("댓글 삭제 실패")
                 console.log(req.responseText);
             }
@@ -214,21 +211,21 @@ function deleteReply(replyNo) {
 let beforeReplyRow; // 수정 전 원래 행의 상태를 저장할 변수
 
 
-function showUpdateReply(replyNo, btn) {
-    // 댓글번호, 이벤트발생요소(수정버튼)
+function showUpdateReply(replyNo, btn){
+                     // 댓글번호, 이벤트발생요소(수정버튼)
 
     // ** 댓글 수정이 한 개만 열릴 수 있도록 만들기 **
-    const temp = document.getElementsByClassName("update-textarea");
+    const temp = document.getElementsByClassName("update-textarea");  
+    
+    if(temp.length > 0){ // 수정이 한 개 이상 열려 있는 경우
 
-    if (temp.length > 0) { // 수정이 한 개 이상 열려 있는 경우
-
-        if (confirm("다른 댓글이 수정 중입니다. 현재 댓글을 수정 하시겠습니까?")) { // 확인
+        if(confirm("다른 댓글이 수정 중입니다. 현재 댓글을 수정 하시겠습니까?")){ // 확인
 
             temp[0].parentElement.innerHTML = beforeReplyRow;
             // reply-row                       // 백업한 댓글
             // 백업 내용으로 덮어 씌워 지면서 textarea 사라짐
-
-        } else { // 취소
+       
+        }else{ // 취소
             return;
         }
     }
@@ -246,7 +243,7 @@ function showUpdateReply(replyNo, btn) {
 
 
     // 3. 댓글에 작성되어 있던 내용만 얻어오기 -> 새롭게 생성된 textarea 추가될 예정
-
+    
     //console.log(replyRow.children[1].innerHTML); // <br> 태그 유지를 위해서 innerHTML 사용
     let beforeContent = replyRow.children[1].innerHTML;
 
@@ -263,13 +260,13 @@ function showUpdateReply(replyNo, btn) {
 
     // ******************************************
     // XSS 방지 처리 해제
-    beforeContent = beforeContent.replaceAll("&amp;", "&");
-    beforeContent = beforeContent.replaceAll("&lt;", "<");
-    beforeContent = beforeContent.replaceAll("&gt;", ">");
-    beforeContent = beforeContent.replaceAll("&quot;", "\"");
-
+    beforeContent =  beforeContent.replaceAll("&amp;", "&");
+    beforeContent =  beforeContent.replaceAll("&lt;", "<");
+    beforeContent =  beforeContent.replaceAll("&gt;", ">");
+    beforeContent =  beforeContent.replaceAll("&quot;", "\"");
+    
     // 개행문자 처리 해제
-    beforeContent = beforeContent.replaceAll("<br>", "\n");
+    beforeContent =  beforeContent.replaceAll("<br>", "\n");
 
     // ******************************************
     textarea.value = beforeContent; // 내용 추가
@@ -281,11 +278,11 @@ function showUpdateReply(replyNo, btn) {
     // 7. 버튼 영역 + 수정/취소 버튼 생성
     const replyBtnArea = document.createElement("div");
     replyBtnArea.classList.add("reply-btn-area");
-
+    
 
     const updateBtn = document.createElement("button");
     updateBtn.innerText = "수정";
-    updateBtn.setAttribute("onclick", "updateReply(" + replyNo + ", this)");
+    updateBtn.setAttribute("onclick", "updateReply("+replyNo+", this)");
 
 
     const cancelBtn = document.createElement("button");
@@ -303,38 +300,36 @@ function showUpdateReply(replyNo, btn) {
 
 // -----------------------------------------------------------------------------------
 // 댓글 수정 취소
-function updateCancel(btn) {
+function updateCancel(btn){
     // 매개변수 btn : 클릭된 취소 버튼
     // 전역변수 beforeReplyRow : 수정 전 원래 행(댓글)을 저장한 변수
 
-    if (confirm("댓글 수정을 취소하시겠습니까?")) {
+    if(confirm("댓글 수정을 취소하시겠습니까?")){
         btn.parentElement.parentElement.innerHTML = beforeReplyRow;
     }
 }
 
 // -----------------------------------------------------------------------------------
 // 댓글 수정(AJAX)
-function updateReply(replyNo, btn) {
+function updateReply(replyNo, btn){
 
     // 새로 작성된 댓글 내용 얻어오기
     const replyContent = btn.parentElement.previousElementSibling.value;
 
     $.ajax({
-        url: contextPath + "/reply/update",
-        data: {
-            "replyNo": replyNo,
-            "replyContent": replyContent
-        },
-        type: "POST",
-        success: function (result) {
-            if (result > 0) {
+        url : contextPath + "/reply/update",
+        data : {"replyNo" : replyNo,
+                "replyContent" : replyContent},
+        type : "POST",
+        success : function(result){
+            if(result > 0){
                 alert("댓글이 수정되었습니다.");
                 selectReplyList();
-            } else {
+            }else{
                 alert("댓글 수정 실패");
             }
         },
-        error: function (req, status, error) {
+        error : function(req, status, error){
             console.log("댓글 수정 실패");
             console.log(req.responseText);
         }
