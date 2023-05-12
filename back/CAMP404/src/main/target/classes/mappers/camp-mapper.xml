@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!-- namespace 추가하기 -->
+<mapper namespace="campMapper">
+
+<!-- <cache-ref namespace=""/> : 지우기 -->
+
+<resultMap type="camp" id="camp_rm">
+<id property="userNo" column="USER_NO"/>
+<result property="userId" column="USER_ID"/>
+<result property="userPw" column="USER_PW"/>
+<result property="userName" column="USER_NAME"/>
+<result property="userEmail" column="USER_EMAIL"/>
+<result property="userNick" column="USER_NICK"/>
+<result property="userTel" column="USER_TEL"/>
+<result property="userAddress" column="USER_ADDR"/>
+<result property="enrollDate" column="ENROLL_DT"/>
+<result property="secessionFlag" column="SECESSION_FL"/>
+</resultMap>
+
+
+
+
+<!--  사용자 -->
+	<resultMap type="users" id="users_rm">
+		<id property="userNo" column="USER_NO"/>
+		<result property="userId" column="USER_ID" />
+		<result property="userPw" column="USER_PW" />
+		<result property="userName" column="USER_NAME" />
+		<result property="userEmail" column="USER_EMAIL" />
+		<result property="userNick" column="USER_NICK" />
+		<result property="userTel" column="USER_TEL" />
+		<result property="userAddress" column="USER_ADDR" />
+		<result property="enrollDate" column="ENROLL_DT" />
+		<result property="secessionFlag" column="SECESSION_FL" />
+	</resultMap>
+	
+	<!-- 강사 -->
+	<resultMap type="teacher" id="teacher_rm">
+		<id property="teacherNo" column="TEACHER_NO"/>
+		<result property="teacherId" column="TEACHER_ID" />
+		<result property="teacherPw" column="TEACHER_PW" />	
+		<result property="teacherName" column="TEACHER_NAME" />
+		<result property="teacherEmail" column="TEACHER_EMAIL" />
+		<result property="teacherTel" column="TEACHER_TEL" />
+		<result property="teacherAddress" column="TEACHER_ADDR" />
+		<result property="teacherenrollDate" column="ENROLL_DT" />
+		<result property="secessionFlag" column="SECESSION_FL" />
+	</resultMap>
+	
+	<!-- 강의노트 -->
+	<resultMap type="lectureNote" id="lectureNote_rm">
+		<id property="noteNo" column="NOTE_NO"/>
+		<result property="noteContent" column="NOTE_CONTENT" />
+		<result property="userNo" column="USER_NO" />
+		<result property="lectureNo" column="LECTURE_NO" />
+	</resultMap>
+	
+	<!-- 이메일인증 -->
+	<resultMap type="certification" id="certification_rm">
+		<id property="cEmail" column="C_EMAIL"/>
+		<result property="cNumber" column="C_NUMBER" />
+		<result property="issueDate" column="ISSU_DT" />
+	</resultMap>
+	
+	<!-- 강의 -->
+	<resultMap type="lecture" id="lecture_rm">
+		<id property="lectureNo" column="LECTURE_NO"/>
+		<result property="lectureName" column="LECTURE_NAME" />
+		<result property="uploadDate" column="UPLOAD_DATE" />
+		<result property="viewCount" column="VIEW_CNT" />
+		<result property="price" column="PRICE" />
+		<result property="teacherNo" column="TEACHER_NO" />
+		<result property="categoryNo" column="CATEGORY_NO" />
+		<result property="lectureImg" column="LECTURE_IMG" />
+	</resultMap>
+	
+	<!-- 카테고리 -->
+	<resultMap type="category" id="category_rm">
+		<id property="categoryNo" column="CATEGORY_NO"/>
+		<result property="categoryName" column="CATEGORY_NAME" />
+	</resultMap>
+	
+	<!-- 내강의 -->
+	<resultMap type="mylecture" id="mylecture_rm">
+		<id property="usersNo" column="USER_NO"/>
+		<result property="lectureNo" column="LECTURE_NO" />
+		<result property="favNo" column="PAY_NO" />
+	</resultMap>
+	
+	<!-- 찜목록 -->
+	<resultMap type="favlec" id="favlec_rm">
+		<id property="favNo" column="FAV_NO"/>
+		<result property="favYn" column="FAV_YN" />
+		<result property="lectureNo" column="LECTURE_NO" />
+		<result property="usersNo" column="USER_NO" />
+	</resultMap>
+	
+	<!-- 결제 -->
+	<resultMap type="payment" id="payment_rm">
+		<id property="payNo" column="PAY_NO"/>
+		<result property="payWay" column="PAY_WAY" />
+		<result property="payDate" column="PAY_DATE" />
+		<result property="payPrice" column="PAY_PRICE" />
+		<result property="usersNo" column="USER_NO" />
+		<result property="lectureNo" column="LECTURE_NO" />
+	</resultMap>
+	
+	<!-- 관리자 -->
+	<resultMap type="manager" id="manager_rm">
+		<id property="mgrNo" column="MGR_NO"/>
+		<result property="mgrName" column="MGR_NAME" />
+		<result property="mgrId" column="MGR_ID" />
+		<result property="mgrPw" column="MGR_PW" />
+	</resultMap>
+	
+	<!-- 공지사항 -->
+	<!-- <resultMap type="notice" id="notice_rm">
+		<id property="noticeNo" column="NOTICE_NO"/>
+		<result property="noticeTitle" column="NOTICE_TITLE" />
+		<result property="noticeContent" column="NOTICE_CONTENT" />
+		<result property="noticeDate" column="NOTICE_DATE" />
+		<result property="mgrNo" column="MGR_NO" />
+	</resultMap>  -->
+
+
+
+
+
+
+
+
+
+<!--  parameterType="camp.kh.semi.member.model.vo.Users"-->
+<select id="login" parameterType="users" resultMap="users_rm">
+SELECT USER_NO,
+USER_ID,
+USER_PW,
+USER_NAME,
+USER_EMAIL,
+USER_NICK,
+USER_TEL,
+USER_ADDR,
+TO_CHAR(ENROLL_DT, 'YYYY-MM-DD HH24:MI:SS') AS ENROLL_DT
+FROM USERS
+WHERE USER_ID = #{userId}
+
+AND SECESSION_FL = 'N'
+</select>
+
+<!-- 회원정보 수정 -->
+<update id="changeInfo">
+	UPDATE USERS SET 
+	USER_NICK = #{memberNick},
+	USER_TEL =#{memberTel},
+	USER_ADDR = #{memberAddress}
+	WHERE USER_NO=#{userNo}
+</update>
+
+
+
+<!-- 이메일 인증 -->
+<update id="updateCertification">
+		UPDATE CERTIFICATION SET 
+		C_NUMBER = #{cNumber},
+		ISSU_DT = SYSDATE 
+		WHERE C_EMAIL = #{cEmail}
+</update>
+<insert id="insertCertification">
+		INSERT INTO CERTIFICATION(C_EMAIL,C_NUMBER,ISSU_DT) VALUES(#{userEmail},#{cNumber},SYSDATE)
+</insert>
+
+<select id="checkNumber" resultType="_int">
+		SELECT 
+    CASE 
+        WHEN EXISTS (
+            SELECT '1' FROM CERTIFICATION
+            WHERE C_EMAIL = #{userEmail}
+            AND C_NUMBER = #{cNumber}
+        ) THEN
+            CASE 
+                WHEN EXISTS (
+                    SELECT '1' FROM CERTIFICATION
+                    WHERE C_EMAIL = #{userEmail}
+                    AND ISSU_DT + (INTERVAL '5' MINUTE) >= SYSDATE
+                ) THEN '1'
+                ELSE '2'
+            END
+        ELSE '3'	
+    END
+FROM DUAL
+</select>
+
+<select id="emailDupCheck" parameterType="string" resultType="_int">
+  		SELECT COUNT(*) FROM USERS
+		WHERE USER_EMAIL = #{userEmail}
+		AND SECESSION_FL = 'N'
+</select>
+  	
+
+<!-- 닉네임 중복 검사 -->
+<select id="nicknameDupCheck" parameterType="string" resultType="_int">
+  		SELECT COUNT(*) FROM USERS
+		WHERE USER_NICK = #{userNick}
+		AND SECESSION_FL = 'N'
+</select>
+
+<!-- 아이디 중복검사 -->
+<select id="IdDupCheck" parameterType="string" resultType="_int">
+		SELECT COUNT(*) FROM USERS
+		WHERE USER_ID = #{userId}
+		AND SECESSION_FL = 'N'
+</select>
+
+
+<!-- 회원 가입 -->
+<insert id="signUp" parameterType="users">
+  		INSERT INTO USERS VALUES(
+  		SEQ_USER_NO.NEXTVAL,
+  		#{userId},
+  		#{userPw},
+  		#{userName},
+  		#{userEmail},
+  		#{userNick},
+  		#{userTel},
+  		#{userAddress},
+  		DEFAULT, DEFAULT
+  		)
+</insert>
+  
+  <!-- 강의노트 저장(insert) -->
+
+	<!--
+	<insert id="insertNote" parameterType="lectureNote"  >
+	INSERT INTO LECTURE_NOTE VALUES
+	(SEQ_NOTE_NO.NEXTVAL,
+	#{noteContent}, 
+	'1', 
+	'1')
+</insert>  
+-->
+	
+	<select id="getClassItems" parameterType="lecture" resultMap="lecture_rm">
+	SELECT * FROM LECTURE
+	WHERE CATEGORY_NO = #{categoryNo}
+	</select>
+	
+	
+</mapper>

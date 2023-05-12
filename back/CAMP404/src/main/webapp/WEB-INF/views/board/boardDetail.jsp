@@ -94,7 +94,8 @@
                             <!-- onclick="history.back();"  뒤로가기 
                     history.go(숫자) : 양수(앞으로가기), 음수(뒤로가기)
                 -->
-                            <button id="goToListBtn">목록으로</button>
+                            <button id="goToListBtn" 
+                            onclick="location.href='../../write/${boardCode}?mode=update&cp=${cp}&no=${detail.boardNo}'">목록으로</button>
                         </div>
                     </section>
 
