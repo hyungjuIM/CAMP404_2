@@ -74,6 +74,7 @@
 		<result property="teacherNo" column="TEACHER_NO" />
 		<result property="categoryNo" column="CATEGORY_NO" />
 		<result property="lectureImg" column="LECTURE_IMG" />
+		<result property="teacherName" column="TEACHER_NAME" />		
 	</resultMap>
 	
 	<!-- 카테고리 -->
@@ -242,7 +243,10 @@ FROM DUAL
 -->
 	
 	<select id="getClassItems" parameterType="lecture" resultMap="lecture_rm">
-	SELECT * FROM LECTURE
+	SELECT lecture.*, teacher.TEACHER_NAME 
+	FROM LECTURE lecture
+	JOIN TEACHER teacher
+	ON lecture.TEACHER_NO = teacher.TEACHER_NO
 	WHERE CATEGORY_NO = #{categoryNo}
 	</select>
 	
