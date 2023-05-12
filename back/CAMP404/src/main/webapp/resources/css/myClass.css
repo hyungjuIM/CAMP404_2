@@ -106,12 +106,7 @@
     font-family: 'Noto Sans KR', sans-serif;
     margin-top: 18px;
     font-weight: 550;
-<<<<<<< HEAD
     margin-top: 3px;
-=======
-    
-    
->>>>>>> da251bcdc351b571db8f444d173a3e8ce3da0dd0
 }
 
 /*------------------body-content------------------*/
@@ -316,11 +311,8 @@ input::placeholder {
     overflow: hidden;
 }
 
-<<<<<<< HEAD
-.show_index{
-=======
-show_index {
->>>>>>> da251bcdc351b571db8f444d173a3e8ce3da0dd0
+HEAD .show_index {
+
     color: #fe6936;
 }
 
