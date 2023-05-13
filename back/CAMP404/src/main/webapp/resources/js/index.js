@@ -54,7 +54,7 @@ function leftMove() {
 // 자동 슬라이드 기능 (내부 내용은 오른쪽 버튼 클릭과 같음.)
 function slide() {
     rightMove();
-    console.log("5초마다 상단 슬라이드가 이동함");
+    // console.log("5초마다 상단 슬라이드가 이동함");
 };
 
 let ci = setInterval(slide, 5000);
@@ -109,35 +109,34 @@ leftBtn.on('click', function () {
 // =========================================================================
 // =========================================================================
 
-function test123(a) {
-    console.log(a);
-}
-
-
 // 강의 좋아요 버튼
 likeBtn.on('click', function () {
-    // $(this).toggleClass('likeColor');
+
+    $(this).toggleClass('likeColor');
+
     console.log("좋아요 버튼이 눌림");
-    let FAV_YN = "Y";
 
-    console.log(lectureNo);
+    // 강의 상태 보기
+    let FAV_YN = "N";
 
+    // 강의번호 가지고 오기
+    // .data의 괄호 안은 무조건 소문자만 들어간다. JSP에서도 소문자로 설정해야함(data-lectureno)
+    let lectureNo = $(this).data('lectureno');
+    console.log(lectureNo + " : lectureNo");
 
-    if (loginMember != "") { // 로그인 되어 있을 경우.
+    if (loginMember != "" && FAV_YN == 'N' || "") { // 로그인 되어 있을 경우.
         console.log("로그인 했음");
         $.ajax({
-            url: contextPath + "/test",
+            url: "CAMP404/likeBtn",
             data: {
-                "favYn": FAV_YN,
-
-
+                "favYn": FAV_YN
+                , "loginUserNo": loginUserNo
+                , "lectureNo": lectureNo
             },
-            type: post,
-
+            type: "POST",
             success: function (result) {
                 if (result > 0) {
                     console.log("찜 목록에 등록 완료");
-
                     function ask(question, yes, no) { // 등록 후 찜 목록 이동 여부 물어보기.
                         if (confirm(question)) {
                             yes(); // 찜 목록 이동 희망
@@ -152,7 +151,7 @@ likeBtn.on('click', function () {
                     ask( // function ask() 용 질의 구문
                         "찜목록에 강의를 추가했습니다!.\n찜 목록으로 가시겠어요?",
                         (ask) => alert("찜목 록 창으로 이동합니다."),
-                        (ask) => alert("취소 버튼을 누르셨습니다."),
+                        (ask) => alert("취소 버튼을 누르셨습니다.")
                     );
                 }
             },
@@ -166,13 +165,13 @@ likeBtn.on('click', function () {
 
 
 
-
-
+    } else if (loginMember != "" && FAV_YN == 'Y') { // 로그인 되었고, 이미 DB에 들어 있을 때,
+        console.log("로그인 되었고, 이미 DB에 들어 있을 때");
 
 
     } else { // 로그인이 되어 있지 않은 경우.
+        event.preventDefault();
         console.log("로그인 안했음");
-
         function ask(question, yes, no) { // 사용자에게 로그인 할지 말지 물어본다.
             if (confirm(question)) {
                 yes(); // 로그인 희망 시, 로그인 사이트로 이동
@@ -181,7 +180,6 @@ likeBtn.on('click', function () {
             } else {
                 no(); // 거부 시, 이벤트 취소 및 방지
                 likeBtn.removeClass('likeColor');
-                e.preventDefault()
                 return false;
             }
         };
@@ -189,7 +187,7 @@ likeBtn.on('click', function () {
         ask( // function ask() 용 질의 구문
             "로그인 후 찜목록에 추가할 수 있습니다.\n로그인 하시겠어요?",
             (ask) => alert("로그인 창으로 이동합니다."),
-            (ask) => alert("취소 버튼을 누르셨습니다."),
+            (ask) => alert("취소 버튼을 누르셨습니다.")
         );
 
     }
@@ -247,7 +245,7 @@ midde_SlideImgHolder.on("mousedown", (e) => {
 
 function middle_slide() {
     middle_rightMove();
-    console.log("10초마다 광고 영역1 슬라이드가 이동함");
+    // console.log("10초마다 광고 영역1 슬라이드가 이동함");
 };
 
 let mi = setInterval(middle_slide, 10000);
@@ -348,7 +346,7 @@ midde_SlideImgHolder2.on("mousedown", (e) => {
 
 function middle_slide2() {
     middle_rightMove2();
-    console.log("7초마다 광고 영역2 슬라이드가 이동함");
+    // console.log("7초마다 광고 영역2 슬라이드가 이동함");
 };
 
 let mi2 = setInterval(middle_slide2, 7000);
