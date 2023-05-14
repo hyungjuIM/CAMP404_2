@@ -152,7 +152,7 @@ likeBtn.on('click', function () {
                     ask( // function ask() 용 질의 구문
                         "찜목록에 강의를 추가했습니다!.\n찜 목록으로 가시겠어요?",
                         (ask) => alert("찜목 록 창으로 이동합니다."),
-                        (ask) => alert("취소 버튼을 누르셨습니다."),
+                        (ask) => alert("취소 버튼을 누르셨습니다.")
                     );
                 }
             },
@@ -189,7 +189,7 @@ likeBtn.on('click', function () {
         ask( // function ask() 용 질의 구문
             "로그인 후 찜목록에 추가할 수 있습니다.\n로그인 하시겠어요?",
             (ask) => alert("로그인 창으로 이동합니다."),
-            (ask) => alert("취소 버튼을 누르셨습니다."),
+            (ask) => alert("취소 버튼을 누르셨습니다.")
         );
 
     }
