@@ -59,18 +59,11 @@
                         <div class="board-btn-area">
                             <button type="submit" id="writebtn">등록</button>
 
-                            <!-- insert 모드 -->
-                            <c:if test="${param.mode == 'insert'}">
-                                <!-- <button type="button" id="goToListBtn"
-                    onclick="location.href='../board/list/${boardCode}'">목록으로</button>
-                    
-                    <button type="button" id="goToListBtn"
-                    onclick="location.href='${pageContext.request.contextPath}/board/list/${boardCode}';">목록으로</button> -->
 
+							<!-- insert 모드 -->
+                            <c:if test="${param.mode == 'insert'}">
                                 <button type="button" id="nameChange"
                                     onclick="location.href='${pageContext.request.contextPath}/board/list/${boardCode}'">목록으로</button>
-
-
                             </c:if>
 
 
