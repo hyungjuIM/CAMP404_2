@@ -73,15 +73,15 @@ public class MypageController {
 
 	@ResponseBody
 	@GetMapping("/newNicknameDupCheck")
-	public int newNicknameDupCheck(@RequestParam("memberNickname") String userNick) {
+	public int newNicknameDupCheck( String userNick) {
 		int result = service.nicknameDupCheck(userNick);
 
 		return result;
 
 	}
 
-	@PostMapping("/info")
-	public String changeinfo(Users loginMember,
+	@PostMapping("/my-info")
+	public String changeinfo(@ModelAttribute("loginMember") Users loginMember,
 			@RequestParam Map<String, Object> paramMap
 
 			, RedirectAttributes ra) {
@@ -96,9 +96,9 @@ public class MypageController {
 		if (result > 0) { //
 			message = "회원 정보 수정이 완료 되었습니다.";
 			path = "redirect:/myPage/my-info";
-			loginMember.setUserNick((String) paramMap.get("memberNickname"));
-			loginMember.setUserTel((String) paramMap.get("memberTel"));
-			loginMember.setUserAddress((String) paramMap.get("memberAddr"));
+			loginMember.setUserNick((String) paramMap.get("userNick"));
+			loginMember.setUserTel((String) paramMap.get("userTel"));
+			loginMember.setUserAddress((String) paramMap.get("userAddress"));
 		} else { // 실패
 			logger.info(message);
 			message = "회원 정보 수정 실패";

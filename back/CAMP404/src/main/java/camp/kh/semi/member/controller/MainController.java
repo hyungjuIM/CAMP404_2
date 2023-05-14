@@ -126,7 +126,7 @@ public class MainController {
 	
 	// 닉네임 중복 검사
 	@ResponseBody  
-	@GetMapping("/nicknameDupCheck")
+	@GetMapping("/newNicknameDupCheck")
 	public int nicknameDupCheck(String userNick) {
 		int result = service.nicknameDupCheck(userNick);
 		
