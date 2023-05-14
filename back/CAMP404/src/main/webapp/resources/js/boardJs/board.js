@@ -114,24 +114,19 @@
 
     if(deleteBtn != null){ // 버튼이 화면에 존재할 때
         deleteBtn.addEventListener("click", function(){
-            // 현재 : detail?no=1508&cp=1&type=1
+            // 현재 : /board/detail/{boardCode}/{boardNo}
 
-            // 목표 : delete?no=1508&type=1
+            // 목표 : /board/delete/{boardCode}/{boardNo}
 
-            let url = "delete"; // 상대경로 형식으로 작성
+            let url = contextPath + "/board/delete/" + boardCode + "/" +  boardNo + "?cp=" + cp;
 
-            // 주소에 작성된 쿼리스트링에서 필요한 파라미터만 얻어와서 사용
+            // 삭제 성공 -> 해당 게시판 목록 조회 1페이지로 리다이렉트
+            // 삭제 실패 -> 요청 이전 페이지(referer)로 리다이렉트
 
-            // 1) 쿼리스트링에 존재하는 파라미터 모두 얻어오기
-            const params = new URL(location.href).searchParams  ;
+            // UPDATE BOARD SET
+            // BOARD_ST = 'Y'
+            // WHERE BOARD_NO = #{boardNo}
 
-            // 2) 원하는 파라미터만 얻어와 변수에 저장
-            const no = "?no=" + params.get("no");   // ?no=1508
-
-            const type = "&type=" + params.get("type"); // &type=1
-
-            // url에 쿼리스트링 추가
-            url += no + type; // delete?no=1508&type=1
 
             if( confirm("정말로 삭제 하시겠습니까?") ){
                 location.href = url; // get방식으로 url에 요청

@@ -292,23 +292,24 @@ public class BoardController {
 		
 
 		// 게시글 삭제
-		@ResponseBody
+		
 		@GetMapping("/delete/{boardCode}/{boardNo}")
 		public String deleteBoard(@PathVariable("boardCode") int boardCode,
+								  @RequestParam(value="cp", required = false, defaultValue = "1") int cp,
 								  @PathVariable("boardNo") int boardNo,
-								  RedirectAttributes ra, @RequestHeader("referer") String referer,
-								  BoardDetail boardDetail) {
-			
-			int result = service.deleteBoard(boardDetail);
-			
-			
+								  Model model,
+								  RedirectAttributes ra, 
+								  @RequestHeader("referer") String referer
+								  ) {
+
 			String path = null;
 			String message = null;
 			
-			if(result > 0) {
+			int result = service.deleteBoard(boardNo);
+			
+			if(result > 0) {				
+				path = "/board/list/" + boardCode + "?cp="+cp; //forward >> url로 변경후 연결
 				message = "삭제되었습니다.";
-				//path = "../../list/" + boardCode; // 상대경로
-				path = "/board/list/" + boardCode;
 			} else {
 				message = "삭제 실패";
 				path = referer;

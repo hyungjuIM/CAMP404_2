@@ -351,51 +351,51 @@ function updateReply(replyNo, btn) {
 // 답글 작성 화면 추가 
 // -> 답글 작성 화면은 전체 화면에 1개만 존재 해야한다!
 
-function showInsertReply(parentReplyNo, btn) {
+function showInsertReply(parentReplyNo, btn){
     // 부모 댓글 번호, 클릭한 답글 버튼
 
 
-    const temp = document.getElementsByClassName("replyContent");
+const temp = document.getElementsByClassName("replyInsertContent");
 
-    if (temp.length > 0) { // 답글 작성 textara가 이미 화면에 존재하는 경우
+if(temp.length > 0){ // 답글 작성 textara가 이미 화면에 존재하는 경우
 
-        if (confirm("다른 답글을 작성 중입니다. 현재 댓글에 답글을 작성 하시겠습니까?")) {
-            temp[0].nextElementSibling.remove(); // 버튼 영역부터 삭제
-            temp[0].remove(); // textara 삭제 (기준점은 마지막에 삭제해야 된다!)
+if(confirm("다른 답글을 작성 중입니다. 현재 댓글에 답글을 작성 하시겠습니까?")){
+temp[0].nextElementSibling.remove(); // 버튼 영역부터 삭제
+temp[0].remove(); // textara 삭제 (기준점은 마지막에 삭제해야 된다!)
 
-        } else {
-            return; // 함수를 종료시켜 답글이 생성되지 않게함.
-        }
-    }
+} else{
+return; // 함수를 종료시켜 답글이 생성되지 않게함.
+}
+}
 
-    // 답글을 작성할 textarea 요소 생성
-    const textarea = document.createElement("textarea");
-    textarea.classList.add("replyContent");
+// 답글을 작성할 textarea 요소 생성
+const textarea = document.createElement("textarea");
+textarea.classList.add("replyInsertContent");
 
-    // 답글 버튼의 부모의 뒤쪽에 textarea 추가
-    // after(요소) : 뒤쪽에 추가
-    btn.parentElement.after(textarea);
-
-
-    // 답글 버튼 영역 + 등록/취소 버튼 생성 및 추가
-    const replyBtnArea = document.createElement("div");
-    replyBtnArea.classList.add("reply-btn-area");
+// 답글 버튼의 부모의 뒤쪽에 textarea 추가
+// after(요소) : 뒤쪽에 추가
+btn.parentElement.after(textarea);
 
 
-    const insertBtn = document.createElement("button");
-    insertBtn.innerText = "등록";
-    insertBtn.setAttribute("onclick", "insertChildReply(" + parentReplyNo + ", this)");
+// 답글 버튼 영역 + 등록/취소 버튼 생성 및 추가
+const replyBtnArea = document.createElement("div");
+replyBtnArea.classList.add("reply-btn-area");
 
 
-    const cancelBtn = document.createElement("button");
-    cancelBtn.innerText = "취소";
-    cancelBtn.setAttribute("onclick", "deleteReply(this)");
+const insertBtn = document.createElement("button");
+insertBtn.innerText = "등록";
+insertBtn.setAttribute("onclick", "insertChildReply("+parentReplyNo+", this)");
 
-    // 답글 버튼 영역의 자식으로 등록/취소 버튼 추가
-    replyBtnArea.append(insertBtn, cancelBtn);
 
-    // 답글 버튼 영역을 화면에 추가된 textarea 뒤쪽에 추가
-    textarea.after(replyBtnArea);
+const cancelBtn = document.createElement("button");
+cancelBtn.innerText = "취소";
+cancelBtn.setAttribute("onclick", "insertCancel(this)");
+
+// 답글 버튼 영역의 자식으로 등록/취소 버튼 추가
+replyBtnArea.append(insertBtn, cancelBtn);
+
+// 답글 버튼 영역을 화면에 추가된 textarea 뒤쪽에 추가
+textarea.after(replyBtnArea);
 
 }
 

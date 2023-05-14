@@ -59,10 +59,11 @@ public interface BoardService {
 	int updateBoard(BoardDetail detail)  throws IOException;
 
 	/** 게시글 삭제 서비스
-	 * @param boardDetail
-	 * @return result
+	 * @param boardNo
+	 * @return
 	 */
-	int deleteBoard(BoardDetail boardDetail);	
+	int deleteBoard(int boardNo);
+
 
 
 

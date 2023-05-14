@@ -101,16 +101,17 @@ public class BoardDAO {
 		return result;
 
 	}
-	
-	
+
 	/** 게시글 삭제 DAO
-	 * @param boardDetail
-	 * @return result
+	 * @param boardNo
+	 * @return
 	 */
-	public int deleteBoard(BoardDetail boardDetail) {
-		int result =  sqlSession.update("boardMapper.deleteBoard", boardDetail);
-		return result;
+	public int deleteBoard(int boardNo) {
+		return sqlSession.update("boardMapper.deleteBoard", boardNo);
 	}
+	
+	
+
 
 
 }
