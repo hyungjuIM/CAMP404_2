@@ -59,7 +59,7 @@
                 <!-- insert 모드 -->
                 <c:if test="${param.mode == 'insert'}">
                     <button type="button" id="goToListBtn"
-                    onclick="location.href='../board/list/${boardCode}'">목록으로</button>
+                    onclick="location.href='../../list/${boardCode}'">목록으로</button>
                     
                     <button type="button" id="goToListBtn"
                     onclick="location.href='${pageContext.request.contextPath}/board/boardList';">목록으로</button>
