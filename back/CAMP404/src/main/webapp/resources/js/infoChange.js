@@ -22,7 +22,7 @@ const checkobj = {
 
 // 닉네임 
 //필요한 요소 : newNick, nicknameMessage
-const newNick = document.getElementById("newNick");
+const newNick = document.getElementById("memberNickname");
 const nicknameMessage = document.getElementById("nicknameMessage");
 newNick.addEventListener("input", function () {
     if (newNick.value.length == 0) {
@@ -38,7 +38,7 @@ newNick.addEventListener("input", function () {
 
         $.ajax({
             url: "newNicknameDupCheck",  // 필수 작성 속성
-            data: { "memberNickname": newNick.value }, // 서버로 전달할 값(파라미터)
+            data: { "userNick": newNick.value }, // 서버로 전달할 값(파라미터)
             type: "GET", // 데이터 전달 방식(기본값 GET)
 
             success: function (result) { // 비동기 통신 성공 시(에러 발생 X)
@@ -124,8 +124,6 @@ function infoValidate(){
 
             switch(key){
             case "newTel":     str="전화번호가"; break;
-            case "newPw":        str="비밀번호가"; break;    
-            case "newPwConfirm": str="비밀번호 확인이"; break;
             case "newNick":  str="닉네임이"; break;
            
             }

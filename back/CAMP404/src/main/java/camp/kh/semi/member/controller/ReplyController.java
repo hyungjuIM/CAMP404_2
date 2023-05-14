@@ -2,6 +2,7 @@ package camp.kh.semi.member.controller;
 
 import java.util.List;
 
+import org.springframework.ui.Model;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,9 +41,11 @@ public class ReplyController {
 	
 	// 댓글 목록조회
 	@GetMapping("/selectReplyList")
-	public String selectReplyList(int boardNo) {
+	public String selectReplyList(int boardNo,
+			Model model) {
 		
 		List<Reply> rList = service.selectReplyList(boardNo);
+		model.addAttribute("rList", rList);
 		logger.info("댓글목록으로 이동");
 		return new Gson().toJson(rList);
 	}

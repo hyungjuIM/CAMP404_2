@@ -22,7 +22,7 @@
             <heder>
                 <jsp:include page="/WEB-INF/views/common/header.jsp" />
             </heder>
-            <mian>
+            <main>
                 <div data-inclued2="Q&ABtn" id="Q&ABtn"></div>
                 <div class="myClass-container">
                     <nav class="myClass-nav-Area">
@@ -56,7 +56,7 @@
                     </nav>
                     <!-- ---------------------------------------------- -->
                     <!-- 회원정보 본문 -->
-                    <form action="info" method="POST" class="content-Area" onsubmit="return infoValidate()"
+                    <form action="my-info" method="POST" class="content-Area" onsubmit="return infoValidate()"
                         autocomplete="off">
                         <!-- <div class="content-Area"> -->
                         <!-- h -->
@@ -68,7 +68,7 @@
                         <div class="changeInfo">
                             <!-- 인풋창 -->
                             <div class="input-area">
-                                <input type="text" class="newInfo" name="memberNickname" id="newNick" maxlength="10"
+                                <input type="text" class="newInfo" name="userNick" id="memberNickname" maxlength="10"
                                     placeholder="새로운 닉네임을 입력해주세요">
 
                             </div>
@@ -85,7 +85,7 @@
                         <div class="changeInfo">
                             <!-- 인풋창 -->
                             <div class="input-area">
-                                <input type="text" class="newInfo" id="newTel" name="memberTel" maxlength="12"
+                                <input type="text" class="newInfo" id="newTel" name="userTel" maxlength="12"
                                     placeholder="새로운 전화번호를 입력해주세요">
 
                             </div>
@@ -99,7 +99,7 @@
                         <div class="changeInfo">
                             <!-- 인풋창 -->
                             <div class="input-area">
-                                <input type="text" class="newInfo" id="newAddr" name="memberAddr" maxlength="50"
+                                <input type="text" class="newInfo" id="newAddr" name="userAddr" maxlength="50"
                                     placeholder="새로운 주소를 입력해주세요">
                             </div>
                             <!-- 정규식메시지창 -->
@@ -115,7 +115,7 @@
                     </form>
                 </div>
                 <jsp:include page="/WEB-INF/views/common/Q&ABtn.jsp" />
-            </mian>
+            </main>
 
             <script src="${pageContext.request.contextPath}/resources/js/infoChange.js"></script>
         </body>

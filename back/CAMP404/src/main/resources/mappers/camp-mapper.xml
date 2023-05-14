@@ -153,9 +153,9 @@ AND SECESSION_FL = 'N'
 <!-- 회원정보 수정 -->
 <update id="changeInfo">
 	UPDATE USERS SET 
-	USER_NICK = #{memberNick},
-	USER_TEL =#{memberTel},
-	USER_ADDR = #{memberAddress}
+	USER_NICK = #{userNick},
+	USER_TEL =#{userTel},
+	USER_ADDR = #{userAddr}
 	WHERE USER_NO=#{userNo}
 </update>
 
