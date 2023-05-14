@@ -54,7 +54,7 @@ function leftMove() {
 // 자동 슬라이드 기능 (내부 내용은 오른쪽 버튼 클릭과 같음.)
 function slide() {
     rightMove();
-    console.log("5초마다 상단 슬라이드가 이동함");
+    // console.log("5초마다 상단 슬라이드가 이동함");
 };
 
 let ci = setInterval(slide, 5000);
@@ -165,7 +165,7 @@ midde_SlideImgHolder.on("mousedown", (e) => {
 
 function middle_slide() {
     middle_rightMove();
-    console.log("10초마다 광고 영역1 슬라이드가 이동함");
+    // console.log("10초마다 광고 영역1 슬라이드가 이동함");
 };
 
 let mi = setInterval(middle_slide, 10000);
@@ -266,7 +266,7 @@ midde_SlideImgHolder2.on("mousedown", (e) => {
 
 function middle_slide2() {
     middle_rightMove2();
-    console.log("7초마다 광고 영역2 슬라이드가 이동함");
+    // console.log("7초마다 광고 영역2 슬라이드가 이동함");
 };
 
 let mi2 = setInterval(middle_slide2, 7000);

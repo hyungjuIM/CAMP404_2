@@ -250,5 +250,39 @@ FROM DUAL
 	WHERE CATEGORY_NO = #{categoryNo}
 	</select>
 	
+		<!--찜 목록에서 조회하기  -->
+	<select id="checkFavLec" parameterType="favlec" resultType="boolean">
+	SELECT * 
+	FROM FAV_LEC
+	WHERE
+	LECTURE_NO = #{lectureNo}
+	AND USER_NO = #{usersNo}
+	</select>
+	
+	<!--찜 목록에 추가하기  -->
+	<insert id="insertFavLec" parameterType="favlec">
+	INSERT INTO FAV_LEC VALUES
+	(
+	SEQ_FAV_NO.NEXTVAL
+	, #{favYn}
+	, #{lectureNo}
+	, #{usersNo}
+	)
+	</insert>
+	
+		<!--찜 목록 FavYn 업데이트 하기 / 찜목록에서 삭제  -->
+	<delete  id="updateFavLec">
+	DELETE  FROM FAV_LEC
+	WHERE
+	LECTURE_NO = #{lectureNo}
+	AND USER_NO = #{usersNo}
+	</delete>
+	
+	<!--  parameterType="camp.kh.semi.member.model.vo.Users"-->
+<select id="getFavLecList" parameterType="favlec" resultMap="favlec_rm">
+SELECT *
+FROM FAV_LEC
+WHERE USER_NO = #{usersNo}
+</select>
 	
 </mapper>

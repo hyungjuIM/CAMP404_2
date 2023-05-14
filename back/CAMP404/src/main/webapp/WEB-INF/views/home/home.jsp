@@ -214,218 +214,239 @@
                                                     <a href="#" class="mainText1">SQL</a>
                                                     <a href="#" class="mainText2">수강가능</a>
                                                 </div>
-                                                <div class="likeBtn"><i class="fa-solid fa-heart"></i></i></div>
-                                            </div>
-                                            <a href="${contextPath}/class/class3">
-                                                <div class="subText">${bestClass.lectureName}<br></div>
-                                                <div class="tutorTitle">${bestClass.teacherName}</div>
-                                            </a>
-                                        </div>
-                                    </div>
+                                                <div class="likeBtn" data-lectureno="${bestClass.lectureNo}">
+                                                    <i class="fa-solid fa-heart"></i>
+                                                </div>
+                                                <%-- <c:if test='${favLec.favYn == "Y"}'>
+                                                    <div class="likeBtn likeColor"
+                                                        data-lectureno="${bestClass.lectureNo}">
+                                                        <i class="fa-solid fa-heart"></i>
+                                                    </div>
                                 </c:if>
-                            </c:forEach>
+                                <c:if test="${!favLec.favYn}">
+                                    <div class="likeBtn" data-lectureno="${bestClass.lectureNo}">
+                                        <i class="fa-solid fa-heart"></i>
+                                    </div>
+                                </c:if>--%>
+                        </div>
+                        <a href="${contextPath}/class/class3">
+                            <div class="subText">${bestClass.lectureName}<br></div>
+                            <div class="tutorTitle">${bestClass.teacherName}</div>
+                        </a>
+                    </div>
+                </div>
+                </c:if>
+                </c:forEach>
+                </div>
+                </div>
+                <!-- BEST CLASS -->
+
+                <!-- 중간 광고 -->
+                <div class="middleAddArea">
+                    <div class="middleAddItems">
+                        <div class="middleCheckEvent">
+                            <div class="Middle_SlideBtn">
+                                <div class="Middle_leftBtn"><span>&lt;</span></div>
+                                <div><span class="Middle_moveNum">1</span></div>
+                                <div><span>&nbsp;/&nbsp;</span></div>
+                                <div><span class="Middle_fixedNum">3</span></div>
+                                <div class="Middle_rightBtn"><span>&gt;</span></div>
+                            </div>
                         </div>
                     </div>
-                    <!-- BEST CLASS -->
+                    <ul class="midde_SlideImgHolder">
+                        <li class="midde_SlideContainer">
+                            <img class="midde_InnerImg" src="resources/images/middleSlide1.png" />
+                        </li>
+                        <li class="midde_SlideContainer">
+                            <img class="midde_InnerImg" src="resources/images/middleSlide2.png" />
+                        </li>
+                        <li class="midde_SlideContainer">
+                            <img class="midde_InnerImg" src="resources/images/middleSlide3.png" />
+                        </li>
+                    </ul>
 
-                    <!-- 중간 광고 -->
-                    <div class="middleAddArea">
-                        <div class="middleAddItems">
-                            <div class="middleCheckEvent">
-                                <div class="Middle_SlideBtn">
-                                    <div class="Middle_leftBtn"><span>&lt;</span></div>
-                                    <div><span class="Middle_moveNum">1</span></div>
-                                    <div><span>&nbsp;/&nbsp;</span></div>
-                                    <div><span class="Middle_fixedNum">3</span></div>
-                                    <div class="Middle_rightBtn"><span>&gt;</span></div>
+                </div>
+                <!-- 중간 광고 -->
+
+                <!-- FRONT-END class -->
+                <div class="classWrapper">
+                    <div class="classTitle">
+                        <div class="classTitle1">
+                            <span>FRONT-END</span>
+                            <span>Class</span>
+                        </div>
+                        <a href="#" class="classTitle2">더보기&nbsp;<i class="fa-solid fa-angles-right"></i></a>
+                    </div>
+                    <div class="classDescription">
+                        <c:forEach var="frontClass" items="${frontClassList}">
+                            <c:if test="${frontClass.categoryNo == 2}">
+                                <div class="classItem">
+                                    <a href="${contextPath}/class/class3" class="imgArea">
+                                        <img src="${frontClass.lectureImg}">
+                                    </a>
+                                    <div class="textArea">
+                                        <div class="topText">
+                                            <div class="mainText">
+                                                <a href="#" class="mainText1">JAVA</a>
+                                                <a href="#" class="mainText2">수강가능</a>
+                                            </div>
+                                            <div class="likeBtn" data-lectureno="${frontClass.lectureNo}">
+                                                <i class="fa-solid fa-heart"></i>
+                                            </div>
+                                        </div>
+                                        <a href="${contextPath}/class/class3">
+                                            <div class="subText">${frontClass.lectureName}<br></div>
+                                            <div class="tutorTitle">${frontClass.teacherName}</div>
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <ul class="midde_SlideImgHolder">
-                            <li class="midde_SlideContainer">
-                                <img class="midde_InnerImg" src="resources/images/middleSlide1.png" />
-                            </li>
-                            <li class="midde_SlideContainer">
-                                <img class="midde_InnerImg" src="resources/images/middleSlide2.png" />
-                            </li>
-                            <li class="midde_SlideContainer">
-                                <img class="midde_InnerImg" src="resources/images/middleSlide3.png" />
-                            </li>
-                        </ul>
-
+                            </c:if>
+                        </c:forEach>
                     </div>
-                    <!-- 중간 광고 -->
+                </div>
+                <!-- FRONT-END class -->
 
-                    <!-- FRONT-END class -->
-                    <div class="classWrapper">
-                        <div class="classTitle">
-                            <div class="classTitle1">
-                                <span>FRONT-END</span>
-                                <span>Class</span>
-                            </div>
-                            <a href="#" class="classTitle2">더보기&nbsp;<i class="fa-solid fa-angles-right"></i></a>
+                <!-- BACK-END class -->
+                <div class="classWrapper">
+                    <div class="classTitle">
+                        <div class="classTitle1">
+                            <span>BACK-END</span>
+                            <span>Class</span>
                         </div>
-                        <div class="classDescription">
-                            <c:forEach var="frontClass" items="${frontClassList}">
-                                <c:if test="${frontClass.categoryNo == 2}">
-                                    <div class="classItem">
-                                        <a href="${contextPath}/class/class3" class="imgArea">
-                                            <img src="${frontClass.lectureImg}">
-                                        </a>
-                                        <div class="textArea">
-                                            <div class="topText">
-                                                <div class="mainText">
-                                                    <a href="#" class="mainText1">JAVA</a>
-                                                    <a href="#" class="mainText2">수강가능</a>
-                                                </div>
-                                                <div class="likeBtn"><i class="fa-solid fa-heart"></i></i></div>
+                        <a href="#" class="classTitle2">더보기&nbsp;<i class="fa-solid fa-angles-right"></i></a>
+                    </div>
+                    <div class="classDescription">
+                        <c:forEach var="backClass" items="${backClassList}">
+                            <c:if test="${backClass.categoryNo == 3}">
+                                <div class="classItem">
+                                    <a href="${contextPath}/class/class3" class="imgArea">
+                                        <img src="${backClass.lectureImg}">
+                                    </a>
+                                    <div class="textArea">
+                                        <div class="topText">
+                                            <div class="mainText">
+                                                <a href="#" class="mainText1">JAVA</a>
+                                                <a href="#" class="mainText2">수강가능</a>
                                             </div>
-                                            <a href="${contextPath}/class/class3">
-                                                <div class="subText">${frontClass.lectureName}<br></div>
-                                                <div class="tutorTitle">${frontClass.teacherName}</div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </c:if>
-                            </c:forEach>
-                        </div>
-                    </div>
-                    <!-- FRONT-END class -->
-
-                    <!-- BACK-END class -->
-                    <div class="classWrapper">
-                        <div class="classTitle">
-                            <div class="classTitle1">
-                                <span>BACK-END</span>
-                                <span>Class</span>
-                            </div>
-                            <a href="#" class="classTitle2">더보기&nbsp;<i class="fa-solid fa-angles-right"></i></a>
-                        </div>
-                        <div class="classDescription">
-                            <c:forEach var="backClass" items="${backClassList}">
-                                <c:if test="${backClass.categoryNo == 3}">
-                                    <div class="classItem">
-                                        <a href="${contextPath}/class/class3" class="imgArea">
-                                            <img src="${backClass.lectureImg}">
-                                        </a>
-                                        <div class="textArea">
-                                            <div class="topText">
-                                                <div class="mainText">
-                                                    <a href="#" class="mainText1">JAVA</a>
-                                                    <a href="#" class="mainText2">수강가능</a>
-                                                </div>
-                                                <div class="likeBtn"><i class="fa-solid fa-heart"></i></i></div>
+                                            <div class="likeBtn" data-lectureno="${backClass.lectureNo}">
+                                                <i class="fa-solid fa-heart"></i>
                                             </div>
-                                            <a href="${contextPath}/class/class3">
-                                                <div class="subText">${backClass.lectureName}<br></div>
-                                                <div class="tutorTitle">${backClass.teacherName}</div>
-                                            </a>
                                         </div>
+                                        <a href="${contextPath}/class/class3">
+                                            <div class="subText">${backClass.lectureName}<br></div>
+                                            <div class="tutorTitle">${backClass.teacherName}</div>
+                                        </a>
                                     </div>
-                                </c:if>
-                            </c:forEach>
-                        </div>
-                    </div>
-                    <!-- BACK-END class -->
-
-                    <!-- 중간 광고2 -->
-                    <div class="middleAddArea2">
-                        <div class="middleAddItems2">
-                            <div class="middleCheckEvent2">
-                                <div class="Middle_SlideBtn2">
-                                    <div class="Middle_leftBtn2"><span>&lt;</span></div>
-                                    <div><span class="Middle_moveNum2">1</span></div>
-                                    <div><span>&nbsp;/&nbsp;</span></div>
-                                    <div><span class="Middle_fixedNum2">3</span></div>
-                                    <div class="Middle_rightBtn2"><span>&gt;</span></div>
                                 </div>
-                            </div>
-                        </div>
-                        <ul class="midde_SlideImgHolder2">
-                            <li class="midde_SlideContainer2">
-                                <img class="midde_InnerImg2" src="resources/images/middleSlide1.png" />
-                            </li>
-                            <li class="midde_SlideContainer2">
-                                <img class="midde_InnerImg2" src="resources/images/middleSlide2.png" />
-                            </li>
-                            <li class="midde_SlideContainer2">
-                                <img class="midde_InnerImg2" src="resources/images/middleSlide3.png" />
-                            </li>
-                        </ul>
-
+                            </c:if>
+                        </c:forEach>
                     </div>
-                    <!-- 중간 광고2 -->
+                </div>
+                <!-- BACK-END class -->
 
-                    <!-- DATABASE class -->
-                    <div class="classWrapper">
-                        <div class="classTitle">
-                            <div class="classTitle1">
-                                <span>DataBase</span>
-                                <span>Class</span>
+                <!-- 중간 광고2 -->
+                <div class="middleAddArea2">
+                    <div class="middleAddItems2">
+                        <div class="middleCheckEvent2">
+                            <div class="Middle_SlideBtn2">
+                                <div class="Middle_leftBtn2"><span>&lt;</span></div>
+                                <div><span class="Middle_moveNum2">1</span></div>
+                                <div><span>&nbsp;/&nbsp;</span></div>
+                                <div><span class="Middle_fixedNum2">3</span></div>
+                                <div class="Middle_rightBtn2"><span>&gt;</span></div>
                             </div>
-                            <a href="#" class="classTitle2">더보기&nbsp;<i class="fa-solid fa-angles-right"></i></a>
                         </div>
-                        <div class="classDescription">
-                            <c:forEach var="dataBase" items="${dataBaseClass}">
-                                <c:if test="${dataBase.categoryNo == 4}">
-                                    <div class="classItem">
-                                        <a href="${contextPath}/class/class3" class="imgArea">
-                                            <img src="${dataBase.lectureImg}">
-                                        </a>
-                                        <div class="textArea">
-                                            <div class="topText">
-                                                <div class="mainText">
-                                                    <a href="#" class="mainText1">JAVA</a>
-                                                    <a href="#" class="mainText2">수강가능</a>
-                                                </div>
-                                                <div class="likeBtn"><i class="fa-solid fa-heart"></i></i></div>
+                    </div>
+                    <ul class="midde_SlideImgHolder2">
+                        <li class="midde_SlideContainer2">
+                            <img class="midde_InnerImg2" src="resources/images/middleSlide1.png" />
+                        </li>
+                        <li class="midde_SlideContainer2">
+                            <img class="midde_InnerImg2" src="resources/images/middleSlide2.png" />
+                        </li>
+                        <li class="midde_SlideContainer2">
+                            <img class="midde_InnerImg2" src="resources/images/middleSlide3.png" />
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- 중간 광고2 -->
+
+                <!-- DATABASE class -->
+                <div class="classWrapper">
+                    <div class="classTitle">
+                        <div class="classTitle1">
+                            <span>DataBase</span>
+                            <span>Class</span>
+                        </div>
+                        <a href="#" class="classTitle2">더보기&nbsp;<i class="fa-solid fa-angles-right"></i></a>
+                    </div>
+                    <div class="classDescription">
+                        <c:forEach var="dataBase" items="${dataBaseClass}">
+                            <c:if test="${dataBase.categoryNo == 4}">
+                                <div class="classItem">
+                                    <a href="${contextPath}/class/class3" class="imgArea">
+                                        <img src="${dataBase.lectureImg}">
+                                    </a>
+                                    <div class="textArea">
+                                        <div class="topText">
+                                            <div class="mainText">
+                                                <a href="#" class="mainText1">JAVA</a>
+                                                <a href="#" class="mainText2">수강가능</a>
                                             </div>
-                                            <a href="${contextPath}/class/class3">
-                                                <div class="subText">${dataBase.lectureName}<br></div>
-                                                <div class="tutorTitle">${dataBase.teacherName}</div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </c:if>
-                            </c:forEach>
-                        </div>
-                    </div>
-                    <!-- DATABASE class -->
-
-                    <!-- OS class -->
-                    <div class="classWrapper">
-                        <div class="classTitle">
-                            <div class="classTitle1">
-                                <span>Operation System</span>
-                                <span>Class</span>
-                            </div>
-                            <a href="#" class="classTitle2">더보기&nbsp;<i class="fa-solid fa-angles-right"></i></a>
-                        </div>
-                        <div class="classDescription">
-                            <c:forEach var="osClass" items="${osClassList}">
-                                <c:if test="${osClass.categoryNo == 5}">
-                                    <div class="classItem">
-                                        <a href="${contextPath}/class/class3" class="imgArea">
-                                            <img src="${osClass.lectureImg}">
-                                        </a>
-                                        <div class="textArea">
-                                            <div class="topText">
-                                                <div class="mainText">
-                                                    <a href="#" class="mainText1">JAVA</a>
-                                                    <a href="#" class="mainText2">수강가능</a>
-                                                </div>
-                                                <div class="likeBtn"><i class="fa-solid fa-heart"></i></i></div>
+                                            <div class="likeBtn" data-lectureno="${dataBase.lectureNo}">
+                                                <i class="fa-solid fa-heart"></i>
                                             </div>
-                                            <a href="${contextPath}/class/class3">
-                                                <div class="subText">${osClass.lectureName}<br></div>
-                                                <div class="tutorTitle">${osClass.teacherName}</div>
-                                            </a>
                                         </div>
+                                        <a href="${contextPath}/class/class3">
+                                            <div class="subText">${dataBase.lectureName}<br></div>
+                                            <div class="tutorTitle">${dataBase.teacherName}</div>
+                                        </a>
                                     </div>
-                                </c:if>
-                            </c:forEach>
-                        </div>
+                                </div>
+                            </c:if>
+                        </c:forEach>
                     </div>
+                </div>
+                <!-- DATABASE class -->
+
+                <!-- OS class -->
+                <div class="classWrapper">
+                    <div class="classTitle">
+                        <div class="classTitle1">
+                            <span>Operation System</span>
+                            <span>Class</span>
+                        </div>
+                        <a href="#" class="classTitle2">더보기&nbsp;<i class="fa-solid fa-angles-right"></i></a>
+                    </div>
+                    <div class="classDescription">
+                        <c:forEach var="osClass" items="${osClassList}">
+                            <c:if test="${osClass.categoryNo == 5}">
+                                <div class="classItem">
+                                    <a href="${contextPath}/class/class3" class="imgArea">
+                                        <img src="${osClass.lectureImg}">
+                                    </a>
+                                    <div class="textArea">
+                                        <div class="topText">
+                                            <div class="mainText">
+                                                <a href="#" class="mainText1">JAVA</a>
+                                                <a href="#" class="mainText2">수강가능</a>
+                                            </div>
+                                            <div class="likeBtn" data-lectureno="${osClass.lectureNo}">
+                                                <i class="fa-solid fa-heart"></i>
+                                            </div>
+                                        </div>
+                                        <a href="${contextPath}/class/class3">
+                                            <div class="subText">${osClass.lectureName}<br></div>
+                                            <div class="tutorTitle">${osClass.teacherName}</div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </c:if>
+                        </c:forEach>
+                    </div>
+                </div>
                 </div>
                 <jsp:include page="/WEB-INF/views/common/Q&ABtn.jsp" />
             </main>
@@ -435,12 +456,31 @@
             </footer>
 
             <script>
+                // 필터에서 가지고온 최상단 주소
                 const contextPath = "${contextPath}";
                 console.log(contextPath);
-                const loginMemberNo = "${loginMember.userNo}";
-                console.log(loginMemberNo);
+
+                // 현재 유저번호 확인용
+                const loginUserNo = "${loginMember.userNo}";
+                console.log(loginUserNo);
+
+
                 const loginMember = "${loginMember}";
                 console.log(loginMember);
+
+                const favLecList = "${favLecList}";
+
+                console.log(favLecList);
+
+
+                // const bestClassList = "${JSON.stringify(bestClassList)}";
+                // const frontClassList = "${JSON.stringify(frontClassList)}";
+                // const backClassList = "${JSON.stringify(backClassList)}";
+                // const dataBaseClass = "${JSON.stringify(dataBaseClass)}";
+                // const osClassList = "${JSON.stringify(osClassList)}";
+
+
+
             </script>
 
             <script src="${pageContext.request.contextPath}/resources/js/index.js"></script>

@@ -23,6 +23,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import camp.kh.semi.member.model.service.CampService;
+import camp.kh.semi.member.model.vo.FavLec;
 import camp.kh.semi.member.model.vo.Lecture;
 import camp.kh.semi.member.model.vo.Users;
 
@@ -30,7 +31,7 @@ import camp.kh.semi.member.model.vo.Users;
 // 로그인 및 회원가입 관련 기능 모음 컨트롤러
 
 @Controller
-@SessionAttributes({"loginMember"})
+@SessionAttributes({"loginMember", "favLecList"})
 @RequestMapping("/main")
 public class MainController {
 	private Logger logger = LoggerFactory.getLogger(MainController.class);
@@ -58,15 +59,20 @@ public class MainController {
 	@PostMapping("/login")
 	public String login	(@ModelAttribute("Users") Users inputMember, Model model, 
 			RedirectAttributes ra, HttpServletResponse resp, HttpServletRequest req,
-			@RequestParam(value ="saveId", required=false) String saveId
+			@RequestParam(value ="saveId", required=false) String saveId, FavLec favLec
 			) {
 		logger.info("로그인 기능 수행됨.");
 
 	Users loginMember = service.login(inputMember);
-	
+
 
 	if(loginMember != null) { 	// 로그인 성공 시
+		
+		// 로그인이 성공되면 찜목록을 해당 회원 세션에 저장한다.
+		favLec.setUsersNo(loginMember.getUserNo());
+		List<FavLec> favLecList = service.getFavLecList(favLec);
 		model.addAttribute("loginMember", loginMember);
+		model.addAttribute("favLecList", favLecList);
 		
 		Cookie cookie = new Cookie("saveId", loginMember.getUserEmail());
 		
@@ -78,6 +84,7 @@ public class MainController {
 		cookie.setPath(req.getContextPath());
 		
 		resp.addCookie(cookie);
+		System.out.println(favLecList);
 		logger.info("로그인 됨.");
 	} else {
 		logger.info("로그인 실패.");
@@ -86,7 +93,7 @@ public class MainController {
 		return "redirect:/main/login";
 	}
 
-	System.out.println();
+
 	return "redirect:/";
 	}
 	
