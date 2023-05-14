@@ -14,19 +14,14 @@
 .reply-writer{
     display: flex;
     align-items: center;
-    color: black;
 }
 
-/* 댓글 작성자 프로필 이미지 */
-.reply-writer > img{
-    width: 40px;
-    height: 40px;
-}
 
 /* 댓글 작성자 닉네임, 작성일 */
 .reply-writer > span{
     font-weight: bold;
     margin-left: 10px;
+    color: rgb(255, 255, 255);
 }
 
 /* 댓글 작성일 */
@@ -48,15 +43,15 @@
     margin-left: 10px;
 
     font-weight: bold;
+
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+
     border: 0;
     
-    background-color: #333333;
-    border-radius: 50px;
-    font-weight: 500;
-    font-size: 14px;
     
+    border-radius: 3px;
     
-    color : white;
 
     cursor: pointer;
 }
@@ -64,9 +59,11 @@
 /* 버튼 hover */
 .reply-btn-area > button:hover{
     background-color: #fe6936;
-    box-shadow: 0px 0px 8px #9f9f9f;
-    transition-duration: 0.2s;
-    border : #fe6936;
+
+    border: 1px solid fe6936;
+    color: white;
+
+
 }
 
 
@@ -79,15 +76,14 @@
     margin: 30px 0;
 }
 .reply-content{
-    color: black;
+    color: rgb(255, 255, 255);
+    padding-top: 15px;
 }
 
 /* 댓글 작성 내용 */
 #replyContent{
     flex-basis: 75%;
     margin-right: 10px;
-    width: 700px;
-    height: 60px;
     resize: none;
     color: black;
 }
@@ -96,8 +92,8 @@
 #addReply{
     flex-basis: 8%;
     font-weight: bold;
-    background-color: black;
-    color: white;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     border: 0;
     cursor: pointer;
 }
@@ -118,7 +114,7 @@
 /* 답글 스타일 */
 .child-reply{
     padding-left: 100px;
-    background-color: rgba(241, 50, 156, 0.2);
+    background-color:rgb(38, 38, 38);
 }
 
 

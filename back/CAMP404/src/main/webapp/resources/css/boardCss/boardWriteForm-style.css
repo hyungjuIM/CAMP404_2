@@ -1,3 +1,7 @@
+main{
+    background-color:  #0e0e0e;
+}
+
 /* 게시글 작성 전체 영역 */
 .board-write{
     width: 1000px;
@@ -114,20 +118,14 @@
 
     font-weight: bold;
     border: 0;
-    
-    background-color: #333333;
-    border-radius: 50px;
-    font-weight: 500;
-    font-size: 14px;
-    
+    background-color: #455ba8;
     color : white;
 
     cursor: pointer;
 }
 
 .board-btn-area button:hover{
-    background-color: #fe6936;
-    box-shadow: 0px 0px 8px #9f9f9f;
-    transition-duration: 0.2s;
-    border : #fe6936;
+    background-color: white;
+    color : #455ba8;
+    border: 2px solid #455ba8;
 }
