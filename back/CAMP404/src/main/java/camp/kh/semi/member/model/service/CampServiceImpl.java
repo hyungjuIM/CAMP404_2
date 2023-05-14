@@ -15,6 +15,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import camp.kh.semi.member.model.dao.CampDAO;
+import camp.kh.semi.member.model.vo.FavLec;
 import camp.kh.semi.member.model.vo.Lecture;
 import camp.kh.semi.member.model.vo.Users;
 
@@ -168,12 +169,33 @@ public class CampServiceImpl implements CampService {
 	 */
 	@Override
 	public int changeInfo(Map<String, Object> paramMap) {
-		
-
-
 			return dao.changeInfo(paramMap);
-
-	
 	}
+	
+	// 찜 목록에서 조회하기
+	@Override
+	public boolean checkFavLec(FavLec favlec) {
+		return dao.checkFavLec(favlec);
+	}
+
+	// 찜목록에 추가하기
+	@Override
+	public int insertFavLec(FavLec favlec) {
+		return dao.insertFavLec(favlec);
+	}
+
+	// 찜 목록 FavYn 업데이트 하기 / 찜목록에서 삭제
+	@Override
+	public int updateFavLec(FavLec favlec) {
+		return dao.updateFavLec(favlec);
+	}
+
+	@Override
+	public List<FavLec> getFavLecList(FavLec favLec) {
+		return  dao.getFavLecList(favLec);
+	}
+	
+	
+	
 
 }

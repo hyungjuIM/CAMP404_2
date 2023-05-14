@@ -19,7 +19,7 @@ import camp.kh.semi.member.model.vo.Lecture;
 // 메인 화면 이동용 컨트롤러
 
 @Controller
-@SessionAttributes({"list"})
+@SessionAttributes({"lecture", "bestClassList","frontClassList",  "backClassList", "dataBaseClass", "osClassList"})
 public class HomeController {
 	private Logger logger = LoggerFactory.getLogger(HomeController.class);
 	

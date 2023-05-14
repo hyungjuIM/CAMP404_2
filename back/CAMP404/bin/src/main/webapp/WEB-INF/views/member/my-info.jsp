@@ -25,7 +25,7 @@
                 <div class="myClass-summary-container">
                     <!-- 안녕하세요 * 님 -->
                     <div class="myClass-hiUser">안녕하세요.<br>
-                        <span class="userName">김철수</span> 님!
+                        <span class="userName">${loginMember.userName}</span> 님!
                     </div>
                     <!-- 나의강의장, 찜목록, 정보수정버튼 -->
                     <div class="myClass-content-container">
@@ -33,7 +33,8 @@
                             <span class="myClass-span">나의 강의장</span>
                             <i class="fa-solid fa-chevron-right fa-xm"></i>
                         </div>
-                        <div class="content-1" onclick="location.href='/html/payMall.html';">
+                        <div class="content-1"
+                            onclick="location.href='${pageContext.request.contextPath}/myPage/favLecture';">
                             <span class="myClass-span">나의 찜목록</span>
                             <i class="fa-solid fa-chevron-right fa-xm"></i>
                         </div>

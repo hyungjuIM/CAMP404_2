@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import camp.kh.semi.member.model.vo.Camp;
+import camp.kh.semi.member.model.vo.FavLec;
 import camp.kh.semi.member.model.vo.Lecture;
 import camp.kh.semi.member.model.vo.LectureNote;
 import camp.kh.semi.member.model.vo.Users;
@@ -92,6 +93,39 @@ public class CampDAO {
 		return sqlSession.update("campMapper.changeInfo", paramMap);
 		
 	}
+
+
+	// 찜 목록에서 조회하기
+	public boolean checkFavLec(FavLec favlec) {
+		Boolean result = sqlSession.selectOne("campMapper.checkFavLec", favlec);
+	    if (result == null) {
+	        return false;
+	    }
+	    return result;
+	}
+
+	// 찜목록에 추가하기
+	public int insertFavLec(FavLec favlec) {
+		return sqlSession.insert("campMapper.insertFavLec", favlec);
+	}
+
+	// 찜 목록 FavYn 업데이트 하기 / 찜목록에서 삭제
+	public int updateFavLec(FavLec favlec) {
+		return sqlSession.update("campMapper.updateFavLec", favlec);
+	}
+
+
+
+
+
+	public List<FavLec> getFavLecList(FavLec favLec) {
+		return sqlSession.selectList("campMapper.getFavLecList", favLec);
+	}
+
+
+
+
+
 
 
 
