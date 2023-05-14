@@ -39,7 +39,7 @@ public class ReplyDAO {
 	 * @return result
 	 */
 	public int deleteReply(Reply reply) {
-		return sqlSession.update("replyMapper.deleteReply", reply);
+		return sqlSession.delete("replyMapper.deleteReply", reply);
 	}
 
 	

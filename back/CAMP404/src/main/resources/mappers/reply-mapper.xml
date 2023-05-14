@@ -91,13 +91,21 @@
 
 
 
-	<!-- 댓글 삭제 -->
+	<!-- 댓글 삭제 
 	<update id="deleteReply">
-		UPDATE REPLY_S SET
+		UPDATE REPLY_S  SET
 		REPLY_ST = 'Y'
+		WHERE 
+		REPLY_NO = #{replyNo}
+		AND USER_NO =#{userNo}
+		
+	</update>
+	-->
+	<delete id="deleteReply">
+		DELETE FROM REPLY_S
 		WHERE REPLY_NO = #{replyNo}
 		AND USER_NO =#{userNo}
-	</update>
+	</delete>
 	
 	
 	<!-- 댓글 수정 -->
