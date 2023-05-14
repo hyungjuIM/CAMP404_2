@@ -28,9 +28,9 @@
 
                                             <%-- 로그인한 회원의 댓글인 경우 --%>
                                                 <c:if test="${loginMember.userNo == reply.userNo}">
-                                                    <button
-                                                        onclick="showUpdateReply(${reply.replyNo}, this);">수정</button>
+                                                    <button onclick="showUpdateReply(${reply.replyNo}, this);">수정</button>
                                                     <button onclick="deleteReply(${reply.replyNo})">삭제</button>
+                                                	
                                                 </c:if>
 
                                         </div>
