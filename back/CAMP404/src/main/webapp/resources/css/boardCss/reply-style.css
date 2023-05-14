@@ -80,6 +80,8 @@
 #replyContent{
     flex-basis: 75%;
     margin-right: 10px;
+    width: 700px;
+    height: 60px;
     resize: none;
     color: black;
 }
