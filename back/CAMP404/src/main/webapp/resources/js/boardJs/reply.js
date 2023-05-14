@@ -400,12 +400,7 @@ function showInsertReply(parentReplyNo, btn) {
 }
 
 
-// 답글 취소
-function deleteReply(btn) {
-    // 취소
-    btn.parentElement.previousElementSibling.remove(); // 취소의 부모의 이전 요소(textarea) 제거
-    btn.parentElement.remove(); // 취소의 부모 요소(reply-btn-area) 제거
-}
+
 
 
 // 답글 등록
