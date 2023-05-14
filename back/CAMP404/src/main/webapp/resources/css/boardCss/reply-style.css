@@ -102,3 +102,18 @@
     height: 90px;
     resize: none;
 }
+
+/* 답글 스타일 */
+.child-reply{
+    padding-left: 100px;
+    background-color:rgb(38, 38, 38);
+}
+
+
+/* 답글 작성 textarea */
+.replyInsertContent{
+    width: 100%;
+    height: 90px;
+    resize: none;
+    margin-top: 20px;
+}
