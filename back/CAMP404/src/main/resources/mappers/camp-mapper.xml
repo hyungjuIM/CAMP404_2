@@ -75,6 +75,7 @@
 		<result property="categoryNo" column="CATEGORY_NO" />
 		<result property="lectureImg" column="LECTURE_IMG" />
 		<result property="teacherName" column="TEACHER_NAME" />		
+		<result property="favYn" column="FAV_YN" />
 	</resultMap>
 	
 	<!-- 카테고리 -->
@@ -242,11 +243,14 @@ FROM DUAL
 </insert>  
 -->
 	
+	<!-- 시작 시, 강의 목록 불러오기 -->
 	<select id="getClassItems" parameterType="lecture" resultMap="lecture_rm">
-	SELECT lecture.*, teacher.TEACHER_NAME 
+	SELECT lecture.*, teacher.TEACHER_NAME, fav_lec.FAV_YN
 	FROM LECTURE lecture
 	JOIN TEACHER teacher
 	ON lecture.TEACHER_NO = teacher.TEACHER_NO
+	LEFT JOIN FAV_LEC fav_lec
+	ON lecture.LECTURE_NO = fav_lec.LECTURE_NO
 	WHERE CATEGORY_NO = #{categoryNo}
 	</select>
 	
@@ -279,10 +283,12 @@ FROM DUAL
 	</delete>
 	
 	<!--  parameterType="camp.kh.semi.member.model.vo.Users"-->
-<select id="getFavLecList" parameterType="favlec" resultMap="favlec_rm">
-SELECT *
+<select id="getFavLecList" parameterType="favlec" resultType="_int">
+SELECT
+LECTURE_NO
 FROM FAV_LEC
 WHERE USER_NO = #{usersNo}
+AND FAV_YN ='Y'
 </select>
 	
 </mapper>

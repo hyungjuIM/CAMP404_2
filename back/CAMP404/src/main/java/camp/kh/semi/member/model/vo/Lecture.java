@@ -19,4 +19,6 @@ public class Lecture {
 	private int categoryNo;
 	private String lectureImg;
 	private String teacherName;
+	
+	private String favYn;
 }

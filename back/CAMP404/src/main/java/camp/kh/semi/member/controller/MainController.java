@@ -1,6 +1,8 @@
 package camp.kh.semi.member.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -70,9 +72,11 @@ public class MainController {
 		
 		// 로그인이 성공되면 찜목록을 해당 회원 세션에 저장한다.
 		favLec.setUsersNo(loginMember.getUserNo());
-		List<FavLec> favLecList = service.getFavLecList(favLec);
+		
+		
+		
 		model.addAttribute("loginMember", loginMember);
-		model.addAttribute("favLecList", favLecList);
+		
 		
 		Cookie cookie = new Cookie("saveId", loginMember.getUserEmail());
 		
@@ -84,7 +88,6 @@ public class MainController {
 		cookie.setPath(req.getContextPath());
 		
 		resp.addCookie(cookie);
-		System.out.println(favLecList);
 		logger.info("로그인 됨.");
 	} else {
 		logger.info("로그인 실패.");

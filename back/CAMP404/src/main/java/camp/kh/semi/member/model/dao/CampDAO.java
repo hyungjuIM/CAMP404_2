@@ -118,7 +118,8 @@ public class CampDAO {
 
 
 
-	public List<FavLec> getFavLecList(FavLec favLec) {
+	public List<Integer> getFavLecList(FavLec favLec) {
+		
 		return sqlSession.selectList("campMapper.getFavLecList", favLec);
 	}
 

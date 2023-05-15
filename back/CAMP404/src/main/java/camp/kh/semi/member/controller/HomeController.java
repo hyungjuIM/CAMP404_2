@@ -40,7 +40,9 @@ public class HomeController {
 		List<Lecture> osClassList = service.getClassItems(5);
 		
 
-		
+		System.out.println(bestClassList.get(0));
+		System.out.println(bestClassList.get(1));
+		System.out.println(bestClassList.get(2));
 		System.out.println("DB에서 강의 자료를 가지고 옴");
 		
 		session.setAttribute("bestClassList", bestClassList);

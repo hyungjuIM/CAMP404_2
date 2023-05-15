@@ -191,10 +191,9 @@ public class CampServiceImpl implements CampService {
 	}
 
 	@Override
-	public List<FavLec> getFavLecList(FavLec favLec) {
+	public List<Integer> getFavLecList(FavLec favLec) {
 		return  dao.getFavLecList(favLec);
 	}
-	
 	
 	
 

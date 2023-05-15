@@ -53,7 +53,7 @@ public interface CampService {
 	public abstract int updateFavLec(FavLec favlec);
 
 // 로그인 시 세션에 찜목록 저장
-	public abstract List<FavLec> getFavLecList(FavLec favLec);
+	public abstract List<Integer> getFavLecList(FavLec favLec);
 
 	
 

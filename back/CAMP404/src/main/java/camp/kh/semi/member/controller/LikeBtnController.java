@@ -38,13 +38,13 @@ public  int insertFavLec(
 		
 		if(!checkFavLec) { // 찜 목록 조회 후, 해당 강의가 찜목록에 없을 경우에만 등록
 			System.out.println("찜 목록 조회 후, 해당 강의가 찜목록에 없을 경우에만 등록");
-			return result;
-//			return result = service.insertFavLec(favlec);
+//			return result;
+			return result = service.insertFavLec(favlec);
 			
 		} else { // 해당 강의가 이미 찜목록에 있을 경우, / 찜목록에서 삭제
 			System.out.println(" 해당 강의가 이미 찜목록에 있을 경우, / 찜목록에서 삭제");
-			return FavYnChange;
-//			return FavYnChange = service.updateFavLec(favlec);
+//			return FavYnChange;
+			return FavYnChange = service.updateFavLec(favlec);
 		}
 	}
 }
