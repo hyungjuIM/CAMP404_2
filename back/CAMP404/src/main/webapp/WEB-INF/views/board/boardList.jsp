@@ -49,10 +49,7 @@
         </c:if>
 
         <section class="board-list">
-                
- 		<div class="page-title">
-			<img src="${pageContext.request.contextPath}/resources/images/CAMP404(가로).png" alt="">
-		</div>
+
 
             <h1 class="board-name">${boardName}</h1>
 
